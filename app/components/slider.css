@@ -1,0 +1,16 @@
+.slick-slide img {
+  display: block;
+  /* margin: auto; */
+  /* height: 120px; */
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: start;
+}
+
+.slick-dots li {
+  width: auto;
+  /* height: auto; */
+  /* margin: 5px; */
+}
