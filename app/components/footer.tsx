@@ -19,7 +19,7 @@ const Footer = () => {
               src="/resources/logo.png"
               width={120}
               height={120}
-              alt="cliff and waves logo"
+              alt="clark kent travel logo"
             />
           </div>
           <div className="text-slate-500">

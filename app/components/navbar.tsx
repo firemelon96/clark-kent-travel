@@ -18,7 +18,7 @@ const Navbar = () => {
                 width={80}
                 height={80}
                 src="/resources/logo.png"
-                alt="cliff and waves logo"
+                alt="clark kent travel logo"
                 className="rounded-md bg-white"
               />
             </Link>
