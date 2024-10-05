@@ -83,7 +83,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="border-sky-300 text-slate-500 flex flex-col items-center border-t py-2 text-sm">
+      <div className="flex flex-col items-center border-t border-sky-300 py-2 text-sm text-slate-500">
         <p> &copy; Copyright 2024. All Rights Reserved.</p>
         <span>Design and developed by: Almujahid Jamion</span>
       </div>

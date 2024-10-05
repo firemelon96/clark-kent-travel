@@ -21,21 +21,21 @@ const Contact = () => {
           </div>
           <div className="w-full p-4 md:w-1/2">
             <div className="flex w-full flex-col items-start gap-4">
-              <div className="text-slate-800 mb-20 w-full text-center text-4xl font-semibold md:text-start">
+              <div className="mb-20 w-full text-center text-4xl font-semibold text-slate-800 md:text-start">
                 <span>Got any Inquiries?</span>
                 <p className="text-rose-500">Message us</p>
               </div>
               <a
                 target="_blank"
-                href={`https://wa.me/${fbPageId}?text=I'm%20interested%20in%20your%20tour%20booking`}
-                className="text-emerald-500 flex w-full items-center justify-center gap-3 border p-4 text-3xl"
+                href={`https://wa.me/639552946691?text=I'm%20interested%20in%20your%20tour%20booking`}
+                className="flex w-full items-center justify-center gap-3 border p-4 text-3xl text-emerald-500"
               >
                 <BsWhatsapp /> Chat on Whatsapp
               </a>
               <a
                 target="_blank"
                 href={`https://m.me/${fbPageId}?text=I'm%20interested%20in%20your%20tour%20booking`}
-                className="text-sky-500 flex w-full items-center justify-center gap-3 border p-4 text-3xl"
+                className="flex w-full items-center justify-center gap-3 border p-4 text-3xl text-sky-500"
               >
                 <BsMessenger /> Messenger
               </a>

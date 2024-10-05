@@ -7,6 +7,7 @@ interface DescriptionProps {
   price?: number | number[];
   description: string;
   iti: string;
+  privatePrice: number[];
 }
 
 const Description = ({
@@ -14,6 +15,7 @@ const Description = ({
   price,
   description,
   iti,
+  privatePrice,
 }: DescriptionProps) => {
   return (
     <div className="space-y-2 rounded-md bg-sky-50 p-4">
@@ -28,6 +30,11 @@ const Description = ({
       {price && Array.isArray(price) && (
         <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
           {formatPeso(price[0])} / <FaUser className="size-5" />
+        </p>
+      )}
+      {!price && privatePrice && (
+        <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
+          {formatPeso(privatePrice[0])} / <FaUser className="size-5" />
         </p>
       )}
       <h5 className="pt-10 text-xl font-bold uppercase text-sky-800">

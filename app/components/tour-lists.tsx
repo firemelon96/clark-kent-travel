@@ -18,9 +18,9 @@ export const TourLists = ({ title, tours }: Props) => {
             key={tour.tourId}
             image={tour.images[0]}
             address={tour.address[0]}
-            iti={tour.iti}
             price={tour.price}
             title={tour.tourName}
+            privatePrice={tour.privatePrice!}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import Description from "../components/description";
 import Itenerary from "../components/itenerary";
 import ListBox from "../components/list-box";
-import FormWithZOD from "../components/form-with-zod";
+import { FormWithZOD } from "../components/form-with-zod";
 import ImageSliderSlick from "@/app/components/image-slider-slick";
 import { formatPeso, getTourById } from "@/app/lib/helpers";
 import RecommendedTours from "@/app/components/recommended-tours";
@@ -51,6 +51,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
               price={tour.price}
               description={tour.description}
               iti={tour.iti}
+              privatePrice={tour.privatePrice}
             />
             <Itenerary itineraries={tour.itineraries} />
           </div>
@@ -63,6 +64,9 @@ const SingleTour = ({ params }: SingleTourProps) => {
                 {tour.price &&
                   Array.isArray(tour.price) &&
                   `Price starts at ${formatPeso(tour.price[0])}`}
+                {!tour.price &&
+                  tour.privatePrice &&
+                  `Price starts at ${formatPeso(tour.privatePrice[0])}`}
               </h4>
               <hr className="my-4" />
               <h5 className="text-4xl font-bold text-sky-500">
@@ -74,6 +78,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
                 price={tour.price}
                 duration={tour.duration}
                 privatePrice={tour.privatePrice!}
+                title={tour.tourName}
               />
             </div>
             <ListBox items={tour.reminders!} type="Reminder" />

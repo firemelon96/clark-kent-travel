@@ -26,10 +26,16 @@ interface FormWithZODProps {
   duration: string;
   price?: number | number[];
   privatePrice: number[];
+  title: string;
 }
 
-const FormWithZOD = ({ duration, price, privatePrice }: FormWithZODProps) => {
-  const durationNum = Number(duration.split(" ")[0]) - 1;
+export const FormWithZOD = ({
+  duration,
+  price,
+  privatePrice,
+  title,
+}: FormWithZODProps) => {
+  const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
 
   const {
@@ -49,27 +55,38 @@ const FormWithZOD = ({ duration, price, privatePrice }: FormWithZODProps) => {
     },
   });
 
-  const onSubmit = (data: FieldValues) => {
-    const { dateRange, count, travellerType, notes } = data;
-    // const { startDate, endDate } = dateRange;
-    // router.push(
-    //   `https://m.me/134942517233163?text=Booking%20from%20WebApp%0ATour%20name:%20Balabac%20Tour%0ADate:%20${format(new Date(startDate), "MMMM dd")}%20-%20${format(new Date(endDate), "MMMM dd")}%0AParticipants:%20${count}x%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${totalPrice}`,
-    // );
-    console.log(data);
-  };
-
   const count = watch("count");
   const travellerType = watch("travellerType");
-  // const dateRange = watch("dateRange");
 
   const isPrivatePrice = travellerType === "Private";
+  const joiners = !isPrivatePrice && price && !Array.isArray(price);
+  const joinerPriceArray = !isPrivatePrice && Array.isArray(price);
 
-  const [date, setDate] = useState<Date | null>(null);
-  // const [tourPrice] = useState(price);
+  useEffect(() => {
+    if (joiners) {
+      setTotalPrice(price * count);
+    }
 
-  // const totalPrice = tourPrice
-  //   ? formatPeso(tourPrice * count)
-  //   : "To be discussed";
+    if (isPrivatePrice) {
+      setTotalPrice(privatePrice[count - 1] * count);
+    }
+
+    if (joinerPriceArray) {
+      setTotalPrice(price[count - 1] * count);
+    }
+  }, [price, privatePrice, isPrivatePrice, count]);
+
+  const onSubmit = (data: FieldValues) => {
+    const { date, count, travellerType, notes } = data;
+    const formatDate = format(new Date(date), "MMM dd EEEE");
+    const formattedTotalPrice = formatPeso(totalPrice);
+
+    const appName = "Clark Kent Travel Website";
+
+    router.push(
+      `https://m.me/276166685864117/?text=Booking%20from%20${appName}%0ATour%20name:%20${title}%0ADate:%20${formatDate}%0AParticipants:%20${count}%20pax%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${formattedTotalPrice}`,
+    );
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
@@ -212,5 +229,3 @@ const FormWithZOD = ({ duration, price, privatePrice }: FormWithZODProps) => {
     </form>
   );
 };
-
-export default FormWithZOD;
