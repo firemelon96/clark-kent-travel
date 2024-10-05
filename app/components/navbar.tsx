@@ -19,7 +19,7 @@ const Navbar = () => {
                 height={80}
                 src="/resources/logo.png"
                 alt="cliff and waves logo"
-                className="bg-white rounded-md"
+                className="rounded-md bg-white"
               />
             </Link>
             <div className="text-white">
@@ -33,11 +33,11 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden md:block">
-            <ul className="text-white font-base flex text-lg uppercase">
+            <ul className="font-base flex text-lg uppercase text-white">
               {navLinks.map((nav) => (
                 <li
                   key={nav.label}
-                  className="hover:bg-white/30 p-6 uppercase hover:bg-primary"
+                  className="hover:bg-primary p-6 uppercase hover:bg-white/30"
                 >
                   <Link href={nav.href}>{nav.label}</Link>
                 </li>
@@ -54,9 +54,9 @@ const Navbar = () => {
           </button>
 
           {isMobile && (
-            <ul className="absolute left-0 top-20 w-full items-center bg-[#E13179]/75 text-center text-2xl tracking-widest text-secondary backdrop-blur-sm md:hidden">
+            <ul className="absolute left-0 top-20 w-full items-center bg-[#E13179]/75 text-center text-2xl tracking-widest text-sky-50 backdrop-blur-sm md:hidden">
               {navLinks.map((nav) => (
-                <li key={nav.label} className="p-6 uppercase hover:bg-primary">
+                <li key={nav.label} className="p-6 uppercase hover:bg-white/30">
                   <Link href={nav.href}>{nav.label}</Link>
                 </li>
               ))}
