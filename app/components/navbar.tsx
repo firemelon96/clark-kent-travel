@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { navLinks } from "../data/navlinks";
+import { useMediaQuery } from "usehooks-ts";
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const isMobileBreakPoint = useMediaQuery("(min-width: 430px)");
+  const [isMobile, setIsMobile] = useState(isMobileBreakPoint);
 
   return (
     <header className="relative z-[9999]">
