@@ -30,8 +30,9 @@ const Footer = () => {
               Travel and Tours
             </span>
             <p className="text-base text-[#E13179]/75">
-              Lagan St., Puerto Princesa City, Palawan 5300
+              Lagan St., Puerto Princesa City
             </p>
+            <span className="text-base text-[#E13179]/75">Palawan 5300</span>
           </div>
         </div>
         <div className="flex flex-col p-2">

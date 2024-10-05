@@ -4,17 +4,17 @@ import { BiChevronRight } from "react-icons/bi";
 
 const Hero = () => {
   return (
-    <section className="bg-red-300 mt-16 flex max-h-[755px] w-full overflow-hidden">
+    <section className="mt-16 flex max-h-[755px] w-full overflow-hidden bg-red-300">
       <div className="relative h-[440px] w-full">
         <Image
           fill
           alt="Palawan island"
-          src="/resources/hero.png"
+          src="/resources/hero.avif"
           className="w-full object-cover object-top"
           priority
         />
 
-        <div className="text-sky-50 absolute inset-y-0 left-5 flex items-center sm:left-36 2xl:left-80">
+        <div className="absolute inset-y-0 left-5 flex items-center text-sky-50 sm:left-36 2xl:left-80">
           <div className="space-y-2">
             {/* <span className="text-rose-500 text-3xl">Let your</span> */}
             <h1 className="text-4xl font-semibold uppercase lg:text-7xl">
@@ -28,7 +28,7 @@ const Hero = () => {
             </p> */}
 
             <Link href="#tours">
-              <button className="bg-sky-500 group mt-5 flex items-center rounded-full px-4 py-3 text-sm font-semibold tracking-wider">
+              <button className="group mt-5 flex items-center rounded-full bg-sky-500 px-4 py-3 text-sm font-semibold tracking-wider">
                 EXPLORE NOW{" "}
                 <BiChevronRight className="ml-2 group-hover:animate-ping" />
               </button>
