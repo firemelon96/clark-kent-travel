@@ -10,7 +10,7 @@ const RecommendedTours = ({ id }: RecommendedToursProps) => {
   return (
     <>
       <div className="my-10 ml-5 md:ml-20 2xl:ml-80">
-        <h2 className="text-3xl font-semibold text-primary">
+        <h2 className="text-primary text-3xl font-semibold">
           You might <span className="text-third">also like</span>
         </h2>
       </div>
@@ -18,10 +18,10 @@ const RecommendedTours = ({ id }: RecommendedToursProps) => {
         <div className="ml-5 flex w-max gap-4 md:ml-20 2xl:ml-80">
           {filteredTours.map((tour) => (
             <Card
+              privatePrice={tour.privatePrice}
               key={tour.tourId}
               image={tour.images[0]}
               address={tour.address[0]}
-              iti={tour.iti}
               price={tour.price}
               title={tour.tourName}
               id={tour.tourId}

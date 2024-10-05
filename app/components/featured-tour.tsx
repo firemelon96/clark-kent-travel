@@ -8,10 +8,10 @@ const FeaturedTour = () => {
       <div className="ml-5 flex w-max gap-4 md:ml-36">
         {featuredTours.map((tour) => (
           <Card
+            privatePrice={tour.privatePrice}
             key={tour.tourId}
             image={tour.images[0]}
             address={tour.address[0]}
-            iti={tour.iti}
             price={tour.price}
             title={tour.tourName}
             id={tour.tourId}

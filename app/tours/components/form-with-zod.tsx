@@ -74,7 +74,7 @@ export const FormWithZOD = ({
     if (joinerPriceArray) {
       setTotalPrice(price[count - 1] * count);
     }
-  }, [price, privatePrice, isPrivatePrice, count]);
+  }, [price, privatePrice, isPrivatePrice, joinerPriceArray, joiners, count]);
 
   const onSubmit = (data: FieldValues) => {
     const { date, count, travellerType, notes } = data;
