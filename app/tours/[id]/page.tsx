@@ -79,6 +79,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
                 duration={tour.duration}
                 privatePrice={tour.privatePrice!}
                 title={tour.tourName}
+                isPax
               />
             </div>
             <ListBox items={tour.reminders!} type="Reminder" />

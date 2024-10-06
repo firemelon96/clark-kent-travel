@@ -27,6 +27,7 @@ interface FormWithZODProps {
   price?: number | number[];
   privatePrice: number[];
   title: string;
+  isPax: boolean;
 }
 
 export const FormWithZOD = ({
@@ -34,6 +35,7 @@ export const FormWithZOD = ({
   price,
   privatePrice,
   title,
+  isPax,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
@@ -74,7 +76,20 @@ export const FormWithZOD = ({
     if (joinerPriceArray) {
       setTotalPrice(price[count - 1] * count);
     }
-  }, [price, privatePrice, isPrivatePrice, joinerPriceArray, joiners, count]);
+
+    if (isPrivatePrice && isPax) {
+      const index = Math.floor((count - 1) / 2);
+      setTotalPrice(privatePrice[index]);
+    }
+  }, [
+    price,
+    privatePrice,
+    isPax,
+    isPrivatePrice,
+    joinerPriceArray,
+    joiners,
+    count,
+  ]);
 
   const onSubmit = (data: FieldValues) => {
     const { date, count, travellerType, notes } = data;
@@ -202,7 +217,7 @@ export const FormWithZOD = ({
               </p>
             </>
           )}
-          {isPrivatePrice && (
+          {isPrivatePrice && !isPax && (
             <>
               <p className="font-bold text-slate-500">
                 {count <= privatePrice.length ? (
@@ -210,6 +225,19 @@ export const FormWithZOD = ({
                 ) : (
                   <span className="text-right text-base font-normal text-rose-500">
                     Minimum {privatePrice.length} per pax reach
+                  </span>
+                )}
+              </p>
+            </>
+          )}
+          {isPrivatePrice && isPax && (
+            <>
+              <p className="font-bold text-slate-500">
+                {count <= privatePrice.length * 2 ? (
+                  formatPeso(totalPrice)
+                ) : (
+                  <span className="text-right text-base font-normal text-rose-500">
+                    Minimum {privatePrice.length * 2} per pax reach
                   </span>
                 )}
               </p>

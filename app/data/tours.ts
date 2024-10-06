@@ -235,10 +235,8 @@ export const tours = [
     iti: "1D",
     type: "day tour",
     price: 1200,
-    privatePrice: [
-      11000, 11000, 12000, 12000, 14500, 14500, 16000, 16000, 18000, 18000,
-      19000, 19000, 20000, 20000,
-    ],
+    isPax: true,
+    privatePrice: [11000, 12000, 14500, 16000, 18000, 19000, 20000],
     address: ["El Nido, Palawan"],
     description:
       "Embark on the iconic El Nido Tour A, a must-experience adventure that showcases some of the most stunning natural attractions in El Nido, Palawan. Perfect for beach lovers, snorkelers, and nature enthusiasts, this tour offers an unforgettable day of exploring crystal-clear lagoons, pristine beaches, and vibrant underwater life.",
@@ -298,10 +296,8 @@ export const tours = [
     iti: "1D",
     type: "day tour",
     price: 1300,
-    privatePrice: [
-      13000, 13000, 15500, 15500, 17500, 17500, 19500, 19500, 21000, 21000,
-      22000, 22000, 23000, 23000,
-    ],
+    isPax: true,
+    privatePrice: [13000, 15500, 17500, 19500, 21000, 22000, 23000],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour B offers an exciting exploration of caves, hidden beaches, and vibrant marine life. This tour is perfect for those seeking adventure and discovery, providing a blend of thrilling activities and stunning natural scenery. Explore unique geological formations, swim in crystal-clear waters, and relax on pristine beaches.",
@@ -363,10 +359,8 @@ export const tours = [
     iti: "1D",
     type: "day tour",
     price: 1400,
-    privatePrice: [
-      13000, 13000, 15500, 15500, 17500, 17500, 19500, 19500, 21000, 21000,
-      22000, 22000, 23000, 23000,
-    ],
+    isPax: true,
+    privatePrice: [13000, 15500, 17500, 19500, 21000, 22000, 23000],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour C is renowned for its hidden beaches, secret coves, and dramatic limestone formations. This tour is perfect for those seeking an adventurous day of snorkeling, exploring pristine beaches, and discovering the hidden treasures of El Nido's stunning seascape.",
@@ -428,10 +422,8 @@ export const tours = [
     iti: "1D",
     type: "day tour",
     price: 1200,
-    privatePrice: [
-      11000, 11000, 12000, 12000, 14500, 14500, 16000, 16000, 18000, 18000,
-      19000, 19000, 20000, 20000,
-    ],
+    isPax: true,
+    privatePrice: [11000, 12000, 14500, 16000, 18000, 19000, 20000],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour D offers a more relaxed and intimate exploration of some of the less-visited yet equally stunning islands and beaches of El Nido. This tour is perfect for travelers looking to escape the crowds and enjoy a day of tranquility, snorkeling, and soaking in the natural beauty of secluded spots.",

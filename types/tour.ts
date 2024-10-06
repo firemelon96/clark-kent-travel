@@ -10,6 +10,7 @@ export type TourPackage = {
   iti: string;
   type: string;
   price?: number | number[] | undefined;
+  isPax?: boolean | undefined;
   privatePrice?: number[] | undefined;
   address: string[];
   description: string;
