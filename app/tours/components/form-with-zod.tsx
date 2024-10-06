@@ -23,7 +23,7 @@ const schema = z.object({
 });
 
 interface FormWithZODProps {
-  duration: string;
+  duration: string[];
   price?: number | number[];
   privatePrice: number[];
   title: string;
@@ -108,7 +108,7 @@ export const FormWithZOD = ({
       )}
       <div className="flex items-center gap-2">
         <label
-          className={`cursor-pointer rounded-xl border border-sky-500 px-4 py-2 ${travellerType === "Private" && "bg-sky-500 text-white"}`}
+          className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Private" && "bg-sky-500 text-white"}`}
         >
           <input
             type="radio"
@@ -120,7 +120,7 @@ export const FormWithZOD = ({
         </label>
         {price && (
           <label
-            className={`cursor-pointer rounded-xl border border-sky-500 px-4 py-2 ${travellerType === "Joiners" && "bg-sky-500 text-white"}`}
+            className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Joiners" && "bg-sky-500 text-white"}`}
           >
             <input
               type="radio"
@@ -136,13 +136,13 @@ export const FormWithZOD = ({
         )}
       </div>
       <div>
-        <label className="flex items-center justify-between text-xl text-slate-500">
+        <label className="flex items-center justify-between text-base text-slate-500">
           Participants
           <div className="flex items-center gap-1">
             <button
               type="button"
               onClick={() => setValue("count", Math.max(0, count - 1))}
-              className="rounded-full bg-sky-500 p-2 text-white"
+              className="rounded-full bg-sky-500 p-1.5 text-white"
             >
               <BiMinus />
             </button>
@@ -155,7 +155,7 @@ export const FormWithZOD = ({
             <button
               type="button"
               onClick={() => setValue("count", count + 1)}
-              className="rounded-full bg-sky-500 p-2 text-white"
+              className="rounded-full bg-sky-500 p-1.5 text-white"
             >
               <BiPlus />
             </button>
@@ -167,7 +167,7 @@ export const FormWithZOD = ({
           ""
         )}
       </div>
-      <label className="text-xl text-slate-500">
+      <label className="text-base text-slate-500">
         Notes
         <textarea
           placeholder="e.g. type of food and drinks"
@@ -180,7 +180,7 @@ export const FormWithZOD = ({
         )}
       </label>
       {count ? (
-        <div className="flex items-center justify-between p-4 text-xl font-semibold">
+        <div className="flex items-center justify-between px-2 text-xl font-semibold">
           <span className="text-lg text-slate-400">TOTAL</span>{" "}
           {!isPrivatePrice && price && !Array.isArray(price) && (
             <>
@@ -222,7 +222,7 @@ export const FormWithZOD = ({
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full rounded-full bg-sky-500 p-4 font-bold uppercase tracking-widest text-white"
+        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white"
       >
         BOOK THIS TRIP
       </button>

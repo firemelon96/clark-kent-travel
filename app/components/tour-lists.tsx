@@ -11,7 +11,7 @@ export const TourLists = ({ title, tours }: Props) => {
       <h3 className="text-primary pb-10 text-4xl font-semibold">
         Destinations in <span className="text-rose-500">{title}</span>
       </h3>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {tours.map((tour) => (
           <Card
             id={tour.tourId}

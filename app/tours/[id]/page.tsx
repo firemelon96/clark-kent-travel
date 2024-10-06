@@ -39,7 +39,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
 
   return (
     <>
-      <div className="container mx-auto mt-20 md:px-20">
+      <div className="container mx-auto mt-20 xl:px-20">
         <div className="flex flex-col gap-0 md:flex-row">
           <div className="flex w-full flex-col gap-4 p-4 md:w-2/3">
             <div className="mb-20 h-[500px] bg-sky-50">
@@ -56,8 +56,8 @@ const SingleTour = ({ params }: SingleTourProps) => {
             <Itenerary itineraries={tour.itineraries} />
           </div>
           <div className="flex w-full flex-col gap-4 px-4 py-0 md:sticky md:top-20 md:w-1/3 md:px-0 md:py-4">
-            <div className="border-third text-third space-y-2 border bg-sky-50 p-4 shadow-md">
-              <h4 className="text-md font-semibold text-slate-600">
+            <div className="border-third text-third border bg-sky-50 p-4 shadow-md">
+              <h4 className="text-sm font-normal text-slate-400">
                 {tour.price &&
                   !Array.isArray(tour.price) &&
                   `Price starts at ${formatPeso(tour.price)}`}
@@ -68,11 +68,11 @@ const SingleTour = ({ params }: SingleTourProps) => {
                   tour.privatePrice &&
                   `Price starts at ${formatPeso(tour.privatePrice[0])}`}
               </h4>
-              <hr className="my-4" />
-              <h5 className="text-4xl font-bold text-sky-500">
+              <hr className="my-2" />
+              <h5 className="text-2xl font-bold text-sky-500">
                 {tour.tourName}
               </h5>
-              <p className="text-xl text-slate-500">{tour.address[0]}</p>
+              <p className="text-base text-slate-500">{tour.address[0]}</p>
 
               <FormWithZOD
                 price={tour.price}

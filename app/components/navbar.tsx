@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { navLinks } from "../data/navlinks";
-import { useMediaQuery } from "usehooks-ts";
+import { useMedia } from "react-use";
 
 const Navbar = () => {
-  const isMobileBreakPoint = useMediaQuery("(min-width: 430px)");
-  const [isMobile, setIsMobile] = useState(isMobileBreakPoint);
+  const isMobile = useMedia("(min-width: 430px)", false);
+  const [isOpen, setIsOpen] = useState(isMobile);
 
   return (
     <header className="relative z-[9999]">
@@ -49,14 +49,14 @@ const Navbar = () => {
 
           {/* mobile navigation */}
           <button
-            onClick={() => setIsMobile((prev) => !prev)}
+            onClick={() => setIsOpen((prev) => !prev)}
             className="flex items-center justify-center md:hidden"
           >
             <BiMenu className="fill-sky-50 text-5xl" />
           </button>
 
-          {isMobile && (
-            <ul className="absolute left-0 top-20 w-full items-center bg-[#E13179]/75 text-center text-2xl tracking-widest text-sky-50 backdrop-blur-sm md:hidden">
+          {isOpen && (
+            <ul className="absolute left-0 top-20 w-full items-center bg-[#E13179]/75 text-center text-2xl tracking-widest text-sky-50 backdrop-blur-sm">
               {navLinks.map((nav) => (
                 <li key={nav.label} className="p-6 uppercase hover:bg-white/30">
                   <Link href={nav.href}>{nav.label}</Link>

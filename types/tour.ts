@@ -14,7 +14,7 @@ export type TourPackage = {
   address: string[];
   description: string;
   itineraries: Itinerary[];
-  duration: string;
+  duration: string[];
   inclusions: string[];
   exclusions: string[];
   note?: string[] | undefined;
