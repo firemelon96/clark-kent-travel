@@ -47,6 +47,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
             </div>
             <SocialShare url={shareLink} />
             <Description
+              duration={tour.duration}
               tourName={tour.tourName}
               price={tour.price}
               description={tour.description}

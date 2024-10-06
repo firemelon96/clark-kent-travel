@@ -1,5 +1,5 @@
 import { formatPeso } from "@/app/lib/helpers";
-import { BiInfoSquare } from "react-icons/bi";
+import { BsClock } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 
 interface DescriptionProps {
@@ -8,6 +8,7 @@ interface DescriptionProps {
   description: string;
   iti: string;
   privatePrice: number[];
+  duration: string[];
 }
 
 const Description = ({
@@ -16,17 +17,30 @@ const Description = ({
   description,
   iti,
   privatePrice,
+  duration,
 }: DescriptionProps) => {
   return (
     <div className="space-y-2 rounded-md bg-sky-50 p-4">
-      <h1 className="text-3xl font-bold uppercase text-sky-800">
-        {tourName} {iti && `- ${iti}`}
+      <div className="flex justify-between">
+        {price && !Array.isArray(price) && (
+          <p className="text-semibold flex items-center gap-2 text-3xl font-bold text-sky-800">
+            {formatPeso(price)} / <FaUser className="size-5" />
+          </p>
+        )}
+        <div className="flex flex-col">
+          {duration.map((item) => (
+            <span
+              className="flex items-center gap-2 text-sm text-slate-600"
+              key={item}
+            >
+              <BsClock className="size-3" /> {item}
+            </span>
+          ))}
+        </div>
+      </div>
+      <h1 className="text-xl font-semibold uppercase text-slate-500">
+        {tourName} {iti && `- ${iti}`}{" "}
       </h1>
-      {price && !Array.isArray(price) && (
-        <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
-          {formatPeso(price)} / <FaUser className="size-5" />
-        </p>
-      )}
       {price && Array.isArray(price) && (
         <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
           {formatPeso(price[0])} / <FaUser className="size-5" />
@@ -37,7 +51,7 @@ const Description = ({
           {formatPeso(privatePrice[0])} / <FaUser className="size-5" />
         </p>
       )}
-      <h5 className="pt-10 text-xl font-bold uppercase text-sky-800">
+      <h5 className="pt-5 text-xl font-bold uppercase text-sky-800">
         Overview
       </h5>
       <p className="text-xl text-slate-600">{description}</p>
