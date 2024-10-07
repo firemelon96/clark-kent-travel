@@ -73,13 +73,14 @@ export const FormWithZOD = ({
       setTotalPrice(privatePrice[count - 1] * count);
     }
 
-    if (joinerPriceArray) {
-      setTotalPrice(price[count - 1] * count);
-    }
-
-    if (isPrivatePrice && isPax) {
+    if (privatePrice.length >= 1 && privatePrice.length <= 7) {
+      // const copyArray = [...privatePrice];
       const index = Math.floor((count - 1) / 2);
       setTotalPrice(privatePrice[index]);
+    }
+
+    if (joinerPriceArray) {
+      setTotalPrice(price[count - 1] * count);
     }
   }, [
     price,
@@ -221,7 +222,7 @@ export const FormWithZOD = ({
             <>
               <p className="font-bold text-slate-500">
                 {count <= privatePrice.length ? (
-                  formatPeso(privatePrice[count - 1] * count)
+                  formatPeso(totalPrice)
                 ) : (
                   <span className="text-right text-base font-normal text-rose-500">
                     Minimum {privatePrice.length} per pax reach

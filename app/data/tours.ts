@@ -3,7 +3,6 @@ export const tours = [
     tourId: "city-tour-puerto-princesa-city",
     tourName: "City Tour",
     isFeatured: true,
-    iti: "",
     type: "day tour",
     price: 850,
     privatePrice: [4350, 2250, 1750, 1500, 1250, 1100, 1050, 1000, 950, 850],
@@ -66,7 +65,7 @@ export const tours = [
   {
     tourId: "honda-bay-puerto-princesa-city",
     tourName: "Honda Bay Tour",
-    iti: "1D",
+
     type: "day tour",
     price: 2000,
     privatePrice: [8500, 4800, 3800, 2950, 2700, 2400, 2300, 2200, 2100, 2000],
@@ -125,7 +124,6 @@ export const tours = [
     tourId: "underground-puerto-princesa-city",
     tourName: "Underground Tour",
     isFeatured: true,
-    iti: "",
     type: "day tour",
     price: 2500,
     privatePrice: [11000, 6800, 5000, 4000, 3500, 3200, 3000, 2800, 2800, 2500],
@@ -188,7 +186,6 @@ export const tours = [
   {
     tourId: "firefly-watching-puerto-princesa-city",
     tourName: "Firefy Tour",
-    iti: "",
     type: "day tour",
     price: 1500,
     privatePrice: [5500, 4500, 3500, 2500, 2300, 2000, 1950, 1800, 1700, 1600],
@@ -233,7 +230,7 @@ export const tours = [
   {
     tourId: "tour-a-el-nido",
     tourName: "Tour A",
-    iti: "1D",
+
     type: "day tour",
     price: 1200,
     isPax: true,
@@ -294,7 +291,7 @@ export const tours = [
   {
     tourId: "tour-b-el-nido",
     tourName: "Tour B",
-    iti: "1D",
+
     type: "day tour",
     price: 1300,
     isPax: true,
@@ -357,7 +354,7 @@ export const tours = [
     tourId: "tour-c-el-nido",
     tourName: "Tour C",
     isFeatured: true,
-    iti: "1D",
+
     type: "day tour",
     price: 1400,
     isPax: true,
@@ -420,7 +417,7 @@ export const tours = [
   {
     tourId: "tour-d-el-nido",
     tourName: "Tour D",
-    iti: "1D",
+
     type: "day tour",
     price: 1200,
     isPax: true,
@@ -480,12 +477,11 @@ export const tours = [
     maxParticipants: 12,
   },
   //coron
-  //TODO: Multidimensional array
   {
     tourId: "coron-town-tour",
     tourName: "Coron Town Tour",
     isFeatured: true,
-    iti: "1D",
+
     type: "day tour",
     price: 900,
     privatePrice: [4000, 2300, 2300, 1700, 1700, 1500, 1500, 1500, 1300, 1300],
@@ -545,7 +541,7 @@ export const tours = [
   {
     tourId: "coron-island-tour-a",
     tourName: "Coron town tour A",
-    iti: "1D",
+
     type: "day tour",
     price: 1200,
     privatePrice: [6000, 4000, 4000, 3200, 3200, 2800, 2800, 2800, 2600, 2600],
@@ -609,7 +605,7 @@ export const tours = [
   {
     tourId: "coron-island-tour-b",
     tourName: "Coron island tour B",
-    iti: "1D",
+
     type: "day tour",
     price: 1500,
     privatePrice: [6500, 4200, 4200, 3200, 3200, 2700, 2700, 2700, 2500, 2500],
@@ -672,7 +668,7 @@ export const tours = [
   {
     tourId: "coron-island-escapade",
     tourName: "Coron Island Escapade",
-    iti: "1D",
+
     type: "day tour",
     price: 1700,
     privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
@@ -718,7 +714,7 @@ export const tours = [
   {
     tourId: "coron-reef-and-wrecks",
     tourName: "Reef and Wrecks Tour",
-    iti: "1D",
+
     type: "day tour",
     price: 1700,
     privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
@@ -771,7 +767,7 @@ export const tours = [
   {
     tourId: "coron-island-ultimate-tour",
     tourName: "Coron Ultimate Tour",
-    iti: "1D",
+
     type: "day tour",
     price: 1700,
     privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
@@ -829,7 +825,7 @@ export const tours = [
     tourId: "coron-island-super-ultimate-tour",
     tourName: "Coron island super ultimate tour",
     isFeatured: true,
-    iti: "1D",
+
     type: "day tour",
     price: 1900,
     privatePrice: [7700, 4900, 4900, 3500, 3500, 3200, 3200, 3200, 2800, 2800],
@@ -889,7 +885,7 @@ export const tours = [
     tourId: "calauit-safari-tour",
     tourName: "Calauit Safari Tour",
     isFeatured: true,
-    iti: "1D",
+
     type: "day tour",
     price: 2800,
     privatePrice: [15000, 7600, 7600, 5000, 5000, 4000, 4000, 4000, 3400, 3400],
@@ -944,7 +940,7 @@ export const tours = [
     tourId: "port-barton-tour",
     tourName: "Port barton day tour",
     isFeatured: true,
-    iti: "1D",
+
     type: "day tour",
     price: [
       8800, 4990, 4500, 3800, 3500, 3250, 2950, 2750, 2600, 2450, 2450, 2350,
@@ -1004,7 +1000,7 @@ export const tours = [
     tourId: "bohol-countryside-tour",
     tourName: "Countryside Bohol",
     isFeatured: true,
-    iti: "1D",
+
     type: "day tour",
     // price: 1700,
     privatePrice: [
@@ -1054,7 +1050,7 @@ export const tours = [
   {
     tourId: "bohol-panglao-tour",
     tourName: "Panglao Bohol",
-    iti: "1D",
+
     type: "day tour",
     // price: 1700,
     privatePrice: [
@@ -1103,7 +1099,7 @@ export const tours = [
   {
     tourId: "island-hopping-bohol",
     tourName: "Island Hopping",
-    iti: "1D",
+
     type: "day tour",
     // price: 1700,
     privatePrice: [

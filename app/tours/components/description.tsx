@@ -6,7 +6,6 @@ interface DescriptionProps {
   tourName: string;
   price?: number | number[];
   description: string;
-  iti: string;
   privatePrice: number[];
   duration: string[];
 }
@@ -15,7 +14,6 @@ const Description = ({
   tourName,
   price,
   description,
-  iti,
   privatePrice,
   duration,
 }: DescriptionProps) => {
@@ -39,7 +37,7 @@ const Description = ({
         </div>
       </div>
       <h1 className="text-xl font-semibold uppercase text-slate-500">
-        {tourName} {iti && `- ${iti}`}{" "}
+        {tourName}
       </h1>
       {price && Array.isArray(price) && (
         <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
