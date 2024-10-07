@@ -41,8 +41,9 @@ export const tours = [
     ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reinbursement included",
-      "Snorkeling gears not included",
-      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
+      "2 yrs. old and below is free of charge",
+      "3-4yrs old is half-rate",
+      "5yrs old and above is considered as adult.",
     ],
     reminders: [
       "Maximum of 12 tourist in a van",
