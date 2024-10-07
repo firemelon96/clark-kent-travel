@@ -7,7 +7,6 @@ export type TourPackage = {
   tourId: string;
   tourName: string;
   isFeatured?: boolean | undefined;
-  iti: string;
   type: string;
   price?: number | number[] | undefined;
   isPax?: boolean | undefined;
