@@ -188,7 +188,9 @@ export const tours = [
     tourName: "Firefy Tour",
     type: "day tour",
     price: 1500,
-    privatePrice: [5500, 4500, 3500, 2500, 2300, 2000, 1950, 1800, 1700, 1600],
+    privatePrice: [
+      5500, 3300, 2567, 2200, 1980, 1834, 1729, 1650, 1589, 1540, 1500,
+    ],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Embark on a magical journey through the serene waters of Puerto Princesa as you experience the enchanting spectacle of Firefly Watching. This evening tour is perfect for nature lovers and those looking for a peaceful, unforgettable night under the stars. Witness the mesmerizing glow of fireflies lighting up the mangrove forests along the riverbanks, creating a truly magical and serene atmosphere.",
@@ -1029,7 +1031,7 @@ export const tours = [
       "Pick-up & Drop off",
       "Lunch in Loboc River",
     ],
-    exclusions: [],
+    exclusions: ["Anything not mentioned in inclusions"],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
@@ -1078,7 +1080,7 @@ export const tours = [
       "Entrance Fees",
       "Pick-up & Drop off",
     ],
-    exclusions: [],
+    exclusions: ["Anything not mentioned in inclusions"],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
@@ -1124,7 +1126,7 @@ export const tours = [
       "Snorkeling Guide",
       "Lifevest",
     ],
-    exclusions: [],
+    exclusions: ["Anything not mentioned in inclusions"],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",

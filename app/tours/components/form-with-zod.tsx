@@ -75,7 +75,6 @@ export const FormWithZOD = ({
     }
 
     if (groupPax) {
-      // const copyArray = [...privatePrice];
       const index = Math.floor((count - 1) / 2);
       setTotalPrice(privatePrice[index]);
     }
