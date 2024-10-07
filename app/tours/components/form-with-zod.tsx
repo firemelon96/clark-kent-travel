@@ -63,6 +63,7 @@ export const FormWithZOD = ({
   const isPrivatePrice = travellerType === "Private";
   const joiners = !isPrivatePrice && price && !Array.isArray(price);
   const joinerPriceArray = !isPrivatePrice && Array.isArray(price);
+  const groupPax = privatePrice.length >= 1 && privatePrice.length <= 7;
 
   useEffect(() => {
     if (joiners) {
@@ -73,7 +74,7 @@ export const FormWithZOD = ({
       setTotalPrice(privatePrice[count - 1] * count);
     }
 
-    if (privatePrice.length >= 1 && privatePrice.length <= 7) {
+    if (groupPax) {
       // const copyArray = [...privatePrice];
       const index = Math.floor((count - 1) / 2);
       setTotalPrice(privatePrice[index]);
@@ -85,11 +86,11 @@ export const FormWithZOD = ({
   }, [
     price,
     privatePrice,
-    isPax,
     isPrivatePrice,
     joinerPriceArray,
     joiners,
     count,
+    groupPax,
   ]);
 
   const onSubmit = (data: FieldValues) => {
@@ -218,7 +219,7 @@ export const FormWithZOD = ({
               </p>
             </>
           )}
-          {isPrivatePrice && !isPax && (
+          {isPrivatePrice && !groupPax && (
             <>
               <p className="font-bold text-slate-500">
                 {count <= privatePrice.length ? (
@@ -231,7 +232,7 @@ export const FormWithZOD = ({
               </p>
             </>
           )}
-          {isPrivatePrice && isPax && (
+          {isPrivatePrice && groupPax && (
             <>
               <p className="font-bold text-slate-500">
                 {count <= privatePrice.length * 2 ? (
