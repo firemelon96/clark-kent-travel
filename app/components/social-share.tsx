@@ -25,7 +25,7 @@ interface SocialShareProps {
 
 export const SocialShare = ({ url, hashtag }: SocialShareProps) => {
   return (
-    <div className="flex gap-3 bg-sky-50 p-4 dark:border-2 dark:border-slate-600 dark:bg-slate-900">
+    <div className="flex items-center gap-3 bg-sky-50 p-4 dark:border-2 dark:border-slate-600 dark:bg-slate-900">
       <span className="text-base font-semibold text-slate-600">Share</span>
       <FacebookShareButton
         title="Hello"
