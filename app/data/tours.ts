@@ -965,10 +965,7 @@ export const tours = [
         ],
       },
     ],
-    duration: [
-      "5:45am to 9:00pm (from PPS proper)",
-      "8:30am to 4:00pm (from Port barton proper)",
-    ],
+    duration: ["5:45am to 9:00pm (from PPS proper)"],
     inclusions: [
       "Aircon van roundtrip PPS-Port barton (From PPC Proper)",
       "Licensed tour guide",
