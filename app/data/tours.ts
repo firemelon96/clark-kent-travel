@@ -232,7 +232,6 @@ export const tours = [
   {
     tourId: "tour-a-el-nido",
     tourName: "Tour A",
-
     type: "day tour",
     price: 1200,
     isPax: true,
@@ -966,10 +965,13 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 4:00pm"],
+    duration: [
+      "5:45am to 9:00pm (from PPS proper)",
+      "8:30am to 4:00pm (from Port barton proper)",
+    ],
     inclusions: [
-      "Aircon van roundtrip PPS-Port barton",
-      "Licensed toour guide",
+      "Aircon van roundtrip PPS-Port barton (From PPC Proper)",
+      "Licensed tour guide",
       "Accident Insurance worth 10,000 medical reinbursement only",
       "All entrances & permits",
       "Gopro shots (Under water)",
@@ -1035,7 +1037,7 @@ export const tours = [
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
-      "5yrs old and above is considered as adult",
+      "5 yrs old and above is considered as adult",
     ],
     reminders: [],
     images: [
@@ -1126,7 +1128,10 @@ export const tours = [
       "Snorkeling Guide",
       "Lifevest",
     ],
-    exclusions: ["Anything not mentioned in inclusions"],
+    exclusions: [
+      "Anything not mentioned in inclusions",
+      "Meals not mentioned ",
+    ],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
