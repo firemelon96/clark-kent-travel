@@ -939,10 +939,9 @@ export const tours = [
   },
   //port barton
   {
-    tourId: "port-barton-tour",
-    tourName: "Port barton day tour",
+    tourId: "port-barton-tour-from-pps",
+    tourName: "Port Barton Day Tour from Puerto Princesa",
     isFeatured: true,
-
     type: "day tour",
     price: [
       8800, 4990, 4500, 3800, 3500, 3250, 2950, 2750, 2600, 2450, 2450, 2350,
@@ -966,9 +965,62 @@ export const tours = [
         ],
       },
     ],
-    duration: ["5:45am to 9:00pm (from PPS proper)"],
+    duration: ["5:45am to 9:00pm"],
     inclusions: [
       "Aircon van roundtrip PPS-Port barton",
+      "Licensed toour guide",
+      "Accident Insurance worth 10,000 medical reinbursement only",
+      "All entrances & permits",
+      "Gopro shots (Under water)",
+      "Mask & snorkel",
+      "Parking fee",
+      "Terminal fee",
+      "Wharfage fee",
+      "lifevest",
+    ],
+    exclusions: ["Environmental fee 200/person"],
+    notes: [
+      "2 yrs old and below is free of charge",
+      "3-4yrs old is half-rate",
+      "5yrs old and above is considered as adult",
+    ],
+    reminders: [],
+    images: [
+      "/resources/port-barton/day-tour/fantastic.avif",
+      "/resources/port-barton/day-tour/maxima.avif",
+      "/resources/port-barton/day-tour/paradise.avif",
+      "/resources/port-barton/day-tour/starfish.avif",
+      "/resources/port-barton/day-tour/starfishh.avif",
+      "/resources/port-barton/day-tour/turtle.avif",
+    ],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
+  {
+    tourId: "port-barton-tour-from-port-barton",
+    tourName: "Port Barton Island Tour from Port Barton Proper",
+    isFeatured: true,
+    type: "day tour",
+    price: 1500,
+    privatePrice: [6000, 3250, 2334, 1875, 1760, 1667, 1615, 1575, 1545, 1500],
+    address: ["Port barton, Palawan"],
+    description:
+      "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
+    itineraries: [
+      {
+        name: "Destination",
+        activities: [
+          "Maxima Island",
+          "Turtle Spot",
+          "Twin reef",
+          "Starfish",
+          "Fantastic Reef",
+          "Paradise Island",
+        ],
+      },
+    ],
+    duration: ["8:30am to 4:00pm"],
+    inclusions: [
       "Licensed toour guide",
       "Accident Insurance worth 10,000 medical reinbursement only",
       "All entrances & permits",
