@@ -14,15 +14,12 @@ import { useRouter } from "next/navigation";
 import { formatPeso } from "@/app/lib/helpers";
 import DatePicker from "react-datepicker";
 
-const PORT_BARTON_JOINER_PRICE = 1500;
-
 // Define the Zod schema
 const schema = z.object({
   date: z.date(),
   travellerType: z.enum(["Private", "Joiners"]),
   notes: z.string().min(1, "Notes are required"),
   count: z.number().min(1, "Participants required"),
-  pickupLocation: z.enum(["port proper", "pps proper"]).optional(),
 });
 
 interface FormWithZODProps {
@@ -30,6 +27,7 @@ interface FormWithZODProps {
   price?: number | number[];
   privatePrice: number[];
   title: string;
+  isPax: boolean;
 }
 
 export const FormWithZOD = ({
@@ -37,6 +35,7 @@ export const FormWithZOD = ({
   price,
   privatePrice,
   title,
+  isPax,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
@@ -55,43 +54,33 @@ export const FormWithZOD = ({
       count: 1,
       travellerType: price ? "Joiners" : "Private",
       notes: "",
-      pickupLocation: "pps proper",
     },
   });
 
   const count = watch("count");
   const travellerType = watch("travellerType");
-  const pickupLocation = watch("pickupLocation");
 
-  const isPortBartonJoiner = title.toLowerCase().includes("port barton");
   const isPrivatePrice = travellerType === "Private";
-  const joiners = !isPrivatePrice && !!price && !Array.isArray(price);
+  const joiners = !isPrivatePrice && price && !Array.isArray(price);
   const joinerPriceArray = !isPrivatePrice && Array.isArray(price);
   const groupPax = privatePrice.length >= 1 && privatePrice.length <= 7;
-  const ppcProper = pickupLocation === "pps proper";
-  const pbProper = pickupLocation === "port proper";
 
   useEffect(() => {
+    if (joiners) {
+      setTotalPrice(price * count);
+    }
+
     if (isPrivatePrice) {
       setTotalPrice(privatePrice[count - 1] * count);
     }
 
     if (groupPax) {
-      const copyArray = [...privatePrice];
       const index = Math.floor((count - 1) / 2);
-      setTotalPrice(copyArray[index]);
-    }
-
-    if (joiners) {
-      setTotalPrice(price * count);
+      setTotalPrice(privatePrice[index]);
     }
 
     if (joinerPriceArray) {
       setTotalPrice(price[count - 1] * count);
-    }
-
-    if (!isPrivatePrice && pbProper) {
-      setTotalPrice(PORT_BARTON_JOINER_PRICE * count);
     }
   }, [
     price,
@@ -101,19 +90,17 @@ export const FormWithZOD = ({
     joiners,
     count,
     groupPax,
-    pbProper,
   ]);
 
   const onSubmit = (data: FieldValues) => {
-    const { date, count, travellerType, notes, pickupLocation } = data;
+    const { date, count, travellerType, notes } = data;
     const formatDate = format(new Date(date), "MMM dd EEEE");
     const formattedTotalPrice = formatPeso(totalPrice);
 
     const appName = "Clark Kent Travel Website";
-    const pickup = pickupLocation ? `Pickup location: ${pickupLocation}` : "";
 
     router.push(
-      `https://m.me/276166685864117/?text=Booking%20from%20${appName}%0ATour%20name:%20${title}%0A${pickup}%0ADate:%20${formatDate}%0AParticipants:%20${count}%20pax%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${formattedTotalPrice}`,
+      `https://m.me/276166685864117/?text=Booking%20from%20${appName}%0ATour%20name:%20${title}%0ADate:%20${formatDate}%0AParticipants:%20${count}%20pax%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${formattedTotalPrice}`,
     );
   };
 
@@ -164,29 +151,6 @@ export const FormWithZOD = ({
           <span className="text-sm text-rose-500">Select type</span>
         )}
       </div>
-      {isPortBartonJoiner && !isPrivatePrice && (
-        <div className="flex flex-col gap-1.5">
-          <p className="text-slate-500">Pick up location</p>
-          <div className="flex gap-2 text-xs text-slate-400">
-            <label className="flex items-center gap-2">
-              <input
-                type="radio"
-                value="port proper"
-                {...register("pickupLocation")}
-              />
-              Port barton proper
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="radio"
-                value="pps proper"
-                {...register("pickupLocation")}
-              />
-              PPC proper
-            </label>
-          </div>
-        </div>
-      )}
       <div>
         <label className="flex items-center justify-between text-base text-slate-500">
           Participants
@@ -234,25 +198,18 @@ export const FormWithZOD = ({
       {count ? (
         <div className="flex items-center justify-between px-2 text-xl font-semibold">
           <span className="text-lg text-slate-400">TOTAL</span>{" "}
-          {joiners && (
+          {!isPrivatePrice && price && !Array.isArray(price) && (
             <>
               <p className="font-bold text-slate-500">
-                {formatPeso(totalPrice)}
+                {formatPeso(price * count)}
               </p>
             </>
           )}
-          {isPortBartonJoiner && !isPrivatePrice && pbProper && (
-            <>
-              <p className="font-bold text-slate-500">
-                {formatPeso(totalPrice)}
-              </p>
-            </>
-          )}
-          {isPortBartonJoiner && joinerPriceArray && ppcProper && (
+          {!isPrivatePrice && Array.isArray(price) && (
             <>
               <p className="font-bold text-slate-500">
                 {count <= price.length ? (
-                  formatPeso(totalPrice)
+                  formatPeso(price[count - 1] * count)
                 ) : (
                   <span className="text-right text-base font-normal text-rose-500">
                     Minimum {price.length} per pax reach
