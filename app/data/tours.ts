@@ -1011,8 +1011,8 @@ export const tours = [
         name: "Destination",
         activities: [
           "Maxima Island",
-          "Turtle Spot",
           "Twin reef",
+          "Turtle Spot",
           "Starfish",
           "Fantastic Reef",
           "Paradise Island",
@@ -1039,8 +1039,8 @@ export const tours = [
     ],
     reminders: [],
     images: [
-      "/resources/port-barton/day-tour/fantastic.avif",
       "/resources/port-barton/day-tour/maxima.avif",
+      "/resources/port-barton/day-tour/fantastic.avif",
       "/resources/port-barton/day-tour/paradise.avif",
       "/resources/port-barton/day-tour/starfish.avif",
       "/resources/port-barton/day-tour/starfishh.avif",
