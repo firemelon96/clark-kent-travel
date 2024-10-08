@@ -927,9 +927,9 @@ export const tours = [
       "5yrs old and above is considered as adult",
     ],
     images: [
+      "/resources/coron/calauit-safari-tour/calauit.avif",
       "/resources/coron/calauit-safari-tour/busuanga-town.avif",
       "/resources/coron/calauit-safari-tour/busuanga.avif",
-      "/resources/coron/calauit-safari-tour/calauit.avif",
       "/resources/coron/calauit-safari-tour/cave.avif",
       "/resources/coron/calauit-safari-tour/black-cave.avif",
       // TODO:Malbato church

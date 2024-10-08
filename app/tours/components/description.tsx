@@ -19,7 +19,7 @@ const Description = ({
 }: DescriptionProps) => {
   return (
     <div className="space-y-2 rounded-md bg-sky-50 p-4">
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row md:justify-between">
         {price && !Array.isArray(price) && (
           <p className="text-semibold flex items-center gap-2 text-3xl font-bold text-sky-800">
             {formatPeso(price)} / <FaUser className="size-5" />
