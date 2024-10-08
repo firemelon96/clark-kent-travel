@@ -25,6 +25,16 @@ const Description = ({
             {formatPeso(price)} / <FaUser className="size-5" />
           </p>
         )}
+        {price && Array.isArray(price) && (
+          <p className="text-semibold flex items-center gap-2 text-3xl font-bold text-sky-800">
+            {formatPeso(price[0])} / <FaUser className="size-5" />
+          </p>
+        )}
+        {!price && privatePrice && (
+          <p className="text-semibold flex items-center gap-2 text-3xl font-bold text-sky-800">
+            {formatPeso(privatePrice[0])} / <FaUser className="size-5" />
+          </p>
+        )}
         <div className="flex flex-col">
           {duration.map((item) => (
             <span
@@ -39,16 +49,7 @@ const Description = ({
       <h1 className="text-xl font-semibold uppercase text-slate-500">
         {tourName}
       </h1>
-      {price && Array.isArray(price) && (
-        <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
-          {formatPeso(price[0])} / <FaUser className="size-5" />
-        </p>
-      )}
-      {!price && privatePrice && (
-        <p className="text-semibold flex items-center gap-2 text-2xl font-bold text-slate-500">
-          {formatPeso(privatePrice[0])} / <FaUser className="size-5" />
-        </p>
-      )}
+
       <h5 className="pt-5 text-xl font-bold uppercase text-sky-800">
         Overview
       </h5>
