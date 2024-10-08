@@ -966,11 +966,7 @@ export const tours = [
         ],
       },
     ],
-<<<<<<< HEAD
     duration: ["5:45am to 9:00pm (from PPS proper)"],
-=======
-    duration: ["8:30am to 4:00pm"],
->>>>>>> parent of 158d7ce (modified the port barton tour pricing)
     inclusions: [
       "Aircon van roundtrip PPS-Port barton",
       "Licensed toour guide",
