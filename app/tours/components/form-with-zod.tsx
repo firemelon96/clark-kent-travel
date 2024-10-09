@@ -15,20 +15,20 @@ import { formatPeso } from "@/app/lib/helpers";
 import DatePicker from "react-datepicker";
 
 // Define the Zod schema
-const schema = z.object({
+export const FormSchema = z.object({
   date: z.date(),
   travellerType: z.enum(["Private", "Joiners"]),
   notes: z.string().min(1, "Notes are required"),
   count: z.number().min(1, "Participants required"),
 });
 
-interface FormWithZODProps {
+type FormWithZODProps = {
   duration: string[];
   price?: number | number[];
   privatePrice: number[];
   title: string;
   isPax: boolean;
-}
+};
 
 export const FormWithZOD = ({
   duration,
@@ -47,8 +47,8 @@ export const FormWithZOD = ({
     formState: { errors, isLoading },
     setValue,
     watch,
-  } = useForm<z.infer<typeof schema>>({
-    resolver: zodResolver(schema),
+  } = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
     defaultValues: {
       date: undefined,
       count: 1,
