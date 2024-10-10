@@ -3,7 +3,7 @@ export const transfer_services = [
     id: 1,
     service_name: "Joiner Puerto Princesa to El nido",
     vehicle_type: "Van",
-    capacity: 8,
+    capacity: 12,
     price_per_trip: 750,
     available_vehicles: [
       {
@@ -11,6 +11,7 @@ export const transfer_services = [
         vehicle_model: "Toyota HiAce",
         driver_name: "John Doe",
         contact_number: "+63 912 345 6789",
+        images: [],
       },
     ],
     description: "A comfortable van service from the airport to your hotel.",
@@ -20,7 +21,7 @@ export const transfer_services = [
     id: 2,
     service_name: "Joiner El nido to Puerto Princesa",
     vehicle_type: "Van",
-    capacity: 8,
+    capacity: 12,
     price_per_trip: 750,
     available_vehicles: [
       {
@@ -28,6 +29,7 @@ export const transfer_services = [
         vehicle_model: "Toyota HiAce",
         driver_name: "John Doe",
         contact_number: "+63 912 345 6789",
+        images: [],
       },
     ],
     description: "A comfortable van service from the airport to your hotel.",

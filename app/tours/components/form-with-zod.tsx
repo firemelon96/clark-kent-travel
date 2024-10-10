@@ -28,6 +28,7 @@ type FormWithZODProps = {
   privatePrice: number[];
   title: string;
   isPax: boolean;
+  type: string;
 };
 
 export const FormWithZOD = ({
@@ -36,6 +37,7 @@ export const FormWithZOD = ({
   privatePrice,
   title,
   isPax,
+  type,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
@@ -132,9 +134,25 @@ export const FormWithZOD = ({
             {...register("travellerType")}
             className="hidden"
           />{" "}
-          Private
+          {type === "package" ? "Semi Private" : "Private"}
         </label>
         {price && (
+          <label
+            className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Joiners" && "bg-sky-500 text-white"}`}
+          >
+            <input
+              type="radio"
+              value="Joiners"
+              {...register("travellerType")}
+              className="hidden"
+            />{" "}
+            Joiners
+          </label>
+        )}
+        {errors.travellerType && (
+          <span className="text-sm text-rose-500">Select type</span>
+        )}
+        {!price && type === "package" && (
           <label
             className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Joiners" && "bg-sky-500 text-white"}`}
           >
@@ -197,7 +215,8 @@ export const FormWithZOD = ({
       </label>
       {count ? (
         <div className="flex items-center justify-between px-2 text-xl font-semibold">
-          <span className="text-lg text-slate-400">TOTAL</span>{" "}
+          <span className="text-lg text-slate-400">TOTAL</span>
+
           {!isPrivatePrice && price && !Array.isArray(price) && (
             <>
               <p className="font-bold text-slate-500">
@@ -218,7 +237,7 @@ export const FormWithZOD = ({
               </p>
             </>
           )}
-          {isPrivatePrice && !groupPax && (
+          {isPrivatePrice && !groupPax ? (
             <>
               <p className="font-bold text-slate-500">
                 {count <= privatePrice.length ? (
@@ -230,6 +249,10 @@ export const FormWithZOD = ({
                 )}
               </p>
             </>
+          ) : (
+            <span className="text-md font-normal text-rose-400">
+              Upon request
+            </span>
           )}
           {isPrivatePrice && groupPax && (
             <>
