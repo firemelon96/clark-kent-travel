@@ -95,7 +95,7 @@ export const tours = [
       "/resources/balabac/onok-island.avif",
       "/resources/balabac/sebaring.avif",
       "/resources/balabac/sicsican-island.avif",
-      "/resources/balabac/tangkalan.avif",
+      "/resources/balabac/tangkahan.avif",
     ],
     minParticipants: 2,
     maxParticipants: 12,
