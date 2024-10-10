@@ -20,6 +20,12 @@ export const FormSchema = z.object({
   travellerType: z.enum(["Private", "Joiners"]),
   notes: z.string().min(1, "Notes are required"),
   count: z.number().min(1, "Participants required"),
+  name: z.string().min(1, "Name is required!"),
+  age: z.number(),
+  gender: z.enum(["male", "female", "others"]),
+  nationality: z.string(),
+  email: z.string().email(),
+  contact: z.string(),
 });
 
 type FormWithZODProps = {
@@ -54,6 +60,12 @@ export const FormWithZOD = ({
       count: 1,
       travellerType: price ? "Joiners" : "Private",
       notes: "",
+      name: "",
+      age: 5,
+      gender: "male",
+      nationality: "",
+      email: "",
+      contact: "",
     },
   });
 
@@ -106,6 +118,16 @@ export const FormWithZOD = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
+      <div>
+        <label className="flex flex-col justify-between text-base text-slate-500">
+          Name
+          <input
+            placeholder="Your name..."
+            {...register("name")}
+            className="p-2 text-xl"
+          />
+        </label>
+      </div>
       <Controller
         control={control}
         name="date"
