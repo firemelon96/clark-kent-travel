@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { tours } from "../data/tours";
+import { transfer_services } from "../data/logistics";
 
 interface TourLocationProps {
   address: string;
@@ -56,4 +57,18 @@ export const getAllTourLocation = () => {
   );
 
   return uniqueAddressesWithImage;
+};
+
+export const getServicesByType = (type: string) => {
+  const otherservices = transfer_services
+    .filter((transfer) => transfer.type === type)
+    .map((transfer) => ({
+      id: transfer.id,
+      image: transfer.image,
+      price_per_trip: transfer.price_per_trip,
+      service_name: transfer.service_name,
+      vehicle_type: transfer.vehicle_type,
+    }));
+
+  return otherservices;
 };

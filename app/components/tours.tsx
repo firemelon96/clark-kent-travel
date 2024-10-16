@@ -1,4 +1,9 @@
-import { getDayTours, getToursByLocation } from "../lib/helpers";
+import {
+  getDayTours,
+  getServicesByType,
+  getToursByLocation,
+} from "../lib/helpers";
+import { OtherServicesList } from "./other-services-list";
 import { TourLists } from "./tour-lists";
 
 const Tours = () => {
@@ -7,6 +12,9 @@ const Tours = () => {
   const elnidoTours = getToursByLocation("el nido");
   const portBartonTours = getToursByLocation("port barton");
   const boholTours = getToursByLocation("bohol");
+  const transfers = getServicesByType("transfer");
+  const rentals = getServicesByType("rentals");
+
   return (
     <section
       className="container mx-auto mt-80 scroll-mt-6 pb-16 text-center md:px-20 md:text-start"
@@ -17,6 +25,9 @@ const Tours = () => {
       <TourLists title="Coron Palawan" tours={coronTours} />
       <TourLists title="Port Barton, Palawan" tours={portBartonTours} />
       <TourLists title="Bohol" tours={boholTours} />
+      {/* component should not be named as tourlist */}
+      <OtherServicesList title="Transfers" services={transfers} />
+      <OtherServicesList title="Rentals" services={rentals} />
     </section>
   );
 };
