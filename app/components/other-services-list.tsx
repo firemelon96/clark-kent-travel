@@ -1,7 +1,4 @@
-import {
-  TransferServicesType,
-  TransferWihtoutMeta,
-} from "@/types/other-services";
+import { TransferWihtoutMeta } from "@/types/other-services";
 import OtherServicesCard from "./other-services-card";
 
 type Props = {

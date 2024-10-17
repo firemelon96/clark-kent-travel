@@ -17,7 +17,7 @@ import {
 import { format } from "date-fns";
 import { z } from "zod";
 import * as React from "react";
-import { FormSchema } from "@/app/tours/components/form-with-zod";
+import { FormSchema } from "@/app/(single-page)/tours/components/form-with-zod";
 
 type Props = z.infer<typeof FormSchema> & {
   name: string;

@@ -18,7 +18,7 @@ const OtherServicesCard = ({
   price_per_trip,
 }: OtherServicesProps) => {
   return (
-    <Link href={`/tours/${id}`}>
+    <Link href={`/other-services/${id}`}>
       <div className="flex w-fit flex-col gap-2 rounded-2xl bg-white p-4 shadow-sm hover:shadow-md sm:shadow-none">
         <div className="h-48 w-60 overflow-hidden rounded-xl">
           <Image

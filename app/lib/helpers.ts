@@ -72,3 +72,10 @@ export const getServicesByType = (type: string) => {
 
   return otherservices;
 };
+
+export const getOtherServicesById = (id: string) => {
+  const otherServices = transfer_services.find((service) => service.id === id);
+  if (otherServices === undefined) return notFound();
+
+  return otherServices;
+};

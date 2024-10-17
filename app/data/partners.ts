@@ -4,32 +4,32 @@ export const partners = [
     name: "Mariafe Travellers Inn",
     roomType: [
       {
-        name: "Semi deluxe/Double",
+        name: "Semi deluxe",
         roomConfig: "1 Double Bed 54*75",
         pricePerNight: 1600,
       },
       {
-        name: "Superior Twin",
+        name: "Superior twin",
         roomConfig: "2 Double Bed 48*75",
         pricePerNight: 1600,
       },
       {
-        name: "Superior Triple",
+        name: "Superior triple",
         roomConfig: "1 Single / Double 36*75 / 48*75",
         pricePerNight: 2100,
       },
       {
-        name: "Superior Quad",
+        name: "Superior quad",
         roomConfig: "2 Double Bed 48*75",
         pricePerNight: 2600,
       },
       {
-        name: "Family Room",
+        name: "Family room",
         roomConfig: "2 Double Bed 1 extra mattress",
         pricePerNight: 3000,
       },
       {
-        name: "Barkada Room",
+        name: "Barkada room",
         roomConfig: "2 Double Bed 2 extra mattress",
         pricePerNight: 3300,
       },
@@ -53,7 +53,7 @@ export const partners = [
       "Airport transfer Car 300/way (Minimum of 5pax)",
       "Airport transfer Van 500/way (maximum of 10pax)",
     ],
-    pocilies: [
+    policies: [
       {
         title: "Child Policy",
         list: [
@@ -91,7 +91,6 @@ export const partners = [
       "/resources/mariafe/mariafe001.avif",
       "/resources/mariafe/mariafe002.avif",
       "/resources/mariafe/mariafe003.avif",
-      "/resources/mariafe/mariafe004.avif",
       "/resources/mariafe/mariafe005.avif",
       "/resources/mariafe/mariafe006.avif",
     ],

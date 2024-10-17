@@ -1,0 +1,216 @@
+"use client";
+
+import z from "zod";
+import { Controller, FieldValues, useForm } from "react-hook-form";
+// import DatePicker from "react-datepicker";
+import { DayPicker } from "react-day-picker";
+import { BiMinus, BiPlus } from "react-icons/bi";
+
+import "react-datepicker/dist/react-datepicker.css";
+import { useEffect, useState, useMemo } from "react";
+import { addDays, addMonths, format } from "date-fns";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { formatPeso } from "@/app/lib/helpers";
+import DatePicker from "react-datepicker";
+import countryList from "react-select-country-list";
+import Select from "react-select";
+
+// Define the Zod schema
+export const FormSchema = z.object({
+  date: z.date(),
+  notes: z.string().min(1, "Notes are required"),
+  name: z.string().min(1, "Name is required!"),
+  age: z.number(),
+  gender: z.enum(["male", "female", "others"]),
+  nationality: z.string(),
+  email: z.string().email(),
+  contact: z.string(),
+});
+
+type BookingFormProps = {
+  name: string;
+  price: number;
+};
+
+export const BookingForm = ({ price, name }: BookingFormProps) => {
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const router = useRouter();
+
+  const options = useMemo(() => countryList().getData(), []);
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors, isLoading },
+    setValue,
+    watch,
+  } = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      date: new Date(Date.now()),
+      notes: "estong",
+      name: "estong",
+      age: 5,
+      gender: "others",
+      nationality: "",
+      email: "estong.jamion@gmail.com",
+      contact: "9953227432",
+    },
+  });
+
+  const gender = watch("gender");
+
+  const onSubmit = (data: FieldValues) => {
+    // const { date, count, travellerType, notes, nationality } = data;
+    // const formatDate = format(new Date(date), "MMM dd EEEE");
+    // const formattedTotalPrice = formatPeso(totalPrice);
+
+    const appName = "Clark Kent Travel Website";
+
+    console.log(data);
+
+    // router.push(
+    //   `https://m.me/276166685864117/?text=Booking%20from%20${appName}%0ATour%20name:%20${title}%0ADate:%20${formatDate}%0AParticipants:%20${count}%20pax%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${formattedTotalPrice}`,
+    // );
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
+      <Controller
+        control={control}
+        name="date"
+        render={({ field }) => (
+          <DatePicker
+            selected={field.value}
+            onChange={field.onChange}
+            minDate={new Date()}
+            placeholderText="Select a date for your trip"
+            className="border-third mt-1 block w-full rounded-md border border-gray-300 p-2 text-2xl shadow-sm"
+          />
+        )}
+      />
+      {errors.date && (
+        <span className="text-sm text-rose-500">Select a date</span>
+      )}
+      <div>
+        <label className="flex flex-col justify-between text-base text-slate-500">
+          Name
+          <input
+            placeholder="Your name..."
+            {...register("name")}
+            className="p-2 text-xl"
+          />
+        </label>
+      </div>
+      <div>
+        <label className="flex flex-col justify-between text-base text-slate-500">
+          Email
+          <input
+            placeholder="Your email..."
+            {...register("email")}
+            className="p-2 text-xl"
+          />
+        </label>
+      </div>
+      <div className="flex gap-2">
+        <label className="flex flex-col justify-between text-base text-slate-500">
+          Contact
+          <input
+            placeholder="Your contact (skype | whatsapp)"
+            {...register("contact")}
+            className="w-auto p-2 text-xl font-normal"
+          />
+        </label>
+        <label className="flex flex-col justify-between text-base text-slate-500">
+          Age
+          <input
+            type="number"
+            placeholder="Age"
+            {...register("age")}
+            className="w-full p-2 text-xl font-normal"
+          />
+        </label>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-base text-slate-500">Gender</span>
+        <label
+          className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${gender === "male" && "bg-sky-500 text-white"}`}
+        >
+          <input
+            type="radio"
+            value="male"
+            {...register("gender")}
+            className="hidden"
+          />{" "}
+          Male
+        </label>
+        <label
+          className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${gender === "female" && "bg-sky-500 text-white"}`}
+        >
+          <input
+            type="radio"
+            value="female"
+            {...register("gender")}
+            className="hidden"
+          />{" "}
+          Female
+        </label>
+        <label
+          className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${gender === "others" && "bg-sky-500 text-white"}`}
+        >
+          <input
+            type="radio"
+            value="others"
+            {...register("gender")}
+            className="hidden"
+          />{" "}
+          Others
+        </label>
+        {errors.gender && (
+          <span className="text-sm text-rose-500">Select type</span>
+        )}
+      </div>
+
+      <div>
+        <Controller
+          control={control}
+          name="nationality"
+          render={({ field }) => (
+            <Select
+              options={options}
+              value={options.find((option) => option.label === field.value)}
+              onChange={(selectedOption) =>
+                field.onChange(selectedOption?.label)
+              }
+            />
+          )}
+        />
+        {errors.nationality && <span>{errors.nationality.message}</span>}
+      </div>
+
+      <label className="text-base text-slate-500">
+        Notes
+        <textarea
+          placeholder="e.g. type of food and drinks"
+          rows={3}
+          className="h-20 w-full rounded-md border p-2"
+          {...register("notes")}
+        />
+        {errors.notes && (
+          <span className="text-sm text-rose-500">{errors.notes.message}</span>
+        )}
+      </label>
+
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white"
+      >
+        BOOK NOW
+      </button>
+    </form>
+  );
+};

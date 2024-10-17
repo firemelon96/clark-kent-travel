@@ -1,10 +1,10 @@
-type RoomType = {
+export type RoomType = {
   name: string;
   roomConfig: string;
   pricePerNight: number;
 };
 
-type Policy = {
+export type Policy = {
   title: string;
   list: string[];
 };
@@ -16,7 +16,6 @@ export type PartnersType = {
   address: string;
   description: string;
   inclusions: string[];
-  exclusiong: string[];
   notes: string[];
   policies: Policy[];
   termsConditions: string[];

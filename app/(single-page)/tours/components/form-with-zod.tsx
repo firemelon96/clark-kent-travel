@@ -8,7 +8,6 @@ import { BiMinus, BiPlus } from "react-icons/bi";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useState, useMemo } from "react";
-import { addDays, addMonths, format } from "date-fns";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { formatPeso } from "@/app/lib/helpers";
@@ -46,7 +45,7 @@ export const FormWithZOD = ({
   isPax,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
-  const [countryValue, setCountryValue] = useState("");
+
   const router = useRouter();
 
   const options = useMemo(() => countryList().getData(), []);

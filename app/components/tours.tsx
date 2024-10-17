@@ -12,8 +12,6 @@ const Tours = () => {
   const elnidoTours = getToursByLocation("el nido");
   const portBartonTours = getToursByLocation("port barton");
   const boholTours = getToursByLocation("bohol");
-  const transfers = getServicesByType("transfer");
-  const rentals = getServicesByType("rentals");
 
   return (
     <section
@@ -25,9 +23,6 @@ const Tours = () => {
       <TourLists title="Coron Palawan" tours={coronTours} />
       <TourLists title="Port Barton, Palawan" tours={portBartonTours} />
       <TourLists title="Bohol" tours={boholTours} />
-      {/* component should not be named as tourlist */}
-      <OtherServicesList title="Transfers" services={transfers} />
-      <OtherServicesList title="Rentals" services={rentals} />
     </section>
   );
 };
