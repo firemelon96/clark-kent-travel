@@ -17,38 +17,28 @@ import {
 import { format } from "date-fns";
 import { z } from "zod";
 import * as React from "react";
-import { FormSchema } from "@/app/(single-page)/tours/components/form-with-zod";
+import { TourFormSchema } from "@/types/tour";
+import { formatPeso } from "@/app/lib/helpers";
 
-type Props = z.infer<typeof FormSchema> & {
-  name: string;
-  age: number;
-  nationality: string;
-  gender: "male" | "female";
-  title: string;
-  address: string;
-  email: string;
-  contact: string;
-  total: number;
-};
+type Props = z.input<typeof TourFormSchema>;
 
 // const baseUrl = process.env.VERCEL_URL
 //   ? `https://${process.env.VERCEL_URL}`
 //   : "http://localhost:3001";
 
-export const Email = ({
+export const TourEmailTemplate = ({
   count,
-  date = new Date(Date.now()),
+  date,
   notes,
   travellerType,
   age,
   gender,
   name,
   nationality,
-  title,
-  address,
   email,
   contact,
   total,
+  title,
 }: Props) => {
   const previewText = `Your Booking for ${title} Awaits`;
 
@@ -58,9 +48,9 @@ export const Email = ({
       <Preview>{previewText}</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white px-2 font-sans">
-          <Container className="mx-auto my-5 max-w-[500px]">
+          <Container className="mx-auto my-2 max-w-[500px]">
             <Section className="min-w-full">
-              <Row className="mt-10">
+              <Row className="mt-5">
                 <Column>
                   <Img
                     src="https://res.cloudinary.com/dnvcioept/image/upload/v1728403417/wr416vjx538zksetseph.png"
@@ -86,27 +76,27 @@ export const Email = ({
                     Details Below
                   </Text>
                 </Column>
-                <Column>
-                  <Text className="text-end text-base leading-[24px] tracking-wider text-black">
-                    {address}, PH
-                  </Text>
-                </Column>
               </Row>
               <Hr />
+              <Text className="text-[14px]leading-4 tracking-widest text-black">
+                <strong>Travel Date:</strong>
+                {format(new Date(date), "MMM dd EEEE")}
+              </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Traveller Name:</strong> {name} - {nationality} |{" "}
-                {gender} {age} years old
+                <strong>Traveller Name:</strong> {name}
+              </Text>
+              <Text className="text-[14px] leading-4 tracking-widest text-black">
+                <strong>Nationality:</strong> {nationality}
+              </Text>
+              <Text className="text-[14px] leading-4 tracking-widest text-black">
+                <strong>Age & Gender: </strong> {age} {gender}
               </Text>
               <Text className="text-[14px]leading-4 tracking-widest text-black">
                 <strong>Tour:</strong>
                 {travellerType} | {title}
               </Text>
-              <Text className="text-[14px]leading-4 tracking-widest text-black">
-                <strong>Date:</strong>
-                {format(new Date(date), "MMM dd EEEE")}
-              </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Number of Participants:</strong> {count}
+                <strong>Number of Participants:</strong> {count} pax
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Email:</strong> {email}
@@ -115,14 +105,14 @@ export const Email = ({
                 <strong>Contact Number:</strong> {contact}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Total Price:</strong> {total}
+                <strong>Total Price:</strong> {formatPeso(total || 0)}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Additional Message:</strong> {notes}
               </Text>
               <Hr />
               <Section className="text-slate-600">
-                <Text className="leading-5">
+                <Text className="text-xs leading-5">
                   We are excited to help you plan your travels and ensure you
                   have an unforgettable experience. One of our representatives
                   will review your Inquiry/Booking and get back to you within 24
@@ -138,7 +128,7 @@ export const Email = ({
                 <Hr />
                 <Text className="text-xs leading-5">
                   Thank you for choosing Clark Kent Travel and Tours. We look
-                  forward to helping you create wonderful memories in {address}!
+                  forward to helping you create wonderful memories !
                 </Text>
               </Section>
             </Section>
@@ -156,4 +146,4 @@ export const Email = ({
   );
 };
 
-export default Email;
+export default TourEmailTemplate;

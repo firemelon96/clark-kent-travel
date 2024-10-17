@@ -1,3 +1,20 @@
+import { z } from "zod";
+
+export const TourFormSchema = z.object({
+  date: z.date(),
+  travellerType: z.enum(["Private", "Joiners"]),
+  notes: z.string().min(1, "Notes are required"),
+  count: z.number().min(1, "Participants required"),
+  name: z.string().min(1, "Name is required!"),
+  age: z.number(),
+  gender: z.enum(["male", "female", "others"]),
+  nationality: z.string(),
+  email: z.string().email(),
+  contact: z.string(),
+  total: z.number().optional(),
+  title: z.string().optional(),
+});
+
 type Itinerary = {
   name: string;
   activities: string[];

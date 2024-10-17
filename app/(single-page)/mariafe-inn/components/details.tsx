@@ -1,7 +1,3 @@
-import { IconType } from "react-icons";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { BiCheckCircle, BiHelpCircle, BiXCircle } from "react-icons/bi";
-
 interface DetailsType {
   title: string;
   content: string;
