@@ -8,7 +8,11 @@ const TourLayout = ({ children }: { children: ReactNode }) => {
     <>
       <Navbar />
       {children}
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          duration: 5000,
+        }}
+      />
       <Footer />
     </>
   );

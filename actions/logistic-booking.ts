@@ -37,7 +37,10 @@ export const BookLogistic = async (values: FieldValues) => {
     const { data, error } = await resend.emails.send({
       from: "Clark Kent Travel and Tours <sales@clarkkenttravelandtours.com>",
       to: [email],
-      cc: ["sales@clarkkenttravelandtours.com"],
+      cc: [
+        "sales@clarkkenttravelandtours.com",
+        "info.clarkkenttravelandtours@yahoo.com",
+      ],
       replyTo: email,
       subject: title!,
       react: LogisticEmailTemplate({
