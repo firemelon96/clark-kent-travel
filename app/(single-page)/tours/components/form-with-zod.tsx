@@ -172,7 +172,7 @@ export const FormWithZOD = ({
           <input
             type="number"
             placeholder="Age"
-            {...register("age")}
+            {...register("age", { valueAsNumber: true })}
             className="w-full p-2 text-xl font-normal"
             disabled={isLoading || isLoadingTransition}
           />
@@ -280,7 +280,7 @@ export const FormWithZOD = ({
             </button>
             <input
               type="number"
-              {...register("count")}
+              {...register("count", { valueAsNumber: true })}
               readOnly
               className="flex w-7 justify-center bg-sky-50 text-center"
             />

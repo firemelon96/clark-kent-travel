@@ -17,16 +17,16 @@ import {
 import { format } from "date-fns";
 import { z } from "zod";
 import * as React from "react";
-import { AccomodationFormSchema } from "@/types/other-services";
 import { formatPeso } from "@/app/lib/helpers";
+import { MariafeFormSchema } from "@/types/partners";
 
-type Props = z.input<typeof AccomodationFormSchema>;
+type Props = z.input<typeof MariafeFormSchema>;
 
 // const baseUrl = process.env.VERCEL_URL
 //   ? `https://${process.env.VERCEL_URL}`
 //   : "http://localhost:3001";
 
-export const AccomodationEmailTemplate = ({
+export const MariafeEmailTemplate = ({
   name,
   email,
   age,
@@ -38,6 +38,7 @@ export const AccomodationEmailTemplate = ({
   title,
   totalPrice,
   nights,
+  roomPrice,
 }: Props) => {
   const previewText = `Your Booking for ${title} Awaits`;
 
@@ -65,7 +66,7 @@ export const AccomodationEmailTemplate = ({
               <Heading className="mx-0 my-[20px] p-0 text-center text-[24px] font-bold text-black">
                 Hi, {name} 👋🏻
               </Heading>
-              <Heading className="mx-0 my-[10px] p-0 text-center text-base font-semibold text-black">
+              <Heading className="mx-0 my-[10px] p-0 text-center text-[24px] font-bold text-black">
                 Thank you for reaching out to Clark Kent Travel and Tours.
                 We&apos;re thrilled to receive your inquiry about our {title}.
               </Heading>
@@ -100,6 +101,9 @@ export const AccomodationEmailTemplate = ({
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Contact Number:</strong> {contact}
+              </Text>
+              <Text className="text-[14px] leading-4 tracking-widest text-black">
+                <strong>Price per night:</strong> {roomPrice} x{nights} nights
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Total Price:</strong> {formatPeso(totalPrice || 0)}
@@ -143,4 +147,4 @@ export const AccomodationEmailTemplate = ({
   );
 };
 
-export default AccomodationEmailTemplate;
+export default MariafeEmailTemplate;

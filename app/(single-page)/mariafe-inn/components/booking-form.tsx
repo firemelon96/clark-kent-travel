@@ -7,7 +7,7 @@ import { DayPicker } from "react-day-picker";
 import { BiMinus, BiPlus } from "react-icons/bi";
 
 import "react-datepicker/dist/react-datepicker.css";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useTransition } from "react";
 import { addDays, addMonths, differenceInDays, format } from "date-fns";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -15,52 +15,29 @@ import { formatPeso } from "@/app/lib/helpers";
 import DatePicker from "react-datepicker";
 import countryList from "react-select-country-list";
 import Select from "react-select";
-import { RoomType } from "@/types/partners";
-import { title } from "process";
+import { MariafeFormSchema, RoomType } from "@/types/partners";
+import { BookMariafe } from "@/actions/mariafe-booking";
+import toast from "react-hot-toast";
 
 // Define the Zod schema
-export const FormSchema = z.object({
-  dates: z
-    .object({
-      start: z.date().nullable(),
-      end: z.date().nullable(),
-    })
-    .refine((data) => data.start && data.end, {
-      message: "Both start date and end date are required",
-      path: ["dates"],
-    }),
-  notes: z.string().min(1, "Notes are required"),
-  name: z.string().min(1, "Name is required!"),
-  age: z.number(),
-  gender: z.enum(["male", "female", "others"]),
-  roomType: z.enum([
-    "Semi deluxe",
-    "Superior twin",
-    "Superior triple",
-    "Superior quad",
-    "Family room",
-    "Barkada room",
-  ]),
-  nationality: z.string(),
-  email: z.string().email(),
-  contact: z.string(),
-});
 
 type BookingFormProps = {
-  name: string;
-  price: number;
+  title: string;
   roomType: RoomType[];
 };
 
-export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
+export const BookingForm = ({ title, roomType }: BookingFormProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
+  const [roomPrice, setRoomPrice] = useState(0);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [nights, setNights] = useState<number | null>(null);
 
-  const router = useRouter();
+  const [isloadingTransition, startTransition] = useTransition();
 
-  const roomOptions = roomType.map((room) => ({ ...room }));
+  // const router = useRouter();
+
+  // const roomOptions = roomType.map((room) => ({ ...room }));
 
   const options = useMemo(() => countryList().getData(), []);
 
@@ -69,17 +46,16 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
     handleSubmit,
     control,
     formState: { errors, isLoading },
-    setValue,
     watch,
-  } = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  } = useForm<z.infer<typeof MariafeFormSchema>>({
+    resolver: zodResolver(MariafeFormSchema),
     defaultValues: {
       dates: { start: null, end: null },
       notes: "estong",
       name: "estong",
-      age: 5,
+      age: 18,
       gender: "others",
-      nationality: "",
+      nationality: "Philippines",
       email: "estong.jamion@gmail.com",
       contact: "9953227432",
       roomType: "Semi deluxe",
@@ -90,9 +66,13 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
   const room = watch("roomType");
 
   useEffect(() => {
-    const selectedRoom = roomType.find((r) => r.name === room);
-    setTotalPrice(selectedRoom?.pricePerNight || 0);
-  }, [room]);
+    if (nights && room) {
+      const selectedRoom = roomType.find((r) => r.name === room);
+      setRoomPrice(selectedRoom?.pricePerNight || 0);
+
+      setTotalPrice(roomPrice * nights);
+    }
+  }, [room, nights, roomPrice]);
 
   const calculateNights = (start: Date | null, end: Date | null) => {
     if (start && end) {
@@ -102,17 +82,25 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
   };
 
   const onSubmit = (data: FieldValues) => {
-    // const { date, count, travellerType, notes, nationality } = data;
-    // const formatDate = format(new Date(date), "MMM dd EEEE");
-    // const formattedTotalPrice = formatPeso(totalPrice);
+    const transformedData = {
+      ...data,
+      nights,
+      title,
+      roomPrice,
+      totalPrice,
+    };
 
-    const appName = "Clark Kent Travel Website";
+    startTransition(() => {
+      BookMariafe(transformedData)
+        .then((data) => {
+          if (data.success) {
+            toast.success(data.message!);
+          }
+        })
+        .catch((err) => toast.error(err.message));
+    });
 
-    console.log({ ...data, numberofNights: nights });
-
-    // router.push(
-    //   `https://m.me/276166685864117/?text=Booking%20from%20${appName}%0ATour%20name:%20${title}%0ADate:%20${formatDate}%0AParticipants:%20${count}%20pax%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${formattedTotalPrice}`,
-    // );
+    console.log(transformedData);
   };
 
   return (
@@ -136,6 +124,7 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
             endDate={endDate!}
             placeholderText="Select a date for your trip"
             className="border-third mt-1 block w-full rounded-md border border-gray-300 p-2 text-2xl shadow-sm"
+            disabled={isLoading || isloadingTransition}
           />
         )}
       />
@@ -156,6 +145,7 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
               value={type.name}
               {...register("roomType")}
               className="hidden"
+              disabled={isLoading || isloadingTransition}
             />{" "}
             {type.name}
           </label>
@@ -168,8 +158,10 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
             placeholder="Your name..."
             {...register("name")}
             className="p-2 text-xl"
+            disabled={isloadingTransition || isLoading}
           />
         </label>
+        {errors.name && <span>{errors.name.message}</span>}
       </div>
       <div>
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -178,8 +170,10 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
             placeholder="Your email..."
             {...register("email")}
             className="p-2 text-xl"
+            disabled={isLoading || isloadingTransition}
           />
         </label>
+        {errors.email && <span>{errors.email.message}</span>}
       </div>
       <div className="flex gap-2">
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -188,6 +182,7 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
             placeholder="Your contact (skype | whatsapp)"
             {...register("contact")}
             className="w-auto p-2 text-xl font-normal"
+            disabled={isloadingTransition || isLoading}
           />
         </label>
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -195,11 +190,18 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
           <input
             type="number"
             placeholder="Age"
-            {...register("age")}
+            {...register("age", { valueAsNumber: true })}
             className="w-full p-2 text-xl font-normal"
+            disabled={isloadingTransition || isLoading}
           />
         </label>
       </div>
+      {errors.contact && (
+        <span className="text-rose-500">{errors.contact.message}</span>
+      )}
+      {errors.age && (
+        <span className="text-rose-500">{errors.age.message}</span>
+      )}
       <div className="flex items-center gap-2">
         <span className="text-base text-slate-500">Gender</span>
         <label
@@ -251,6 +253,7 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
               onChange={(selectedOption) =>
                 field.onChange(selectedOption?.label)
               }
+              isDisabled={isloadingTransition || isLoading}
             />
           )}
         />
@@ -264,23 +267,33 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
           rows={3}
           className="h-20 w-full rounded-md border p-2"
           {...register("notes")}
+          disabled={isLoading || isloadingTransition}
         />
         {errors.notes && (
           <span className="text-sm text-rose-500">{errors.notes.message}</span>
         )}
       </label>
 
-      <div className="flex items-center justify-between px-2 text-xl font-semibold">
-        <span className="text-lg text-slate-400">TOTAL</span>{" "}
-        <p className="font-bold text-slate-500">{formatPeso(totalPrice)}</p>
-      </div>
+      {nights && (
+        <div className="text-right text-sm">
+          <p className="font-light text-slate-500">
+            Number of night: {nights}x
+          </p>
+          <p className="font-light text-slate-500">
+            Price per night: {formatPeso(roomPrice)}
+          </p>
+          <p className="text-lg font-semibold text-slate-700">
+            Total: {formatPeso(totalPrice)}
+          </p>
+        </div>
+      )}
 
       <button
         type="submit"
-        disabled={isLoading}
-        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white"
+        disabled={isLoading || isloadingTransition}
+        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white disabled:cursor-not-allowed disabled:bg-slate-500"
       >
-        BOOK NOW
+        {isloadingTransition ? "Booking..." : "Book now"}
       </button>
     </form>
   );

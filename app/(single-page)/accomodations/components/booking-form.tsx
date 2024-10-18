@@ -48,7 +48,7 @@ export const BookingForm = ({ price, title }: BookingFormProps) => {
       dates: { start: null, end: null },
       notes: "estong",
       name: "estong",
-      age: 5,
+      age: 18,
       gender: "others",
       nationality: "Philippines",
       email: "estong.jamion@gmail.com",
@@ -136,6 +136,9 @@ export const BookingForm = ({ price, title }: BookingFormProps) => {
             disabled={isLoading || isLoadingTransition}
           />
         </label>
+        {errors.name && (
+          <span className="text-rose-500">{errors.name.message}</span>
+        )}
       </div>
       <div>
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -147,6 +150,9 @@ export const BookingForm = ({ price, title }: BookingFormProps) => {
             disabled={isLoading || isLoadingTransition}
           />
         </label>
+        {errors.email && (
+          <span className="text-rose-500">{errors.email.message}</span>
+        )}
       </div>
       <div className="flex gap-2">
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -163,12 +169,18 @@ export const BookingForm = ({ price, title }: BookingFormProps) => {
           <input
             type="number"
             placeholder="Age"
-            {...register("age")}
+            {...register("age", { valueAsNumber: true })}
             className="w-full p-2 text-xl font-normal"
             disabled={isLoading || isLoadingTransition}
           />
         </label>
       </div>
+      {errors.contact && (
+        <span className="text-rose-500">{errors.contact.message}</span>
+      )}
+      {errors.age && (
+        <span className="text-rose-500">{errors.age.message}</span>
+      )}
       <div className="flex items-center gap-2">
         <span className="text-base text-slate-500">Gender</span>
         <label

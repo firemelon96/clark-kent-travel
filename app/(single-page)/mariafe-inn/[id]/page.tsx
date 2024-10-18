@@ -4,14 +4,11 @@ import { formatPeso, getOtherServicesById } from "@/app/lib/helpers";
 import RecommendedTours from "@/app/components/recommended-tours";
 import { Metadata } from "next";
 import { SocialShare } from "@/app/components/social-share";
-import Image from "next/image";
-import { transfer_services } from "@/app/data/logistics";
 
 import { accomodations } from "@/app/data/accomodations";
 import ImageSliderSlick from "@/app/components/image-slider-slick";
 import { notFound } from "next/navigation";
 import { partners } from "@/app/data/partners";
-import Details from "../components/details";
 import ListContent from "../components/list-content";
 import { Policies } from "../components/policies";
 
@@ -83,8 +80,7 @@ const SingleService = ({ params }: SingleServiceProps) => {
               </h5>
 
               <BookingForm
-                price={mariafeData.roomType[0].pricePerNight}
-                name={mariafeData.name}
+                title={mariafeData.name}
                 roomType={mariafeData.roomType}
               />
             </div>

@@ -64,10 +64,6 @@ export const BookingForm = ({
   const gender = watch("gender");
 
   const onSubmit = (data: FieldValues) => {
-    // const { date, count, travellerType, notes, nationality } = data;
-    // const formatDate = format(new Date(date), "MMM dd EEEE");
-    // const formattedTotalPrice = formatPeso(totalPrice);
-
     const transformedData = {
       ...data,
       title,
@@ -86,14 +82,6 @@ export const BookingForm = ({
         })
         .catch((err) => toast.error(err.message));
     });
-
-    const appName = "Clark Kent Travel Website";
-
-    // console.log(transformedData);
-
-    // router.push(
-    //   `https://m.me/276166685864117/?text=Booking%20from%20${appName}%0ATour%20name:%20${title}%0ADate:%20${formatDate}%0AParticipants:%20${count}%20pax%0ATraveller%20Type:%20${travellerType}%0ANotes:%20${notes}%0ATotal%20Price:%20${formattedTotalPrice}`,
-    // );
   };
 
   return (
@@ -113,7 +101,9 @@ export const BookingForm = ({
         )}
       />
       {errors.date && (
-        <span className="text-sm text-rose-500">Select a date</span>
+        <span className="text-sm text-rose-500">
+          Please select your desired date
+        </span>
       )}
       <div>
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -125,6 +115,9 @@ export const BookingForm = ({
             disabled={isLoading || isLoadingTransition}
           />
         </label>
+        {errors.name && (
+          <span className="text-rose-500">{errors.name.message}</span>
+        )}
       </div>
       <div>
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -136,6 +129,9 @@ export const BookingForm = ({
             disabled={isLoading || isLoadingTransition}
           />
         </label>
+        {errors.email && (
+          <span className="text-sm text-rose-500">{errors.email.message}</span>
+        )}
       </div>
       <div className="flex gap-2">
         <label className="flex flex-col justify-between text-base text-slate-500">
@@ -152,12 +148,18 @@ export const BookingForm = ({
           <input
             type="number"
             placeholder="Age"
-            {...register("age")}
+            {...register("age", { valueAsNumber: true })}
             className="w-full p-2 text-xl font-normal"
             disabled={isLoading || isLoadingTransition}
           />
         </label>
       </div>
+      {errors.contact && (
+        <span className="text-sm text-rose-500">{errors.contact.message}</span>
+      )}
+      {errors.age && (
+        <span className="text-sm text-rose-500">{errors.age.message}</span>
+      )}
       <div className="flex items-center gap-2">
         <span className="text-base text-slate-500">Gender</span>
         <label
@@ -233,7 +235,7 @@ export const BookingForm = ({
       <button
         type="submit"
         disabled={isLoading || isLoadingTransition}
-        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white"
+        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white disabled:cursor-not-allowed disabled:bg-slate-500"
       >
         {isLoadingTransition ? "Booking..." : "Book now"}
       </button>

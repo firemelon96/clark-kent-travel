@@ -2,13 +2,13 @@
 
 import { Resend } from "resend";
 import { FieldValues } from "react-hook-form";
-import { AccomodationFormSchema } from "@/types/other-services";
-import AccomodationEmailTemplate from "@/emails/accomodation-email-template";
+import { MariafeFormSchema } from "@/types/partners";
+import MariafeEmailTemplate from "@/emails/mariafe-email-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const BookAccomodation = async (values: FieldValues) => {
-  const validatedFields = AccomodationFormSchema.safeParse(values);
+export const BookMariafe = async (values: FieldValues) => {
+  const validatedFields = MariafeFormSchema.safeParse(values);
 
   if (!validatedFields.success) {
     return {
@@ -27,8 +27,10 @@ export const BookAccomodation = async (values: FieldValues) => {
     nationality,
     notes,
     nights,
+    roomPrice,
     title,
     totalPrice,
+    roomType,
   } = validatedFields.data;
 
   try {
@@ -38,7 +40,7 @@ export const BookAccomodation = async (values: FieldValues) => {
       cc: ["sales@clarkkenttravelandtours.com"],
       replyTo: email,
       subject: `${nights} nights, ${title}`,
-      react: AccomodationEmailTemplate({
+      react: MariafeEmailTemplate({
         name,
         email,
         age,
@@ -50,6 +52,8 @@ export const BookAccomodation = async (values: FieldValues) => {
         title,
         nights,
         totalPrice,
+        roomPrice,
+        roomType,
       }),
     });
 
@@ -59,7 +63,7 @@ export const BookAccomodation = async (values: FieldValues) => {
 
     return {
       success: true,
-      message: "Booked service successfully, Please check your email!",
+      message: "Booked mariafe inn successfully, Please check your email!",
       data,
     };
   } catch (error) {
