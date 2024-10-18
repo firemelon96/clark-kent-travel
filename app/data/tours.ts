@@ -1203,6 +1203,7 @@ export const tours = [
       "Terminal fee",
       "Wharfage fee",
       "lifevest",
+      "Picnic lunch",
     ],
     exclusions: ["Environmental fee 200/person"],
     notes: [
