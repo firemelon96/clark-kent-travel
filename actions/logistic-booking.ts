@@ -67,7 +67,6 @@ export const BookLogistic = async (values: FieldValues) => {
     return {
       success: true,
       message: "Booked service successfully, Please check your email!",
-      data,
     };
   } catch (error) {
     return {

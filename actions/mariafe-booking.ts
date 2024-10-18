@@ -67,7 +67,6 @@ export const BookMariafe = async (values: FieldValues) => {
     return {
       success: true,
       message: "Booked mariafe inn successfully, Please check your email!",
-      data,
     };
   } catch (error) {
     return {

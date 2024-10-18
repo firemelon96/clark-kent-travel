@@ -35,7 +35,10 @@ export const BookAccomodation = async (values: FieldValues) => {
     const { data, error } = await resend.emails.send({
       from: "Clark Kent Travel and Tours <sales@clarkkenttravelandtours.com>",
       to: [email],
-      cc: ["sales@clarkkenttravelandtours.com", "info.clarkkenttravelandtours@yahoo.com"],
+      cc: [
+        "sales@clarkkenttravelandtours.com",
+        "info.clarkkenttravelandtours@yahoo.com",
+      ],
       replyTo: email,
       subject: `${nights} nights, ${title}`,
       react: AccomodationEmailTemplate({
@@ -60,7 +63,6 @@ export const BookAccomodation = async (values: FieldValues) => {
     return {
       success: true,
       message: "Booked service successfully, Please check your email!",
-      data,
     };
   } catch (error) {
     return {

@@ -65,7 +65,6 @@ export const BookTour = async (values: FieldValues) => {
     return {
       success: true,
       message: "Booked successfully, Check your email",
-      data,
     };
   } catch (error) {
     return {
