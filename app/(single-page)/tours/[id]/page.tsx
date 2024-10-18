@@ -76,10 +76,8 @@ const SingleTour = ({ params }: SingleTourProps) => {
 
               <FormWithZOD
                 price={tour.price}
-                duration={tour.duration}
                 privatePrice={tour.privatePrice!}
                 title={tour.tourName}
-                isPax
               />
             </div>
             <ListBox items={tour.reminders!} type="Reminder" />
