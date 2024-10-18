@@ -74,10 +74,6 @@ export const FormWithZOD = ({
   const groupPax = privatePrice.length >= 1 && privatePrice.length <= 7;
 
   useEffect(() => {
-    if (joiners) {
-      setTotalPrice(price * count);
-    }
-
     if (isPrivatePrice) {
       setTotalPrice(privatePrice[count - 1] * count);
     }
@@ -85,6 +81,10 @@ export const FormWithZOD = ({
     if (groupPax) {
       const index = Math.floor((count - 1) / 2);
       setTotalPrice(privatePrice[index]);
+    }
+
+    if (joiners) {
+      setTotalPrice(price * count);
     }
 
     if (joinerPriceArray) {
@@ -181,7 +181,7 @@ export const FormWithZOD = ({
           {errors.age && <span>{errors.age.message}</span>}
         </label>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <span className="text-base text-slate-500">Gender</span>
         <label
           className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${gender === "male" && "bg-sky-500 text-white"}`}
@@ -250,7 +250,7 @@ export const FormWithZOD = ({
             {...register("travellerType")}
             className="hidden"
           />{" "}
-          {type === "package" ? "Semi Private" : "Private"}
+          Private
         </label>
         {price && (
           <label
@@ -354,7 +354,7 @@ export const FormWithZOD = ({
               </p>
             </>
           )}
-          {isPrivatePrice && !groupPax ? (
+          {isPrivatePrice && !groupPax && (
             <>
               <p className="font-bold text-slate-500">
                 {count <= privatePrice.length ? (
@@ -366,7 +366,8 @@ export const FormWithZOD = ({
                 )}
               </p>
             </>
-          ) : (
+          )}
+          {!price && !isPrivatePrice && (
             <span className="text-md font-normal text-rose-400">
               Upon request
             </span>

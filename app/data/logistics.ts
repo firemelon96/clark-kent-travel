@@ -9,7 +9,7 @@ export const transfer_services = [
     description:
       "Join our Puerto Princesa to El Nido Joiner Transfer for a convenient, budget-friendly ride. Travel in comfort in our air-conditioned vans, perfect for solo travelers or small groups. Enjoy the scenic journey and arrive in El Nido ready to explore. Multiple daily departures available!",
     availability: "24/7",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "joiner-elnido-pps",
@@ -21,7 +21,7 @@ export const transfer_services = [
     description:
       "Join our El Nido to Puerto Princesa Joiner Transfer for an easy, affordable trip back to the city. Travel in comfort in our air-conditioned vans and enjoy the scenic views along the way. Ideal for solo travelers or small groups, with multiple daily departures to fit your schedule.",
     availability: "24/7",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "private-van-pps-elnido",
@@ -57,7 +57,7 @@ export const transfer_services = [
     description:
       "Join our Puerto Princesa to Port Barton Joiner Transfer for an affordable and convenient ride. Travel comfortably in our air-conditioned vans and enjoy the scenic trip to Port Barton. Perfect for solo travelers or small groups, with multiple departures daily.",
     availability: "8:00 AM - 8:00 PM",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "joiner-barton-pps",
@@ -69,7 +69,7 @@ export const transfer_services = [
     description:
       "Join our Port Barton to Puerto Princesa Joiner Transfer for an easy and affordable journey back to the city. Enjoy a comfortable ride in our air-conditioned vans while taking in the beautiful landscapes of Palawan. Ideal for solo travelers or small groups, with multiple daily departures to fit your schedule.",
     availability: "8:00 AM - 8:00 PM",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "private-lio-elnido-town-one-way",
@@ -177,7 +177,7 @@ export const transfer_services = [
     description:
       "Book our PPS Airport Transfer to City Proper for a quick and hassle-free ride to your destination. Our air-conditioned van provides a comfortable and efficient transfer, ideal for solo travelers, families, or groups. Enjoy a smooth journey from Puerto Princesa Airport to any location within the city proper. Let us take care of your transportation needs upon arrival!",
     availability: "4 hours",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   //bohol transfer
   {
@@ -190,7 +190,7 @@ export const transfer_services = [
     description:
       "Book our Bohol Airport Transfer for a convenient and comfortable ride to your destination. Our air-conditioned vehicles ensure a smooth and hassle-free journey, whether you're heading to a hotel, resort, or any location in Bohol. Ideal for solo travelers, families, or groups, this service offers reliable transportation from the airport, allowing you to relax and enjoy the start of your Bohol adventure.",
     availability: "1 Day",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   //rentals
   {
@@ -203,7 +203,7 @@ export const transfer_services = [
     description:
       "Rent our City Tour Van for 4 Hours and explore the city comfortably at your own pace. Perfect for families or groups, our air-conditioned van offers a spacious and convenient way to visit key attractions. With a flexible schedule, you can enjoy sightseeing, shopping, or dining, all while having a reliable ride at your disposal. Ideal for making the most of your city tour!",
     availability: "4 hours",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "estrella-falls-van-rental",
@@ -215,7 +215,7 @@ export const transfer_services = [
     description:
       "Book our Estrella Falls Van Rental for a comfortable and scenic trip to one of Palawan's hidden gems. Perfect for families or groups, our air-conditioned van ensures a smooth and enjoyable journey. Spend the day exploring the beautiful Estrella Falls, swimming in its cool waters, and relaxing in nature. Enjoy the convenience of a private vehicle as you travel at your own pace. A perfect getaway for a day of adventure and relaxation!",
     availability: "4 hours",
-    image: "/resources/logistics/van.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "private-van-pps-dinner",

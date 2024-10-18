@@ -63,10 +63,6 @@ const SingleService = ({ params }: SingleServiceProps) => {
               price={mariafeData.roomType[0].pricePerNight}
               description={mariafeData.description}
             />
-            <ListContent
-              title="Terms and Conditions"
-              datas={mariafeData.termsConditions}
-            />
           </div>
           <div className="flex w-full flex-col gap-4 px-4 py-0 md:sticky md:top-20 md:w-1/3 md:px-0 md:py-4">
             <div className="border-third text-third border bg-sky-50 p-4 shadow-md">
@@ -88,7 +84,6 @@ const SingleService = ({ params }: SingleServiceProps) => {
             {/* inclusions */}
             <ListContent title="Inclusions" datas={mariafeData.inclusions} />
             <ListContent title="Notes" datas={mariafeData.notes} />
-            <Policies datas={mariafeData.policies} title="Policies" />
           </div>
         </div>
       </div>
