@@ -14,15 +14,32 @@ const Others = () => {
   const partnersData = partners.map((partner) => ({ ...partner }));
 
   return (
-    <section
-      className="container mx-auto scroll-mt-6 pb-16 text-center md:px-20 md:text-start"
-      id="tours"
-    >
-      <OtherServicesList title="Transfers" services={transfers} />
-      <OtherServicesList title="Rentals" services={rentals} />
-      <AccomodationsList name="Accomodations" data={accomodationsData} />
-      <MarianfeList name="Mariafe Inn" data={partnersData} />
-    </section>
+    <>
+      <section
+        className="container mx-auto scroll-mt-10 text-center md:px-20 md:text-start"
+        id="transfers"
+      >
+        <OtherServicesList title="Transfers" services={transfers} />
+      </section>
+      <section
+        className="container mx-auto scroll-mt-6 text-center md:px-20 md:text-start"
+        id="rentals"
+      >
+        <OtherServicesList title="Rentals" services={rentals} />
+      </section>
+      <section
+        className="container mx-auto scroll-mt-6 text-center md:px-20 md:text-start"
+        id="accommodations"
+      >
+        <AccomodationsList name="Accomodations" data={accomodationsData} />
+      </section>
+      <section
+        className="container mx-auto scroll-mt-6 text-center md:px-20 md:text-start"
+        id="partners"
+      >
+        <MarianfeList name="Mariafe Inn" data={partnersData} />
+      </section>
+    </>
   );
 };
 
