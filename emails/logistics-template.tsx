@@ -17,28 +17,29 @@ import {
 import { format } from "date-fns";
 import { z } from "zod";
 import * as React from "react";
-import { TourFormSchema } from "@/types/tour";
+import { LogisticFormSchema } from "@/types/other-services";
 import { formatPeso } from "@/app/lib/helpers";
 
-type Props = z.input<typeof TourFormSchema>;
+type Props = z.input<typeof LogisticFormSchema>;
 
 // const baseUrl = process.env.VERCEL_URL
 //   ? `https://${process.env.VERCEL_URL}`
 //   : "http://localhost:3001";
 
-export const TourEmailTemplate = ({
-  count,
-  date,
-  notes,
-  travellerType,
-  age,
-  gender,
+export const LogisticEmailTemplate = ({
   name,
-  nationality,
   email,
+  age,
   contact,
-  total,
+  date,
+  gender,
+  nationality,
+  notes,
   title,
+  availability,
+  price,
+  type,
+  vehicleType,
 }: Props) => {
   const previewText = `Your Booking for ${title} Awaits`;
 
@@ -79,11 +80,15 @@ export const TourEmailTemplate = ({
               </Row>
               <Hr />
               <Text className="text-[14px]leading-4 tracking-widest text-black">
-                <strong>Travel Date:</strong>
+                <strong>Booking Date: </strong>
                 {format(new Date(date), "MMM dd EEEE")}
               </Text>
+              <Text className="text-[14px]leading-4 tracking-widest text-black">
+                <strong>Service: </strong>
+                {title} | {vehicleType} | {type} | {availability}
+              </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Traveller Name:</strong> {name}
+                <strong>Name:</strong> {name}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Nationality:</strong> {nationality}
@@ -91,13 +96,10 @@ export const TourEmailTemplate = ({
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Age & Gender: </strong> {age} years old, {gender}
               </Text>
-              <Text className="text-[14px]leading-4 tracking-widest text-black">
-                <strong>Tour:</strong>
-                {travellerType} | {title}
-              </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Number of Participants:</strong> {count} pax
-              </Text>
+              {/* <Text className="text-[14px]leading-4 tracking-widest text-black">
+                <strong>Service:</strong>
+                {title}
+              </Text> */}
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Email:</strong> {email}
               </Text>
@@ -105,7 +107,7 @@ export const TourEmailTemplate = ({
                 <strong>Contact Number:</strong> {contact}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Total Price:</strong> {formatPeso(total || 0)}
+                <strong>Total Price:</strong> {formatPeso(price || 0)}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Additional Message:</strong> {notes}
@@ -146,4 +148,4 @@ export const TourEmailTemplate = ({
   );
 };
 
-export default TourEmailTemplate;
+export default LogisticEmailTemplate;

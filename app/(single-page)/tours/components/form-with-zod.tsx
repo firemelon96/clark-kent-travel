@@ -21,19 +21,15 @@ import toast from "react-hot-toast";
 // Define the Zod schema
 
 type FormWithZODProps = {
-  duration: string[];
   price?: number | number[];
   privatePrice: number[];
   title: string;
-  isPax: boolean;
 };
 
 export const FormWithZOD = ({
-  duration,
   price,
   privatePrice,
   title,
-  isPax,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -180,6 +176,7 @@ export const FormWithZOD = ({
             className="w-full p-2 text-xl font-normal"
             disabled={isLoading || isLoadingTransition}
           />
+          {errors.age && <span>{errors.age.message}</span>}
         </label>
       </div>
       <div className="flex items-center gap-2">
