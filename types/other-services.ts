@@ -16,6 +16,28 @@ export const LogisticFormSchema = z.object({
   price: z.number().optional(),
 });
 
+export const AccomodationFormSchema = z.object({
+  dates: z
+    .object({
+      start: z.date().nullable(),
+      end: z.date().nullable(),
+    })
+    .refine((data) => data.start && data.end, {
+      message: "Both start date and end date are required",
+      path: ["dates"],
+    }),
+  notes: z.string().min(1, "Notes are required"),
+  name: z.string().min(1, "Name is required!"),
+  age: z.number(),
+  gender: z.enum(["male", "female", "others"]),
+  nationality: z.string(),
+  email: z.string().email(),
+  contact: z.string(),
+  title: z.string().optional(),
+  totalPrice: z.number().optional(),
+  nights: z.number().optional(),
+});
+
 export type TransferServicesType = {
   id: string;
   service_name: string;

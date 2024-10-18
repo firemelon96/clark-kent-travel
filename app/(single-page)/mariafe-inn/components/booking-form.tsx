@@ -20,10 +20,15 @@ import { title } from "process";
 
 // Define the Zod schema
 export const FormSchema = z.object({
-  dates: z.object({
-    start: z.date().nullable(),
-    end: z.date().nullable(),
-  }),
+  dates: z
+    .object({
+      start: z.date().nullable(),
+      end: z.date().nullable(),
+    })
+    .refine((data) => data.start && data.end, {
+      message: "Both start date and end date are required",
+      path: ["dates"],
+    }),
   notes: z.string().min(1, "Notes are required"),
   name: z.string().min(1, "Name is required!"),
   age: z.number(),
@@ -135,7 +140,9 @@ export const BookingForm = ({ price, name, roomType }: BookingFormProps) => {
         )}
       />
       {errors.dates && (
-        <span className="text-sm text-rose-500">Select a date</span>
+        <span className="text-sm text-rose-500">
+          Please select your desired date
+        </span>
       )}
 
       <div className="flex flex-wrap gap-2">

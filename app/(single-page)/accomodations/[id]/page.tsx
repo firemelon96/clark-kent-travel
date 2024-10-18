@@ -78,7 +78,7 @@ const SingleService = ({ params }: SingleServiceProps) => {
 
               <BookingForm
                 price={accomodationsData.price_per_night}
-                name={accomodationsData.name}
+                title={accomodationsData.name}
               />
             </div>
 
