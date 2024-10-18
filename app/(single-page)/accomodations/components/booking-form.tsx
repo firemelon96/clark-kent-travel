@@ -46,13 +46,13 @@ export const BookingForm = ({ price, title }: BookingFormProps) => {
     resolver: zodResolver(AccomodationFormSchema),
     defaultValues: {
       dates: { start: null, end: null },
-      notes: "estong",
-      name: "estong",
+      notes: "",
+      name: "",
       age: 18,
-      gender: "others",
+      gender: "male",
       nationality: "Philippines",
-      email: "estong.jamion@gmail.com",
-      contact: "9953227432",
+      email: "",
+      contact: "",
     },
   });
 

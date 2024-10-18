@@ -51,13 +51,13 @@ export const BookingForm = ({
     resolver: zodResolver(LogisticFormSchema),
     defaultValues: {
       date: new Date(Date.now()),
-      notes: "estong",
-      name: "estong",
+      notes: "",
+      name: "",
       age: 5,
-      gender: "others",
+      gender: "male",
       nationality: "Philippines",
-      email: "estong.jamion@gmail.com",
-      contact: "9953227432",
+      email: "",
+      contact: "",
     },
   });
 
