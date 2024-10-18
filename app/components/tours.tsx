@@ -1,4 +1,9 @@
-import { getDayTours, getToursByLocation } from "../lib/helpers";
+import {
+  getDayTours,
+  getServicesByType,
+  getToursByLocation,
+} from "../lib/helpers";
+import { OtherServicesList } from "./other-services-list";
 import { TourLists } from "./tour-lists";
 
 const Tours = () => {
@@ -7,6 +12,7 @@ const Tours = () => {
   const elnidoTours = getToursByLocation("el nido");
   const portBartonTours = getToursByLocation("port barton");
   const boholTours = getToursByLocation("bohol");
+
   return (
     <section
       className="container mx-auto mt-80 scroll-mt-6 pb-16 text-center md:px-20 md:text-start"

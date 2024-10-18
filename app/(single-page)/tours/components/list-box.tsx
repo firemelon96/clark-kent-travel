@@ -1,7 +1,6 @@
 import { IconType } from "react-icons";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { BiCheckCircle, BiHelpCircle, BiXCircle } from "react-icons/bi";
-import { MdOutlineStickyNote2 } from "react-icons/md";
 
 interface ListBoxType {
   type: "Inclusion" | "Exclusion" | "Reminder" | "Notes";
