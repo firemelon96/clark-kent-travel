@@ -30,9 +30,57 @@ const Footer = () => {
               Travel and Tours
             </span>
             <p className="text-base text-[#E13179]/75">
-              Lagan St., Puerto Princesa City
+              GSFM Bldg., Manalo Street, Puerto Princesa City,Palawan
             </p>
             <span className="text-base text-[#E13179]/75">Palawan 5300</span>
+          </div>
+          <h6 className="text-[#E13179]/75">Accredited by</h6>
+          <div className="flex flex-col items-center gap-2 md:flex-row">
+            <Link href="https://beta.tourism.gov.ph/">
+              <Image
+                src="/resources/dot.jpg"
+                width={90}
+                height={90}
+                alt="department of tourism"
+                className="rounded-full object-contain"
+              />
+            </Link>
+            <Link href="https://www.dti.gov.ph/">
+              <Image
+                src="/resources/dti.png"
+                width={90}
+                height={90}
+                alt="department of trade and industry"
+                className="object-contain"
+              />
+            </Link>
+            <Link href="https://www.puertoprincesatourism.com/">
+              <Image
+                src="/resources/citytourism.jpg"
+                width={90}
+                height={90}
+                alt="department of trade"
+                className="rounded-full object-contain"
+              />
+            </Link>
+            <Link href="https://www.itsmorefuninthephilippines.co.uk/">
+              <Image
+                src="/resources/loveph.png"
+                width={90}
+                height={90}
+                alt="department of trade"
+                className="object-contain"
+              />
+            </Link>
+            <Link href="https://notices.philgeps.gov.ph/">
+              <Image
+                src="/resources/philgeps.png"
+                width={90}
+                height={90}
+                alt="philgeps"
+                className="object-contain"
+              />
+            </Link>
           </div>
         </div>
         <div className="flex flex-col p-2">
