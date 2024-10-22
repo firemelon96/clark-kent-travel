@@ -68,8 +68,8 @@ const About = () => {
         <p>
           Our mission is to turn wanderlust into lifelong memories and to serve
           our customers by ensuring their complete satisfaction and providing
-          the best tourism services while remaining committed to our country's
-          social, cultural, and environmental aspects.
+          the best tourism services while remaining committed to our
+          country&apos;s social, cultural, and environmental aspects.
         </p>
       </div>
       <div className="mx-auto flex max-w-3xl flex-col text-start">
