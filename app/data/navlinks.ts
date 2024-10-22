@@ -19,11 +19,11 @@ export const navLinks = [
     link: "/testimonials",
     href: "#testimonial",
   },
-  // {
-  //   label: "About",
-  //   link: "/About",
-  //   href: "/about",
-  // },
+  {
+    label: "About",
+    link: "/About",
+    href: "/about",
+  },
   {
     label: "Contact",
     link: "/contact",
