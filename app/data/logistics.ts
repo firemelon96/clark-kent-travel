@@ -8,7 +8,7 @@ export const transfer_services = [
     price_per_trip: 750,
     description:
       "Join our Puerto Princesa to El Nido Joiner Transfer for a convenient, budget-friendly ride. Travel in comfort in our air-conditioned vans, perfect for solo travelers or small groups. Enjoy the scenic journey and arrive in El Nido ready to explore. Multiple daily departures available!",
-    availability: "24/7",
+    availability: "6:00 AM - 5:00 PM",
     image: "/resources/logistics/van-premium.png",
   },
   {
@@ -20,7 +20,7 @@ export const transfer_services = [
     price_per_trip: 750,
     description:
       "Join our El Nido to Puerto Princesa Joiner Transfer for an easy, affordable trip back to the city. Travel in comfort in our air-conditioned vans and enjoy the scenic views along the way. Ideal for solo travelers or small groups, with multiple daily departures to fit your schedule.",
-    availability: "24/7",
+    availability: "6:00 AM - 5:00 PM",
     image: "/resources/logistics/van-premium.png",
   },
   {
@@ -56,7 +56,7 @@ export const transfer_services = [
     price_per_trip: 700,
     description:
       "Join our Puerto Princesa to Port Barton Joiner Transfer for an affordable and convenient ride. Travel comfortably in our air-conditioned vans and enjoy the scenic trip to Port Barton. Perfect for solo travelers or small groups, with multiple departures daily.",
-    availability: "8:00 AM - 8:00 PM",
+    availability: "6:00 AM - 5:00 PM",
     image: "/resources/logistics/van-premium.png",
   },
   {
@@ -68,7 +68,7 @@ export const transfer_services = [
     price_per_trip: 700,
     description:
       "Join our Port Barton to Puerto Princesa Joiner Transfer for an easy and affordable journey back to the city. Enjoy a comfortable ride in our air-conditioned vans while taking in the beautiful landscapes of Palawan. Ideal for solo travelers or small groups, with multiple daily departures to fit your schedule.",
-    availability: "8:00 AM - 8:00 PM",
+    availability: "6:00 AM - 5:00 PM",
     image: "/resources/logistics/van-premium.png",
   },
   {
