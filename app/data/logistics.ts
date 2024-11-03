@@ -137,7 +137,7 @@ export const transfer_services = [
     type: "transfer",
     vehicle_type: "Private Van",
     capacity: 10,
-    price_per_trip: 8500,
+    price_per_trip: 9500,
     description:
       "Enjoy a day of adventure with our Round-Trip Private Van Port Barton Day Tour. Travel comfortably in an air-conditioned van and explore the pristine beaches and lush surroundings of Port Barton at your own pace. Perfect for families or groups, this personalized tour offers a relaxing escape, with stunning views and opportunities for swimming, snorkeling, and sightseeing. A perfect way to experience the natural beauty of Palawan!",
     availability: "9:00 AM - 4:00 PM",

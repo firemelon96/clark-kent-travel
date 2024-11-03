@@ -121,10 +121,8 @@ export const MariafeEmailTemplate = ({
                 </Text>
                 <Text className="text-xs leading-5">
                   Should you have any immediate questions or require further
-                  assistance, please feel free to contact us at{" "}
-                  <Link href="mailto:support@icapturetravelservices.com">
-                    sales@clarkkenttravelandtours.com
-                  </Link>
+                  assistance, please feel free to contact us at Whatsapp{" "}
+                  <Link href="wa.me/639552946691">+639173028053</Link>
                 </Text>
                 <Hr />
                 <Text className="text-xs leading-5">
