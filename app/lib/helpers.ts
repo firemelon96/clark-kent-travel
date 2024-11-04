@@ -35,8 +35,20 @@ export const getTourById = (id: string) => {
 };
 
 export const getToursByLocation = (address: string) => {
-  const tour = tours.filter((tour) =>
-    tour.address[0].toLowerCase().includes(address.toLowerCase()),
+  const tour = tours.filter(
+    (tour) =>
+      tour.address[0].toLowerCase().includes(address.toLowerCase()) &&
+      tour.type === "day tour",
+  );
+
+  return tour;
+};
+
+export const getPackageToursByLocation = (address: string) => {
+  const tour = tours.filter(
+    (tour) =>
+      tour.address[0].toLowerCase().includes(address.toLowerCase()) &&
+      tour.type === "package",
   );
 
   return tour;

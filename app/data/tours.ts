@@ -102,49 +102,49 @@ export const tours = [
   },
 
   //new entry
-  // {
-  //   tourId: "batak-the-most-preserved-tribe-in-Palawan",
-  //   tourName: "Batak the most preserved tribe in Palawan",
-  //   isFeatured: true,
-  //   type: "day tour",
-  //   // price: 850,
-  //   privatePrice: [15800, 8900, 6800, 5650, 5000, 4550, 4300, 4000, 3800, 3600],
-  //   address: ["Puerto Princesa, Palawan"],
-  //   description:
-  //     "Guests will be picked up on their hotel in the morning (not later than 08:00AM) and travel about 70 kilometers out of Puerto Princesa City. After an hour and half drive, will arrive at the Batak Visitor Center which is located in Barangay Conception. At the Visitor Center, you will find various local products made by the tribe available for purchase. From the Visitor Center, group will trek across mountainous terrain and cross some rivers to reach the Batak community. The hiking time takes 75 to 120 minutes, depending on the pace of the group. Upon reaching the village, join in presenting a token gift to the tribe which contains coffee, rice, sugar, and other basic needs. Say hello and make your interaction to the tribe members and see how they go about their daily lives. Our local guide will provide information about the history of the tribe and their customs. Afterwards, head back down to the Visitor Center and you'll be driven back to your hotel in Puerto Princesa or go straight North for your next day’s itinerary in Palawan. An option to include lunch in this activity is also available.",
-  //   itineraries: [
-  //     {
-  //       name: "Destination",
-  //       activities: ["Batak visitor center", "Batak community"],
-  //     },
-  //   ],
-  //   duration: ["1 Day"],
-  //   inclusions: [
-  //     "Air-conditioned van transport for hotel pickup and drop-off",
-  //     "Service of a licensed tour guide",
-  //     "Entry fees / permits",
-  //     "Processing of tour permits",
-  //     "Token / gratitudes to the tribe",
-  //     "Bottled water",
-  //   ],
-  //   exclusions: ["lunch", "Anything not mentioned in inclusions"],
-  //   notes: [
-  //     "Bring comfortable clothes",
-  //     "Luggage or large bags are highly discouraged",
-  //     "This tour is not recommended for people with limited mobility, pregnant women, wheelchair users, or those with serious medical conditions",
-  //   ],
-  //   reminders: ["Booking must be 2 days - 3 days before the visit."],
-  //   images: [
-  //     "/resources/batak/batak00.avif",
-  //     "/resources/batak/batak01.avif",
-  //     "/resources/batak/batak02.avif",
-  //     "/resources/batak/batak03.avif",
-  //     "/resources/batak/batak04.avif",
-  //     "/resources/batak/batak05.avif",
-  //   ],
-  //   minParticipants: 2,
-  //   maxParticipants: 12,
-  // },
+  {
+    tourId: "batak-the-most-preserved-tribe-in-Palawan",
+    tourName: "Batak the most preserved tribe in Palawan",
+    isFeatured: true,
+    type: "day tour",
+    // price: 850,
+    privatePrice: [15800, 8900, 6800, 5650, 5000, 4550, 4300, 4000, 3800, 3600],
+    address: ["Puerto Princesa, Palawan"],
+    description:
+      "Guests will be picked up on their hotel in the morning (not later than 08:00AM) and travel about 70 kilometers out of Puerto Princesa City. After an hour and half drive, will arrive at the Batak Visitor Center which is located in Barangay Conception. At the Visitor Center, you will find various local products made by the tribe available for purchase. From the Visitor Center, group will trek across mountainous terrain and cross some rivers to reach the Batak community. The hiking time takes 75 to 120 minutes, depending on the pace of the group. Upon reaching the village, join in presenting a token gift to the tribe which contains coffee, rice, sugar, and other basic needs. Say hello and make your interaction to the tribe members and see how they go about their daily lives. Our local guide will provide information about the history of the tribe and their customs. Afterwards, head back down to the Visitor Center and you'll be driven back to your hotel in Puerto Princesa or go straight North for your next day’s itinerary in Palawan. An option to include lunch in this activity is also available.",
+    itineraries: [
+      {
+        name: "Destination",
+        activities: ["Batak visitor center", "Batak community"],
+      },
+    ],
+    duration: ["1 Day"],
+    inclusions: [
+      "Air-conditioned van transport for hotel pickup and drop-off",
+      "Service of a licensed tour guide",
+      "Entry fees / permits",
+      "Processing of tour permits",
+      "Token / gratitudes to the tribe",
+      "Bottled water",
+    ],
+    exclusions: ["lunch", "Anything not mentioned in inclusions"],
+    notes: [
+      "Bring comfortable clothes",
+      "Luggage or large bags are highly discouraged",
+      "This tour is not recommended for people with limited mobility, pregnant women, wheelchair users, or those with serious medical conditions",
+    ],
+    reminders: ["Booking must be 2 days - 3 days before the visit."],
+    images: [
+      "/resources/batak/batak00.avif",
+      "/resources/batak/batak04.avif",
+      "/resources/batak/batak05.avif",
+      "/resources/batak/batak06.avif",
+      "/resources/batak/batak07.avif",
+      "/resources/batak/batak08.avif",
+    ],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
   {
     tourId: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour",
     tourName: "3 days 2 nights Puerto Princesa w/ Underground River Tour",
