@@ -241,17 +241,19 @@ export const FormWithZOD = ({
 
       <div className="flex items-center gap-2">
         <span className="text-base text-slate-500">Traveler Type</span>
-        <label
-          className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Private" && "bg-sky-500 text-white"}`}
-        >
-          <input
-            type="radio"
-            value="Private"
-            {...register("travellerType")}
-            className="hidden"
-          />{" "}
-          Private
-        </label>
+        {privatePrice.length > 0 && (
+          <label
+            className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Private" && "bg-sky-500 text-white"}`}
+          >
+            <input
+              type="radio"
+              value="Private"
+              {...register("travellerType")}
+              className="hidden"
+            />{" "}
+            Private
+          </label>
+        )}
         {price && (
           <label
             className={`cursor-pointer rounded-xl border border-sky-500 px-2 py-1.5 ${travellerType === "Joiners" && "bg-sky-500 text-white"}`}
