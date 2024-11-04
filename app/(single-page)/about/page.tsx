@@ -33,12 +33,12 @@ const About = () => {
           been a booking office since January 13, 2014, and it was upgraded as a
           Tour Operator in Puerto Princesa City on January 15, 2020. They own
           the Clark Kent Tourist Boat in El Nido, Palawan, Short term rentals
-          Homestay/Apartment Mariafe Inn, Motorcycle and Car Rentals, and Clark
-          Kent Tourist Van Transport in Puerto Princesa City, Palawan. CLARK
-          KENT TRAVEL AND TOURS also manages several social media accounts,
-          which serves as a channel for the booking officers and guests to
-          discuss transactions regarding the tours offered by the business. The
-          social media accounts are the following: Facebook:{" "}
+          Homestay/Apartmente, Motorcycle and Car Rentals, and Clark Kent
+          Tourist Van Transport in Puerto Princesa City, Palawan. CLARK KENT
+          TRAVEL AND TOURS also manages several social media accounts, which
+          serves as a channel for the booking officers and guests to discuss
+          transactions regarding the tours offered by the business. The social
+          media accounts are the following: Facebook:{" "}
           <span className="font-semibold">
             CLARK KENT TRAVEL AND TOURS & TICKETING SERVICES
           </span>{" "}
