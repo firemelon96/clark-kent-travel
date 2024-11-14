@@ -30,6 +30,7 @@ export const BookTour = async (values: FieldValues) => {
     travellerType,
     total,
     title,
+    pickupLocation,
   } = validatedFields.data;
 
   try {
@@ -55,6 +56,7 @@ export const BookTour = async (values: FieldValues) => {
         travellerType,
         total,
         title,
+        pickupLocation,
       }),
     });
 

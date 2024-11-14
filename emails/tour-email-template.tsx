@@ -39,6 +39,7 @@ export const TourEmailTemplate = ({
   contact,
   total,
   title,
+  pickupLocation,
 }: Props) => {
   const previewText = `Your Booking for ${title} Awaits`;
 
@@ -81,6 +82,10 @@ export const TourEmailTemplate = ({
               <Text className="text-[14px]leading-4 tracking-widest text-black">
                 <strong>Travel Date:</strong>
                 {format(new Date(date), "MMM dd EEEE")}
+              </Text>
+              <Text className="text-[14px]leading-4 tracking-widest text-black">
+                <strong>Pick up location</strong>
+                {pickupLocation}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Traveller Name:</strong> {name}

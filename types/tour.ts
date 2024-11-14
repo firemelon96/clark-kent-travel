@@ -13,6 +13,7 @@ export const TourFormSchema = z.object({
   contact: z.string(),
   total: z.number().optional(),
   title: z.string().optional(),
+  pickupLocation: z.string(),
 });
 
 type Itinerary = {

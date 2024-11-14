@@ -61,6 +61,7 @@ export const FormWithZOD = ({
       nationality: "Philippines",
       email: "",
       contact: "",
+      pickupLocation: "",
     },
   });
 
@@ -318,6 +319,17 @@ export const FormWithZOD = ({
         ) : (
           ""
         )}
+      </div>
+      <div>
+        <label className="flex flex-col justify-between text-base text-slate-500">
+          Pick up location | Hotel
+          <input
+            placeholder="Pick up hotel"
+            {...register("pickupLocation")}
+            className="p-2 text-xl"
+            disabled={isLoading || isLoadingTransition}
+          />
+        </label>
       </div>
       <label className="text-base text-slate-500">
         Notes
