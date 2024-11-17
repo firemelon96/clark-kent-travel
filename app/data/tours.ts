@@ -72,6 +72,7 @@ export const tours = [
       "Airport Pick up",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Airfare",
       "Environmental Fee (150-200/Head)",
       "Incidental Tricycle service/Porters fee",
@@ -164,7 +165,11 @@ export const tours = [
       "Token / gratitudes to the tribe",
       "Bottled water",
     ],
-    exclusions: ["lunch", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "lunch",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Bring comfortable clothes",
       "Luggage or large bags are highly discouraged",
@@ -227,6 +232,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Anything not mentioned in Inclusions",
     ],
@@ -291,6 +297,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Anything not mentioned in Inclusions",
     ],
@@ -357,6 +364,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Anything not mentioned in Inclusions",
     ],
@@ -418,6 +426,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Mask & Snorkel and aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
@@ -480,6 +489,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Mask & Snorkel and aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
@@ -546,6 +556,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Mask & Snorkel and aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
@@ -621,6 +632,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Mask & Snorkeling gears and Aqua shoes",
       "Anything not mentioned in Inclusions",
@@ -697,6 +709,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Mask & Snorkeling gears and Aqua shoes",
       "Anything not mentioned in Inclusions",
@@ -773,6 +786,7 @@ export const tours = [
       "Environmental fee",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Mask & Snorkeling gears and Aqua shoes",
       "Anything not mentioned in Inclusions",
@@ -844,7 +858,10 @@ export const tours = [
       "Entrance for CBST (Mangrove, Sabang X & Ugong Rock)",
       "Buffet Lunch",
     ],
-    exclusions: ["Environmental Fee 150 per person"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Environmental Fee 150 per person",
+    ],
     notes: [
       "The above itinerary is only a guide for the whole trip and may not be exactly followed depending on the sea and weather condition",
     ],
@@ -897,6 +914,7 @@ export const tours = [
       "Accident insurance worth 10,000 pesos medical reimbursement only",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Anything not mentioned in inclusions ",
       "Extra activities on site",
     ],
@@ -957,6 +975,7 @@ export const tours = [
       "Terminal and wharf fees",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Environmental fee 150/person",
       "Anything not mentioned in inclusions",
       "Snorkeling gears",
@@ -1016,6 +1035,7 @@ export const tours = [
       "Lifevest",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Environmental fee 150/person",
       "Anything not mentioned in inclusions",
       "Tip for driver and tour guide",
@@ -1071,6 +1091,7 @@ export const tours = [
       "Life-vest",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Environmental fee 150/person",
       "Anything not mentioned in inclusions ",
     ],
@@ -1123,6 +1144,7 @@ export const tours = [
       "Lifevest",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Big lagoon fee 200/person",
       "Environmental fee 400/person",
       "Kayak fee",
@@ -1183,6 +1205,7 @@ export const tours = [
       "Lifevest",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Environment fee 400/person",
       "Kayak fee",
       "Snorkeling gears",
@@ -1247,6 +1270,7 @@ export const tours = [
       "Lifevest",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Environment fee 400/person",
       "Matinloc shrine 300/person (Optional)",
       "Kayak fee",
@@ -1310,6 +1334,7 @@ export const tours = [
       "Lifevest",
     ],
     exclusions: [
+      "Tipping for the guide and driver not included",
       "Environment fee 400/person",
       "Small lagoon 200/person",
       "Kayak fee",
@@ -1383,7 +1408,10 @@ export const tours = [
       "Government taxes",
       "Accident insurance worth 10,000 medical reimbursement only",
     ],
-    exclusions: ["Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [],
     reminders: [
       "2 yrs old and below is free of charge.",
@@ -1445,7 +1473,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1508,7 +1540,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1556,7 +1592,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1607,7 +1647,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1663,7 +1707,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1721,7 +1769,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1778,7 +1830,11 @@ export const tours = [
       "Government taxes",
       "Cottage rental",
     ],
-    exclusions: ["Snorkeling gears", "Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Snorkeling gears",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
@@ -1840,7 +1896,10 @@ export const tours = [
       "lifevest",
       "Picnic lunch",
     ],
-    exclusions: ["Environmental fee 200/person"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Environmental fee 200/person",
+    ],
     notes: [
       "2 yrs old and below is free of charge",
       "3-4yrs old is half-rate",
@@ -1900,7 +1959,10 @@ export const tours = [
       "lifevest",
       "Picnic lunch",
     ],
-    exclusions: ["Environmental fee 200/person"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Environmental fee 200/person",
+    ],
     notes: [
       "2 yrs old and below is free of charge",
       "3-4yrs old is half-rate",
@@ -1958,7 +2020,10 @@ export const tours = [
       "Pick-up & Drop off",
       "Lunch in Loboc River",
     ],
-    exclusions: ["Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
@@ -2007,7 +2072,10 @@ export const tours = [
       "Entrance Fees",
       "Pick-up & Drop off",
     ],
-    exclusions: ["Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
@@ -2053,7 +2121,10 @@ export const tours = [
       "Snorkeling Guide",
       "Lifevest",
     ],
-    exclusions: ["Anything not mentioned in inclusions"],
+    exclusions: [
+      "tippingTfor the guide and driver not included",
+      "Anything not mentioned in inclusions",
+    ],
     notes: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
