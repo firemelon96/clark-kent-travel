@@ -189,7 +189,8 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour",
-    tourName: "3 days 2 nights Puerto Princesa w/ Underground River Tour",
+    tourName:
+      "3 days 2 nights Puerto Princesa w/ Underground River Tour (Mariafe Inn or any similar hotel)",
     isFeatured: true,
     type: "package",
     price: 4250,
@@ -253,7 +254,7 @@ export const tours = [
   {
     tourId: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour-city-tour",
     tourName:
-      "3 days 2 nights Puerto Princesa with Underground River Tour + City Tour",
+      "3 days 2 nights Puerto Princesa with Underground River Tour + City Tour (Mariafe Inn or similar hotel)",
     isFeatured: false,
     type: "package",
     price: 4998,
@@ -320,7 +321,7 @@ export const tours = [
     tourId:
       "3-days-2-nigths-puerto-princesa-underground-river-tour-firefly-watching",
     tourName:
-      "3 Days 2 Nigths Puerto Princesa w/ Underground River Tour + Firefly Watching",
+      "3 Days 2 Nigths Puerto Princesa w/ Underground River Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 5750,
@@ -384,7 +385,8 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-puerto-princesa-honda-bay-tour",
-    tourName: "3 Days 2 Nights Puerto Princesa w/ Honda bay Tour",
+    tourName:
+      "3 Days 2 Nights Puerto Princesa w/ Honda bay Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 3750,
@@ -446,7 +448,8 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-puerto-princesa-honda-bay-tour-city-tour",
-    tourName: "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + City Tour",
+    tourName:
+      "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 4500,
@@ -513,7 +516,7 @@ export const tours = [
   {
     tourId: "3-days-2-nights-puerto-princesa-honda-bay-tour-firefly-tour",
     tourName:
-      "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + Firefly Watching",
+      "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 5250,
@@ -581,7 +584,7 @@ export const tours = [
     tourId:
       "4-days-3-nights-puerto-princesa-underground-river-honda-bay-city-tour",
     tourName:
-      "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + City Tour",
+      "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 7850,
@@ -658,7 +661,7 @@ export const tours = [
     tourId:
       "4-days-3-nights-puerto-princesa-underground-river-honda-bay-firefly-watching",
     tourName:
-      "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching",
+      "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 8600,
@@ -734,7 +737,7 @@ export const tours = [
     tourId:
       "4-days-3-nights-puerto-princesa-underground-river-honda-bay-firefly-watching-city-tour",
     tourName:
-      "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching + City Tour",
+      "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     price: 9350,
@@ -814,7 +817,7 @@ export const tours = [
     tourId:
       "private-underground-river-tour-with-ultimate-package-with-sidetrips",
     tourName:
-      "Private Underground River Tour with Ultimate Package with Sidetrips",
+      "Private Underground River Tour with Ultimate Package with Sidetrips (Mariafe Inn or any similar hotel)",
     isFeatured: true,
     type: "package",
     // price: 850,
