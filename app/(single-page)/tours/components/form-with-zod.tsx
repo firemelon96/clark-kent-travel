@@ -25,6 +25,7 @@ type FormWithZODProps = {
   privatePrice: number[];
   title: string;
   type: string;
+  min?: number;
 };
 
 export const FormWithZOD = ({
@@ -32,9 +33,9 @@ export const FormWithZOD = ({
   privatePrice,
   title,
   type,
+  min,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
-
   const [isLoadingTransition, startTransition] = useTransition();
 
   const router = useRouter();
@@ -52,7 +53,7 @@ export const FormWithZOD = ({
     resolver: zodResolver(TourFormSchema),
     defaultValues: {
       date: new Date(Date.now()),
-      count: 1,
+      count: min ? min : 1,
       travellerType: price ? "Joiners" : "Private",
       notes: "",
       name: "",
@@ -314,12 +315,10 @@ export const FormWithZOD = ({
             </button>
           </div>
         </label>
-        {errors.count ? (
-          <span className="text-sm text-rose-500">{errors.count.message}</span>
-        ) : (
-          ""
-        )}
       </div>
+      {errors.count?.message && (
+        <span className="text-sm text-rose-500">{errors.count.message}</span>
+      )}
       <div>
         <label className="flex flex-col justify-between text-base text-slate-500">
           Pick up location | Hotel

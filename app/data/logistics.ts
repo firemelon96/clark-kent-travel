@@ -229,6 +229,9 @@ export const transfer_services = [
     availability: "4 hours",
     image: "/resources/logistics/sedan.avif",
   },
+
+  //motorcycle
+
   {
     id: "pps-scooter-motor-rental-125cc-click",
     service_name: "PPS Scooter Motor Rental 125cc Click/Gear",
@@ -253,6 +256,18 @@ export const transfer_services = [
     availability: "4 hours",
     image: "/resources/logistics/aerox.avif",
   },
+  {
+    id: "pps-scooter-honda-beat-motor-rental",
+    service_name: "PPS Scooter Motor Rental Honda Beat",
+    vehicle_type: "Scooter",
+    type: "rentals",
+    capacity: 2,
+    price_per_trip: 600,
+    description:
+      "The Honda Beat is the perfect choice for exploring Puerto Princesa with ease and efficiency. This lightweight and fuel-efficient scooter is ideal for solo travelers or couples looking to navigate the city or take a leisurely ride to nearby attractions.",
+    availability: "4 hours",
+    image: "/resources/logistics/hondabeat.avif",
+  },
   //Car rentals
   {
     id: "self-drive-vios-car-rental",
@@ -262,7 +277,7 @@ export const transfer_services = [
     capacity: 4,
     price_per_trip: 1500,
     description:
-      "Experience the freedom of the open road with our Self-Drive Vios Car Rental in Puerto Princesa. Ideal for solo travelers, couples, or families, this reliable and fuel-efficient vehicle offers a comfortable ride for exploring the city's attractions and the stunning landscapes of Palawan. With easy handling and modern amenities, you can enjoy the convenience of traveling at your own pace. Whether you’re heading to the beach or visiting local sites, our Vios car rental provides the perfect way to make the most of your adventure. Rent your car today and start exploring!",
+      "Experience the freedom of the open road with our Self-Drive Vios Car Rental in Puerto Princesa. Ideal for solo travelers, couples, or families, this reliable and fuel-efficient vehicle offers a comfortable ride for exploring the city's attractions and the stunning landscapes of Palawan. With easy handling and modern amenities, you can enjoy the convenience of traveling at your own pace. Whether you're heading to the beach or visiting local sites, our Vios car rental provides the perfect way to make the most of your adventure. Rent your car today and start exploring!",
     availability: "1 Day",
     image: "/resources/logistics/sedan.avif",
   },
@@ -289,5 +304,17 @@ export const transfer_services = [
       "Explore Puerto Princesa and its breathtaking surroundings with our Self-Drive Toyota Zenix Rental. This spacious and comfortable vehicle is perfect for families and groups, offering plenty of room for passengers and luggage. Equipped with modern features and excellent fuel efficiency, the Toyota Zenix ensures a smooth ride as you navigate both city streets and scenic routes. Enjoy the freedom to discover local attractions, hidden gems, and beautiful beaches at your own pace. Rent your Zenix today and embark on an unforgettable journey through Palawan!",
     availability: "1 Day",
     image: "/resources/logistics/zenix.avif",
+  },
+  {
+    id: "self-drive-innova-car-rental",
+    service_name: "Self Drive Innova car rental",
+    vehicle_type: "SUV",
+    type: "rentals",
+    capacity: 7,
+    price_per_trip: 2800,
+    description:
+      "The Toyota Innova is the ultimate choice for travelers seeking comfort, space, and flexibility. Perfect for families, friends, or business trips, this versatile MPV offers a smooth driving experience and ample room for passengers and luggage.",
+    availability: "1 Day",
+    image: "/resources/logistics/innova.avif",
   },
 ];

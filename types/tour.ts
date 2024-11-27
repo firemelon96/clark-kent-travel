@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const TourFormSchema = z.object({
   date: z.date(),
+  min: z.number().min(2, "Minimum of to pax").optional(),
   travellerType: z.enum(["Private", "Joiners"]),
   notes: z.string().min(1, "Notes are required"),
   count: z.number().min(1, "Participants required"),
@@ -26,6 +27,7 @@ export type TourPackage = {
   tourName: string;
   isFeatured?: boolean | undefined;
   type: string;
+  min?: number;
   price?: number | number[] | undefined;
   isPax?: boolean | undefined;
   privatePrice?: number[] | undefined;

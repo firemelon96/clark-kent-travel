@@ -193,6 +193,7 @@ export const tours = [
       "3 days 2 nights Puerto Princesa w/ Underground River Tour (Mariafe Inn or any similar hotel)",
     isFeatured: true,
     type: "package",
+    min: 2,
     price: 4250,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -256,6 +257,7 @@ export const tours = [
     tourName:
       "3 days 2 nights Puerto Princesa with Underground River Tour + City Tour (Mariafe Inn or similar hotel)",
     isFeatured: false,
+    min: 2,
     type: "package",
     price: 4998,
     privatePrice: [],
@@ -324,6 +326,7 @@ export const tours = [
       "3 Days 2 Nigths Puerto Princesa w/ Underground River Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 5750,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -389,6 +392,7 @@ export const tours = [
       "3 Days 2 Nights Puerto Princesa w/ Honda bay Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 3750,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -452,6 +456,7 @@ export const tours = [
       "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 4500,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -519,6 +524,7 @@ export const tours = [
       "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 5250,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -587,6 +593,7 @@ export const tours = [
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 7850,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -664,6 +671,7 @@ export const tours = [
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 8600,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -740,6 +748,7 @@ export const tours = [
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    min: 2,
     price: 9350,
     privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
@@ -893,16 +902,19 @@ export const tours = [
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
     itineraries: [
       {
-        name: "Destinations",
+        name: "AM SCHEDULE",
         activities: [
-          "Mitras ranch",
-          "Crocodile farm or Butterfly Garden",
-          "Bakers Hill",
-          "Cathedral",
-          "Baywalk",
-          "Plaza Quartel",
-          "Binuatan creations",
-          "Souvenir Shop",
+          "07:30-08:15 Pick up time for City Tour then proceed to Tour",
+          "10:00-10:30 Light Snacks at Bakers Hill",
+          "11:30-12:00 End of tour then drop to hotel",
+        ],
+      },
+      {
+        name: "PM SCHEDULE",
+        activities: [
+          "13:00-14:00 Pick up time for City Tour then proceed to Tour",
+          "15:00-15:30 Light Snacks at Bakers Hill",
+          "17:00-17:30 End of tour then drop to hotel",
         ],
       },
     ],
@@ -954,14 +966,19 @@ export const tours = [
     privatePrice: [8500, 4800, 3800, 2950, 2700, 2400, 2300, 2200, 2100, 2000],
     address: ["Puerto Princesa, Palawan"],
     description:
-      "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan’s most picturesque islands, each with its unique charm and beauty.",
+      "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan's most picturesque islands, each with its unique charm and beauty.",
     itineraries: [
       {
         name: "Destinations",
         activities: [
-          "Luli Island",
-          "Starfish Island or Pambato Island",
-          "Cowrie Island",
+          "07:00-07:45 Pick up time then proceed to tour",
+          "08:30-09:00 Arrived in Honda Bay Wharf",
+          "11:00-12:00 Picnic Lunch at the Island",
+          "15:00-16:00 End of Tour",
+          "16:00-17:00 Drop to Hotel",
+          // "Luli Island",
+          // "Starfish Island or Pambato Island",
+          // "Cowrie Island",
         ],
       },
     ],
@@ -1018,10 +1035,15 @@ export const tours = [
       {
         name: "Destinations",
         activities: [
-          "Buenavista Viewdeck",
-          "Sabang wharf/Beach (sightseeing only)",
-          "Natural Park",
-          "Subterranian river",
+          "06:30-07:15 Pick up time then proceed to tour",
+          "08:30-09:15 Arrived in Sabang wharf",
+          "11:00-12:00 Buffet lunch at sabang",
+          "14:00-15:00 End of tour",
+          "16:00-17:00 Drop to Hotel in Puerto Princesa",
+          // "Buenavista Viewdeck",
+          // "Sabang wharf/Beach (sightseeing only)",
+          // "Natural Park",
+          // "Subterranian river",
         ],
       },
     ],
@@ -1082,7 +1104,11 @@ export const tours = [
     itineraries: [
       {
         name: "Destinations",
-        activities: ["Kitu-kitu Firefly watching "],
+        activities: [
+          "17:00-17:30 Pick up time then proceed to tour",
+          "19:00-19:30 Buffet Dinner",
+          "20:00-21:00 End of tour then drop to hotel",
+        ],
       },
     ],
     duration: ["5:00pm to 9:00pm", "5:30pm to 9:30pm"],
@@ -1129,6 +1155,9 @@ export const tours = [
       {
         name: "Destinations",
         activities: [
+          "08:30-09:15 Pick up time for island tour",
+          "11:00-12:00 Picnic Lunch in an Island",
+          "16:30-17:30 End of tour then drop to El nido wharf",
           "Big lagoon",
           "Shimizu island",
           "Payong payong island",
@@ -1191,6 +1220,9 @@ export const tours = [
       {
         name: "Destination",
         activities: [
+          "08:30-09:15 Pick up time for island tour",
+          "11:00-12:00 Picnic Lunch in an Island",
+          "16:30-17:30 End of tour then drop to El nido wharf",
           "Snake Island",
           "Cathedral Cave",
           "Cudugnon Cave",
@@ -1255,6 +1287,9 @@ export const tours = [
       {
         name: "Destination",
         activities: [
+          "08:30-09:15 Pick up time for island tour",
+          "11:00-12:00 Picnic Lunch in an Island",
+          "16:30-17:30 End of tour then drop to El nido wharf",
           "Helicopter Island",
           "Matinloc Shrine",
           "Talisay Beach",
@@ -1319,6 +1354,9 @@ export const tours = [
       {
         name: "Destinations",
         activities: [
+          "08:30-09:15 Pick up time for island tour",
+          "11:00-12:00 Picnic Lunch in an Island",
+          "16:30-17:30 End of tour then drop to El nido wharf",
           "Small lagoon",
           "Cadlao lagoon",
           "Pasandigan beach",
