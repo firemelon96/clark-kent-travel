@@ -917,6 +917,19 @@ export const tours = [
           "17:00-17:30 End of tour then drop to hotel",
         ],
       },
+      {
+        name: "Destinations",
+        activities: [
+          "Mitras ranch",
+          "Crocodile farm or Butterfly Garden",
+          "Bakers Hill",
+          "Cathedral",
+          "Baywalk",
+          "Plaza Quartel",
+          "Binuatan creations",
+          "Souvenir Shop",
+        ],
+      },
     ],
     duration: ["8:00am to 12:00pm", "1:00pm to 5:00pm"],
     inclusions: [
@@ -969,16 +982,21 @@ export const tours = [
       "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan's most picturesque islands, each with its unique charm and beauty.",
     itineraries: [
       {
-        name: "Destinations",
+        name: "Iteneraries",
         activities: [
           "07:00-07:45 Pick up time then proceed to tour",
           "08:30-09:00 Arrived in Honda Bay Wharf",
           "11:00-12:00 Picnic Lunch at the Island",
           "15:00-16:00 End of Tour",
           "16:00-17:00 Drop to Hotel",
-          // "Luli Island",
-          // "Starfish Island or Pambato Island",
-          // "Cowrie Island",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
+          "Luli Island",
+          "Starfish Island or Pambato Island",
+          "Cowrie Island",
         ],
       },
     ],
@@ -1033,17 +1051,22 @@ export const tours = [
       "Explore one of the New 7 Wonders of Nature and a UNESCO World Heritage Site on this breathtaking Underground River Tour. Journey into the heart of Palawan and discover the natural beauty and incredible geology of the Puerto Princesa Subterranean River National Park. This tour offers an unforgettable adventure through ancient limestone caves, stunning rock formations, and a world-class ecosystem.",
     itineraries: [
       {
-        name: "Destinations",
+        name: "Itineraries",
         activities: [
           "06:30-07:15 Pick up time then proceed to tour",
           "08:30-09:15 Arrived in Sabang wharf",
           "11:00-12:00 Buffet lunch at sabang",
           "14:00-15:00 End of tour",
           "16:00-17:00 Drop to Hotel in Puerto Princesa",
-          // "Buenavista Viewdeck",
-          // "Sabang wharf/Beach (sightseeing only)",
-          // "Natural Park",
-          // "Subterranian river",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
+          "Buenavista Viewdeck",
+          "Sabang wharf/Beach (sightseeing only)",
+          "Natural Park",
+          "Subterranian river",
         ],
       },
     ],
@@ -1103,12 +1126,16 @@ export const tours = [
       "Embark on a magical journey through the serene waters of Puerto Princesa as you experience the enchanting spectacle of Firefly Watching. This evening tour is perfect for nature lovers and those looking for a peaceful, unforgettable night under the stars. Witness the mesmerizing glow of fireflies lighting up the mangrove forests along the riverbanks, creating a truly magical and serene atmosphere.",
     itineraries: [
       {
-        name: "Destinations",
+        name: "Itineraries",
         activities: [
           "17:00-17:30 Pick up time then proceed to tour",
           "19:00-19:30 Buffet Dinner",
           "20:00-21:00 End of tour then drop to hotel",
         ],
+      },
+      {
+        name: "Destination",
+        activities: ["Kitu-kitu Firefly watching"],
       },
     ],
     duration: ["5:00pm to 9:00pm", "5:30pm to 9:30pm"],
@@ -1153,11 +1180,16 @@ export const tours = [
       "Embark on the iconic El Nido Tour A, a must-experience adventure that showcases some of the most stunning natural attractions in El Nido, Palawan. Perfect for beach lovers, snorkelers, and nature enthusiasts, this tour offers an unforgettable day of exploring crystal-clear lagoons, pristine beaches, and vibrant underwater life.",
     itineraries: [
       {
-        name: "Destinations",
+        name: "Itineraries",
         activities: [
           "08:30-09:15 Pick up time for island tour",
           "11:00-12:00 Picnic Lunch in an Island",
           "16:30-17:30 End of tour then drop to El nido wharf",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
           "Big lagoon",
           "Shimizu island",
           "Payong payong island",
@@ -1218,11 +1250,16 @@ export const tours = [
       "El Nido Tour B offers an exciting exploration of caves, hidden beaches, and vibrant marine life. This tour is perfect for those seeking adventure and discovery, providing a blend of thrilling activities and stunning natural scenery. Explore unique geological formations, swim in crystal-clear waters, and relax on pristine beaches.",
     itineraries: [
       {
-        name: "Destination",
+        name: "Itineraries",
         activities: [
           "08:30-09:15 Pick up time for island tour",
           "11:00-12:00 Picnic Lunch in an Island",
           "16:30-17:30 End of tour then drop to El nido wharf",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
           "Snake Island",
           "Cathedral Cave",
           "Cudugnon Cave",
@@ -1285,11 +1322,16 @@ export const tours = [
       "El Nido Tour C is renowned for its hidden beaches, secret coves, and dramatic limestone formations. This tour is perfect for those seeking an adventurous day of snorkeling, exploring pristine beaches, and discovering the hidden treasures of El Nido's stunning seascape.",
     itineraries: [
       {
-        name: "Destination",
+        name: "Itineraries",
         activities: [
           "08:30-09:15 Pick up time for island tour",
           "11:00-12:00 Picnic Lunch in an Island",
           "16:30-17:30 End of tour then drop to El nido wharf",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
           "Helicopter Island",
           "Matinloc Shrine",
           "Talisay Beach",
@@ -1352,11 +1394,16 @@ export const tours = [
       "El Nido Tour D offers a more relaxed and intimate exploration of some of the less-visited yet equally stunning islands and beaches of El Nido. This tour is perfect for travelers looking to escape the crowds and enjoy a day of tranquility, snorkeling, and soaking in the natural beauty of secluded spots.",
     itineraries: [
       {
-        name: "Destinations",
+        name: "Itineraries",
         activities: [
           "08:30-09:15 Pick up time for island tour",
           "11:00-12:00 Picnic Lunch in an Island",
           "16:30-17:30 End of tour then drop to El nido wharf",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
           "Small lagoon",
           "Cadlao lagoon",
           "Pasandigan beach",
