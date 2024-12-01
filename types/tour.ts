@@ -2,10 +2,9 @@ import { z } from "zod";
 
 export const TourFormSchema = z.object({
   date: z.date(),
-  min: z.number().min(2, "Minimum of to pax").optional(),
   travellerType: z.enum(["Private", "Joiners"]),
   notes: z.string().min(1, "Notes are required"),
-  count: z.number().min(1, "Participants required"),
+  count: z.number().min(1, "Count is required"),
   name: z.string().min(1, "Name is required!"),
   age: z.number(),
   gender: z.enum(["male", "female", "others"]),

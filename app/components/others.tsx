@@ -8,6 +8,7 @@ import { OtherServicesList } from "./other-services-list";
 const Others = () => {
   const transfers = getServicesByType("transfer");
   const rentals = getServicesByType("rentals");
+  const cruises = getServicesByType("fast craft");
   const accomodationsData = accomodations.map((accomodation) => ({
     ...accomodation,
   }));
@@ -15,6 +16,12 @@ const Others = () => {
 
   return (
     <>
+      <section
+        className="container mx-auto scroll-mt-10 text-center md:px-20 md:text-start"
+        id="cruise"
+      >
+        <OtherServicesList title="Cruise" services={cruises} />
+      </section>
       <section
         className="container mx-auto scroll-mt-10 text-center md:px-20 md:text-start"
         id="transfers"

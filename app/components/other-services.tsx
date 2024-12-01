@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCar, FaHotel, FaMotorcycle, FaShuttleVan } from "react-icons/fa";
 import { FaHouse, FaTruckPlane } from "react-icons/fa6";
+import { PiBoat, PiBoatFill } from "react-icons/pi";
 
 const OtherServices = () => {
   return (
@@ -14,6 +15,12 @@ const OtherServices = () => {
           Other Service Offer
         </h2>
         <div className="flex flex-col justify-evenly gap-2 p-4 md:flex-row">
+          <Link href="#cruise">
+            <div className="flex w-full flex-col items-center rounded-md bg-white/20 p-4 text-white md:w-48">
+              <PiBoatFill className="size-24" />
+              <p>Cruise</p>
+            </div>
+          </Link>
           <Link href="#transfers">
             <div className="flex w-full flex-col items-center rounded-md bg-white/20 p-4 text-white md:w-48">
               <FaTruckPlane className="size-24" />

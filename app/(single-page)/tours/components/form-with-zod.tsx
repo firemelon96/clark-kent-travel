@@ -25,7 +25,7 @@ type FormWithZODProps = {
   privatePrice: number[];
   title: string;
   type: string;
-  min?: number;
+  minParticipants: number;
 };
 
 export const FormWithZOD = ({
@@ -33,12 +33,10 @@ export const FormWithZOD = ({
   privatePrice,
   title,
   type,
-  min,
+  minParticipants,
 }: FormWithZODProps) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [isLoadingTransition, startTransition] = useTransition();
-
-  const router = useRouter();
 
   const options = useMemo(() => countryList().getData(), []);
 
@@ -53,7 +51,7 @@ export const FormWithZOD = ({
     resolver: zodResolver(TourFormSchema),
     defaultValues: {
       date: new Date(Date.now()),
-      count: min ? min : 1,
+      count: minParticipants,
       travellerType: price ? "Joiners" : "Private",
       notes: "",
       name: "",
