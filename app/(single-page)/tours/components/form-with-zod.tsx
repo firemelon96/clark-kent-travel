@@ -2,14 +2,11 @@
 
 import z from "zod";
 import { Controller, FieldValues, useForm } from "react-hook-form";
-// import DatePicker from "react-datepicker";
-import { DayPicker } from "react-day-picker";
 import { BiMinus, BiPlus } from "react-icons/bi";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useState, useMemo, useTransition } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
 import { formatPeso } from "@/app/lib/helpers";
 import DatePicker from "react-datepicker";
 import countryList from "react-select-country-list";

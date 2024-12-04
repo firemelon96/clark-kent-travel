@@ -12,7 +12,9 @@ const Tours = () => {
   const coronTours = getToursByLocation("coron");
   const puertoTours = getToursByLocation("Puerto");
   const puertoPackage = getPackageToursByLocation("Puerto");
+  const coronPackage = getPackageToursByLocation("coron");
   const elnidoTours = getToursByLocation("el nido");
+  const elnidoPackage = getPackageToursByLocation("el nido");
   const portBartonTours = getToursByLocation("port barton");
   const boholTours = getToursByLocation("bohol");
 
@@ -24,7 +26,9 @@ const Tours = () => {
       <TourLists title="Puerto Princesa, Palawan Tours" tours={puertoTours} />
       <PackageLists title="Puerto Princesa" tours={puertoPackage} />
       <TourLists title="El nido Palawan" tours={elnidoTours} />
+      <PackageLists title="El nido, Palawan" tours={elnidoPackage} />
       <TourLists title="Coron Palawan" tours={coronTours} />
+      <PackageLists title="Coron, Palawan" tours={coronPackage} />
       <TourLists title="Port Barton, Palawan" tours={portBartonTours} />
       <TourLists title="Bohol" tours={boholTours} />
     </section>
