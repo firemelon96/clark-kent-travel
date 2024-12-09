@@ -16,6 +16,24 @@ export const LogisticFormSchema = z.object({
   price: z.number().optional(),
 });
 
+export const FastCraftFormSchema = z.object({
+  date: z.date(),
+  notes: z.string().min(1, "Notes are required"),
+  name: z.string().min(1, "Name is required!"),
+  age: z.number(),
+  gender: z.enum(["male", "female", "others"]),
+  nationality: z.string(),
+  email: z.string().email(),
+  contact: z.string(),
+  title: z.string().optional(),
+  vehicleType: z.string().optional(),
+  type: z.string().optional(),
+  availability: z.string().optional(),
+  price: z.number().optional(),
+  participantCount: z.number(),
+  totalPrice: z.number().optional(),
+});
+
 export const AccomodationFormSchema = z.object({
   dates: z
     .object({
@@ -49,6 +67,23 @@ export type TransferServicesType = {
   availability: string;
   image: string;
 };
+
+export type FastCraftType = {
+  id: string;
+  service_name: string;
+  type: "transfer" | "rentals";
+  vehicle_type: string;
+  capacity: number;
+  price_per_trip: number;
+  description: string;
+  availability: string;
+  images: string[];
+};
+
+export type FastCraftWihtoutMeta = Pick<
+  FastCraftType,
+  "id" | "images" | "price_per_trip" | "vehicle_type" | "service_name"
+>;
 
 export type TransferWihtoutMeta = Pick<
   TransferServicesType,

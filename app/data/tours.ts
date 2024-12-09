@@ -5,7 +5,7 @@ export const tours = [
     isFeatured: true,
     type: "package",
     price: [
-      15588, 13588, 13588, 13588, 13588, 13588, 13588, 13588, 13588, 13588,
+      16088, 14088, 14088, 14088, 14088, 14088, 14088, 14088, 14088, 14088,
     ],
     privatePrice: [
       40988, 24699, 20488, 18688, 16888, 15688, 14988, 14388, 13988, 13588,
@@ -146,7 +146,7 @@ export const tours = [
   {
     tourId: "3d2n-coron-package-coron-island-tour-a-coron-town-tour-transfers",
     tourName:
-      "3D2N Coron Package with Coron Island Tour A & Coron Town Tour + Transfers",
+      "3D2N Coron Package with Coron Island Tour A & Coron Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 5100,
@@ -203,9 +203,9 @@ export const tours = [
     maxParticipants: 12,
   },
   {
-    tourId: "3d2n-coron-package-coron-island-tour-b-town-tour-transfers",
+    tourId: "3d2n-coron-package-coron-island-tour-b-town-tour-transfers ",
     tourName:
-      "3D2N Coron Package with Coron Island Tour B and Town Tour + Transfers",
+      "3D2N Coron Package with Coron Island Tour B and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 5400,
@@ -265,7 +265,7 @@ export const tours = [
   {
     tourId: "3d2n-super-ultimate-tour-coron-tour-transfer",
     tourName:
-      "3D2N Coron Package with Coron Ultimate Tour and Town Tour + Transfers",
+      "3D2N Coron Package with Coron Ultimate Tour and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 5800,
@@ -323,7 +323,8 @@ export const tours = [
   },
   {
     tourId: "4d3n-island-tour-a-tour-b-town-tour-transfer",
-    tourName: "4D3N Coron Package with Island Tour A, B, Town Tour + Transfers",
+    tourName:
+      "4D3N Coron Package with Island Tour A, B, Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 7850,
@@ -389,7 +390,7 @@ export const tours = [
   {
     tourId: "4d3n-super-ultimate-tour-escapade-town-tour-transfer",
     tourName:
-      "4D3N Coron Super Ultimate, Escapade Tour, and Town Tour + Transfers",
+      "4D3N Coron Super Ultimate, Escapade Tour, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 8750,
@@ -455,7 +456,7 @@ export const tours = [
   {
     tourId: "4d3n-super-ultimate-tour-calauit-safari-town-tour-transfer",
     tourName:
-      "4D3N Coron Super Ultimate, Calauit Safari, and Town Tour + Transfers",
+      "4D3N Coron Super Ultimate, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 9850,
@@ -520,7 +521,8 @@ export const tours = [
   },
   {
     tourId: "5d4n-tour-a-b-escapade-tour-town-tour-transfer",
-    tourName: "5D4N Coron Tour A, B, Escapade Tour, and Town Tour + Transfers",
+    tourName:
+      "5D4N Coron Tour A, B, Escapade Tour, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 10800,
@@ -594,7 +596,7 @@ export const tours = [
     tourId:
       "5d4n-super-ultimate-escapade-reef-and-wrecks-tour-town-tour-transfer",
     tourName:
-      "5D4N Super Coron Ultimate, Escapade Tour, Reef and Wrecks, and Town Tour + Transfers",
+      "5D4N Super Coron Ultimate, Escapade Tour, Reef and Wrecks, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 11700,
@@ -666,7 +668,7 @@ export const tours = [
     tourId:
       "5d4n-super-ultimate-escapade-reef-and-wrecks-tour-town-tour-transfer",
     tourName:
-      "5D4N Coron Super Ultimate, Reef and Wrecks, Calauit Safari, and Town Tour + Transfers",
+      "5D4N Coron Super Ultimate, Reef and Wrecks, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 12800,
@@ -738,7 +740,8 @@ export const tours = [
   //elnido package
   {
     tourId: "3d2n-elnido-tour-a-transfer",
-    tourName: "3D2N El Nido Package Tour A + Transfer",
+    tourName:
+      "3D2N El Nido Package Tour A + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 4800,
@@ -795,7 +798,8 @@ export const tours = [
   },
   {
     tourId: "4d3n-elnido-tour-a-tour-c-transfer",
-    tourName: "4D3N El Nido Package Tour A, Tour C + Transfer",
+    tourName:
+      "4D3N El Nido Package Tour A, Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 7200,
@@ -858,7 +862,8 @@ export const tours = [
   },
   {
     tourId: "5d4n-elnido-tour-a-tour-b-tour-c-transfer",
-    tourName: "5D4N El Nido Package Tour A, Tour B, and Tour C + Transfer",
+    tourName:
+      "5D4N El Nido Package Tour A, Tour B, and Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
     price: 9300,
@@ -2866,7 +2871,7 @@ export const tours = [
     type: "day tour",
     // price: 1700,
     privatePrice: [
-      4650, 3150, 2650, 2500, 2350, 2250, 2180, 2150, 2100, 2050, 2000, 1950,
+      5150, 3650, 3150, 3000, 2850, 2750, 2680, 2650, 2600, 2550, 2500, 2450,
     ],
     address: ["Bohol"],
     description:
@@ -2919,7 +2924,7 @@ export const tours = [
     type: "day tour",
     // price: 1700,
     privatePrice: [
-      3400, 1850, 1350, 1250, 1100, 980, 930, 880, 830, 780, 730, 690,
+      3900, 2350, 1850, 1750, 1600, 1480, 1430, 1380, 1330, 1280, 1230, 1190,
     ],
     address: ["Bohol"],
     description:
@@ -2971,7 +2976,7 @@ export const tours = [
     type: "day tour",
     // price: 1700,
     privatePrice: [
-      4950, 2950, 2350, 2100, 2000, 1900, 1800, 1700, 1600, 1500, 1400, 1350,
+      5450, 3450, 2850, 2600, 2500, 2400, 2300, 2200, 2100, 2000, 1900, 1850,
     ],
     address: ["Bohol"],
     description:

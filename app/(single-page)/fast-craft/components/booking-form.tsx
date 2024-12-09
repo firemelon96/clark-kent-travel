@@ -15,9 +15,13 @@ import { formatPeso } from "@/app/lib/helpers";
 import DatePicker from "react-datepicker";
 import countryList from "react-select-country-list";
 import Select from "react-select";
-import { LogisticFormSchema } from "@/types/other-services";
+import {
+  FastCraftFormSchema,
+  LogisticFormSchema,
+} from "@/types/other-services";
 import { BookLogistic } from "@/actions/logistic-booking";
 import toast from "react-hot-toast";
+import { FastCraftBooking } from "@/actions/fast-craft-booking";
 
 type BookingFormProps = {
   price: number;
@@ -36,7 +40,7 @@ export const BookingForm = ({
 }: BookingFormProps) => {
   const [isLoadingTransition, startTransition] = useTransition();
 
-  const router = useRouter();
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const options = useMemo(() => countryList().getData(), []);
 
@@ -45,9 +49,10 @@ export const BookingForm = ({
     handleSubmit,
     control,
     formState: { errors, isLoading },
+    setValue,
     watch,
-  } = useForm<z.infer<typeof LogisticFormSchema>>({
-    resolver: zodResolver(LogisticFormSchema),
+  } = useForm<z.infer<typeof FastCraftFormSchema>>({
+    resolver: zodResolver(FastCraftFormSchema),
     defaultValues: {
       date: new Date(Date.now()),
       notes: "",
@@ -57,10 +62,18 @@ export const BookingForm = ({
       nationality: "Philippines",
       email: "",
       contact: "",
+      participantCount: 1,
     },
   });
 
   const gender = watch("gender");
+  const participantCount = watch("participantCount");
+
+  useEffect(() => {
+    if (participantCount) {
+      setTotalPrice(participantCount * price);
+    }
+  }, [participantCount]);
 
   const onSubmit = (data: FieldValues) => {
     const transformedData = {
@@ -70,10 +83,11 @@ export const BookingForm = ({
       vehicleType,
       type,
       availability,
+      totalPrice,
     };
 
     startTransition(() => {
-      BookLogistic(transformedData)
+      FastCraftBooking(transformedData)
         .then((data) => {
           if (data.success) {
             toast.success(data.message || "");
@@ -200,6 +214,36 @@ export const BookingForm = ({
       </div>
 
       <div>
+        <label className="flex items-center justify-between text-base text-slate-500">
+          Participants
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() =>
+                setValue("participantCount", Math.max(0, participantCount - 1))
+              }
+              className="rounded-full bg-sky-500 p-1.5 text-white"
+            >
+              <BiMinus />
+            </button>
+            <input
+              type="number"
+              {...register("participantCount", { valueAsNumber: true })}
+              readOnly
+              className="flex w-7 justify-center bg-sky-50 text-center"
+            />
+            <button
+              type="button"
+              onClick={() => setValue("participantCount", participantCount + 1)}
+              className="rounded-full bg-sky-500 p-1.5 text-white"
+            >
+              <BiPlus />
+            </button>
+          </div>
+        </label>
+      </div>
+
+      <div>
         <Controller
           control={control}
           name="nationality"
@@ -230,6 +274,13 @@ export const BookingForm = ({
           <span className="text-sm text-rose-500">{errors.notes.message}</span>
         )}
       </label>
+
+      {participantCount && (
+        <div className="flex items-center justify-between px-2 text-xl">
+          <span className="text-slate-500">TOTAL</span>
+          <p>{totalPrice}</p>
+        </div>
+      )}
 
       <button
         type="submit"

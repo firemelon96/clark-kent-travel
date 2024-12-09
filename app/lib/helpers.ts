@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { tours } from "../data/tours";
 import { transfer_services } from "../data/logistics";
+import { fastCrafts } from "../data/fast-craft";
 
 interface TourLocationProps {
   address: string;
@@ -90,4 +91,11 @@ export const getOtherServicesById = (id: string) => {
   if (otherServices === undefined) return notFound();
 
   return otherServices;
+};
+
+export const getFastCraftById = (id: string) => {
+  const fastcraft = fastCrafts.find((fastcraft) => fastcraft.id === id);
+  if (fastcraft === undefined) return notFound();
+
+  return fastcraft;
 };
