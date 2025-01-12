@@ -8,6 +8,7 @@ import RecommendedTours from "@/app/components/recommended-tours";
 import { Metadata } from "next";
 import { tours } from "@/app/data/tours";
 import { SocialShare } from "@/app/components/social-share";
+import Image from "next/image";
 
 interface SingleTourProps {
   params: {
@@ -42,8 +43,17 @@ const SingleTour = ({ params }: SingleTourProps) => {
       <div className="container mx-auto mt-20 xl:px-20">
         <div className="flex flex-col gap-0 md:flex-row">
           <div className="flex w-full flex-col gap-4 p-4 md:w-2/3">
-            <div className="mb-20 h-[500px] bg-sky-50">
-              <ImageSliderSlick images={tour.images} />
+            <div className="relative mb-20 h-[500px] bg-sky-50">
+              {tour.images.length > 1 ? (
+                <ImageSliderSlick images={tour.images} />
+              ) : (
+                <Image
+                  src={tour.images[0]}
+                  fill
+                  alt={tour.images[0]}
+                  className="object-cover"
+                />
+              )}
             </div>
             <SocialShare url={shareLink} />
             <Description
