@@ -26,4 +26,13 @@ export const reviews = [
       "Thank you for being accommodating and organized. Ang smooth ng lahat ng tours namin around Puerto Princesa. This travel agency is highly recommended especially yung accommodation namin na Mariafe Inn, ang bait ng mga staff nila sobrang caring and helpful 🥹 The tour guides are very knowledgeable lahat alam nila tungkol sa Palawan kahit yung meaning ng mga tricycle sinabi din sa amin. Best experience! Customized yung tour depende sa arrival and departure mo sa Palawan pero sobrang organized! Ang galing ng scheduling and management, on time din sa schedule. This may not be the best travel agency in Palawan, but this is the best travel agency I trusted so far ❤️ Thank you. See you soon for El Nido and Coron 😊",
     image: "/resources/profile/review3.png",
   },
+  {
+    name: "Irvinb Skyforth",
+    title: "Traveller",
+    starRating: 5,
+    heading: "Recommends Clark Kent Travel and Tours",
+    message:
+      "Thank you for being accommodating and organized. Ang smooth ng lahat ng tours namin around Puerto Princesa. This travel agency is highly recommended especially yung accommodation namin na Mariafe Inn, ang bait ng mga staff nila sobrang caring and helpful 🥹 The tour guides are very knowledgeable lahat alam nila tungkol sa Palawan kahit yung meaning ng mga tricycle sinabi din sa amin. Best experience! Customized yung tour depende sa arrival and departure mo sa Palawan pero sobrang organized! Ang galing ng scheduling and management, on time din sa schedule. This may not be the best travel agency in Palawan, but this is the best travel agency I trusted so far ❤️ Thank you. See you soon for El Nido and Coron 😊",
+    image: "/resources/profile/review3.png",
+  },
 ];

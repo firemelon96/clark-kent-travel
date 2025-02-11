@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { NewNavbar } from "@/components/new-navigation";
+import { MainNav } from "@/components/main-nav";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -29,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${font.className} bg-[#FAF9F6]`}>{children}</body>
+      <body className={`${font.className} bg-[#FAF9F6]`}>
+        <NewNavbar />
+        {/* <MainNav /> */}
+        {children}
+      </body>
     </html>
   );
 }

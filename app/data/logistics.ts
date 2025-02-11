@@ -1,7 +1,9 @@
 export const transfer_services = [
   {
     id: "joiner-pps-elnido",
-    service_name: "Joiner Puerto Princesa to El nido",
+    service_name: "Joiner PPC",
+    from: "Puerto Princesa, City",
+    to: "El Nido",
     type: "transfer",
     vehicle_type: "Van",
     capacity: 8,
@@ -13,7 +15,9 @@ export const transfer_services = [
   },
   {
     id: "joiner-elnido-pps",
-    service_name: "Joiner El nido to Puerto Princesa",
+    service_name: "Joiner EN",
+    from: "El Nido",
+    to: "Puerto Princesa, City",
     vehicle_type: "Van",
     type: "transfer",
     capacity: 8,

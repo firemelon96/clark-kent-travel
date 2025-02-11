@@ -1,49 +1,59 @@
-import Image from "next/image";
-import Link from "next/link";
-import { FaCar, FaHotel, FaMotorcycle, FaShuttleVan } from "react-icons/fa";
-import { FaHouse, FaTruckPlane } from "react-icons/fa6";
-import { PiBoat, PiBoatFill } from "react-icons/pi";
+import { FeatureCard } from "@/components/feature-card";
+import { ServiceLabel } from "@/components/service-label";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
+const otherServicesCard = [
+  {
+    imageUrl: "",
+    href: "/transfers",
+    name: "Transfers",
+    description: "Enjoy our transfers offer",
+  },
+  {
+    imageUrl: "",
+    href: "/accommodations",
+    name: "Accommodations",
+    description: "Enjoy our accomodations here",
+  },
+  {
+    imageUrl: "",
+    href: "/rentals",
+    name: "Rentals",
+    description: "Rent the most cheapest price",
+  },
+];
 
 const OtherServices = () => {
   return (
     <section
-      className="container mx-auto scroll-mt-20 pb-10 md:px-20"
+      className="scroll-mt-6 space-y-4 md:text-start"
       id="other-services"
     >
-      <div className="rounded-md bg-[#63C8F6] py-5">
-        <h2 className="p-4 text-center text-4xl font-semibold uppercase text-white">
-          Other Service Offer
-        </h2>
-        <div className="flex flex-col justify-evenly gap-2 p-4 md:flex-row">
-          <Link href="#cruise">
-            <div className="flex w-full flex-col items-center rounded-md bg-white/20 p-4 text-white md:w-48">
-              <PiBoatFill className="size-24" />
-              <p>Cruise</p>
-            </div>
-          </Link>
-          <Link href="#transfers">
-            <div className="flex w-full flex-col items-center rounded-md bg-white/20 p-4 text-white md:w-48">
-              <FaTruckPlane className="size-24" />
-              <p>Transfers</p>
-            </div>
-          </Link>
-          <Link href="#rentals">
-            <div className="flex w-full flex-col items-center rounded-md bg-white/20 p-4 text-white md:w-48">
-              <FaShuttleVan className="size-24" />
-              <p>Rentals</p>
-            </div>
-          </Link>
-
-          <Link href="#accommodations">
-            <div className="flex w-full flex-col items-center rounded-md bg-white/20 p-4 text-white md:w-48">
-              <FaHouse className="size-24" />
-              <p>Accomodations</p>
-            </div>
-          </Link>
-        </div>
-        {/* <button className="text-white bg-white/60 m-4 rounded-full p-4 text-2xl">
-          Contact us
-        </button> */}
+      <ServiceLabel label="We also offer other services" />
+      <div className="flex flex-col justify-evenly gap-2 md:flex-row">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {otherServicesCard.map((service, i) => (
+              <CarouselItem
+                className="flex items-center justify-center md:basis-1/2"
+                key={i}
+              >
+                <FeatureCard
+                  hasText
+                  className="h-72 w-full"
+                  imageUrl="/resources/balabac/canimeran-island.avif"
+                  name={service.name}
+                  href={service.href}
+                  description={service.description}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );

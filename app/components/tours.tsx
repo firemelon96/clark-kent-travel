@@ -1,3 +1,4 @@
+import { ServiceLabel } from "@/components/service-label";
 import {
   getDayTours,
   getPackageToursByLocation,
@@ -7,30 +8,33 @@ import {
 import { OtherServicesList } from "./other-services-list";
 import { PackageLists } from "./package-lists";
 import { TourLists } from "./tour-lists";
+import Card from "./card";
+import { Button } from "@/components/ui/button";
 
 const Tours = () => {
-  const coronTours = getToursByLocation("coron");
-  const puertoTours = getToursByLocation("Puerto");
-  const puertoPackage = getPackageToursByLocation("Puerto");
-  const coronPackage = getPackageToursByLocation("coron");
-  const elnidoTours = getToursByLocation("el nido");
-  const elnidoPackage = getPackageToursByLocation("el nido");
-  const portBartonTours = getToursByLocation("port barton");
-  const boholTours = getToursByLocation("bohol");
+  const tours = getDayTours();
 
   return (
-    <section
-      className="container mx-auto mt-80 scroll-mt-6 pb-16 text-center md:px-20 md:text-start"
-      id="tours"
-    >
-      <TourLists title="Puerto Princesa, Palawan Tours" tours={puertoTours} />
-      <PackageLists title="Puerto Princesa" tours={puertoPackage} />
-      <TourLists title="El nido Palawan" tours={elnidoTours} />
-      <PackageLists title="El nido, Palawan" tours={elnidoPackage} />
-      <TourLists title="Coron Palawan" tours={coronTours} />
-      <PackageLists title="Coron, Palawan" tours={coronPackage} />
-      <TourLists title="Port Barton, Palawan" tours={portBartonTours} />
-      <TourLists title="Bohol" tours={boholTours} />
+    <section className="scroll-mt-6 space-y-4 md:text-start" id="tours">
+      <ServiceLabel label="Day Tours" />
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        {tours.slice(0, 8).map((tour) => (
+          <Card
+            id={tour.tourId}
+            key={tour.tourId}
+            image={tour.images[0]}
+            address={tour.address[0]}
+            price={tour.price}
+            title={tour.tourName}
+            privatePrice={tour.privatePrice!}
+          />
+        ))}
+      </div>
+      <div className="flex w-full items-center justify-center">
+        <Button variant="ckBtn" className="">
+          See more...
+        </Button>
+      </div>
     </section>
   );
 };

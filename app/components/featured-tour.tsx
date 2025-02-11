@@ -1,25 +1,39 @@
-import { getFeaturedTours } from "../lib/helpers";
-import Card from "./card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { getPackageTours } from "../lib/helpers";
+import { FeatureCard } from "../../components/feature-card";
+import { ServiceLabel } from "@/components/service-label";
 
-const FeaturedTour = () => {
-  const featuredTours = getFeaturedTours();
+const FeaturedCard = () => {
+  const packageTours = getPackageTours();
   return (
-    <div className="absolute -mt-20 w-full gap-4 overflow-x-scroll pb-8">
-      <div className="ml-5 flex w-max gap-4 md:ml-36">
-        {featuredTours.map((tour) => (
-          <Card
-            privatePrice={tour.privatePrice}
-            key={tour.tourId}
-            image={tour.images[0]}
-            address={tour.address[0]}
-            price={tour.price}
-            title={tour.tourName}
-            id={tour.tourId}
-          />
-        ))}
+    <div className="mt-10 w-full">
+      <div className="space-y-4">
+        <ServiceLabel label="Tour Packages" />
+        <Carousel className="w-full">
+          <CarouselContent>
+            {packageTours.map((tour, i) => (
+              <CarouselItem
+                className="flex items-center justify-center md:basis-1/3"
+                key={i}
+              >
+                <FeatureCard imageUrl={tour.images[0]} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        </Carousel>
       </div>
     </div>
   );
 };
 
-export default FeaturedTour;
+export default FeaturedCard;

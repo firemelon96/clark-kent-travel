@@ -1,35 +1,30 @@
 import Image from "next/image";
 import { getAllTourLocation } from "../lib/helpers";
+import { ServiceLabel } from "@/components/service-label";
+import { Card } from "@/components/ui/card";
 
 const TripByLocation = () => {
   const tourByLocation = getAllTourLocation();
-  const array = [0, 1, 2, 3, 4];
   return (
-    <section className="container mx-auto mt-10 px-4 md:my-10 md:px-20">
-      {/* Tailwind get 2 last element and change style */}
-      <div className="py-20">
-        <p className="pb-10 text-center text-4xl font-semibold text-slate-800 md:text-start">
-          Plan your <span className="text-rose-500">Next Trip</span> with us
-        </p>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
-          {tourByLocation.map((tour, i) => (
-            <div key={i} className={`relative h-40 md:col-span-2`}>
+    <section className="space-y-4 pb-10">
+      <ServiceLabel label="Trips" />
+      <div className="flex">
+        {tourByLocation.map((tour, i) => (
+          <Card
+            key={i}
+            className="relative h-96 w-full rounded-none shadow-none"
+          >
+            <div className="relative h-full w-full">
               <Image
                 src={tour.image}
                 fill
-                alt="balabac"
+                alt={tour.image}
                 className="object-cover"
               />
-              <div className="absolute inset-y-0 w-full bg-rose-500/20 backdrop-blur-sm">
-                <div className="p-4">
-                  <span className="text-3xl font-semibold uppercase text-sky-50">
-                    {tour.address}
-                  </span>
-                </div>
-              </div>
             </div>
-          ))}
-        </div>
+            <div className="absolute inset-0 bg-black/30"></div>
+          </Card>
+        ))}
       </div>
     </section>
   );

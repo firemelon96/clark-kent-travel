@@ -29,6 +29,12 @@ export const getDayTours = () => {
   return dayTours;
 };
 
+export const getPackageTours = () => {
+  const dayTours = tours.filter((tour) => tour.type === "package");
+
+  return dayTours;
+};
+
 export const getTourById = (id: string) => {
   const tour = tours.find((tour) => tour.tourId === id);
   if (tour === undefined) return notFound();
@@ -98,4 +104,18 @@ export const getFastCraftById = (id: string) => {
   if (fastcraft === undefined) return notFound();
 
   return fastcraft;
+};
+
+export const getTravelTours = ({
+  location,
+  type,
+}: {
+  location: string;
+  type: string;
+}) => {
+  const datas = tours.filter(
+    (tour) => tour.address.includes(location) && tour.type === type,
+  );
+
+  return datas;
 };
