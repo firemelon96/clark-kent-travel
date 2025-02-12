@@ -4,11 +4,29 @@ export const tours = [
     tourName: "4D3N Balabac + 1N in Mariafe",
     isFeatured: true,
     type: "package",
-    price: [
-      16088, 14088, 14088, 14088, 14088, 14088, 14088, 14088, 14088, 14088,
-    ],
-    privatePrice: [
-      40988, 24699, 20488, 18688, 16888, 15688, 14988, 14388, 13988, 13588,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 2, price: 16088 },
+          { minGroupSize: 3, maxGroupSize: 10, price: 14088 },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 40988 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 24699 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 20488 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 18688 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 16888 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 15688 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 14988 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 14388 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 13988 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 13588 },
+        ],
+      },
     ],
     address: ["Balabac, Palawan"],
     description:
@@ -744,8 +762,16 @@ export const tours = [
       "3D2N El Nido Package Tour A + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 4800,
-    privatePrice: [],
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 4800 }],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Escape to the stunning paradise of El Nido with this 3-day, 2-night package, offering a perfect balance of relaxation and adventure. Explore El Nido's breathtaking limestone cliffs, crystal-clear waters, and hidden lagoons with Tour A, one of the most popular island-hopping tours in the region. This package is ideal for travelers looking for an unforgettable getaway in the heart of Palawan.",
@@ -802,8 +828,16 @@ export const tours = [
       "4D3N El Nido Package Tour A, Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 7200,
-    privatePrice: [],
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 7200 }],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Embark on an unforgettable 4-day, 3-night adventure in El Nido, Palawan, with this comprehensive package that includes Tour A and Tour C—two of the most sought-after island-hopping tours in the region. With stunning lagoons, vibrant coral reefs, secluded beaches, and dramatic limestone cliffs, this package offers the perfect combination of El Nido's best highlights.",
@@ -866,8 +900,16 @@ export const tours = [
       "5D4N El Nido Package Tour A, Tour B, and Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 9300,
-    privatePrice: [],
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 9300 }],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Experience the very best of El Nido's islands and beaches with this 5-day, 4-night package that combines the highlights of Tour A, Tour B, and Tour C—three of the most popular island-hopping tours in El Nido. From vibrant lagoons to secluded beaches, coral reefs, and dramatic cliffs, this package offers the ultimate adventure for nature lovers, beach enthusiasts, and those seeking to immerse themselves in the stunning beauty of Palawan.",

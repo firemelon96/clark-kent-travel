@@ -21,13 +21,18 @@ type Itinerary = {
   activities: string[];
 };
 
+export type Pricing = {
+  pricingType: string;
+  prices: { minGroupSize: number; maxGroupSize: number; price: number }[];
+};
+
 export type TourPackage = {
   tourId: string;
   tourName: string;
   isFeatured?: boolean | undefined;
   type: string;
   min?: number;
-  price?: number | number[] | undefined;
+  pricing: Pricing[];
   isPax?: boolean | undefined;
   privatePrice?: number[] | undefined;
   address: string[];

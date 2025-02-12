@@ -27,39 +27,41 @@ import { DateRange } from "react-day-picker";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
+import { Pricing } from "@/types/tour";
+import { PopoverClose } from "@radix-ui/react-popover";
+import { Label } from "./ui/label";
 
 const BookingSchema = z.object({
-  dateRange: z
-    .object({
-      from: z.date(),
-      to: z.date().optional(),
-    })
-    .optional(),
+  dateRange: z.object({
+    from: z.date(),
+    to: z.date().optional(),
+  }),
   participants: z.number().positive(),
   totalPrice: z.number(),
-  travellerType: z.enum(["Joiner", "Private"]),
+  pricingType: z.string(),
 });
 
 const types = [
-  { value: "JOINER", label: "Joiner" },
-  { value: "PRIVATE", label: "Private" },
+  { value: "joiner", label: "Joiner" },
+  { value: "private", label: "Private" },
 ];
 
 type Props = {
   tourId: string;
-  prices: number[];
+  pricing: Pricing[];
+  duration: number;
 };
 
-export const BookingOptions = ({ tourId, prices }: Props) => {
+export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
   const [price, setPrice] = useState(0);
   const [openDate, setOpenDate] = useState(false);
   const router = useRouter();
 
-  const maxGroupSize = Math.max(
-    ...prices
-      .filter((price) => price.maxGroupSize !== 1) // Exclude prices where maxGroupSize is 1
-      .map((price) => price.maxGroupSize), // Extract the maxGroupSize values
-  );
+  // const maxGroupSize = Math.max(
+  //   ...prices
+  //     .filter((price) => price.maxGroupSize !== 1) // Exclude prices where maxGroupSize is 1
+  //     .map((price) => price.maxGroupSize), // Extract the maxGroupSize values
+  // );
 
   const form = useForm<z.infer<typeof BookingSchema>>({
     resolver: zodResolver(BookingSchema),
@@ -70,46 +72,37 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
       },
       participants: 2,
       totalPrice: 0,
-      travellerType: "JOINER",
+      pricingType: "joiner",
     },
   });
 
   const participants = form.watch("participants");
-  const travellerType = form.watch("travellerType");
+  const travellerType = form.watch("pricingType");
 
   useEffect(() => {
-    let selectedPrice = 0;
-
     // Check for either JOINER or PRIVATE pricing
-    const priceForType = prices.find(
+    const priceForType = pricing.find(
       (price) => price.pricingType === travellerType,
-    );
+    )?.prices;
 
-    if (priceForType) {
-      // If participants match minGroupSize and maxGroupSize (e.g., JOINER with group size of 1)
-      if (priceForType.minGroupSize === 1 && priceForType.maxGroupSize === 1) {
-        selectedPrice = priceForType.price;
-        setPrice(selectedPrice);
-      } else {
-        // Handle cases where group size is larger than defined range
-        selectedPrice =
-          prices.find(
-            (price) =>
-              price.pricingType === travellerType &&
-              participants >= price.minGroupSize &&
-              participants <= price.maxGroupSize,
-          )?.price || 0;
+    // If participants match minGroupSize and maxGroupSize (e.g., JOINER with group size of 1)
 
-        setPrice(selectedPrice);
-      }
-    }
+    // Handle cases where group size is larger than defined range
+    const selectedPrice =
+      priceForType?.find(
+        (price) =>
+          participants >= price.minGroupSize &&
+          participants <= price.maxGroupSize,
+      )?.price || 0;
 
-    form.setValue("totalPrice", selectedPrice * participants);
-  }, [participants, travellerType, prices, form.setValue, form]);
+    setPrice(selectedPrice);
+
+    form.setValue("totalPrice", price * participants);
+  }, [participants, travellerType, , price, pricing, form.setValue, form]);
 
   const onSubmit = (values: z.infer<typeof BookingSchema>) => {
-    const { participants, totalPrice, travellerType, dateRange } = values;
-    const from = dateRange?.from;
+    const { participants, totalPrice, pricingType, dateRange } = values;
+    const from = dateRange.from;
     const to = dateRange?.to;
     const url = qs.stringifyUrl(
       {
@@ -120,7 +113,7 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
           to: to ? format(to, "yyyy-MM-dd") : undefined,
           participants,
           totalPrice,
-          travellerType,
+          pricingType,
         },
       },
       { skipNull: true, skipEmptyString: true },
@@ -135,62 +128,91 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
         <FormField
           control={form.control}
           name="dateRange"
-          render={({ field }) => (
-            <FormItem className="flex flex-col">
-              <FormLabel>Travel Date</FormLabel>
-              <Popover open={openDate} onOpenChange={setOpenDate}>
-                <PopoverTrigger asChild>
-                  <FormControl>
-                    <Button
-                      variant={"outline"}
-                      className={cn(
-                        "w-[240px] pl-3 text-left font-normal",
-                        !field.value && "text-muted-foreground",
-                      )}
-                    >
-                      {field.value?.from ? (
-                        field.value.to ? (
-                          <>
-                            {format(field.value.from, "LLL dd, y")} -{" "}
-                            {format(field.value.to, "LLL dd, y")}
-                          </>
+          render={({ field }) => {
+            return (
+              <FormItem className="flex flex-col">
+                <FormLabel>Travel Date</FormLabel>
+                <Popover open={openDate} onOpenChange={setOpenDate}>
+                  <PopoverTrigger asChild>
+                    <FormControl>
+                      <Button
+                        variant={"outline"}
+                        className={cn(
+                          "w-[240px] pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground",
+                        )}
+                      >
+                        {field.value?.from ? (
+                          field.value.to ? (
+                            <>
+                              {format(field.value.from, "LLL dd, y")} -{" "}
+                              {format(field.value.to, "LLL dd, y")}
+                            </>
+                          ) : (
+                            format(field.value.from, "LLL dd, y")
+                          )
                         ) : (
-                          format(field.value.from, "LLL dd, y")
-                        )
-                      ) : (
-                        <span>Pick a date</span>
-                      )}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                    </Button>
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
-                  <Calendar
-                    initialFocus
-                    mode="range"
-                    defaultMonth={field.value?.from}
-                    selected={field.value as DateRange | undefined}
-                    onSelect={(range) => {
-                      if (range?.from) {
-                        const endDate = range.to || addDays(range.from, 3);
-                        field.onChange({ from: range.from, to: endDate });
-                      } else {
-                        field.onChange(range); // Handle cases where range is cleared
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      </Button>
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      initialFocus
+                      mode="range"
+                      defaultMonth={field.value?.from}
+                      selected={(field.value as DateRange) || undefined}
+                      onSelect={(range) => {
+                        if (range?.from) {
+                          field.onChange({
+                            from: range.from,
+                            to: addDays(range.from, duration - 1),
+                          });
+                        } else {
+                          field.onChange(undefined); // Handle cases where range is cleared
+                        }
+                      }}
+                      numberOfMonths={2}
+                      disabled={(date) =>
+                        date < new Date() ||
+                        date.getDay() === 0 ||
+                        date.getDay() === 6
                       }
-                    }}
-                    numberOfMonths={2}
-                  />
-                </PopoverContent>
-              </Popover>
-              <FormDescription>Select date that is available</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+
+                      // max={duration}
+                    />
+                    {field.value?.from && (
+                      <div className="flex justify-end gap-2 p-2">
+                        <Button
+                          onClick={() => {
+                            field.onChange(undefined);
+                          }}
+                          variant="secondary"
+                        >
+                          Clear
+                        </Button>
+                        <Button asChild variant="ckBtn">
+                          <PopoverClose>Select</PopoverClose>
+                        </Button>
+                      </div>
+                    )}
+                  </PopoverContent>
+                </Popover>
+                <FormDescription
+                  className={form.formState.errors.dateRange && "text-rose-500"}
+                >
+                  Select date that is available
+                </FormDescription>
+              </FormItem>
+            );
+          }}
         />
 
         <FormField
           control={form.control}
-          name="travellerType"
+          name="pricingType"
           render={({ field }) => (
             <FormItem className="">
               <FormLabel>Select type</FormLabel>
@@ -200,13 +222,11 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
                     <Button
                       key={type.value}
                       type="button"
-                      variant={
-                        field.value === type.value ? "default" : "outline"
-                      }
+                      variant={field.value === type.value ? "ckBtn" : "outline"}
                       className={cn(
                         "",
                         field.value === type.value &&
-                          "bg-primary text-primary-foreground",
+                          "bg-rose-500 text-primary-foreground",
                       )}
                       onClick={() => field.onChange(type.value)}
                     >
@@ -226,7 +246,7 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
             <span>Participants</span>
             <div className="ml-auto flex flex-col-reverse items-center gap-2 md:flex-row">
               <span className="text-xs text-slate-500 md:text-base">
-                {price === 0 ? "Get qoute for this group size" : price}
+                {price === 0 ? "Get qoute for this group size" : `${price} x`}
               </span>
               <FormField
                 control={form.control}
@@ -265,7 +285,6 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
                           onClick={() =>
                             field.onChange(Math.min(12, field.value + 1))
                           }
-                          disabled={field.value >= maxGroupSize}
                         >
                           <Plus className="h-4 w-4" />
                           <span className="sr-only">Increase participants</span>
@@ -283,16 +302,10 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
           control={form.control}
           name="totalPrice"
           render={({ field }) => (
-            <FormItem className="">
-              <FormLabel>Total Price</FormLabel>
-              <FormControl>
-                <Input
-                  type="number"
-                  readOnly
-                  {...field}
-                  className="border-none text-xl font-semibold shadow-none"
-                />
-              </FormControl>
+            <FormItem className="flex items-center justify-between rounded-md bg-slate-50 p-4">
+              <FormLabel className="font-light">Total Price</FormLabel>
+
+              <Label className="p-2 text-xl font-medium">{field.value}</Label>
             </FormItem>
           )}
         />
@@ -301,7 +314,7 @@ export const BookingOptions = ({ tourId, prices }: Props) => {
           <Button variant="secondary" type="button">
             Save
           </Button>
-          <Button>Book now</Button>
+          <Button variant="ckBtn">Book now</Button>
         </div>
       </form>
     </Form>

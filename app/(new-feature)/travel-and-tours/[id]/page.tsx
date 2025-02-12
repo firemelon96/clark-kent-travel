@@ -1,9 +1,11 @@
-import { getTourById } from "@/app/lib/helpers";
+import { getTourById, getTravelToursNewData } from "@/app/lib/helpers";
 import { BookingOptions } from "@/components/booking-options";
 import { ImageBanner } from "@/components/image-banner";
+import { ReusableAccordion } from "@/components/reusable-accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { getFirstAvailablePrice } from "@/lib/utils";
 import { BiSolidLeftArrow } from "react-icons/bi";
 
 interface SingleProps {
@@ -13,7 +15,12 @@ interface SingleProps {
 }
 
 const SinglePage = ({ params }: SingleProps) => {
-  const tour = getTourById(params.id);
+  const tour = getTravelToursNewData(params.id);
+
+  const joinerPrice = getFirstAvailablePrice(tour.pricing, "joiner");
+
+  const privatePrice = getFirstAvailablePrice(tour.pricing, "private");
+
   return (
     <section className="space-y-5">
       <ImageBanner images={tour.images} />
@@ -22,17 +29,19 @@ const SinglePage = ({ params }: SingleProps) => {
           <div className="space-y-2">
             <div className="hidden md:block">
               <h1 className="text-2xl font-medium">{tour.tourName}</h1>
-              <Badge>{tour.privatePrice[0]}</Badge>
+              <Badge>{joinerPrice || privatePrice}</Badge>
             </div>
             <p className="text-justify text-slate-700">{tour.description}</p>
           </div>
         </div>
-        <Card className="h-full w-full border-none shadow-none md:w-[450px]">
+        <Card className="h-full w-full border-none shadow-none md:w-[370px]">
           <CardHeader>
             <p className="text-2xl font-medium">{tour.tourName}</p>
           </CardHeader>
           <CardContent>
-            <Button className="w-full">Check Availability</Button>
+            <Button variant="ckBtn" className="w-full">
+              Check Availability
+            </Button>
           </CardContent>
         </Card>
       </div>
@@ -44,16 +53,26 @@ const SinglePage = ({ params }: SingleProps) => {
           <Card className="">
             <CardHeader>Select Options</CardHeader>
             <CardContent>
-              <BookingOptions tourId={tour.tourId} prices={tour.privatePrice} />
+              <BookingOptions
+                duration={tour.numOfDays}
+                tourId={tour.tourId}
+                pricing={tour.pricing}
+              />
             </CardContent>
           </Card>
         </div>
-        <div className="w-full space-y-2 md:w-[450px]">
+        <div className="w-full space-y-2 md:w-[370px]">
           <span className="font-medium uppercase">Package Information</span>
-          <div className="relative rounded-md bg-rose-300 p-4">
-            <BiSolidLeftArrow className="absolute -left-4 top-0 hidden size-6 text-rose-300 md:block" />
+          <div className="relative rounded-md bg-rose-100 px-4">
+            <BiSolidLeftArrow className="absolute -left-4 top-0 hidden size-6 text-rose-100 md:block" />
             <div>
-              <h3 className="text-2xl font-medium">Itinerary</h3>
+              <ReusableAccordion
+                itineraries={tour.itineraries}
+                label="Itinerary"
+              />
+              <ReusableAccordion items={tour.inclusions} label="Inclusion" />
+              <ReusableAccordion items={tour.exclusions} label="Exclusions" />
+              <ReusableAccordion items={tour.notes} label="Additionat Info" />
             </div>
           </div>
         </div>
