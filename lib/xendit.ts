@@ -1,7 +1,9 @@
 import axios from "axios";
 import { redirect } from "next/navigation";
 
-const authToken = Buffer.from(`${process.env.XENDIT_KEY}`).toString("base64");
+const authToken = Buffer.from(
+  "xnd_development_semDoEUETRrKm4nV79YNB24wvTO7UjB7NecsTdqVJrk1Tr83YyaTdg9YelMv1",
+).toString("base64");
 
 type Customer = {
   given_names: string;
@@ -44,7 +46,7 @@ export async function createXenditPayment(payload: Payload) {
 
   console.log(response.data);
 
-  // redirect(response.data.invoice_url);
+  redirect(response.data.invoice_url);
 
-  return response.data;
+  // return response.data;
 }

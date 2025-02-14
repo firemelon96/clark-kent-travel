@@ -1,6 +1,6 @@
 "use client";
 
-import { Book } from "@/actions/book";
+// import { Book } from "@/actions/book";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { createXenditPayment } from "@/lib/xendit";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
@@ -57,10 +58,30 @@ export const ContactForm = ({
   const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
     const data = { ...values, tourId, participants, totalPrice, tourName };
 
-    startTransition(() => {
-      Book(data)
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
+    createXenditPayment({
+      external_id: `booking_${tourId}`,
+      currency: "PHP",
+      amount: totalPrice,
+      customer: {
+        email: data.contactEmail,
+        given_names: data.contactName,
+        mobile_number: data.contactNumber,
+      },
+      success_redirect_url:
+        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-success",
+      failure_redirect_url:
+        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-failure",
+      customer_notification_preference: {
+        invoice_paid: ["email"],
+      },
+      items: [
+        {
+          name: tourName,
+          price: totalPrice / participants,
+          category: "Tour Package",
+          quantity: participants,
+        },
+      ],
     });
   };
 
