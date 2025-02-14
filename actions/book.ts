@@ -22,7 +22,7 @@ export const Book = async (values: BookingProps) => {
     tourName,
   } = values;
   try {
-    const xenditData = await createXenditPayment({
+    await createXenditPayment({
       external_id: `booking_${tourId}`,
       currency: "PHP",
       amount: totalPrice,
@@ -45,8 +45,6 @@ export const Book = async (values: BookingProps) => {
         },
       ],
     });
-
-    return xenditData;
   } catch (error) {
     console.log(error);
   }
