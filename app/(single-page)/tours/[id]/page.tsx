@@ -61,7 +61,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
               tourName={tour.tourName}
               price={tour.price}
               description={tour.description}
-              privatePrice={tour.privatePrice}
+              privatePrice={tour.privatePrice || []}
             />
             <Itenerary itineraries={tour.itineraries} />
           </div>
