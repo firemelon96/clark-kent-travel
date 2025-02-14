@@ -72,7 +72,7 @@ export const BookingForm = ({ title, roomType }: BookingFormProps) => {
 
       setTotalPrice(roomPrice * nights);
     }
-  }, [room, nights, roomPrice]);
+  }, [room, nights, roomPrice, roomType]);
 
   const calculateNights = (start: Date | null, end: Date | null) => {
     if (start && end) {

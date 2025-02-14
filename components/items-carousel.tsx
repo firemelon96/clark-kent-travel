@@ -23,6 +23,7 @@ export const ItemsCarousel = <T extends string | number>({
       <CarouselContent>
         {datas.map((item, i) => (
           <CarouselItem
+            key={item.key}
             className={cn(
               "flex items-center justify-center md:basis-1/3",
               className,

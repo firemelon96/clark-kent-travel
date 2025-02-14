@@ -105,7 +105,11 @@ export function NewNavbar() {
                       </NavigationMenuLink>
                     </li>
                     {item.items?.slice(1).map((subItem) => (
-                      <ListItem href={subItem.href} title={subItem.title}>
+                      <ListItem
+                        key={subItem.title}
+                        href={subItem.href}
+                        title={subItem.title}
+                      >
                         {subItem.description}
                       </ListItem>
                     ))}

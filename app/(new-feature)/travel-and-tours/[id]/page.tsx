@@ -63,8 +63,8 @@ const SinglePage = ({ params }: SingleProps) => {
         </div>
         <div className="w-full space-y-2 md:w-[370px]">
           <span className="font-medium uppercase">Package Information</span>
-          <div className="relative rounded-md bg-rose-100 px-4">
-            <BiSolidLeftArrow className="absolute -left-4 top-0 hidden size-6 text-rose-100 md:block" />
+          <div className="relative rounded-md bg-rose-50 px-4">
+            <BiSolidLeftArrow className="absolute -left-4 top-0 hidden size-6 text-rose-50 md:block" />
             <div>
               <ReusableAccordion
                 itineraries={tour.itineraries}

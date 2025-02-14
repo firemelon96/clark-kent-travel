@@ -35,6 +35,7 @@ export const ReusableAccordion = ({
           <div className="pl-2">
             {itineraries?.map((itinerary) => (
               <ReusableAccordion
+                key={itinerary.name}
                 label={itinerary.name}
                 items={itinerary.activities}
                 isContent
@@ -44,7 +45,7 @@ export const ReusableAccordion = ({
           <ul className="pl-2">
             {items &&
               items.map((item) => (
-                <li className="flex gap-2 text-slate-700">
+                <li key={item} className="flex gap-2 text-slate-700">
                   <Dot /> <span className="flex-1">{item}</span>
                 </li>
               ))}
