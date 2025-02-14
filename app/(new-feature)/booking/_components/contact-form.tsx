@@ -58,7 +58,9 @@ export const ContactForm = ({
     const data = { ...values, tourId, participants, totalPrice, tourName };
 
     startTransition(() => {
-      Book(data).then((data) => console.log(data));
+      Book(data)
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
     });
   };
 

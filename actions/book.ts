@@ -31,8 +31,10 @@ export const Book = async (values: BookingProps) => {
         given_names: contactName,
         mobile_number: contactNumber,
       },
-      success_redirect_url: "",
-      failure_redirect_url: "",
+      success_redirect_url:
+        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-success",
+      failure_redirect_url:
+        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-failure",
       customer_notification_preference: {
         invoice_paid: ["email"],
       },
