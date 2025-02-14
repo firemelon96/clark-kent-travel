@@ -35,7 +35,6 @@ type Props = {
 };
 
 export const ImageDialog = ({ images }: Props) => {
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const [api, setApi] = useState<any>();
   const [current, setCurrent] = useState(0);
 

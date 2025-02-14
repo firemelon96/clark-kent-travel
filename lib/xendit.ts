@@ -1,9 +1,7 @@
 import axios from "axios";
 import { redirect } from "next/navigation";
 
-const authToken = Buffer.from(`${process.env.NEXT_PUBLIC_XENDIT_KEY}`).toString(
-  "base64",
-);
+const authToken = Buffer.from(`${process.env.XENDIT_KEY}`).toString("base64");
 
 type Customer = {
   given_names: string;
