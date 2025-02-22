@@ -4,6 +4,7 @@ import { formatPeso } from "../app/lib/helpers";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 type Props = {
   imageUrl: string;
@@ -41,7 +42,7 @@ export const FeatureCard = ({
                   {name}
                 </h2>
               )}
-              {description && <p className="text-white">{description}</p>}
+              {description && <p className="text-white/80">{description}</p>}
               {price && (
                 <p className="text-base text-slate-300">
                   {isArray ? formatPeso(price[0]) : formatPeso(price)}
@@ -50,13 +51,16 @@ export const FeatureCard = ({
             </div>
             {href && (
               <div>
-                <Button variant="secondary">Book Now</Button>
+                <Button variant="secondary" asChild>
+                  <Link href={href}>Book Now</Link>
+                </Button>
               </div>
             )}
           </div>
         </div>
       )}
-      <Image src={imageUrl} fill alt="image" />
+      <Image src={imageUrl} fill alt="image" className="object-cover" />
+      <div className="absolute inset-0 bg-black/30"></div>
     </Card>
   );
 };

@@ -1,12 +1,13 @@
-export const transfer_services = [
+export const transfers = [
+  //transfer
   {
     id: "joiner-pps-elnido",
-    service_name: "Joiner PPC",
-    from: "Puerto Princesa",
+    service_name: "Joiner Puerto Princesa to El Nido",
+    from: "Puerto Princesa, City",
     to: "El Nido",
     type: "transfer",
     vehicle_type: "Van",
-    capacity: 8,
+    capacity: 12,
     price_per_trip: 750,
     description:
       "Join our Puerto Princesa to El Nido Joiner Transfer for a convenient, budget-friendly ride. Travel in comfort in our air-conditioned vans, perfect for solo travelers or small groups. Enjoy the scenic journey and arrive in El Nido ready to explore. Multiple daily departures available!",
@@ -15,9 +16,9 @@ export const transfer_services = [
   },
   {
     id: "joiner-elnido-pps",
-    service_name: "Joiner EN",
+    service_name: "Joiner El Nido to Puerto Princesa",
     from: "El Nido",
-    to: "Puerto Princesa",
+    to: "Puerto Princesa, City",
     vehicle_type: "Van",
     type: "transfer",
     capacity: 8,
@@ -29,33 +30,39 @@ export const transfer_services = [
   },
   {
     id: "private-van-pps-elnido",
-    service_name: "Private Van Puerto Princesa to Elnido",
+    service_name: "Private Van Puerto Princesa to El Nido",
     type: "transfer",
     vehicle_type: "Private Van",
-    capacity: 4,
+    from: "Puerto Princesa, City",
+    to: "El Nido",
+    capacity: 10,
     price_per_trip: 7500,
     description:
       "Book our Private Van Transfer from Puerto Princesa to El Nido for a personalized and comfortable travel experience. Perfect for families or groups, our air-conditioned van offers a direct, hassle-free journey at your own pace. Enjoy the privacy, flexibility, and scenic views as you travel through Palawan. Choose your departure time and relax while we take care of the rest!",
     availability: "6:00 AM - 10:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "private-van-elnido-pps",
-    service_name: "Private Van Elnido to Puerto Princesa",
+    service_name: "Private Van El Nido to Puerto Princesa",
     type: "transfer",
     vehicle_type: "Private Van",
+    to: "Puerto Princesa, City",
+    from: "El Nido",
     capacity: 10,
     price_per_trip: 7500,
     description:
-      "Book our Private Van Transfer from El Nido to Puerto Princesa for a comfortable and exclusive travel experience. Ideal for families or groups, our air-conditioned van provides a direct and flexible journey, letting you choose your own departure time. Enjoy the privacy and scenic views along the way as we ensure a hassle-free ride back to Puerto Princesa. Relax while we handle the rest!",
-    availability: "8:00 AM - 8:00 PM",
-    image: "/resources/logistics/sedan.avif",
+      "Book our Private Van Transfer from Puerto Princesa to El Nido for a personalized and comfortable travel experience. Perfect for families or groups, our air-conditioned van offers a direct, hassle-free journey at your own pace. Enjoy the privacy, flexibility, and scenic views as you travel through Palawan. Choose your departure time and relax while we take care of the rest!",
+    availability: "6:00 AM - 10:00 PM",
+    image: "/resources/logistics/van-premium.png",
   },
   {
     id: "joiner-pps-barton",
     service_name: "Joiners Puerto Princesa to Port Barton",
     vehicle_type: "Van",
     type: "transfer",
+    from: "Puerto Princesa, City",
+    to: "Port Barton",
     capacity: 10,
     price_per_trip: 700,
     description:
@@ -68,6 +75,8 @@ export const transfer_services = [
     service_name: "Joiners Port Barton to Puerto Princesa",
     vehicle_type: "Van",
     type: "transfer",
+    to: "Puerto Princesa, City",
+    from: "Port Barton",
     capacity: 10,
     price_per_trip: 700,
     description:
@@ -76,10 +85,72 @@ export const transfer_services = [
     image: "/resources/logistics/van-premium.png",
   },
   {
+    id: "private-puerto-princesa-astoria-transfer-per-way",
+    service_name: "Private Puerto Princesa to Astoria Transfer per way",
+    vehicle_type: "Private Van",
+    from: "Puerto Princesa, City",
+    to: "Astoria",
+    type: "transfer",
+    capacity: 10,
+    price_per_trip: 3500,
+    description:
+      "Book our Private Transfer from Puerto Princesa to Astoria Palawan for a comfortable and hassle-free journey. Travel in a spacious, air-conditioned van with the convenience of choosing your own departure time. Perfect for families or groups, this direct transfer ensures a smooth and relaxing ride to your destination. Enjoy the scenic beauty of Palawan along the way!",
+    availability: "9:00 AM - 4:00 PM",
+    image: "/resources/logistics/sedan.avif",
+  },
+  {
+    id: "private-astoria-puerto-princesa-transfer-per-way",
+    service_name: "Private Astoria to Puerto Princesa Transfer per way",
+    vehicle_type: "Private Van",
+    from: "Astoria",
+    to: "Puerto Princesa, City",
+    type: "transfer",
+    capacity: 10,
+    price_per_trip: 3500,
+    description:
+      "Book our Private Transfer from Astoria Palawan to Puerto Princesa for a smooth and comfortable journey. Travel in an air-conditioned van with the convenience of selecting your preferred departure time. Ideal for families or groups, this direct transfer ensures a stress-free ride back to the city while enjoying the scenic landscapes of Palawan.",
+    availability: "9:00 AM - 4:00 PM",
+    image: "/resources/logistics/sedan.avif",
+  },
+
+  //city proper
+  {
+    id: "pps-airport-transfer-for-city-proper",
+    service_name: "PPS Airport Transfer for City Proper only",
+    vehicle_type: "Van",
+    from: "Puerto Princesa Airport",
+    to: "City Proper",
+    type: "proper",
+    capacity: 2,
+    price_per_trip: 700,
+    description:
+      "Book our PPS Airport Transfer to City Proper for a quick and hassle-free ride to your destination. Our air-conditioned van provides a comfortable and efficient transfer, ideal for solo travelers, families, or groups. Enjoy a smooth journey from Puerto Princesa Airport to any location within the city proper. Let us take care of your transportation needs upon arrival!",
+    availability: "4 hours",
+    image: "/resources/logistics/van-premium.png",
+  },
+  {
+    id: "bohol-airport-transfer",
+    service_name: "Bohol Airport Transfer",
+    vehicle_type: "Van",
+    type: "proper",
+    from: "Bohol Airport",
+    to: "Bohol Proper",
+    capacity: 4,
+    price_per_trip: 1500,
+    description:
+      "Book our Bohol Airport Transfer for a convenient and comfortable ride to your destination. Our air-conditioned vehicles ensure a smooth and hassle-free journey, whether you're heading to a hotel, resort, or any location in Bohol. Ideal for solo travelers, families, or groups, this service offers reliable transportation from the airport, allowing you to relax and enjoy the start of your Bohol adventure.",
+    availability: "1 Day",
+    image: "/resources/logistics/van-premium.png",
+  },
+
+  //one way
+  {
     id: "private-lio-elnido-town-one-way",
     service_name: "Private Lio to Elnido town one way",
     vehicle_type: "Private Van",
-    type: "transfer",
+    type: "one_way",
+    from: "Lio Resort",
+    to: "El Nido Town",
     capacity: 10,
     price_per_trip: 2000,
     description:
@@ -91,7 +162,9 @@ export const transfer_services = [
     id: "private-elnido-town-lio-one-way",
     service_name: "Private  Elnido town to Lio one way",
     vehicle_type: "Private Van",
-    type: "transfer",
+    type: "one_way",
+    from: "El Nido Town",
+    to: "Lio Resort",
     capacity: 10,
     price_per_trip: 2000,
     description:
@@ -99,11 +172,15 @@ export const transfer_services = [
     availability: "8:00 AM - 8:00 PM",
     image: "/resources/logistics/sedan.avif",
   },
+
+  //day tour
   {
     id: "private-van-nacpan-day-tour",
     service_name: "Private Van Nacpan Day Tour",
     vehicle_type: "Private Van",
-    type: "transfer",
+    type: "day_tour",
+    from: "El Nido",
+    to: "Nacpan",
     capacity: 10,
     price_per_trip: 5000,
     description:
@@ -115,7 +192,9 @@ export const transfer_services = [
     id: "private-van-lio-day-tour",
     service_name: "Private Van Lio Day Tour",
     vehicle_type: "Private Van",
-    type: "transfer",
+    type: "day_tour",
+    from: "El Nido",
+    to: "Lio Resort",
     capacity: 10,
     price_per_trip: 4000,
     description:
@@ -127,7 +206,9 @@ export const transfer_services = [
     id: "private-van-talaudyong-day-tour",
     service_name: "Private Van Talaudyong Day Tour",
     vehicle_type: "Private Van",
-    type: "transfer",
+    type: "day_tour",
+    from: "Puerto Princesa",
+    to: "Talaudyong",
     capacity: 10,
     price_per_trip: 4000,
     description:
@@ -135,11 +216,15 @@ export const transfer_services = [
     availability: "9:00 AM - 4:00 PM",
     image: "/resources/logistics/sedan.avif",
   },
+
+  //roundtrip
   {
     id: "rt-private-van-port-barton-day-tour",
     service_name: "RT Private Van Port Barton Day Tour",
-    type: "transfer",
+    type: "round_trip",
     vehicle_type: "Private Van",
+    from: "Puerto Princesa",
+    to: "Port Barton",
     capacity: 10,
     price_per_trip: 9500,
     description:
@@ -147,54 +232,40 @@ export const transfer_services = [
     availability: "9:00 AM - 4:00 PM",
     image: "/resources/logistics/sedan.avif",
   },
+
+  //cruise
   {
-    id: "private-puerto-princesa-astoria-transfer-per-way",
-    service_name: "Private Puerto Princesa to Astoria Transfer per way",
-    vehicle_type: "Private Van",
-    type: "transfer",
-    capacity: 10,
-    price_per_trip: 3500,
+    id: "jomalia-fastcraft-pps-to-coron",
+    service_name: "Jomalia Fast Craft",
+    vehicle_type: "cruise",
+    type: "fast craft",
+    from: "El Nido",
+    to: "Coron",
+    capacity: 15,
+    price_per_trip: 2800,
     description:
-      "Book our Private Transfer from Puerto Princesa to Astoria Palawan for a comfortable and hassle-free journey. Travel in a spacious, air-conditioned van with the convenience of choosing your own departure time. Perfect for families or groups, this direct transfer ensures a smooth and relaxing ride to your destination. Enjoy the scenic beauty of Palawan along the way!",
-    availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+      "Jomalia Shipping offers a convenient and scenic ferry service between Elnido and Coron, Palawan. This route is perfect for travelers seeking a reliable and affordable way to explore the stunning islands of Palawan. Enjoy a comfortable journey aboard their well-maintained vessel, equipped with modern amenities to ensure a pleasant travel experience. Whether you're a tourist eager to discover Coron's iconic lagoons or a local traveling for business, Jomalia Shipping provides a seamless connection between these two beautiful destinations. Sit back, relax, and enjoy the breathtaking ocean views along the way.",
+    availability: {
+      morning: "8:00 AM MWFSun",
+      afternoon: "12:30 PM Daily ",
+    },
+    image: "/resources/logistics/jomalia.avif",
   },
   {
-    id: "private-astoria-puerto-princesa-transfer-per-way",
-    service_name: "Private  Astoria to Puerto Princesa Transfer per way",
-    vehicle_type: "Private Van",
-    type: "transfer",
-    capacity: 10,
-    price_per_trip: 3500,
+    id: "jomalia-fastcraft-coron-to-pps",
+    service_name: "Jomalia Fast Craft ",
+    vehicle_type: "cruise",
+    type: "fast craft",
+    from: "Coron",
+    to: "El Nido",
+    capacity: 15,
+    price_per_trip: 2800,
     description:
-      "Book our Private Transfer from Astoria Palawan to Puerto Princesa for a smooth and comfortable journey. Travel in an air-conditioned van with the convenience of selecting your preferred departure time. Ideal for families or groups, this direct transfer ensures a stress-free ride back to the city while enjoying the scenic landscapes of Palawan.",
-    availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+      "Jomalia Shipping offers a reliable and comfortable ferry service connecting Coron to Elnido, Palawan. Ideal for travelers heading to Puerto Princesa's natural wonders, such as the Underground River or Honda Bay, this route ensures a hassle-free journey with excellent service. The ferry is equipped with modern facilities, providing a smooth and enjoyable ride as you traverse the scenic waters of Palawan. Whether you're a tourist or a local, Jomalia Shipping makes traveling between Coron and Puerto Princesa both convenient and unforgettable.",
+    availability: {
+      morning: "7:30 AM Daily",
+      afternoon: "1:00 PM MWFSun ",
+    },
+    image: "/resources/logistics/jomalia.avif",
   },
-  {
-    id: "pps-airport-transfer-for-city-proper",
-    service_name: "PPS Airport Transfer for City Proper only",
-    vehicle_type: "Van",
-    type: "transfer",
-    capacity: 2,
-    price_per_trip: 700,
-    description:
-      "Book our PPS Airport Transfer to City Proper for a quick and hassle-free ride to your destination. Our air-conditioned van provides a comfortable and efficient transfer, ideal for solo travelers, families, or groups. Enjoy a smooth journey from Puerto Princesa Airport to any location within the city proper. Let us take care of your transportation needs upon arrival!",
-    availability: "4 hours",
-    image: "/resources/logistics/van-premium.png",
-  },
-  //bohol transfer
-  {
-    id: "bohol-airport-transfer",
-    service_name: "Bohol Airport Transfer",
-    vehicle_type: "Van",
-    type: "transfer",
-    capacity: 4,
-    price_per_trip: 1500,
-    description:
-      "Book our Bohol Airport Transfer for a convenient and comfortable ride to your destination. Our air-conditioned vehicles ensure a smooth and hassle-free journey, whether you're heading to a hotel, resort, or any location in Bohol. Ideal for solo travelers, families, or groups, this service offers reliable transportation from the airport, allowing you to relax and enjoy the start of your Bohol adventure.",
-    availability: "1 Day",
-    image: "/resources/logistics/van-premium.png",
-  },
-  //rentals
 ];

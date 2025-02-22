@@ -46,7 +46,7 @@ export async function createXenditPayment(payload: Payload) {
 
   console.log(response.data);
 
-  redirect(response.data.invoice_url);
+  // redirect(response.data.invoice_url);
 
-  // return response.data;
+  return response;
 }

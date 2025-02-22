@@ -15,7 +15,7 @@ interface SingleProps {
 }
 
 const SinglePage = ({ params }: SingleProps) => {
-  const tour = getTravelToursNewData(params.id);
+  const tour = getTourById(params.id);
 
   const joinerPrice = getFirstAvailablePrice(tour.pricing, "joiner");
 

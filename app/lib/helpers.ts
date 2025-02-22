@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { tours } from "../data/tours";
 import { transfer_services } from "../data/logistics";
 import { fastCrafts } from "../data/fast-craft";
-import { travelTours } from "../data/travel-tours-data";
 
 interface TourLocationProps {
   address: string;
@@ -38,12 +37,6 @@ export const getPackageTours = () => {
 
 export const getTourById = (id: string) => {
   const tour = tours.find((tour) => tour.tourId === id);
-  if (tour === undefined) return notFound();
-  return tour;
-};
-
-export const getTravelToursNewData = (id: string) => {
-  const tour = travelTours.find((tour) => tour.tourId === id);
   if (tour === undefined) return notFound();
   return tour;
 };

@@ -5,6 +5,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { services } from "../data/services";
 
 const otherServicesCard = [
   {
@@ -33,11 +34,14 @@ const OtherServices = () => {
       className="scroll-mt-6 space-y-4 md:text-start"
       id="other-services"
     >
-      <ServiceLabel label="We also offer other services" />
+      <ServiceLabel
+        label="Seamless Travel Solutions"
+        subHeading="Transfers, Stays, and Rentals for a Worry-Free Journey!"
+      />
       <div className="flex flex-col justify-evenly gap-2 md:flex-row">
         <Carousel className="w-full">
           <CarouselContent>
-            {otherServicesCard.map((service, i) => (
+            {services.map((service, i) => (
               <CarouselItem
                 className="flex items-center justify-center md:basis-1/2"
                 key={i}
@@ -45,7 +49,7 @@ const OtherServices = () => {
                 <FeatureCard
                   hasText
                   className="h-72 w-full"
-                  imageUrl="/resources/balabac/canimeran-island.avif"
+                  imageUrl={service.image}
                   name={service.name}
                   href={service.href}
                   description={service.description}

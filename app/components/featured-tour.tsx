@@ -14,7 +14,10 @@ const FeaturedCard = () => {
   return (
     <div className="mt-10 w-full">
       <div className="space-y-4">
-        <ServiceLabel label="Tour Packages" />
+        <ServiceLabel
+          label="Epic Getaways"
+          subHeading="Unforgettable Adventures, Hassle-Free Travel!"
+        />
         <Carousel className="w-full">
           <CarouselContent>
             {packageTours.map((tour, i) => (

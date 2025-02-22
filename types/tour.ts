@@ -23,7 +23,12 @@ type Itinerary = {
 
 export type Pricing = {
   pricingType: string;
-  prices: { minGroupSize: number; maxGroupSize: number; price: number }[];
+  prices: {
+    minGroupSize: number;
+    maxGroupSize: number;
+    price: number;
+    isGroupPrice?: boolean;
+  }[];
 };
 
 export type TourPackage = {
@@ -34,7 +39,6 @@ export type TourPackage = {
   min?: number;
   pricing: Pricing[];
   isPax?: boolean | undefined;
-  privatePrice?: number[] | undefined;
   address: string[];
   description: string;
   itineraries: Itinerary[];

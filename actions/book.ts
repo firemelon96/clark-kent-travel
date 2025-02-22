@@ -2,6 +2,7 @@
 
 import { contactFormSchema } from "@/app/(new-feature)/booking/_components/contact-form";
 import { createXenditPayment } from "@/lib/xendit";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
 interface BookingProps extends z.infer<typeof contactFormSchema> {
@@ -22,7 +23,7 @@ export const Book = async (values: BookingProps) => {
     tourName,
   } = values;
   try {
-    await createXenditPayment({
+    const { data } = await createXenditPayment({
       external_id: `booking_${tourId}`,
       currency: "PHP",
       amount: totalPrice,
@@ -47,6 +48,10 @@ export const Book = async (values: BookingProps) => {
         },
       ],
     });
+
+    if (!data) return;
+
+    return data;
   } catch (error) {
     console.log(error);
   }

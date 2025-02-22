@@ -1,16 +1,13 @@
-import { transfer_services } from "@/app/data/logistics";
-import { ServiceLabel } from "@/components/service-label";
+import { HeroService } from "@/components/hero-service";
+import { Transfer } from "./_components/transfer";
+import { getTransfer } from "@/lib/utils";
 
-const TransferPage = () => {
+const TransferPage = async () => {
   return (
-    <section>
-      <ServiceLabel label="Transfers" />
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {transfer_services.map((transfer) => (
-          <p key={transfer.service_name}>{transfer.service_name}</p>
-        ))}
-      </div>
-    </section>
+    <div className="space-y-4">
+      <HeroService title="Transfers" />
+      <Transfer />
+    </div>
   );
 };
 

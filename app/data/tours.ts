@@ -4,27 +4,88 @@ export const tours = [
     tourName: "4D3N Balabac + 1N in Mariafe",
     isFeatured: true,
     type: "package",
+    numOfDays: 4,
     pricing: [
       {
         pricingType: "joiner",
         prices: [
-          { minGroupSize: 1, maxGroupSize: 2, price: 16088 },
-          { minGroupSize: 3, maxGroupSize: 10, price: 14088 },
+          {
+            minGroupSize: 1,
+            maxGroupSize: 2,
+            price: 16088,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 3,
+            maxGroupSize: 10,
+            price: 14088,
+            isGroupPrice: false,
+          },
         ],
       },
       {
         pricingType: "private",
         prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 40988 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 24699 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 20488 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 18688 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 16888 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 15688 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 14988 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 14388 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 13988 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 13588 },
+          {
+            minGroupSize: 1,
+            maxGroupSize: 1,
+            price: 40988,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 2,
+            maxGroupSize: 2,
+            price: 24699,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 3,
+            maxGroupSize: 3,
+            price: 20488,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 4,
+            maxGroupSize: 4,
+            price: 18688,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 5,
+            maxGroupSize: 5,
+            price: 16888,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 6,
+            maxGroupSize: 6,
+            price: 15688,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 7,
+            maxGroupSize: 7,
+            price: 14988,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 8,
+            maxGroupSize: 8,
+            price: 14388,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 9,
+            price: 13988,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 10,
+            maxGroupSize: 10,
+            price: 13588,
+            isGroupPrice: false,
+          },
         ],
       },
     ],
@@ -167,8 +228,24 @@ export const tours = [
       "3D2N Coron Package with Coron Island Tour A & Coron Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 5100,
-    privatePrice: [],
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 5100,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Dive into the beauty and charm of Coron with this 3-day, 2-night package designed for adventure seekers and culture lovers. This package combines the best of Coron's stunning islands and rich local culture, ensuring you make the most of your getaway.",
@@ -225,9 +302,25 @@ export const tours = [
     tourName:
       "3D2N Coron Package with Coron Island Tour B and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 5400,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     type: "package",
-    price: 5400,
-    privatePrice: [],
     address: ["Coron, Palawan"],
     description:
       "Immerse yourself in the unparalleled beauty of Coron with this 3-day, 2-night package that combines pristine natural wonders and rich cultural experiences. This package is the perfect blend of adventure and relaxation, designed to showcase the best of Coron's hidden gems.",
@@ -286,8 +379,24 @@ export const tours = [
       "3D2N Coron Package with Coron Ultimate Tour and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 5800,
-    privatePrice: [],
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 5800,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Experience the ultimate Coron getaway with this 3-day, 2-night package that takes you to Coron's most iconic destinations and offers a glimpse into its rich culture. From stunning islands and lagoons to the charming sights of Coron Town, this package is perfect for those seeking the best of both worlds.",
@@ -345,8 +454,24 @@ export const tours = [
       "4D3N Coron Package with Island Tour A, B, Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 7850,
-    privatePrice: [],
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 7850,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Discover the full splendor of Coron with this 4-day, 3-night package that combines awe-inspiring island tours and a cultural town experience. This adventure-filled package is designed to give you the ultimate Coron getaway, where natural wonders meet vibrant local charm.",
@@ -411,8 +536,24 @@ export const tours = [
       "4D3N Coron Super Ultimate, Escapade Tour, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 8750,
-    privatePrice: [],
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 8750,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Indulge in the ultimate Coron experience with this 4-day, 3-night package, designed to showcase the best of the island's breathtaking beauty, hidden treasures, and rich culture. From iconic lagoons to pristine beaches and cultural landmarks, this package offers an unforgettable adventure for nature lovers and culture enthusiasts alike.",
@@ -477,8 +618,24 @@ export const tours = [
       "4D3N Coron Super Ultimate, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 9850,
-    privatePrice: [],
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 9850,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Immerse yourself in the wonders of Coron with this 4-day, 3-night package. Combining the breathtaking island attractions of the Super Ultimate Tour, the unique wildlife experience of Calauit Safari, and the cultural highlights of Coron Town, this package offers a perfect mix of adventure, nature, and relaxation.",
@@ -543,8 +700,24 @@ export const tours = [
       "5D4N Coron Tour A, B, Escapade Tour, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 10800,
-    privatePrice: [],
+    numOfDays: 5,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 10800,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Immerse yourself in Coron's unmatched beauty with this 5-day, 4-night package that takes you to its most iconic spots, hidden gems, and serene beaches. This ultimate getaway promises a perfect blend of relaxation, adventure, and cultural discovery, designed for travelers who want to experience the best of Coron.",
@@ -617,8 +790,24 @@ export const tours = [
       "5D4N Super Coron Ultimate, Escapade Tour, Reef and Wrecks, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 11700,
-    privatePrice: [],
+    numOfDays: 5,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 11700,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Experience the ultimate Coron adventure with this 5-day, 4-night package. Perfect for nature enthusiasts and explorers, this itinerary combines the best of Coron's stunning landscapes, pristine beaches, rich marine biodiversity, and cultural heritage.",
@@ -689,8 +878,24 @@ export const tours = [
       "5D4N Coron Super Ultimate, Reef and Wrecks, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     type: "package",
-    price: 12800,
-    privatePrice: [],
+    numOfDays: 5,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 12800,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Discover Coron's unparalleled beauty, rich marine biodiversity, and unique wildlife with this 5-day, 4-night package. From iconic island destinations to historic shipwrecks, exotic wildlife, and cultural landmarks, this all-in-one adventure is the perfect way to explore Coron's wonders.",
@@ -762,10 +967,18 @@ export const tours = [
       "3D2N El Nido Package Tour A + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 3,
     pricing: [
       {
         pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 4800 }],
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 4800,
+            isGroupPrice: false,
+          },
+        ],
       },
       {
         pricingType: "private",
@@ -828,10 +1041,18 @@ export const tours = [
       "4D3N El Nido Package Tour A, Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 4,
     pricing: [
       {
         pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 7200 }],
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 7200,
+            isGroupPrice: false,
+          },
+        ],
       },
       {
         pricingType: "private",
@@ -900,10 +1121,18 @@ export const tours = [
       "5D4N El Nido Package Tour A, Tour B, and Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 5,
     pricing: [
       {
         pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 9300 }],
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 9300,
+            isGroupPrice: false,
+          },
+        ],
       },
       {
         pricingType: "private",
@@ -976,8 +1205,24 @@ export const tours = [
     tourName: "7D6N Trio Palawan",
     isFeatured: false,
     type: "package",
-    price: 18900,
-    privatePrice: [],
+    numOfDays: 7,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 18900,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Discover the best of Palawan in this 7-day, 6-night adventure that takes you to Puerto Princesa, El Nido, and Coron. This comprehensive tour is the perfect combination of cultural discovery, island-hopping escapades, and nature exploration, showcasing the unparalleled beauty of the Philippines' last frontier.",
@@ -1012,8 +1257,24 @@ export const tours = [
     tourName: "6D5N Trio Palawan",
     isFeatured: false,
     type: "package",
-    price: 15700,
-    privatePrice: [],
+    numOfDays: 6,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 15700,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Embark on a remarkable 6-day, 5-night journey across Palawan’s most iconic destinations—Puerto Princesa, El Nido, and Coron. This carefully crafted itinerary combines cultural exploration, natural wonders, and island adventures, making it the perfect choice for travelers seeking the ultimate Palawan experience.",
@@ -1048,8 +1309,24 @@ export const tours = [
     tourName: "5D4N Trio Palawan",
     isFeatured: false,
     type: "package",
-    price: 14800,
-    privatePrice: [],
+    numOfDays: 5,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 14800,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Experience the ultimate Palawan escapade with this 5-day, 4-night tour, combining the best of Puerto Princesa, El Nido, and Coron. Discover breathtaking natural wonders, explore world-famous destinations, and create unforgettable memories in the paradise of Palawan.",
@@ -1083,8 +1360,24 @@ export const tours = [
     tourName: "5D4N PPS to El nido Palawan",
     isFeatured: false,
     type: "package",
-    price: 10500,
-    privatePrice: [],
+    numOfDays: 5,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 10500,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Immerse yourself in the best of Palawan with this 5-day, 4-night tour that perfectly combines Puerto Princesa's rich culture and natural wonders with El Nido's world-renowned islands. This package is ideal for travelers seeking a complete Palawan experience.",
@@ -1116,8 +1409,24 @@ export const tours = [
     tourName: "4D3N PPS to El nido Palawan",
     isFeatured: false,
     type: "package",
-    price: 9100,
-    privatePrice: [],
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 9100,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Discover the best of Palawan with this 4-day, 3-night tour package, combining the natural wonders of Puerto Princesa with the iconic islands of El Nido. Perfect for those who want to experience Palawan’s top attractions in a short but unforgettable getaway.",
@@ -1149,8 +1458,24 @@ export const tours = [
     tourName: "3D2N PPS to El nido Palawan",
     isFeatured: false,
     type: "package",
-    price: 6900,
-    privatePrice: [],
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 6900,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Embark on an unforgettable journey combining the natural wonders of Puerto Princesa and the pristine beauty of El Nido. This 3-day, 2-night package offers a perfect blend of exploration and relaxation.",
@@ -1182,8 +1507,78 @@ export const tours = [
     tourName: "Batak the most preserved tribe in Palawan",
     isFeatured: true,
     type: "day tour",
-    // price: 850,
-    privatePrice: [15800, 8900, 6800, 5650, 5000, 4550, 4300, 4000, 3800, 3600],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 1,
+            price: 15800,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 2,
+            maxGroupSize: 2,
+            price: 8900,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 3,
+            maxGroupSize: 3,
+            price: 6800,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 4,
+            maxGroupSize: 4,
+            price: 5650,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 5,
+            maxGroupSize: 5,
+            price: 5000,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 6,
+            maxGroupSize: 6,
+            price: 4550,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 7,
+            maxGroupSize: 7,
+            price: 4300,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 8,
+            maxGroupSize: 8,
+            price: 4000,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 9,
+            price: 3800,
+            isGroupPrice: false,
+          },
+          {
+            minGroupSize: 10,
+            maxGroupSize: 10,
+            price: 3600,
+            isGroupPrice: false,
+          },
+        ],
+      },
+    ],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Guests will be picked up on their hotel in the morning (not later than 08:00AM) and travel about 70 kilometers out of Puerto Princesa City. After an hour and half drive, will arrive at the Batak Visitor Center which is located in Barangay Conception. At the Visitor Center, you will find various local products made by the tribe available for purchase. From the Visitor Center, group will trek across mountainous terrain and cross some rivers to reach the Batak community. The hiking time takes 75 to 120 minutes, depending on the pace of the group. Upon reaching the village, join in presenting a token gift to the tribe which contains coffee, rice, sugar, and other basic needs. Say hello and make your interaction to the tribe members and see how they go about their daily lives. Our local guide will provide information about the history of the tribe and their customs. Afterwards, head back down to the Visitor Center and you'll be driven back to your hotel in Puerto Princesa or go straight North for your next day’s itinerary in Palawan. An option to include lunch in this activity is also available.",
@@ -1230,9 +1625,25 @@ export const tours = [
       "3 days 2 nights Puerto Princesa w/ Underground River Tour (Mariafe Inn or any similar hotel)",
     isFeatured: true,
     type: "package",
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 4250,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 4250,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
@@ -1294,10 +1705,26 @@ export const tours = [
     tourName:
       "3 days 2 nights Puerto Princesa with Underground River Tour + City Tour (Mariafe Inn or similar hotel)",
     isFeatured: false,
-    min: 2,
     type: "package",
-    price: 4998,
-    privatePrice: [],
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 4998,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
+    min: 2,
     address: ["Puerto Princesa, Palawan"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
@@ -1363,6 +1790,24 @@ export const tours = [
       "3 Days 2 Nigths Puerto Princesa w/ Underground River Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 5750,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
     price: 5750,
     privatePrice: [],
@@ -1429,9 +1874,25 @@ export const tours = [
       "3 Days 2 Nights Puerto Princesa w/ Honda bay Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 3750,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 3750,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Aside from the underground river experience, Puerto Princesa's Honda Bay boasts white sand beaches and small islands teeming with marine life, and you can see all of the best attractions in a single day with Honda Bay islandhopping expeditions. During your island-hopping tour, you will visit Cowrie Island, Luli Island, and Pambato Reef, all of which are excellent swimming and snorkeling spots. Cowrie Island is a popular destination for a buffet meal prepared by boatmen or tour operators. It has cabanas with massage areas and a beautiful view of the ocean. You can also order beer or cocktails from the bar while you relax in the sun.Luli Island is a sandbar that emerges only at low tide. It is surrounded by mangroves and has a lagoon where you may swim and a diving board where you can jump into the blue waters. Meanwhile, Pambato Reef is notable for its diverse population of coral reefs and fish.",
@@ -1493,9 +1954,25 @@ export const tours = [
       "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 4500,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 4500,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Aside from the underground river experience, Puerto Princesa's Honda Bay boasts white sand beaches and small islands teeming with marine life, and you can see all of the best attractions in a single day with Honda Bay island- hopping expeditions. During your island-hopping tour, you will visit Cowrie Island, Luli Island, and Pambato Reef, all of which are excellent swimming and snorkeling spots. Cowrie Island is a popular destination for a buffet meal prepared by boatmen or tour operators. It has cabanas with massage areas and a beautiful view of the ocean. You can also order beer or cocktails from the bar while you relax in the sun.Luli Island is a sandbar that emerges only at low tide. It is surrounded by mangroves and has a lagoon where you may swim and a diving board where you can jump into the blue waters. Meanwhile, Pambato Reef is notable for its diverse population of coral reefs and fish.",
@@ -1561,9 +2038,25 @@ export const tours = [
       "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 3,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 5250,
+            isGroupPrice: false,
+          },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 5250,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Aside from the underground river experience, Puerto Princesa's Honda Bay boasts white sand beaches and small islands teeming with marine life, and you can see all of the best attractions in a single day with Honda Bay island- hopping expeditions. During your island-hopping tour, you will visit Cowrie Island, Luli Island, and Pambato Reef, all of which are excellent swimming and snorkeling spots. Cowrie Island is a popular destination for a buffet meal prepared by boatmen or tour operators. It has cabanas with massage areas and a beautiful view of the ocean. You can also order beer or cocktails from the bar while you relax in the sun.Luli Island is a sandbar that emerges only at low tide. It is surrounded by mangroves and has a lagoon where you may swim and a diving board where you can jump into the blue waters. Meanwhile, Pambato Reef is notable for its diverse population of coral reefs and fish.",
@@ -1630,9 +2123,18 @@ export const tours = [
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 7850 }],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 7850,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
@@ -1708,9 +2210,18 @@ export const tours = [
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 8600 }],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 8600,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
@@ -1785,9 +2296,18 @@ export const tours = [
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
+    numOfDays: 4,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 9350 }],
+      },
+      {
+        pricingType: "private",
+        prices: [],
+      },
+    ],
     min: 2,
-    price: 9350,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
@@ -1865,11 +2385,28 @@ export const tours = [
     tourName:
       "Private Underground River Tour with Ultimate Package with Sidetrips (Mariafe Inn or any similar hotel)",
     isFeatured: true,
-    type: "package",
-    // price: 850,
-    privatePrice: [
-      13000, 8900, 7100, 6100, 5600, 5300, 5100, 4900, 4700, 4600, 4600, 4600,
-      4600,
+    type: "day tour",
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 13000 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 8900 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 7100 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 6100 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 5600 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 5300 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 5100 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 4900 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 4700 },
+          { minGroupSize: 10, maxGroupSize: 13, price: 4600 },
+        ],
+      },
     ],
     address: ["Puerto Princesa, Palawan"],
     description:
@@ -1932,8 +2469,28 @@ export const tours = [
     tourName: "City Tour",
     isFeatured: true,
     type: "day tour",
-    price: 850,
-    privatePrice: [4350, 2250, 1750, 1500, 1250, 1100, 1050, 1000, 950, 850],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 850 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 4350 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 2250 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 1750 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 1500 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 1250 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 1100 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 1050 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 1000 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 950 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 850 },
+        ],
+      },
+    ],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
@@ -2010,10 +2567,29 @@ export const tours = [
   {
     tourId: "honda-bay-puerto-princesa-city",
     tourName: "Honda Bay Tour",
-
     type: "day tour",
-    price: 2000,
-    privatePrice: [8500, 4800, 3800, 2950, 2700, 2400, 2300, 2200, 2100, 2000],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2000 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 8500 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 4800 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 3800 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 2950 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 2700 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 2400 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 2300 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 2200 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 2100 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 2000 },
+        ],
+      },
+    ],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan's most picturesque islands, each with its unique charm and beauty.",
@@ -2081,8 +2657,27 @@ export const tours = [
     tourName: "Underground Tour",
     isFeatured: true,
     type: "day tour",
-    price: 2500,
-    privatePrice: [11000, 6800, 5000, 4000, 3500, 3200, 3000, 2800, 2800, 2500],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2500 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 11000 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 6800 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 5000 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 4000 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 3500 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 3200 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 3000 },
+          { minGroupSize: 8, maxGroupSize: 9, price: 2800 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 2500 },
+        ],
+      },
+    ],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Explore one of the New 7 Wonders of Nature and a UNESCO World Heritage Site on this breathtaking Underground River Tour. Journey into the heart of Palawan and discover the natural beauty and incredible geology of the Puerto Princesa Subterranean River National Park. This tour offers an unforgettable adventure through ancient limestone caves, stunning rock formations, and a world-class ecosystem.",
@@ -2154,9 +2749,28 @@ export const tours = [
     tourId: "firefly-watching-puerto-princesa-city",
     tourName: "Firefy Tour",
     type: "day tour",
-    price: 1500,
-    privatePrice: [
-      5500, 3300, 2567, 2200, 1980, 1834, 1729, 1650, 1589, 1540, 1500,
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 5500 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 3300 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 2567 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 2200 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 1980 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 1834 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 1729 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 1650 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 1589 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 1540 },
+          { minGroupSize: 11, maxGroupSize: 11, price: 1500 },
+        ],
+      },
     ],
     address: ["Puerto Princesa, Palawan"],
     description:
@@ -2207,11 +2821,61 @@ export const tours = [
   {
     tourId: "tour-a-el-nido",
     tourName: "Tour A",
-
     type: "day tour",
-    price: 1200,
-    isPax: true,
-    privatePrice: [11000, 12000, 14500, 16000, 18000, 19000, 20000],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1200 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          {
+            minGroupSize: 1,
+            maxGroupSize: 2,
+            price: 11000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 3,
+            maxGroupSize: 4,
+            price: 12000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 5,
+            maxGroupSize: 6,
+            price: 14500,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 7,
+            maxGroupSize: 8,
+            price: 16000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 18000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 11,
+            maxGroupSize: 12,
+            price: 19000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 13,
+            maxGroupSize: 14,
+            price: 20000,
+            isGroupSize: true,
+          },
+        ],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "Embark on the iconic El Nido Tour A, a must-experience adventure that showcases some of the most stunning natural attractions in El Nido, Palawan. Perfect for beach lovers, snorkelers, and nature enthusiasts, this tour offers an unforgettable day of exploring crystal-clear lagoons, pristine beaches, and vibrant underwater life.",
@@ -2277,11 +2941,41 @@ export const tours = [
   {
     tourId: "tour-b-el-nido",
     tourName: "Tour B",
-
     type: "day tour",
-    price: 1300,
-    isPax: true,
-    privatePrice: [13000, 15500, 17500, 19500, 21000, 22000, 23000],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1300 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 2, price: 13000, isGroupSize: true },
+          { minGroupSize: 3, maxGroupSize: 4, price: 15500, isGroupSize: true },
+          { minGroupSize: 5, maxGroupSize: 6, price: 17500, isGroupSize: true },
+          { minGroupSize: 7, maxGroupSize: 8, price: 19500, isGroupSize: true },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 21000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 11,
+            maxGroupSize: 12,
+            price: 22000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 13,
+            maxGroupSize: 14,
+            price: 23000,
+            isGroupSize: true,
+          },
+        ],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour B offers an exciting exploration of caves, hidden beaches, and vibrant marine life. This tour is perfect for those seeking adventure and discovery, providing a blend of thrilling activities and stunning natural scenery. Explore unique geological formations, swim in crystal-clear waters, and relax on pristine beaches.",
@@ -2349,11 +3043,41 @@ export const tours = [
     tourId: "tour-c-el-nido",
     tourName: "Tour C",
     isFeatured: true,
-
     type: "day tour",
-    price: 1400,
-    isPax: true,
-    privatePrice: [13000, 15500, 17500, 19500, 21000, 22000, 23000],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1400 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 2, price: 13000, isGroupSize: true },
+          { minGroupSize: 3, maxGroupSize: 4, price: 15500, isGroupSize: true },
+          { minGroupSize: 5, maxGroupSize: 6, price: 17500, isGroupSize: true },
+          { minGroupSize: 7, maxGroupSize: 8, price: 19500, isGroupSize: true },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 21000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 11,
+            maxGroupSize: 12,
+            price: 22000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 13,
+            maxGroupSize: 14,
+            price: 23000,
+            isGroupSize: true,
+          },
+        ],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour C is renowned for its hidden beaches, secret coves, and dramatic limestone formations. This tour is perfect for those seeking an adventurous day of snorkeling, exploring pristine beaches, and discovering the hidden treasures of El Nido's stunning seascape.",
@@ -2421,11 +3145,41 @@ export const tours = [
   {
     tourId: "tour-d-el-nido",
     tourName: "Tour D",
-
     type: "day tour",
-    price: 1200,
-    isPax: true,
-    privatePrice: [11000, 12000, 14500, 16000, 18000, 19000, 20000],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1200 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 2, price: 11000, isGroupSize: true },
+          { minGroupSize: 3, maxGroupSize: 4, price: 12000, isGroupSize: true },
+          { minGroupSize: 5, maxGroupSize: 6, price: 14500, isGroupSize: true },
+          { minGroupSize: 7, maxGroupSize: 8, price: 16000, isGroupSize: true },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 18000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 11,
+            maxGroupSize: 12,
+            price: 19000,
+            isGroupSize: true,
+          },
+          {
+            minGroupSize: 13,
+            maxGroupSize: 14,
+            price: 20000,
+            isGroupSize: true,
+          },
+        ],
+      },
+    ],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour D offers a more relaxed and intimate exploration of some of the less-visited yet equally stunning islands and beaches of El Nido. This tour is perfect for travelers looking to escape the crowds and enjoy a day of tranquility, snorkeling, and soaking in the natural beauty of secluded spots.",
@@ -2494,10 +3248,30 @@ export const tours = [
     tourId: "coron-town-tour",
     tourName: "Coron Town Tour",
     isFeatured: true,
-
     type: "day tour",
-    price: 900,
-    privatePrice: [4000, 2300, 2300, 1700, 1700, 1500, 1500, 1500, 1300, 1300],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 900 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 4000 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 2300 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 1700 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 1500 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 1300,
+          },
+        ],
+      },
+    ],
+    // price: 900,
+    // privatePrice: [4000, 2300, 2300, 1700, 1700, 1500, 1500, 1500, 1300, 1300],
     address: ["Coron, Palawan"],
     description:
       "Discover the charm of Coron Town and experience its rich history, culture, and scenic spots with this comprehensive Coron Town Tour. This half-day tour will take you through the town’s must-see attractions, offering a perfect blend of history, relaxation, and stunning views. Whether you're looking to learn more about the local way of life or just want to explore the hidden gems of Coron, this tour has something for everyone.",
@@ -2557,10 +3331,28 @@ export const tours = [
   {
     tourId: "coron-island-tour-a",
     tourName: "Coron town tour A",
-
     type: "day tour",
-    price: 1200,
-    privatePrice: [6000, 4000, 4000, 3200, 3200, 2800, 2800, 2800, 2600, 2600],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1200 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 6000 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 4000 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 3200 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 2800 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 2600,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Explore the breathtaking natural wonders of Coron Island with Tour A, an island-hopping adventure that showcases the best of what Coron has to offer. Known for its crystal-clear waters, stunning limestone cliffs, and vibrant marine life, Coron Island is a paradise for nature lovers, snorkelers, and adventurers alike. This full-day tour will take you to some of the most iconic and picturesque spots, giving you an unforgettable experience in one of the world’s most beautiful destinations.",
@@ -2625,10 +3417,28 @@ export const tours = [
   {
     tourId: "coron-island-tour-b",
     tourName: "Coron island tour B",
-
     type: "day tour",
-    price: 1500,
-    privatePrice: [6500, 4200, 4200, 3200, 3200, 2700, 2700, 2700, 2500, 2500],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 6500 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 4200 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 3200 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 2700 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 2500,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Immerse yourself in the natural beauty and rich history of Coron Island with Tour B, a captivating island-hopping adventure that takes you to some of Coron’s lesser-known yet equally stunning spots. This tour is perfect for those who want to explore quieter, hidden gems, offering both adventure and relaxation amidst Coron’s famous limestone cliffs, crystal-clear waters, and pristine beaches.",
@@ -2692,10 +3502,28 @@ export const tours = [
   {
     tourId: "coron-island-escapade",
     tourName: "Coron Island Escapade",
-
     type: "day tour",
-    price: 1700,
-    privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1700 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 4700 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 3300 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 3000 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 2600,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Experience the beauty and diversity of Palawan’s islands as you explore pristine beaches, vibrant coral reefs, and crystal-clear waters. Perfect for beach lovers, snorkelers, and adventure seekers, this tour promises a day of fun, relaxation, and breathtaking scenery.",
@@ -2742,10 +3570,28 @@ export const tours = [
   {
     tourId: "coron-reef-and-wrecks",
     tourName: "Reef and Wrecks Tour",
-
     type: "day tour",
-    price: 1700,
-    privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1700 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 4700 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 3300 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 3000 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 2600,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Explore the underwater wonders of Coron with our Reef and Wrecks Tour. This adventure takes you to some of the best snorkeling and diving sites in the world, where you can discover vibrant coral reefs and historic shipwrecks from World War II. Ideal for both beginners and experienced divers, this tour offers a unique blend of natural beauty and historical intrigue.",
@@ -2799,10 +3645,28 @@ export const tours = [
   {
     tourId: "coron-island-ultimate-tour",
     tourName: "Coron Ultimate Tour",
-
     type: "day tour",
-    price: 1700,
-    privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1700 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 4700 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 3300 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 3000 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 2600,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Experience the breathtaking beauty and diverse ecosystems of Coron with the Coron Island Ultimate Tour. This all-inclusive adventure is designed for those who want to explore the best that Coron has to offer in a single day. From stunning lagoons and pristine beaches to vibrant coral gardens and historical sites, this tour promises an unforgettable journey through one of the Philippines’ most stunning destinations.",
@@ -2861,10 +3725,28 @@ export const tours = [
     tourId: "coron-island-super-ultimate-tour",
     tourName: "Coron island super ultimate tour",
     isFeatured: true,
-
     type: "day tour",
-    price: 1900,
-    privatePrice: [7700, 4900, 4900, 3500, 3500, 3200, 3200, 3200, 2800, 2800],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1900 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 7700 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 4900 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 3500 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 3200 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 2800,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "The Coron Super Ultimate Tour is the quintessential full-day excursion that showcases the best of Coron's stunning natural wonders. Perfect for adventurers, beach lovers, and snorkeling enthusiasts, this tour takes you to iconic lakes, lagoons, and coral gardens, offering a diverse array of experiences from swimming in crystal-clear waters to exploring vibrant marine life and relaxing on pristine beaches.",
@@ -2925,10 +3807,28 @@ export const tours = [
     tourId: "calauit-safari-tour",
     tourName: "Calauit Safari Tour",
     isFeatured: true,
-
     type: "day tour",
-    price: 2800,
-    privatePrice: [15000, 7600, 7600, 5000, 5000, 4000, 4000, 4000, 3400, 3400],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2800 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 15000 },
+          { minGroupSize: 2, maxGroupSize: 3, price: 7600 },
+          { minGroupSize: 4, maxGroupSize: 5, price: 5000 },
+          { minGroupSize: 6, maxGroupSize: 8, price: 4000 },
+          {
+            minGroupSize: 9,
+            maxGroupSize: 10,
+            price: 3400,
+          },
+        ],
+      },
+    ],
     address: ["Coron, Palawan"],
     description:
       "Discover a slice of Africa in the heart of the Philippines with our Calauit Safari Tour. Nestled on Calauit Island, just off the coast of Coron, Palawan, this unique safari park offers an extraordinary adventure where you can encounter exotic wildlife, stunning landscapes, and immerse yourself in a conservation success story.",
@@ -2985,11 +3885,41 @@ export const tours = [
     tourName: "Port Barton Day Tour from Puerto Princesa",
     isFeatured: true,
     type: "day tour",
-    price: [
-      8800, 4990, 4500, 3800, 3500, 3250, 2950, 2750, 2600, 2450, 2450, 2350,
-    ],
-    privatePrice: [
-      14988, 7588, 5288, 4388, 3888, 3488, 3188, 2988, 2788, 2688, 2588, 2488,
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 8800 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 4990 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 4500 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 3800 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 3500 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 3250 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 2950 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 2750 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 2600 },
+          { minGroupSize: 10, maxGroupSize: 11, price: 2450 },
+          { minGroupSize: 12, maxGroupSize: 12, price: 2350 },
+        ],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 14988 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 7588 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 5288 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 4388 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 3888 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 3488 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 3188 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 2988 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 2788 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 2688 },
+          { minGroupSize: 11, maxGroupSize: 11, price: 2588 },
+          { minGroupSize: 12, maxGroupSize: 12, price: 2488 },
+        ],
+      },
     ],
     address: ["Port barton, Palawan"],
     description:
@@ -3053,8 +3983,28 @@ export const tours = [
     tourName: "Port Barton Island Tour from Port Barton Proper",
     isFeatured: true,
     type: "day tour",
-    price: 1500,
-    privatePrice: [6000, 3250, 2334, 1875, 1760, 1667, 1615, 1575, 1545, 1500],
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 6000 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 3250 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 2334 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 1875 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 1760 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 1667 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 1615 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 1575 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 1545 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 1500 },
+        ],
+      },
+    ],
     address: ["Port barton, Palawan"],
     description:
       "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
@@ -3116,11 +4066,30 @@ export const tours = [
     tourId: "bohol-countryside-tour",
     tourName: "Countryside Bohol",
     isFeatured: true,
-
     type: "day tour",
-    // price: 1700,
-    privatePrice: [
-      5150, 3650, 3150, 3000, 2850, 2750, 2680, 2650, 2600, 2550, 2500, 2450,
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 5150 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 3650 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 3150 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 3000 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 2850 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 2750 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 2680 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 2650 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 2600 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 2550 },
+          { minGroupSize: 11, maxGroupSize: 11, price: 2500 },
+          { minGroupSize: 12, maxGroupSize: 12, price: 2450 },
+        ],
+      },
     ],
     address: ["Bohol"],
     description:
@@ -3169,11 +4138,30 @@ export const tours = [
   {
     tourId: "bohol-panglao-tour",
     tourName: "Panglao Bohol",
-
     type: "day tour",
-    // price: 1700,
-    privatePrice: [
-      3900, 2350, 1850, 1750, 1600, 1480, 1430, 1380, 1330, 1280, 1230, 1190,
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 3900 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 2350 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 1850 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 1750 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 1600 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 1480 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 1430 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 1380 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 1330 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 1280 },
+          { minGroupSize: 11, maxGroupSize: 11, price: 1230 },
+          { minGroupSize: 12, maxGroupSize: 12, price: 1190 },
+        ],
+      },
     ],
     address: ["Bohol"],
     description:
@@ -3221,11 +4209,30 @@ export const tours = [
   {
     tourId: "island-hopping-bohol",
     tourName: "Island Hopping",
-
     type: "day tour",
-    // price: 1700,
-    privatePrice: [
-      5450, 3450, 2850, 2600, 2500, 2400, 2300, 2200, 2100, 2000, 1900, 1850,
+    numOfDays: 1,
+    pricing: [
+      {
+        pricingType: "joiner",
+        prices: [],
+      },
+      {
+        pricingType: "private",
+        prices: [
+          { minGroupSize: 1, maxGroupSize: 1, price: 5450 },
+          { minGroupSize: 2, maxGroupSize: 2, price: 3450 },
+          { minGroupSize: 3, maxGroupSize: 3, price: 2850 },
+          { minGroupSize: 4, maxGroupSize: 4, price: 2600 },
+          { minGroupSize: 5, maxGroupSize: 5, price: 2500 },
+          { minGroupSize: 6, maxGroupSize: 6, price: 2400 },
+          { minGroupSize: 7, maxGroupSize: 7, price: 2300 },
+          { minGroupSize: 8, maxGroupSize: 8, price: 2200 },
+          { minGroupSize: 9, maxGroupSize: 9, price: 2100 },
+          { minGroupSize: 10, maxGroupSize: 10, price: 2000 },
+          { minGroupSize: 11, maxGroupSize: 11, price: 1900 },
+          { minGroupSize: 12, maxGroupSize: 12, price: 1850 },
+        ],
+      },
     ],
     address: ["Bohol"],
     description:

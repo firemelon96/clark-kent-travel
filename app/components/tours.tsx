@@ -16,7 +16,10 @@ const Tours = () => {
 
   return (
     <section className="scroll-mt-6 space-y-4 md:text-start" id="tours">
-      <ServiceLabel label="Day Tours" />
+      <ServiceLabel
+        label="Adventure Escapes"
+        subHeading="Experience More in a Day!"
+      />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {tours.slice(0, 8).map((tour) => (
           <Card

@@ -1,6 +1,6 @@
 "use client";
 
-// import { Book } from "@/actions/book";
+import { Book } from "@/actions/book";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -56,32 +56,16 @@ export const ContactForm = ({
   //   };
 
   const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
-    const data = { ...values, tourId, participants, totalPrice, tourName };
+    const newValues = { ...values, tourId, participants, totalPrice, tourName };
 
-    createXenditPayment({
-      external_id: `booking_${tourId}`,
-      currency: "PHP",
-      amount: totalPrice,
-      customer: {
-        email: data.contactEmail,
-        given_names: data.contactName,
-        mobile_number: data.contactNumber,
-      },
-      success_redirect_url:
-        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-success",
-      failure_redirect_url:
-        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-failure",
-      customer_notification_preference: {
-        invoice_paid: ["email"],
-      },
-      items: [
-        {
-          name: tourName,
-          price: totalPrice / participants,
-          category: "Tour Package",
-          quantity: participants,
-        },
-      ],
+    startTransition(() => {
+      Book(newValues)
+        .then((data) => {
+          if (!data) return;
+
+          window.location.href = data.invoice_url;
+        })
+        .catch(() => console.log("Something went wrong"));
     });
   };
 

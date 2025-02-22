@@ -57,11 +57,11 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
   const [openDate, setOpenDate] = useState(false);
   const router = useRouter();
 
-  // const maxGroupSize = Math.max(
-  //   ...prices
-  //     .filter((price) => price.maxGroupSize !== 1) // Exclude prices where maxGroupSize is 1
-  //     .map((price) => price.maxGroupSize), // Extract the maxGroupSize values
-  // );
+  const filteredTypes = types.filter((type) => {
+    const priceForType =
+      pricing.find((price) => price.pricingType === type.value)?.prices || [];
+    return priceForType.length > 0; // Only keep types with prices
+  });
 
   const form = useForm<z.infer<typeof BookingSchema>>({
     resolver: zodResolver(BookingSchema),
@@ -72,7 +72,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
       },
       participants: 2,
       totalPrice: 0,
-      pricingType: "joiner",
+      pricingType: filteredTypes[0].value === "joiner" ? "joiner" : "private",
     },
   });
 
@@ -85,25 +85,33 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
       (price) => price.pricingType === travellerType,
     )?.prices;
 
+    if (!priceForType) return;
+
     // If participants match minGroupSize and maxGroupSize (e.g., JOINER with group size of 1)
 
     // Handle cases where group size is larger than defined range
-    const selectedPrice =
-      priceForType?.find(
-        (price) =>
-          participants >= price.minGroupSize &&
-          participants <= price.maxGroupSize,
-      )?.price || 0;
+    const selectedPrice = priceForType?.find(
+      (price) =>
+        participants >= price.minGroupSize &&
+        participants <= price.maxGroupSize,
+    );
 
-    setPrice(selectedPrice);
+    if (!selectedPrice) return;
 
-    form.setValue("totalPrice", price * participants);
-  }, [participants, travellerType, , price, pricing, form.setValue, form]);
+    setPrice(selectedPrice.price);
+
+    if (selectedPrice.isGroupPrice) {
+      form.setValue("totalPrice", price);
+    } else {
+      form.setValue("totalPrice", price * participants);
+    }
+  }, [participants, travellerType, price, pricing, form.setValue, form]);
 
   const onSubmit = (values: z.infer<typeof BookingSchema>) => {
     const { participants, totalPrice, pricingType, dateRange } = values;
     const from = dateRange.from;
     const to = dateRange?.to;
+
     const url = qs.stringifyUrl(
       {
         url: "/booking",
@@ -136,7 +144,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
-                        variant={"outline"}
+                        variant="ckBtn"
                         className={cn(
                           "w-[240px] pl-3 text-left font-normal",
                           !field.value && "text-muted-foreground",
@@ -154,7 +162,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                         ) : (
                           <span>Pick a date</span>
                         )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        <CalendarIcon className="ml-auto h-4 w-4" />
                       </Button>
                     </FormControl>
                   </PopoverTrigger>
@@ -218,7 +226,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
               <FormLabel>Select type</FormLabel>
               <FormControl>
                 <div className="flex flex-wrap gap-2">
-                  {types.map((type) => (
+                  {filteredTypes.map((type) => (
                     <Button
                       key={type.value}
                       type="button"
