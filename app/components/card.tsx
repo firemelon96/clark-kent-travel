@@ -2,26 +2,20 @@ import Image from "next/image";
 import { formatPeso } from "../lib/helpers";
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
-import { Banknote, MapPin } from "lucide-react";
+import { Banknote, BanknoteIcon, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface CardProps {
   image: string;
   title: string;
-  price?: number | number[];
   address: string;
   id: string;
-  privatePrice: number[];
+  price: number | null;
 }
 
-const Card = ({
-  image,
-  title,
-  price,
-  address,
-  id,
-  privatePrice,
-}: CardProps) => {
+const Card = ({ image, title, address, id, price }: CardProps) => {
+  // const isPriceArray = Array.isArray(price);
+
   return (
     <Link href={`/travel-and-tours/${id}`}>
       <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border bg-white shadow-sm hover:border-rose-500 hover:shadow-md sm:shadow-none md:w-fit">
@@ -39,19 +33,9 @@ const Card = ({
             {title}
           </h2>
           <div className="flex gap-2">
-            {price && !Array.isArray(price) && (
+            {price && (
               <Badge variant="secondary" className="text-slate-500">
                 {formatPeso(price)}
-              </Badge>
-            )}
-            {price && Array.isArray(price) && (
-              <Badge variant="secondary" className="text-slate-500">
-                {formatPeso(price[0])}
-              </Badge>
-            )}
-            {!price && privatePrice && (
-              <Badge variant="secondary" className="text-slate-500">
-                {formatPeso(privatePrice[0])}
               </Badge>
             )}
             <Badge

@@ -1,4 +1,4 @@
-import { getTourById, getTravelToursNewData } from "@/app/lib/helpers";
+import { getTourById } from "@/app/lib/helpers";
 import { BookingOptions } from "@/components/booking-options";
 import { ImageBanner } from "@/components/image-banner";
 import { ReusableAccordion } from "@/components/reusable-accordion";
@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getFirstAvailablePrice } from "@/lib/utils";
+import Link from "next/link";
 import { BiSolidLeftArrow } from "react-icons/bi";
 
 interface SingleProps {
@@ -39,8 +40,8 @@ const SinglePage = ({ params }: SingleProps) => {
             <p className="text-2xl font-medium">{tour.tourName}</p>
           </CardHeader>
           <CardContent>
-            <Button variant="ckBtn" className="w-full">
-              Check Availability
+            <Button variant="ckBtn" className="w-full" asChild>
+              <Link href={"#booking-option"}>Check Availability</Link>
             </Button>
           </CardContent>
         </Card>

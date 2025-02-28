@@ -11,21 +11,14 @@ export const Transfer = () => {
   const searchParams = useSearchParams();
 
   const type = searchParams.get("type") || "all";
-  const from = searchParams?.get("from") || undefined;
-  const to = searchParams?.get("to") || undefined;
-  // console.log({
-  //   type,
-  //   from,
-  //   to,
-  // });
-  const filteredTransferData = getTransfer({ type, from, to });
+
+  const filteredTransferData = getTransfer({ type });
 
   return (
-    <section className="space-y-4">
-      <ServiceLabel label="Transfers" subHeading="Adventure" />
-      <div className="flex flex-col gap-4 md:flex-row">
+    <div className="space-y-4">
+      <div className="flex flex-col flex-wrap gap-4">
         <Filter />
-        <div className="flex flex-1 flex-col gap-2">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
           {filteredTransferData.map((transfer) => (
             <ServiceCard
               key={transfer.id}
@@ -40,6 +33,6 @@ export const Transfer = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };

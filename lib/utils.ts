@@ -1,4 +1,4 @@
-import { transfer_services } from "@/app/data/logistics";
+import { rentals } from "@/app/data/rentals";
 import { transfers } from "@/app/data/transfer";
 import { Pricing } from "@/types/tour";
 import { clsx, type ClassValue } from "clsx";
@@ -16,34 +16,26 @@ export const getFirstAvailablePrice = (
   return pricing && pricing.prices.length > 0 ? pricing.prices[0].price : null;
 };
 
-export const getTransfer = ({
-  type,
-  from,
-  to,
-}: {
-  type: string;
-  from?: string;
-  to?: string;
-}) => {
+export const getTransfer = ({ type }: { type: string }) => {
   let transferData = [];
   if (type === "all") {
     transferData = transfers;
-  } else if (from && to) {
-    transferData = transfers.filter(
-      (data) =>
-        data.type.toLowerCase() === type &&
-        data.from.toLowerCase() === from &&
-        data.to.toLowerCase() === to,
-    );
   } else {
     transferData = transfers.filter((data) => data.type.toLowerCase() === type);
   }
 
-  // return new Promise((resolve) => {
-  //   setTimeout(() => {
-  //     resolve(transferData);
-  //   }, 2000);
-  // });
-
   return transferData;
+};
+
+export const getRentalByType = ({ type }: { type: string }) => {
+  let rentalData = [];
+  if (type === "all") {
+    rentalData = rentals;
+  } else {
+    rentalData = rentals.filter(
+      (data) => data.serviceType.toLowerCase() === type,
+    );
+  }
+
+  return rentalData;
 };

@@ -20,6 +20,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         ckBtn: "bg-rose-500 text-primary-foreground hover:bg-rose-500/90",
+        filterActive: "bg-white/10 text-white",
       },
       size: {
         default: "h-9 px-4 py-2",

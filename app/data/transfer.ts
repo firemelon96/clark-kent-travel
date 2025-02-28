@@ -12,7 +12,7 @@ export const transfers = [
     description:
       "Join our Puerto Princesa to El Nido Joiner Transfer for a convenient, budget-friendly ride. Travel in comfort in our air-conditioned vans, perfect for solo travelers or small groups. Enjoy the scenic journey and arrive in El Nido ready to explore. Multiple daily departures available!",
     availability: "6:00 AM - 5:00 PM",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
   {
     id: "joiner-elnido-pps",
@@ -26,7 +26,7 @@ export const transfers = [
     description:
       "Join our El Nido to Puerto Princesa Joiner Transfer for an easy, affordable trip back to the city. Travel in comfort in our air-conditioned vans and enjoy the scenic views along the way. Ideal for solo travelers or small groups, with multiple daily departures to fit your schedule.",
     availability: "6:00 AM - 5:00 PM",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
   {
     id: "private-van-pps-elnido",
@@ -40,7 +40,7 @@ export const transfers = [
     description:
       "Book our Private Van Transfer from Puerto Princesa to El Nido for a personalized and comfortable travel experience. Perfect for families or groups, our air-conditioned van offers a direct, hassle-free journey at your own pace. Enjoy the privacy, flexibility, and scenic views as you travel through Palawan. Choose your departure time and relax while we take care of the rest!",
     availability: "6:00 AM - 10:00 PM",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
   {
     id: "private-van-elnido-pps",
@@ -54,7 +54,7 @@ export const transfers = [
     description:
       "Book our Private Van Transfer from Puerto Princesa to El Nido for a personalized and comfortable travel experience. Perfect for families or groups, our air-conditioned van offers a direct, hassle-free journey at your own pace. Enjoy the privacy, flexibility, and scenic views as you travel through Palawan. Choose your departure time and relax while we take care of the rest!",
     availability: "6:00 AM - 10:00 PM",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
   {
     id: "joiner-pps-barton",
@@ -68,7 +68,7 @@ export const transfers = [
     description:
       "Join our Puerto Princesa to Port Barton Joiner Transfer for an affordable and convenient ride. Travel comfortably in our air-conditioned vans and enjoy the scenic trip to Port Barton. Perfect for solo travelers or small groups, with multiple departures daily.",
     availability: "6:00 AM - 5:00 PM",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
   {
     id: "joiner-barton-pps",
@@ -82,7 +82,7 @@ export const transfers = [
     description:
       "Join our Port Barton to Puerto Princesa Joiner Transfer for an easy and affordable journey back to the city. Enjoy a comfortable ride in our air-conditioned vans while taking in the beautiful landscapes of Palawan. Ideal for solo travelers or small groups, with multiple daily departures to fit your schedule.",
     availability: "6:00 AM - 5:00 PM",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
   {
     id: "private-puerto-princesa-astoria-transfer-per-way",
@@ -96,7 +96,7 @@ export const transfers = [
     description:
       "Book our Private Transfer from Puerto Princesa to Astoria Palawan for a comfortable and hassle-free journey. Travel in a spacious, air-conditioned van with the convenience of choosing your own departure time. Perfect for families or groups, this direct transfer ensures a smooth and relaxing ride to your destination. Enjoy the scenic beauty of Palawan along the way!",
     availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/ckvan.jpg",
   },
   {
     id: "private-astoria-puerto-princesa-transfer-per-way",
@@ -110,7 +110,7 @@ export const transfers = [
     description:
       "Book our Private Transfer from Astoria Palawan to Puerto Princesa for a smooth and comfortable journey. Travel in an air-conditioned van with the convenience of selecting your preferred departure time. Ideal for families or groups, this direct transfer ensures a stress-free ride back to the city while enjoying the scenic landscapes of Palawan.",
     availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/ckvan.jpg",
   },
 
   //city proper
@@ -126,7 +126,7 @@ export const transfers = [
     description:
       "Book our PPS Airport Transfer to City Proper for a quick and hassle-free ride to your destination. Our air-conditioned van provides a comfortable and efficient transfer, ideal for solo travelers, families, or groups. Enjoy a smooth journey from Puerto Princesa Airport to any location within the city proper. Let us take care of your transportation needs upon arrival!",
     availability: "4 hours",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/airport-van.jpg",
   },
   {
     id: "bohol-airport-transfer",
@@ -140,7 +140,7 @@ export const transfers = [
     description:
       "Book our Bohol Airport Transfer for a convenient and comfortable ride to your destination. Our air-conditioned vehicles ensure a smooth and hassle-free journey, whether you're heading to a hotel, resort, or any location in Bohol. Ideal for solo travelers, families, or groups, this service offers reliable transportation from the airport, allowing you to relax and enjoy the start of your Bohol adventure.",
     availability: "1 Day",
-    image: "/resources/logistics/van-premium.png",
+    image: "/resources/logistics/van.jpg",
   },
 
   //one way
@@ -156,7 +156,7 @@ export const transfers = [
     description:
       "Book our Private Transfer from Lio to El Nido Town for a comfortable and exclusive journey. Enjoy the flexibility of choosing your departure time while traveling in an air-conditioned van. Perfect for families or groups, this direct transfer allows you to relax and take in the beautiful scenery of Palawan along the way.",
     availability: "8:00 AM - 8:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/private-vanck.jpg",
   },
   {
     id: "private-elnido-town-lio-one-way",
@@ -170,7 +170,7 @@ export const transfers = [
     description:
       "Book our Private Transfer from El Nido Town to Lio for a comfortable and exclusive journey. Enjoy the flexibility of choosing your departure time in an air-conditioned van. Ideal for families or groups, this direct transfer allows you to relax and soak in the stunning scenery of Palawan as you travel.",
     availability: "8:00 AM - 8:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/private-vanck.jpg",
   },
 
   //day tour
@@ -186,7 +186,7 @@ export const transfers = [
     description:
       "Experience the beauty of Nacpan Beach with our Private Van Nacpan Day Tour. Enjoy a personalized journey in a comfortable, air-conditioned van, allowing you to explore at your own pace. Relax on the stunning shores, swim in crystal-clear waters, and take in breathtaking views. Perfect for families or groups looking for a memorable day in paradise!",
     availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/private-vanck.jpg",
   },
   {
     id: "private-van-lio-day-tour",
@@ -200,7 +200,7 @@ export const transfers = [
     description:
       "Discover the charm of Lio Beach with our Private Van Lio Day Tour. Travel comfortably in an air-conditioned van and enjoy a day of relaxation and exploration at your own pace. Perfect for families or groups, this personalized tour lets you experience the pristine beauty of Lio’s beaches and surroundings. A perfect getaway for a fun and peaceful day!",
     availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/private-vanck.jpg",
   },
   {
     id: "private-van-talaudyong-day-tour",
@@ -214,7 +214,7 @@ export const transfers = [
     description:
       "Escape to the serene Talaudyong Beach with our Private Van Talaudyong Day Tour. Enjoy a comfortable and personalized trip in an air-conditioned van, perfect for families or groups. Spend the day relaxing on the quiet, unspoiled beach, swimming in clear waters, and soaking in the tranquil surroundings. A peaceful retreat for a memorable day in nature!",
     availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/private-vanck.jpg",
   },
 
   //roundtrip
@@ -230,7 +230,7 @@ export const transfers = [
     description:
       "Enjoy a day of adventure with our Round-Trip Private Van Port Barton Day Tour. Travel comfortably in an air-conditioned van and explore the pristine beaches and lush surroundings of Port Barton at your own pace. Perfect for families or groups, this personalized tour offers a relaxing escape, with stunning views and opportunities for swimming, snorkeling, and sightseeing. A perfect way to experience the natural beauty of Palawan!",
     availability: "9:00 AM - 4:00 PM",
-    image: "/resources/logistics/sedan.avif",
+    image: "/resources/logistics/private-vanck.jpg",
   },
 
   //cruise

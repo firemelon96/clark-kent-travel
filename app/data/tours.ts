@@ -1809,8 +1809,6 @@ export const tours = [
       },
     ],
     min: 2,
-    price: 5750,
-    privatePrice: [],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",

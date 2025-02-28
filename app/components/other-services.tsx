@@ -4,29 +4,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { services } from "../data/services";
-
-const otherServicesCard = [
-  {
-    imageUrl: "",
-    href: "/transfers",
-    name: "Transfers",
-    description: "Enjoy our transfers offer",
-  },
-  {
-    imageUrl: "",
-    href: "/accommodations",
-    name: "Accommodations",
-    description: "Enjoy our accomodations here",
-  },
-  {
-    imageUrl: "",
-    href: "/rentals",
-    name: "Rentals",
-    description: "Rent the most cheapest price",
-  },
-];
 
 const OtherServices = () => {
   return (
@@ -39,7 +20,13 @@ const OtherServices = () => {
         subHeading="Transfers, Stays, and Rentals for a Worry-Free Journey!"
       />
       <div className="flex flex-col justify-evenly gap-2 md:flex-row">
-        <Carousel className="w-full">
+        <Carousel
+          opts={{
+            align: "start", // Ensures the first item is fully visible
+            containScroll: "trimSnaps", // Ensures full items are shown
+          }}
+          className="w-full"
+        >
           <CarouselContent>
             {services.map((service, i) => (
               <CarouselItem
@@ -57,6 +44,8 @@ const OtherServices = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselNext />
+          <CarouselPrevious />
         </Carousel>
       </div>
     </section>

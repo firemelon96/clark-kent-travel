@@ -4,10 +4,10 @@ import { getTransfer } from "@/lib/utils";
 
 const TransferPage = async () => {
   return (
-    <div className="space-y-4">
-      <HeroService title="Transfers" />
+    <section className="space-y-4">
+      <HeroService title="Transfers" imageUrl="/resources/van.jpg" />
       <Transfer />
-    </div>
+    </section>
   );
 };
 

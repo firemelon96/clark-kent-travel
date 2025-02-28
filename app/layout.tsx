@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { NewNavbar } from "@/components/new-navigation";
 import { MainNav } from "@/components/main-nav";
+import Footer from "./components/footer";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         <NewNavbar />
         {/* <MainNav /> */}
         {children}
+        <Footer />
       </body>
     </html>
   );
