@@ -82,6 +82,7 @@ export const tours = [
       "Anything not mentioned in inclusions ",
     ],
     notes: [
+      "Non Refundable",
       "The above itinerary is only a guide for the whole trip and may not be exactly followed depending on the sea and weather condition",
     ],
     reminders: [
@@ -188,7 +189,7 @@ export const tours = [
       "Tipping for the guyide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-1/coron001.jpg",
@@ -203,7 +204,7 @@ export const tours = [
     maxParticipants: 12,
   },
   {
-    tourId: "3d2n-coron-package-coron-island-tour-b-town-tour-transfers ",
+    tourId: "3d2n-coron-package-coron-island-tour-b-town-tour-transfers",
     tourName:
       "3D2N Coron Package with Coron Island Tour B and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -248,7 +249,7 @@ export const tours = [
       "Tipping for the guyide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-2/coron001.jpg",
@@ -307,7 +308,7 @@ export const tours = [
       "Tipping for the guyide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-3/coron001.jpg",
@@ -371,7 +372,7 @@ export const tours = [
       "Tipping for the guyide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-4/coron001.jpg",
@@ -436,7 +437,7 @@ export const tours = [
       "Tipping for the guide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-5/coron001.jpg",
@@ -502,7 +503,7 @@ export const tours = [
       "Tipping for the guide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-6/coron001.jpg",
@@ -574,7 +575,7 @@ export const tours = [
       "Tipping for the guide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-7/banana.avif",
@@ -648,7 +649,7 @@ export const tours = [
       "Tipping for the guide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-8/coron001.jpg",
@@ -720,7 +721,7 @@ export const tours = [
       "Tipping for the guide and driver",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/coron-package-9/coron001.jpg",
@@ -783,7 +784,7 @@ export const tours = [
       "Tipping to the guide and driver",
       "Anything not mentioned in inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/elnido-package-1/featured.jpeg",
@@ -846,7 +847,7 @@ export const tours = [
       "Tipping to the guide and driver",
       "Anything not mentioned in inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/elnido-package-2/featured.jpeg",
@@ -911,7 +912,7 @@ export const tours = [
       "Tipping to the guide and driver",
       "Anything not mentioned in inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/elnido-package-3/featured.jpeg",
@@ -959,7 +960,7 @@ export const tours = [
       "Accident Insurance",
     ],
     exclusions: [],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: ["/resources/land-arrangement/7d6n-trio-palawan.jpeg"],
     minParticipants: 2,
@@ -995,7 +996,7 @@ export const tours = [
       "Accident Insurance",
     ],
     exclusions: [],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: ["/resources/land-arrangement/6d5n-trio-palawan.jpeg"],
     minParticipants: 2,
@@ -1030,7 +1031,7 @@ export const tours = [
       "Accident Insurance",
     ],
     exclusions: [],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: ["/resources/land-arrangement/5d4n-trio-palawan.jpeg"],
     minParticipants: 2,
@@ -1063,7 +1064,7 @@ export const tours = [
       "Accident Insurance",
     ],
     exclusions: [],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: ["/resources/land-arrangement/5d4n-pps-elnido.jpeg"],
     minParticipants: 2,
@@ -1096,7 +1097,7 @@ export const tours = [
       "Accident Insurance",
     ],
     exclusions: [],
-    notes: ["Travel date: 2024-2025"],
+    notes: ["Non Refundable", "Travel date: 2024-2025"],
     reminders: [],
     images: ["/resources/land-arrangement/4d3n-pps-elnido.jpeg"],
     minParticipants: 2,
@@ -1128,7 +1129,7 @@ export const tours = [
       "Accident Insurance",
     ],
     exclusions: [],
-    notes: ["Travel date: 2024-2025"],
+    notes: ["Non Refundable", "Travel date: 2024-2025"],
     reminders: [],
     images: ["/resources/land-arrangement/3d2n-pps-elnido.jpeg"],
     minParticipants: 2,
@@ -1166,6 +1167,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Bring comfortable clothes",
       "Luggage or large bags are highly discouraged",
       "This tour is not recommended for people with limited mobility, pregnant women, wheelchair users, or those with serious medical conditions",
@@ -1233,7 +1235,7 @@ export const tours = [
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-ur-package/ur.avif",
@@ -1299,7 +1301,7 @@ export const tours = [
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-ur-city-tour/ur-city.avif",
@@ -1367,7 +1369,7 @@ export const tours = [
       "Extra Activities like Sabang -X Zipline, Ugong Rock Adventure & Mangrove Paddle",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-ur-firefly/ur-firefly.avif",
@@ -1431,7 +1433,7 @@ export const tours = [
       "Mask & Snorkel and aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-honda-bay/hondabay.avif",
@@ -1496,7 +1498,7 @@ export const tours = [
       "Mask & Snorkel and aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-honda-bay-city-tour/hondabay-city.avif",
@@ -1564,7 +1566,7 @@ export const tours = [
       "Mask & Snorkel and aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-honda-bay-firefly/hondabay-firefly.avif",
@@ -1642,7 +1644,7 @@ export const tours = [
       "Mask & Snorkeling gears and Aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-ur-honda-bay-city/ur-honda-city.avif",
@@ -1720,7 +1722,7 @@ export const tours = [
       "Mask & Snorkeling gears and Aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-ur-honda-firefly/ur-honda-firefly.avif",
@@ -1798,7 +1800,7 @@ export const tours = [
       "Mask & Snorkeling gears and Aqua shoes",
       "Anything not mentioned in Inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [],
     images: [
       "/resources/pps-ur-honda-firefly-city/ur-honda-firefly-city.avif",
@@ -1870,6 +1872,7 @@ export const tours = [
       "Environmental Fee 150 per person",
     ],
     notes: [
+      "Non Refundable",
       "The above itinerary is only a guide for the whole trip and may not be exactly followed depending on the sea and weather condition",
     ],
     reminders: [],
@@ -1942,6 +1945,7 @@ export const tours = [
       "Extra activities on site",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reinbursement included",
       "2 yrs. old and below is free of charge",
       "3-4yrs old is half-rate",
@@ -2015,6 +2019,7 @@ export const tours = [
       "Aqua shoes ",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
     ],
     reminders: [
@@ -2084,6 +2089,7 @@ export const tours = [
       "Tip for driver and tour guide",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
     ],
     reminders: [
@@ -2147,6 +2153,7 @@ export const tours = [
       "Anything not mentioned in inclusions ",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
     ],
     reminders: [
@@ -2212,6 +2219,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4 yrs old is half-rate",
       "5 yrs old and above is considered as adult.",
@@ -2280,6 +2288,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4 yrs old is half-rate",
       "5 yrs old and above is considered as adult.",
@@ -2354,6 +2363,7 @@ export const tours = [
       "Anything not mentioned in inclusions ",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4 yrs old is half-rate",
       "5 yrs old and above is considered as adult.",
@@ -2426,6 +2436,7 @@ export const tours = [
       "Anything not mentioned in inclusions ",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4 yrs old is half-rate",
       "5 yrs old and above is considered as adult.",
@@ -2495,7 +2506,7 @@ export const tours = [
       "tippingTfor the guide and driver not included",
       "Anything not mentioned in inclusions",
     ],
-    notes: [],
+    notes: ["Non Refundable"],
     reminders: [
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
@@ -2562,6 +2573,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2629,6 +2641,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2681,6 +2694,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2736,6 +2750,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2796,6 +2811,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2858,6 +2874,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2919,6 +2936,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "Accident insurance worth PHP10,000 per person medical reimbursement included",
     ],
     reminders: [
@@ -2984,6 +3002,7 @@ export const tours = [
       "Environmental fee 200/person",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge",
       "3-4yrs old is half-rate",
       "5yrs old and above is considered as adult",
@@ -3047,6 +3066,7 @@ export const tours = [
       "Environmental fee 200/person",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge",
       "3-4yrs old is half-rate",
       "5yrs old and above is considered as adult",
@@ -3108,6 +3128,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
       "5yrs old and above is considered as adult",
@@ -3160,6 +3181,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
       "5yrs old and above is considered as adult",
@@ -3209,6 +3231,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     notes: [
+      "Non Refundable",
       "2 yrs old and below is free of charge.",
       "3-4yrs old is half-rate",
       "5yrs old and above is considered as adult",
