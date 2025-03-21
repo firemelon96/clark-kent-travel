@@ -30,6 +30,7 @@ import { useRouter } from "next/navigation";
 import { Pricing } from "@/types/tour";
 import { PopoverClose } from "@radix-ui/react-popover";
 import { Label } from "./ui/label";
+import { formatPeso } from "@/app/lib/helpers";
 
 const BookingSchema = z.object({
   dateRange: z.object({
@@ -258,7 +259,9 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
             <span>Participants</span>
             <div className="ml-auto flex flex-col-reverse items-center gap-2 md:flex-row">
               <span className="text-xs text-slate-500 md:text-base">
-                {price === 0 ? "Get qoute for this group size" : `${price} x`}
+                {price === 0
+                  ? "Get qoute for this group size"
+                  : `${formatPeso(price)} x`}
               </span>
               <FormField
                 control={form.control}
@@ -317,7 +320,9 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
             <FormItem className="flex items-center justify-between rounded-md bg-slate-50 p-4">
               <FormLabel className="font-light">Total Price</FormLabel>
 
-              <Label className="p-2 text-xl font-medium">{field.value}</Label>
+              <Label className="p-2 text-xl font-medium">
+                {formatPeso(field.value)}
+              </Label>
             </FormItem>
           )}
         />

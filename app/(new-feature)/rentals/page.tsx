@@ -4,7 +4,7 @@ import { RentalsClient } from "./_components/rentals-client";
 const RentalsPage = () => {
   return (
     <section className="space-y-4">
-      <HeroService title="Rentals" />
+      <HeroService title="Rentals Services" />
       <RentalsClient />
     </section>
   );

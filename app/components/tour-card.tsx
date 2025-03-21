@@ -13,13 +13,13 @@ interface CardProps {
   price: number | null;
 }
 
-const Card = ({ image, title, address, id, price }: CardProps) => {
+const TourCard = ({ image, title, address, id, price }: CardProps) => {
   // const isPriceArray = Array.isArray(price);
 
   return (
     <Link href={`/travel-and-tours/${id}`}>
       <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border bg-white shadow-sm hover:border-rose-500 hover:shadow-md sm:shadow-none md:w-fit">
-        <div className="relative h-48 w-full">
+        <div className="relative h-64 w-full md:h-52">
           <Image
             src={image}
             fill
@@ -28,7 +28,7 @@ const Card = ({ image, title, address, id, price }: CardProps) => {
           />
         </div>
 
-        <div className="w-64 px-2 pb-4">
+        <div className="px-2 pb-4 md:w-64">
           <h2 className="truncate text-xl font-medium text-slate-600">
             {title}
           </h2>
@@ -52,4 +52,4 @@ const Card = ({ image, title, address, id, price }: CardProps) => {
   );
 };
 
-export default Card;
+export default TourCard;

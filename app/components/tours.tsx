@@ -1,6 +1,6 @@
 import { ServiceLabel } from "@/components/service-label";
 import { getDayTours } from "../lib/helpers";
-import Card from "./card";
+import Card from "./tour-card";
 import { Button } from "@/components/ui/button";
 import { getFirstAvailablePrice } from "@/lib/utils";
 

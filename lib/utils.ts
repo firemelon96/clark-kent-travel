@@ -39,3 +39,11 @@ export const getRentalByType = ({ type }: { type: string }) => {
 
   return rentalData;
 };
+
+export const generateTimeSlots = () => {
+  return Array.from({ length: 24 }, (_, i) => {
+    const period = i < 12 ? "AM" : "PM";
+    const hour = i % 12 === 0 ? 12 : i % 12;
+    return `${hour}:00 ${period}`;
+  });
+};

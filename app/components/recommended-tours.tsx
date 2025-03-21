@@ -1,5 +1,5 @@
 import { tours } from "../data/tours";
-import Card from "./card";
+import Card from "./tour-card";
 
 interface RecommendedToursProps {
   id: string;

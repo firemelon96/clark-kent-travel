@@ -5,6 +5,7 @@ import { ServiceCard } from "@/components/service-card";
 import { ServiceLabel } from "@/components/service-label";
 import { getTransfer } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
+import { TransferCard } from "./transfer-card";
 
 export const Transfer = () => {
   // console.log(await searchParams);
@@ -18,15 +19,18 @@ export const Transfer = () => {
     <div className="space-y-4">
       <div className="flex flex-col flex-wrap gap-4">
         <Filter />
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {filteredTransferData.map((transfer) => (
-            <ServiceCard
+            <TransferCard
               key={transfer.id}
-              price={transfer.price_per_trip}
+              pricePerTrip={transfer.price_per_trip}
               imageUrl={transfer.image}
-              title={transfer.service_name}
-              from={transfer.from || "unknown"}
-              to={transfer.to || "unknown"}
+              title={transfer.title}
+              from={transfer.from}
+              to={transfer.to}
+              id={transfer.id}
+              vehicleType={transfer.vehicle_type}
+              seatingCapacity={transfer.capacity}
               description={transfer.description}
               availability={transfer.availability}
             />

@@ -2,11 +2,11 @@ export const transfers = [
   //transfer
   {
     id: "joiner-pps-elnido",
-    service_name: "Joiner Puerto Princesa to El Nido",
+    title: "Joiner Puerto Princesa to El Nido",
     from: "Puerto Princesa, City",
     to: "El Nido",
     type: "transfer",
-    vehicle_type: "Van",
+    vehicle_type: "Urvan Premium",
     capacity: 12,
     price_per_trip: 750,
     description:
@@ -16,7 +16,7 @@ export const transfers = [
   },
   {
     id: "joiner-elnido-pps",
-    service_name: "Joiner El Nido to Puerto Princesa",
+    title: "Joiner El Nido to Puerto Princesa",
     from: "El Nido",
     to: "Puerto Princesa, City",
     vehicle_type: "Van",
@@ -30,7 +30,7 @@ export const transfers = [
   },
   {
     id: "private-van-pps-elnido",
-    service_name: "Private Van Puerto Princesa to El Nido",
+    title: "Private Van Puerto Princesa to El Nido",
     type: "transfer",
     vehicle_type: "Private Van",
     from: "Puerto Princesa, City",
@@ -44,7 +44,7 @@ export const transfers = [
   },
   {
     id: "private-van-elnido-pps",
-    service_name: "Private Van El Nido to Puerto Princesa",
+    title: "Private Van El Nido to Puerto Princesa",
     type: "transfer",
     vehicle_type: "Private Van",
     to: "Puerto Princesa, City",
@@ -58,7 +58,7 @@ export const transfers = [
   },
   {
     id: "joiner-pps-barton",
-    service_name: "Joiners Puerto Princesa to Port Barton",
+    title: "Joiners Puerto Princesa to Port Barton",
     vehicle_type: "Van",
     type: "transfer",
     from: "Puerto Princesa, City",
@@ -72,7 +72,7 @@ export const transfers = [
   },
   {
     id: "joiner-barton-pps",
-    service_name: "Joiners Port Barton to Puerto Princesa",
+    title: "Joiners Port Barton to Puerto Princesa",
     vehicle_type: "Van",
     type: "transfer",
     to: "Puerto Princesa, City",
@@ -86,7 +86,7 @@ export const transfers = [
   },
   {
     id: "private-puerto-princesa-astoria-transfer-per-way",
-    service_name: "Private Puerto Princesa to Astoria Transfer per way",
+    title: "Private Puerto Princesa to Astoria Transfer per way",
     vehicle_type: "Private Van",
     from: "Puerto Princesa, City",
     to: "Astoria",
@@ -100,7 +100,7 @@ export const transfers = [
   },
   {
     id: "private-astoria-puerto-princesa-transfer-per-way",
-    service_name: "Private Astoria to Puerto Princesa Transfer per way",
+    title: "Private Astoria to Puerto Princesa Transfer per way",
     vehicle_type: "Private Van",
     from: "Astoria",
     to: "Puerto Princesa, City",
@@ -116,7 +116,7 @@ export const transfers = [
   //city proper
   {
     id: "pps-airport-transfer-for-city-proper",
-    service_name: "PPS Airport Transfer for City Proper only",
+    title: "PPS Airport Transfer for City Proper only",
     vehicle_type: "Van",
     from: "Puerto Princesa Airport",
     to: "City Proper",
@@ -130,7 +130,7 @@ export const transfers = [
   },
   {
     id: "bohol-airport-transfer",
-    service_name: "Bohol Airport Transfer",
+    title: "Bohol Airport Transfer",
     vehicle_type: "Van",
     type: "proper",
     from: "Bohol Airport",
@@ -146,7 +146,7 @@ export const transfers = [
   //one way
   {
     id: "private-lio-elnido-town-one-way",
-    service_name: "Private Lio to Elnido town one way",
+    title: "Private Lio to Elnido town one way",
     vehicle_type: "Private Van",
     type: "one_way",
     from: "Lio Resort",
@@ -160,7 +160,7 @@ export const transfers = [
   },
   {
     id: "private-elnido-town-lio-one-way",
-    service_name: "Private  Elnido town to Lio one way",
+    title: "Private  Elnido town to Lio one way",
     vehicle_type: "Private Van",
     type: "one_way",
     from: "El Nido Town",
@@ -176,7 +176,7 @@ export const transfers = [
   //day tour
   {
     id: "private-van-nacpan-day-tour",
-    service_name: "Private Van Nacpan Day Tour",
+    title: "Private Van Nacpan Day Tour",
     vehicle_type: "Private Van",
     type: "day_tour",
     from: "El Nido",
@@ -190,7 +190,7 @@ export const transfers = [
   },
   {
     id: "private-van-lio-day-tour",
-    service_name: "Private Van Lio Day Tour",
+    title: "Private Van Lio Day Tour",
     vehicle_type: "Private Van",
     type: "day_tour",
     from: "El Nido",
@@ -204,7 +204,7 @@ export const transfers = [
   },
   {
     id: "private-van-talaudyong-day-tour",
-    service_name: "Private Van Talaudyong Day Tour",
+    title: "Private Van Talaudyong Day Tour",
     vehicle_type: "Private Van",
     type: "day_tour",
     from: "Puerto Princesa",
@@ -220,7 +220,7 @@ export const transfers = [
   //roundtrip
   {
     id: "rt-private-van-port-barton-day-tour",
-    service_name: "RT Private Van Port Barton Day Tour",
+    title: "RT Private Van Port Barton Day Tour",
     type: "round_trip",
     vehicle_type: "Private Van",
     from: "Puerto Princesa",
@@ -236,7 +236,7 @@ export const transfers = [
   //cruise
   {
     id: "jomalia-fastcraft-pps-to-coron",
-    service_name: "Jomalia Fast Craft",
+    title: "Jomalia Fast Craft",
     vehicle_type: "cruise",
     type: "fast craft",
     from: "El Nido",
@@ -253,7 +253,7 @@ export const transfers = [
   },
   {
     id: "jomalia-fastcraft-coron-to-pps",
-    service_name: "Jomalia Fast Craft ",
+    title: "Jomalia Fast Craft ",
     vehicle_type: "cruise",
     type: "fast craft",
     from: "Coron",

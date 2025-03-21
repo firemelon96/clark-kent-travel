@@ -16,7 +16,7 @@ export const RentalsClient = () => {
     <div className="space-y-4">
       <div className="flex flex-col gap-4">
         <FilterRental />
-        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3">
           {filteredRentalsData.map((rental) => (
             <RentalCard
               key={rental.id}
@@ -29,8 +29,8 @@ export const RentalsClient = () => {
               luggageCapacity={rental.luggageCapacity}
               transmission={rental.transmission}
               pricePerDay={rental.pricePerDay}
-              pricePerTrip={rental.pricePerTrip}
               type={rental.type}
+              serviceType={rental.serviceType}
               id={rental.id}
             />
           ))}

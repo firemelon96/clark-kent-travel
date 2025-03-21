@@ -127,9 +127,9 @@ export const rentals = [
   //type: van rentals
   {
     id: "city-tour-van-rental",
-    name: "City Tour Van Rental",
-    type: "Van",
-    serviceType: "van_rentals",
+    name: "Puerto Princesa City Tour",
+    type: "Urvan Premium",
+    serviceType: "van rentals",
     brand: "Nissan",
     modelYear: 2024,
     transmission: "Automatic",
@@ -153,10 +153,6 @@ export const rentals = [
         pricePerDay: 1000,
       },
       {
-        name: "Bottled Water",
-        pricePerPerson: 50,
-      },
-      {
         name: "Wi-Fi Access",
         pricePerDay: 300,
       },
@@ -168,8 +164,8 @@ export const rentals = [
       "/resources/logistics/urvan/urvan-front.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "4 hours",
-      maximumRentalPeriod: "12 hours",
+      minimumRentalPeriod: 4, //"4 hours"
+      maximumRentalPeriod: 12, //"12 hours"
       requiredDocuments: ["Valid ID for booking confirmation"],
       ageRequirement: 18,
       fuelPolicy: "Fuel included for city tours",
@@ -178,9 +174,9 @@ export const rentals = [
   },
   {
     id: "estrella-falls-van-rental",
-    name: "Estrella Falls Van Rental",
-    type: "Van",
-    serviceType: "van_rentals",
+    name: "Narra, Estrella Falls",
+    type: "Urvan Premium",
+    serviceType: "van rentals",
     brand: "Nissan",
     modelYear: 2024,
     transmission: "Automatic",
@@ -193,7 +189,7 @@ export const rentals = [
     availability: true,
     included: [
       "Professional driver",
-      "Fuel for city tour",
+      "Fuel for Estrella Falls",
       "Hotel pickup & drop-off",
       "Spacious and comfortable seats",
       "Tour guide (optional)",
@@ -202,10 +198,6 @@ export const rentals = [
       {
         name: "Tour Guide",
         pricePerDay: 1000,
-      },
-      {
-        name: "Bottled Water",
-        pricePerPerson: 50,
       },
       {
         name: "Wi-Fi Access",
@@ -219,8 +211,8 @@ export const rentals = [
       "/resources/logistics/urvan/urvan-front.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "4 hours",
-      maximumRentalPeriod: "12 hours",
+      minimumRentalPeriod: 4, //"4 hours"
+      maximumRentalPeriod: 12, //"12 hours"
       requiredDocuments: ["Valid ID for booking confirmation"],
       ageRequirement: 18,
       fuelPolicy: "Fuel included for city tours",
@@ -229,16 +221,16 @@ export const rentals = [
   },
   {
     id: "private-van-pps-dinner",
-    name: "Private Van for Puerto Princesa Dinner",
-    type: "Van",
-    serviceType: "van_rentals",
+    name: "Puerto Princesa Dinner (Private)",
+    type: "Urvan Premium",
+    serviceType: "van rentals",
     brand: "Nissan",
     modelYear: 2024,
     transmission: "Automatic",
     fuelType: "Diesel",
     seatingCapacity: 15,
     luggageCapacity: "4 Bags L",
-    pricePerTrip: 2000,
+    pricePerDay: 2000,
     pricePerHour: 900,
     deposit: 4000,
     availability: true,
@@ -253,10 +245,6 @@ export const rentals = [
         name: "Extended Waiting Time",
         pricePerHour: 500,
       },
-      {
-        name: "Bottled Water",
-        pricePerPerson: 50,
-      },
     ],
     images: [
       "/resources/logistics/urvan/private-vanck.jpg",
@@ -265,8 +253,8 @@ export const rentals = [
       "/resources/logistics/urvan/urvan-front.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "1 trip",
-      maximumRentalPeriod: "4 hours",
+      minimumRentalPeriod: 4, //"1 trip"
+      maximumRentalPeriod: 12, //"4 hours"
       requiredDocuments: ["Valid ID for booking confirmation"],
       ageRequirement: 18,
       fuelPolicy: "Fuel included for the trip",
@@ -277,9 +265,9 @@ export const rentals = [
   //type: self drive
   {
     id: "self-drive-toyota-innova",
-    name: "Self Drive Toyota Innova",
+    name: "Toyota Innova",
     type: "MPV",
-    serviceType: "self_drive",
+    serviceType: "self drive",
     brand: "Toyota",
     modelYear: 2023,
     transmission: "Automatic",
@@ -317,8 +305,8 @@ export const rentals = [
       "/resources/logistics/innova/innova-inside.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "4 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 4, //"4 hours"
+      maximumRentalPeriod: 30, //"30 days"
       requiredDocuments: ["Valid Driver’s License", "Government-issued ID"],
       ageRequirement: 21,
       fuelPolicy: "Return with the same fuel level",
@@ -327,9 +315,9 @@ export const rentals = [
   },
   {
     id: "self-drive-toyota-zenix",
-    name: "Self Drive Toyota Zenix",
+    name: "Toyota Zenix",
     type: "Hybrid MPV",
-    serviceType: "self_drive",
+    serviceType: "self drive",
     brand: "Toyota",
     modelYear: 2024,
     transmission: "Automatic",
@@ -371,8 +359,8 @@ export const rentals = [
       "/resources/logistics/zenix/zenix.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "4 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 4, //"4 hours"
+      maximumRentalPeriod: 30, //"30 days"
       requiredDocuments: [
         "Valid Driver’s License",
         "Government-issued ID",
@@ -385,9 +373,9 @@ export const rentals = [
   },
   {
     id: "self-drive-nissan-navarra-pro4x",
-    name: "Self Drive Nissan Navara PRO-4X",
+    name: "Nissan Navara PRO-4X",
     type: "Pickup Truck",
-    serviceType: "self_drive",
+    serviceType: "self drive",
     brand: "Nissan",
     modelYear: 2024,
     transmission: "Automatic",
@@ -425,16 +413,15 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/nissan-pro/pro4x.avif",
-      "/resources/logistics/nissan-pro/pro4.webp",
-      "/resources/logistics/nissan-pro/pro3.webp",
       "/resources/logistics/nissan-pro/pro2.webp",
+      "/resources/logistics/nissan-pro/pro3.webp",
+      "/resources/logistics/nissan-pro/pro4.webp",
       "/resources/logistics/nissan-pro/pro5.webp",
       "/resources/logistics/nissan-pro/pro6.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "4 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 4, //"4 hours"
+      maximumRentalPeriod: 30, //"30 days"
       requiredDocuments: [
         "Valid Driver’s License",
         "Government-issued ID",
@@ -447,9 +434,9 @@ export const rentals = [
   },
   {
     id: "self-drive-toyota-vios",
-    name: "Self Drive Toyota Vios",
+    name: "Toyota Vios",
     type: "Sedan",
-    serviceType: "self_drive",
+    serviceType: "self drive",
     brand: "Toyota",
     modelYear: 2024,
     transmission: "Automatic",
@@ -486,8 +473,8 @@ export const rentals = [
       "/resources/logistics/sedan/sedan4.webp",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "4 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 4, //"4 hours"
+      maximumRentalPeriod: 30, //"30 days"
       requiredDocuments: ["Valid Driver’s License", "Government-issued ID"],
       ageRequirement: 21,
       fuelPolicy: "Return with the same fuel level",
@@ -527,8 +514,8 @@ export const rentals = [
       "/resources/logistics/hondabeat.avif",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "2 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 2, //"2 hours"
+      maximumRentalPeriod: 30, //"30 days"
       requiredDocuments: [
         "Valid Driver’s License (Non-Pro/Pro)",
         "Government-issued ID",
@@ -569,8 +556,8 @@ export const rentals = [
       "/resources/logistics/click125.jpg",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "2 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 2, //"2 hours"
+      maximumRentalPeriod: 30, //"30 days"
       requiredDocuments: [
         "Valid Driver’s License (Non-Pro/Pro)",
         "Government-issued ID",
@@ -611,8 +598,8 @@ export const rentals = [
       "/resources/logistics/aerox.avif",
     ],
     rentalTerms: {
-      minimumRentalPeriod: "2 hours",
-      maximumRentalPeriod: "30 days",
+      minimumRentalPeriod: 2, //"2 hours"
+      maximumRentalPeriod: 30, // "30 days"
       requiredDocuments: [
         "Valid Driver’s License (Non-Pro/Pro)",
         "Government-issued ID",

@@ -44,7 +44,7 @@ export const SearchBar = () => {
     },
   });
 
-  const locations = getAllTourLocation();
+  const locations = [{ address: "all", image: "" }, ...getAllTourLocation()];
 
   const onSearch = (values: z.infer<typeof searchSchema>) => {
     console.log(values);
@@ -119,9 +119,9 @@ export const SearchBar = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="All Tours">All Tours</SelectItem>
+                      <SelectItem value="all types">All Tours</SelectItem>
                       <SelectItem value="day tour">Day Tour</SelectItem>
-                      <SelectItem value="Package Tour">Package Tour</SelectItem>
+                      <SelectItem value="package">Package Tour</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />

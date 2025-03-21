@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { tours } from "../data/tours";
+import { TourPackage } from "@/types/tour";
 // import { transfer_services } from "../data/logistics";
 // import { fastCrafts } from "../data/fast-craft";
 
@@ -38,16 +39,6 @@ export const getPackageTours = () => {
 export const getTourById = (id: string) => {
   const tour = tours.find((tour) => tour.tourId === id);
   if (tour === undefined) return notFound();
-  return tour;
-};
-
-export const getToursByLocation = (address: string) => {
-  const tour = tours.filter(
-    (tour) =>
-      tour.address[0].toLowerCase().includes(address.toLowerCase()) &&
-      tour.type === "day tour",
-  );
-
   return tour;
 };
 
@@ -113,9 +104,21 @@ export const getTravelTours = ({
   location: string;
   type: string;
 }) => {
-  const datas = tours.filter(
-    (tour) => tour.address.includes(location) && tour.type === type,
-  );
+  let datas: TourPackage[] = [];
+
+  if (location === "all" && type === "all types") {
+    datas = tours;
+  } else {
+    if (location && type === "all types") {
+      datas = tours.filter((tour) => tour.address.includes(location));
+    } else if (type && location === "all") {
+      datas = tours.filter((tour) => tour.type === type);
+    } else {
+      datas = tours.filter(
+        (tour) => tour.address.includes(location) && tour.type === type,
+      );
+    }
+  }
 
   return datas;
 };

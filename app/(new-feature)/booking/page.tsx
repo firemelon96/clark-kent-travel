@@ -1,4 +1,4 @@
-import { getTourById } from "@/app/lib/helpers";
+import { formatPeso, getTourById } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { format } from "date-fns";
 import { Suspense } from "react";
 import { ContactForm } from "./_components/contact-form";
+import { Stepper } from "@/components/stepper";
 
 interface Props {
   searchParams: Promise<{
@@ -32,7 +33,7 @@ const BookingPage = async ({ searchParams }: Props) => {
   const tour = getTourById(tourId);
   return (
     <section className="space-y-5">
-      <div className="w-full bg-slate-100 p-2">stepper</div>
+      <Stepper />
 
       <div className="flex flex-col gap-2">
         <div className="flex flex-col-reverse gap-4 md:flex-row">
@@ -96,19 +97,21 @@ const BookingPage = async ({ searchParams }: Props) => {
               </CardContent>
               <CardFooter className="flex items-center justify-between">
                 <p className="text-sm text-slate-500">Total</p>
-                <span className="text-xl font-semibold">{totalPrice}</span>
+                <span className="text-xl font-semibold">
+                  {formatPeso(totalPrice)}
+                </span>
               </CardFooter>
             </Card>
             <Card className="space-y-4">
               <div className="p-6">
                 <div className="flex justify-between">
                   <p className="text-slate-500">Subtotal</p>
-                  <span>{totalPrice}</span>
+                  <span>{formatPeso(totalPrice)}</span>
                 </div>
                 <div className="flex justify-between text-xl">
                   <p>Total payment</p>
                   <span className="font-bold tracking-wide text-rose-500">
-                    {totalPrice}
+                    {formatPeso(totalPrice)}
                   </span>
                 </div>
               </div>

@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className="bg-sky-200">
       <div className="container mx-auto p-4 md:px-20">
         <div className="flex w-full flex-col justify-between gap-4 md:flex-row">
-          <div className="flex flex-1 flex-col items-center gap-4 md:items-start">
+          <div className="flex flex-1 flex-col items-center gap-2 md:items-start">
             <div className="">
               <Image
                 src="/resources/logo.png"
@@ -28,7 +28,7 @@ const Footer = () => {
               />
             </div>
             <div className="text-center text-slate-500 md:text-start">
-              <h6 className="text-2xl font-semibold text-[#E13179]">
+              <h6 className="text-xl font-semibold text-[#E13179]">
                 CLARK KENT
               </h6>
               <span className="text-xl font-medium text-[#E13179]">
@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col items-center gap-4 p-2">
-            <span className="text-2xl font-semibold uppercase text-[#E13179]">
+            <span className="text-xl font-semibold uppercase text-[#E13179]">
               Contact Details
             </span>
             <ul className="flex w-fit flex-col items-center text-base text-[#E13179]/70 md:items-center">
@@ -121,7 +121,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex flex-col items-center md:items-end">
-            <span className="text-2xl font-semibold uppercase text-[#E13179]">
+            <span className="text-xl font-semibold uppercase text-[#E13179]">
               Useful Links
             </span>
             <div className="flex gap-4 text-start text-base text-[#E13179]/75 md:flex-col md:text-end">

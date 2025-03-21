@@ -89,7 +89,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Balabac, Palawan"],
+    address: ["Balabac"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
     itineraries: [
@@ -246,7 +246,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Dive into the beauty and charm of Coron with this 3-day, 2-night package designed for adventure seekers and culture lovers. This package combines the best of Coron's stunning islands and rich local culture, ensuring you make the most of your getaway.",
     itineraries: [
@@ -321,7 +321,7 @@ export const tours = [
       },
     ],
     type: "package",
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Immerse yourself in the unparalleled beauty of Coron with this 3-day, 2-night package that combines pristine natural wonders and rich cultural experiences. This package is the perfect blend of adventure and relaxation, designed to showcase the best of Coron's hidden gems.",
     itineraries: [
@@ -397,7 +397,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Experience the ultimate Coron getaway with this 3-day, 2-night package that takes you to Coron's most iconic destinations and offers a glimpse into its rich culture. From stunning islands and lagoons to the charming sights of Coron Town, this package is perfect for those seeking the best of both worlds.",
     itineraries: [
@@ -472,7 +472,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Discover the full splendor of Coron with this 4-day, 3-night package that combines awe-inspiring island tours and a cultural town experience. This adventure-filled package is designed to give you the ultimate Coron getaway, where natural wonders meet vibrant local charm.",
     itineraries: [
@@ -554,7 +554,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Indulge in the ultimate Coron experience with this 4-day, 3-night package, designed to showcase the best of the island's breathtaking beauty, hidden treasures, and rich culture. From iconic lagoons to pristine beaches and cultural landmarks, this package offers an unforgettable adventure for nature lovers and culture enthusiasts alike.",
     itineraries: [
@@ -636,7 +636,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Immerse yourself in the wonders of Coron with this 4-day, 3-night package. Combining the breathtaking island attractions of the Super Ultimate Tour, the unique wildlife experience of Calauit Safari, and the cultural highlights of Coron Town, this package offers a perfect mix of adventure, nature, and relaxation.",
     itineraries: [
@@ -718,7 +718,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Immerse yourself in Coron's unmatched beauty with this 5-day, 4-night package that takes you to its most iconic spots, hidden gems, and serene beaches. This ultimate getaway promises a perfect blend of relaxation, adventure, and cultural discovery, designed for travelers who want to experience the best of Coron.",
     itineraries: [
@@ -808,7 +808,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Experience the ultimate Coron adventure with this 5-day, 4-night package. Perfect for nature enthusiasts and explorers, this itinerary combines the best of Coron's stunning landscapes, pristine beaches, rich marine biodiversity, and cultural heritage.",
     itineraries: [
@@ -896,7 +896,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Discover Coron's unparalleled beauty, rich marine biodiversity, and unique wildlife with this 5-day, 4-night package. From iconic island destinations to historic shipwrecks, exotic wildlife, and cultural landmarks, this all-in-one adventure is the perfect way to explore Coron's wonders.",
     itineraries: [
@@ -985,7 +985,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Escape to the stunning paradise of El Nido with this 3-day, 2-night package, offering a perfect balance of relaxation and adventure. Explore El Nido's breathtaking limestone cliffs, crystal-clear waters, and hidden lagoons with Tour A, one of the most popular island-hopping tours in the region. This package is ideal for travelers looking for an unforgettable getaway in the heart of Palawan.",
     itineraries: [
@@ -1059,7 +1059,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Embark on an unforgettable 4-day, 3-night adventure in El Nido, Palawan, with this comprehensive package that includes Tour A and Tour C—two of the most sought-after island-hopping tours in the region. With stunning lagoons, vibrant coral reefs, secluded beaches, and dramatic limestone cliffs, this package offers the perfect combination of El Nido's best highlights.",
     itineraries: [
@@ -1139,7 +1139,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Experience the very best of El Nido's islands and beaches with this 5-day, 4-night package that combines the highlights of Tour A, Tour B, and Tour C—three of the most popular island-hopping tours in El Nido. From vibrant lagoons to secluded beaches, coral reefs, and dramatic cliffs, this package offers the ultimate adventure for nature lovers, beach enthusiasts, and those seeking to immerse themselves in the stunning beauty of Palawan.",
     itineraries: [
@@ -1223,7 +1223,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Discover the best of Palawan in this 7-day, 6-night adventure that takes you to Puerto Princesa, El Nido, and Coron. This comprehensive tour is the perfect combination of cultural discovery, island-hopping escapades, and nature exploration, showcasing the unparalleled beauty of the Philippines' last frontier.",
     itineraries: [],
@@ -1275,7 +1275,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Embark on a remarkable 6-day, 5-night journey across Palawan’s most iconic destinations—Puerto Princesa, El Nido, and Coron. This carefully crafted itinerary combines cultural exploration, natural wonders, and island adventures, making it the perfect choice for travelers seeking the ultimate Palawan experience.",
     itineraries: [],
@@ -1327,7 +1327,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Experience the ultimate Palawan escapade with this 5-day, 4-night tour, combining the best of Puerto Princesa, El Nido, and Coron. Discover breathtaking natural wonders, explore world-famous destinations, and create unforgettable memories in the paradise of Palawan.",
     itineraries: [],
@@ -1378,7 +1378,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Immerse yourself in the best of Palawan with this 5-day, 4-night tour that perfectly combines Puerto Princesa's rich culture and natural wonders with El Nido's world-renowned islands. This package is ideal for travelers seeking a complete Palawan experience.",
     itineraries: [],
@@ -1427,7 +1427,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Discover the best of Palawan with this 4-day, 3-night tour package, combining the natural wonders of Puerto Princesa with the iconic islands of El Nido. Perfect for those who want to experience Palawan’s top attractions in a short but unforgettable getaway.",
     itineraries: [],
@@ -1476,7 +1476,7 @@ export const tours = [
         prices: [],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Embark on an unforgettable journey combining the natural wonders of Puerto Princesa and the pristine beauty of El Nido. This 3-day, 2-night package offers a perfect blend of exploration and relaxation.",
     itineraries: [],
@@ -1579,7 +1579,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Guests will be picked up on their hotel in the morning (not later than 08:00AM) and travel about 70 kilometers out of Puerto Princesa City. After an hour and half drive, will arrive at the Batak Visitor Center which is located in Barangay Conception. At the Visitor Center, you will find various local products made by the tribe available for purchase. From the Visitor Center, group will trek across mountainous terrain and cross some rivers to reach the Batak community. The hiking time takes 75 to 120 minutes, depending on the pace of the group. Upon reaching the village, join in presenting a token gift to the tribe which contains coffee, rice, sugar, and other basic needs. Say hello and make your interaction to the tribe members and see how they go about their daily lives. Our local guide will provide information about the history of the tribe and their customs. Afterwards, head back down to the Visitor Center and you'll be driven back to your hotel in Puerto Princesa or go straight North for your next day’s itinerary in Palawan. An option to include lunch in this activity is also available.",
     itineraries: [
@@ -1644,7 +1644,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
     itineraries: [
@@ -1725,7 +1725,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
     itineraries: [
@@ -1809,7 +1809,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
     itineraries: [
@@ -1891,7 +1891,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Aside from the underground river experience, Puerto Princesa's Honda Bay boasts white sand beaches and small islands teeming with marine life, and you can see all of the best attractions in a single day with Honda Bay islandhopping expeditions. During your island-hopping tour, you will visit Cowrie Island, Luli Island, and Pambato Reef, all of which are excellent swimming and snorkeling spots. Cowrie Island is a popular destination for a buffet meal prepared by boatmen or tour operators. It has cabanas with massage areas and a beautiful view of the ocean. You can also order beer or cocktails from the bar while you relax in the sun.Luli Island is a sandbar that emerges only at low tide. It is surrounded by mangroves and has a lagoon where you may swim and a diving board where you can jump into the blue waters. Meanwhile, Pambato Reef is notable for its diverse population of coral reefs and fish.",
     itineraries: [
@@ -1971,7 +1971,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Aside from the underground river experience, Puerto Princesa's Honda Bay boasts white sand beaches and small islands teeming with marine life, and you can see all of the best attractions in a single day with Honda Bay island- hopping expeditions. During your island-hopping tour, you will visit Cowrie Island, Luli Island, and Pambato Reef, all of which are excellent swimming and snorkeling spots. Cowrie Island is a popular destination for a buffet meal prepared by boatmen or tour operators. It has cabanas with massage areas and a beautiful view of the ocean. You can also order beer or cocktails from the bar while you relax in the sun.Luli Island is a sandbar that emerges only at low tide. It is surrounded by mangroves and has a lagoon where you may swim and a diving board where you can jump into the blue waters. Meanwhile, Pambato Reef is notable for its diverse population of coral reefs and fish.",
     itineraries: [
@@ -2055,7 +2055,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Aside from the underground river experience, Puerto Princesa's Honda Bay boasts white sand beaches and small islands teeming with marine life, and you can see all of the best attractions in a single day with Honda Bay island- hopping expeditions. During your island-hopping tour, you will visit Cowrie Island, Luli Island, and Pambato Reef, all of which are excellent swimming and snorkeling spots. Cowrie Island is a popular destination for a buffet meal prepared by boatmen or tour operators. It has cabanas with massage areas and a beautiful view of the ocean. You can also order beer or cocktails from the bar while you relax in the sun.Luli Island is a sandbar that emerges only at low tide. It is surrounded by mangroves and has a lagoon where you may swim and a diving board where you can jump into the blue waters. Meanwhile, Pambato Reef is notable for its diverse population of coral reefs and fish.",
     itineraries: [
@@ -2133,7 +2133,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
     itineraries: [
@@ -2220,7 +2220,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
     itineraries: [
@@ -2306,7 +2306,7 @@ export const tours = [
       },
     ],
     min: 2,
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Puerto Princesa City is the capital of Palawan and is well known for the world-renowned Puerto Princesa Subterranean River (or Underground River), a UNESCO World Heritage Site and one of the New 7 Wonders of Nature. Furthermore, the city has received significant accolades for its environmental superiority.",
     itineraries: [
@@ -2406,7 +2406,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
     itineraries: [
@@ -2489,7 +2489,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
     itineraries: [
@@ -2588,7 +2588,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan's most picturesque islands, each with its unique charm and beauty.",
     itineraries: [
@@ -2676,7 +2676,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Explore one of the New 7 Wonders of Nature and a UNESCO World Heritage Site on this breathtaking Underground River Tour. Journey into the heart of Palawan and discover the natural beauty and incredible geology of the Puerto Princesa Subterranean River National Park. This tour offers an unforgettable adventure through ancient limestone caves, stunning rock formations, and a world-class ecosystem.",
     itineraries: [
@@ -2770,7 +2770,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Puerto Princesa, Palawan"],
+    address: ["Puerto Princesa"],
     description:
       "Embark on a magical journey through the serene waters of Puerto Princesa as you experience the enchanting spectacle of Firefly Watching. This evening tour is perfect for nature lovers and those looking for a peaceful, unforgettable night under the stars. Witness the mesmerizing glow of fireflies lighting up the mangrove forests along the riverbanks, creating a truly magical and serene atmosphere.",
     itineraries: [
@@ -2874,7 +2874,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "Embark on the iconic El Nido Tour A, a must-experience adventure that showcases some of the most stunning natural attractions in El Nido, Palawan. Perfect for beach lovers, snorkelers, and nature enthusiasts, this tour offers an unforgettable day of exploring crystal-clear lagoons, pristine beaches, and vibrant underwater life.",
     itineraries: [
@@ -2974,7 +2974,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "El Nido Tour B offers an exciting exploration of caves, hidden beaches, and vibrant marine life. This tour is perfect for those seeking adventure and discovery, providing a blend of thrilling activities and stunning natural scenery. Explore unique geological formations, swim in crystal-clear waters, and relax on pristine beaches.",
     itineraries: [
@@ -3076,7 +3076,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "El Nido Tour C is renowned for its hidden beaches, secret coves, and dramatic limestone formations. This tour is perfect for those seeking an adventurous day of snorkeling, exploring pristine beaches, and discovering the hidden treasures of El Nido's stunning seascape.",
     itineraries: [
@@ -3178,7 +3178,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["El Nido, Palawan"],
+    address: ["El Nido"],
     description:
       "El Nido Tour D offers a more relaxed and intimate exploration of some of the less-visited yet equally stunning islands and beaches of El Nido. This tour is perfect for travelers looking to escape the crowds and enjoy a day of tranquility, snorkeling, and soaking in the natural beauty of secluded spots.",
     itineraries: [
@@ -3270,7 +3270,7 @@ export const tours = [
     ],
     // price: 900,
     // privatePrice: [4000, 2300, 2300, 1700, 1700, 1500, 1500, 1500, 1300, 1300],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Discover the charm of Coron Town and experience its rich history, culture, and scenic spots with this comprehensive Coron Town Tour. This half-day tour will take you through the town’s must-see attractions, offering a perfect blend of history, relaxation, and stunning views. Whether you're looking to learn more about the local way of life or just want to explore the hidden gems of Coron, this tour has something for everyone.",
     itineraries: [
@@ -3351,7 +3351,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Explore the breathtaking natural wonders of Coron Island with Tour A, an island-hopping adventure that showcases the best of what Coron has to offer. Known for its crystal-clear waters, stunning limestone cliffs, and vibrant marine life, Coron Island is a paradise for nature lovers, snorkelers, and adventurers alike. This full-day tour will take you to some of the most iconic and picturesque spots, giving you an unforgettable experience in one of the world’s most beautiful destinations.",
     itineraries: [
@@ -3437,7 +3437,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Immerse yourself in the natural beauty and rich history of Coron Island with Tour B, a captivating island-hopping adventure that takes you to some of Coron’s lesser-known yet equally stunning spots. This tour is perfect for those who want to explore quieter, hidden gems, offering both adventure and relaxation amidst Coron’s famous limestone cliffs, crystal-clear waters, and pristine beaches.",
     itineraries: [
@@ -3522,7 +3522,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Experience the beauty and diversity of Palawan’s islands as you explore pristine beaches, vibrant coral reefs, and crystal-clear waters. Perfect for beach lovers, snorkelers, and adventure seekers, this tour promises a day of fun, relaxation, and breathtaking scenery.",
     itineraries: [
@@ -3590,7 +3590,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Explore the underwater wonders of Coron with our Reef and Wrecks Tour. This adventure takes you to some of the best snorkeling and diving sites in the world, where you can discover vibrant coral reefs and historic shipwrecks from World War II. Ideal for both beginners and experienced divers, this tour offers a unique blend of natural beauty and historical intrigue.",
     itineraries: [
@@ -3665,7 +3665,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Experience the breathtaking beauty and diverse ecosystems of Coron with the Coron Island Ultimate Tour. This all-inclusive adventure is designed for those who want to explore the best that Coron has to offer in a single day. From stunning lagoons and pristine beaches to vibrant coral gardens and historical sites, this tour promises an unforgettable journey through one of the Philippines’ most stunning destinations.",
     itineraries: [
@@ -3745,7 +3745,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "The Coron Super Ultimate Tour is the quintessential full-day excursion that showcases the best of Coron's stunning natural wonders. Perfect for adventurers, beach lovers, and snorkeling enthusiasts, this tour takes you to iconic lakes, lagoons, and coral gardens, offering a diverse array of experiences from swimming in crystal-clear waters to exploring vibrant marine life and relaxing on pristine beaches.",
     itineraries: [
@@ -3827,7 +3827,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Coron, Palawan"],
+    address: ["Coron"],
     description:
       "Discover a slice of Africa in the heart of the Philippines with our Calauit Safari Tour. Nestled on Calauit Island, just off the coast of Coron, Palawan, this unique safari park offers an extraordinary adventure where you can encounter exotic wildlife, stunning landscapes, and immerse yourself in a conservation success story.",
     itineraries: [
@@ -3919,7 +3919,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Port barton, Palawan"],
+    address: ["Port barton"],
     description:
       "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
     itineraries: [
@@ -4003,7 +4003,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Port barton, Palawan"],
+    address: ["Port barton"],
     description:
       "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
     itineraries: [

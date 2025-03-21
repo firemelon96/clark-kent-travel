@@ -1,5 +1,5 @@
 import { TourPackage } from "@/types/tour";
-import Card from "./card";
+import Card from "./tour-card";
 
 type Props = {
   title: string;
