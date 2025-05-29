@@ -18,14 +18,9 @@ const TourCard = ({ image, title, address, id, price }: CardProps) => {
 
   return (
     <Link href={`/travel-and-tours/${id}`}>
-      <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border bg-white shadow-sm hover:border-rose-500 hover:shadow-md sm:shadow-none md:w-fit">
+      <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-sm hover:shadow-md hover:shadow-rose-500 md:w-fit">
         <div className="relative h-64 w-full md:h-52">
-          <Image
-            src={image}
-            fill
-            alt={title}
-            className="h-full w-full object-cover"
-          />
+          <Image src={image} fill alt={title} className="object-cover" />
         </div>
 
         <div className="px-2 pb-4 md:w-64">

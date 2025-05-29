@@ -101,11 +101,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
 
     setPrice(selectedPrice.price);
 
-    if (selectedPrice.isGroupPrice) {
-      form.setValue("totalPrice", price);
-    } else {
-      form.setValue("totalPrice", price * participants);
-    }
+    form.setValue("totalPrice", price * participants);
   }, [participants, travellerType, price, pricing, form.setValue, form]);
 
   const onSubmit = (values: z.infer<typeof BookingSchema>) => {

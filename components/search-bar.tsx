@@ -24,6 +24,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { usePathname, useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const searchSchema = z.object({
   location: z.string().min(2, { message: "Please select a location!" }),
@@ -79,7 +80,13 @@ export const SearchBar = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="md:w-96">
+                      <SelectTrigger
+                        className={cn(
+                          "md:w-96",
+                          form.formState.errors["location"]?.message &&
+                            "border-red-500",
+                        )}
+                      >
                         <SelectValue
                           className="text-slate-500"
                           placeholder="Where do you want to go?"
@@ -97,7 +104,6 @@ export const SearchBar = () => {
                       ))}
                     </SelectContent>
                   </Select>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -114,7 +120,13 @@ export const SearchBar = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="max-full md:w-52">
+                      <SelectTrigger
+                        className={cn(
+                          "max-full md:w-52",
+                          form.formState.errors["type"]?.message &&
+                            "border-red-500",
+                        )}
+                      >
                         <SelectValue placeholder="Type of tour" />
                       </SelectTrigger>
                     </FormControl>
@@ -124,11 +136,12 @@ export const SearchBar = () => {
                       <SelectItem value="package">Package Tour</SelectItem>
                     </SelectContent>
                   </Select>
-                  <FormMessage />
                 </FormItem>
               )}
             />
-            <Button variant="ckBtn">Search</Button>
+            <div className="flex items-center justify-end">
+              <Button variant="ckBtn">Search</Button>
+            </div>
           </form>
         </Form>
       </Card>

@@ -31,7 +31,9 @@ const SinglePage = ({ params }: SingleProps) => {
             <div className="hidden md:block">
               <h1 className="text-2xl font-medium">{tour.tourName}</h1>
               <Badge>
-                {formatPeso(joinerPrice || 0) || formatPeso(privatePrice || 0)}
+                {joinerPrice
+                  ? formatPeso(joinerPrice || 0)
+                  : formatPeso(privatePrice || 0)}
               </Badge>
             </div>
             <p className="text-justify text-slate-700">{tour.description}</p>

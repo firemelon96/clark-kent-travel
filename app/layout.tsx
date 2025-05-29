@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { NewNavbar } from "@/components/new-navigation";
-import { MainNav } from "@/components/main-nav";
 import Footer from "./components/footer";
 
 const font = Poppins({
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Clark Kent Travel and Tours",
   },
   description:
-    "CLARK KENT TRAVEL AND TOURS offers excursions, primarily around Palawan to local and foreign tourists from around the world.",
+    "Clark kent trave and tours offers excursions, primarily around Palawan to local and foreign tourists from around the world.",
 };
 
 export default function RootLayout({
@@ -34,7 +33,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${font.className} bg-[#FAF9F6]`}>
         <NewNavbar />
-        {/* <MainNav /> */}
         {children}
         <Footer />
       </body>

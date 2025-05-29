@@ -22,14 +22,14 @@ const FeaturedCard = () => {
           <CarouselContent>
             {packageTours.map((tour, i) => (
               <CarouselItem
-                className="flex items-center justify-center md:basis-1/3"
+                className="flex items-center justify-center sm:basis-1/2 md:basis-1/3"
                 key={i}
               >
                 <FeatureCard imageUrl={tour.images[0]} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="hidden md:block">
+          <div className="">
             <CarouselPrevious />
             <CarouselNext />
           </div>

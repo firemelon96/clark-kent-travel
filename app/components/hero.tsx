@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <section className="relative -z-10 flex h-[500px] w-full items-center justify-center overflow-hidden md:h-[400px]">
       <div className="absolute inset-0 h-full w-full">
@@ -25,5 +25,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

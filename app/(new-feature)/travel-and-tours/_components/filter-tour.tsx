@@ -14,12 +14,12 @@ import { Separator } from "@/components/ui/separator";
 
 const locations = [
   { value: "all", label: "All Tours" },
-  { value: "coron", label: "Coron" },
-  { value: "balabac", label: "Balabac" },
-  { value: "puerto princesa", label: "Puerto Princesa" },
-  { value: "el nido", label: "El Nido" },
-  { value: "bohol", label: "Bohol" },
-  { value: "port barton", label: "Port Barton" },
+  { value: "Coron", label: "Coron" },
+  { value: "Balabac", label: "Balabac" },
+  { value: "Puerto Princesa", label: "Puerto Princesa" },
+  { value: "El Nido", label: "El Nido" },
+  { value: "Bohol", label: "Bohol" },
+  { value: "Port Barton", label: "Port Barton" },
 ];
 
 const types = [

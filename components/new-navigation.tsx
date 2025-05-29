@@ -17,6 +17,7 @@ import { Menu } from "lucide-react";
 import { Logo } from "@/app/components/logo";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
+import { useMedia } from "react-use";
 
 export const menuItems = [
   {
@@ -33,6 +34,11 @@ export const menuItems = [
         description: "See what our company is about",
       },
       {
+        title: "Mission & Vision",
+        href: "/mission-vision",
+        description: "Our mission and vision",
+      },
+      {
         title: "Contact",
         href: "/contact",
         description: "Easiest way to contact us",
@@ -40,7 +46,7 @@ export const menuItems = [
       {
         title: "Legalities",
         href: "/legalities",
-        description: "See our legal documents for legitamacy",
+        description: "Legal documents for legitamacy",
       },
     ],
   },
@@ -65,17 +71,31 @@ export const menuItems = [
           "A Budget friendly rentals that can cater to your needs. Book with us now",
       },
       {
-        title: "Accomodations",
-        href: "/accomodations",
+        title: "Accommodations",
+        href: "/accommodations",
         description:
           "From 5 star accomodation to budget friendly that will suit your needs!",
       },
     ],
   },
-  { title: "Pricing", href: "/pricing" },
+  { title: "🇵🇭", href: "/currency" },
 ];
 
 export function NewNavbar() {
+  const isLoggedIn = true;
+
+  const notMobile = useMedia("(min-width: 767px)", false);
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (notMobile) {
+      setOpen(false);
+    }
+  }, [notMobile]);
+
+  const onClose = () => {
+    setOpen(false);
+  };
   return (
     <div className="bg-white">
       <div className="container mx-auto flex h-12 items-center justify-between px-4 md:px-20">
@@ -87,7 +107,7 @@ export function NewNavbar() {
               <NavigationMenuItem key={item.title}>
                 <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <a
@@ -95,24 +115,26 @@ export function NewNavbar() {
                           href="/"
                         >
                           <Logo size="lg" />
-                          <div className="mb-2 mt-4 text-lg font-medium uppercase">
+                          <div className="mt-2 text-center text-lg font-medium uppercase">
                             {item.items?.[0].title}
                           </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
+                          <p className="text-center text-sm leading-tight text-muted-foreground">
                             {item.items?.[0].description}
                           </p>
                         </a>
                       </NavigationMenuLink>
                     </li>
-                    {item.items?.slice(1).map((subItem) => (
-                      <ListItem
-                        key={subItem.title}
-                        href={subItem.href}
-                        title={subItem.title}
-                      >
-                        {subItem.description}
-                      </ListItem>
-                    ))}
+                    <div>
+                      {item.items?.slice(1).map((subItem) => (
+                        <ListItem
+                          key={subItem.title}
+                          href={subItem.href}
+                          title={subItem.title}
+                        >
+                          {subItem.description}
+                        </ListItem>
+                      ))}
+                    </div>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -148,14 +170,32 @@ export function NewNavbar() {
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
+          {/* Authentication */}
+          <div>
+            {isLoggedIn ? (
+              <div className="flex">
+                <Button asChild>
+                  <Link href={`/profile`}>Profile</Link>
+                </Button>
+              </div>
+            ) : (
+              <div className="flex gap-2">
+                <Button variant={"secondary"}>Register</Button>
+                <Button variant={"secondary"}>Login</Button>
+              </div>
+            )}
+          </div>
         </NavigationMenu>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
+        <Button
+          variant="outline"
+          onClick={() => setOpen(true)}
+          size="icon"
+          className="md:hidden"
+        >
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </Button>
+        <Sheet onOpenChange={onClose} open={open}>
           <SheetContent side="right">
             <nav className="flex flex-col space-y-4">
               {menuItems.map((item) => (
@@ -167,6 +207,7 @@ export function NewNavbar() {
                       </span>
                       {item.items.map((subItem) => (
                         <Link
+                          onClick={onClose}
                           key={subItem.title}
                           href={subItem.href}
                           className="text-sm text-muted-foreground hover:text-primary"
@@ -177,6 +218,7 @@ export function NewNavbar() {
                     </div>
                   ) : (
                     <Link
+                      onClick={onClose}
                       href={item.href}
                       className="text-lg font-semibold hover:text-primary"
                     >

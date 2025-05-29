@@ -871,94 +871,6 @@ export const tours = [
     minParticipants: 2,
     maxParticipants: 12,
   },
-  {
-    tourId:
-      "5d4n-super-ultimate-escapade-reef-and-wrecks-tour-town-tour-transfer",
-    tourName:
-      "5D4N Coron Super Ultimate, Reef and Wrecks, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
-    isFeatured: false,
-    type: "package",
-    numOfDays: 5,
-    pricing: [
-      {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 12800,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
-      },
-    ],
-    address: ["Coron"],
-    description:
-      "Discover Coron's unparalleled beauty, rich marine biodiversity, and unique wildlife with this 5-day, 4-night package. From iconic island destinations to historic shipwrecks, exotic wildlife, and cultural landmarks, this all-in-one adventure is the perfect way to explore Coron's wonders.",
-    itineraries: [
-      {
-        name: "Day 1",
-        activities: [
-          "Arrival in Busuanga Airport then Transfer to Hotel then Town Tour (-/-/-)",
-        ],
-      },
-      {
-        name: "Day 2",
-        activities: ["Coron Super Ultimate Tour (B/L/-)"],
-      },
-      {
-        name: "Day 3",
-        activities: ["Coron Reef and Wrecks (B/L/-)"],
-      },
-      {
-        name: "Day 4",
-        activities: ["Coron Calauit Safari (B/L/-)"],
-      },
-      {
-        name: "Day 5",
-        activities: ["Drop to Airport then Departure (B/-/-)"],
-      },
-    ],
-    duration: ["5 Days 4 Nights"],
-    inclusions: [
-      "4n Aircon room w/ own Toilet and Bath",
-      "Complimentary Daily Breakfast",
-      "Free use of Swimming Pool",
-      "Seat in Couch Roundtrip Airport transfer ( Airport-Hotel-Airport)",
-      "Seat in Couch Coron Super Ultimate Tour w/ Lunch (Kayangan Lake, Barracuda Lake, Twin Lagoon, Coral garden, Sunset Beach, Skeleton Wreck, Reef Garden & CYC Beach)",
-      "Seat in Couch Reef and Wrecks w/ Lunch (Pass Island, Lusong gunboat, Lusong Coral Garden & East Tangat Wreck)",
-      "Seat in Couch Coron Calauit Safari w/ Lunch (Calauit Safari, Busuanga Town, Malbato Church & Black Island)",
-      "Seat in Couch Coron Town Tour (Town Plaza, Lualhati Park, Souvenir Shop, St. Augustine Church, Cashew Factory, Mt. tapyas & Maquinit Hotspring)",
-      "Motorized Boat & Entrances",
-      "Tour Guide during the tour",
-      "Goverment taxes & Cottage Rental",
-      "Medical Kit & Lifevest",
-    ],
-    exclusions: [
-      "Snorkeling Gears & Aqua Shoes",
-      "Tipping for the guide and driver",
-      "Anything not mentioned in Inclusions",
-    ],
-    notes: [],
-    reminders: [],
-    images: [
-      "/resources/coron-package-9/coron001.jpg",
-      "/resources/coron-package-9/calauit.avif",
-      "/resources/coron-package-9/cave.avif",
-      "/resources/coron-package-9/coron.avif",
-      "/resources/coron-package-9/gunboat.avif",
-      "/resources/coron-package-9/lualhati.avif",
-      "/resources/coron-package-9/lusong-coral.avif",
-      "/resources/coron-package-9/skeleton.avif",
-      "/resources/coron-package-9/twin.avif",
-    ],
-    minParticipants: 2,
-    maxParticipants: 12,
-  },
 
   //elnido package
   {
@@ -3919,7 +3831,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Port barton"],
+    address: ["Port Barton"],
     description:
       "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
     itineraries: [
@@ -4003,7 +3915,7 @@ export const tours = [
         ],
       },
     ],
-    address: ["Port barton"],
+    address: ["Port Barton"],
     description:
       "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
     itineraries: [

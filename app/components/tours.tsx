@@ -1,8 +1,9 @@
 import { ServiceLabel } from "@/components/service-label";
 import { getDayTours } from "../lib/helpers";
 import Card from "./tour-card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { getFirstAvailablePrice } from "@/lib/utils";
+import Link from "next/link";
 
 const Tours = () => {
   const tours = getDayTours();
@@ -13,7 +14,7 @@ const Tours = () => {
         label="Adventure Escapes"
         subHeading="Experience More in a Day!"
       />
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:place-items-center lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {tours.slice(0, 8).map((tour) => {
           const joinerPrice = getFirstAvailablePrice(tour.pricing, "joiner");
           const privatePrice = getFirstAvailablePrice(tour.pricing, "private");
@@ -30,9 +31,9 @@ const Tours = () => {
         })}
       </div>
       <div className="flex w-full items-center justify-center">
-        <Button variant="ckBtn" className="">
+        <Link href={"/travel-and-tours"} className={buttonVariants()}>
           See more...
-        </Button>
+        </Link>
       </div>
     </section>
   );
