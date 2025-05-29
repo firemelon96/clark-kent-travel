@@ -10,12 +10,13 @@ import Link from "next/link";
 import { BiSolidLeftArrow } from "react-icons/bi";
 
 interface SingleProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-const SinglePage = ({ params }: SingleProps) => {
+const SinglePage = async (props: SingleProps) => {
+  const params = await props.params;
   const tour = getTourById(params.id);
 
   const joinerPrice = getFirstAvailablePrice(tour.pricing, "joiner");
