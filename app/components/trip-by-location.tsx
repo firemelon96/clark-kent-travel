@@ -15,6 +15,7 @@ const TripByLocation = () => {
           {tourByLocation.map((tour, i) => (
             <div key={i} className={`relative h-40 md:col-span-2`}>
               <Image
+                unoptimized
                 src={tour.image}
                 fill
                 alt="balabac"
@@ -22,7 +23,7 @@ const TripByLocation = () => {
               />
               <div className="absolute inset-y-0 w-full bg-rose-500/20 backdrop-blur-sm">
                 <div className="p-4">
-                  <span className="text-3xl font-semibold uppercase text-sky-50">
+                  <span className="text-3xl font-semibold text-sky-50 uppercase">
                     {tour.address}
                   </span>
                 </div>

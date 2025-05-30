@@ -40,7 +40,7 @@ const ReviewsMap = () => {
               className={`flex w-full cursor-pointer items-start justify-start gap-4 rounded-md ${selectMessage.index === index && "bg-rose-50"} p-4 shadow-sm`}
             >
               <div className="relative h-20 w-20 overflow-hidden rounded-full">
-                <Image src={review.image} fill alt="avatar" />
+                <Image unoptimized src={review.image} fill alt="avatar" />
               </div>
               <div className="hidden flex-col p-2 md:flex">
                 <span className="text-xl text-slate-800">{review.name}</span>

@@ -51,6 +51,7 @@ const ImageSliderSlick = ({ images }: ImageProps) => {
         {images.map((image) => (
           <div key={image} className="relative h-[500px]">
             <Image
+              unoptimized
               src={image}
               fill
               alt={`image-${image + 1}`}

@@ -7,6 +7,7 @@ const Hero = () => {
     <section className="mt-16 flex max-h-[755px] w-full overflow-hidden bg-red-300">
       <div className="relative h-[440px] w-full">
         <Image
+          unoptimized
           fill
           alt="Palawan island"
           src="/resources/hero.avif"

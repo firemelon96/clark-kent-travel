@@ -1,6 +1,6 @@
+"use client";
 import { BsMessenger, BsWhatsapp } from "react-icons/bs";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
 const Map = dynamic(
   () => {
