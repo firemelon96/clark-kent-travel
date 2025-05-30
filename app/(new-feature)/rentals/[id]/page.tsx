@@ -115,7 +115,7 @@ const RentalSinglePage = async ({ params }: Props) => {
             <p className="text-2xl font-medium">{rental.name}</p>{" "}
           </CardHeader>
           <CardContent>
-            <Button variant="ckBtn" className="w-full" asChild>
+            <Button variant="default" className="w-full" asChild>
               <Link href={"#booking-option"}>Check Availability</Link>
             </Button>
           </CardContent>
@@ -145,7 +145,7 @@ const RentalSinglePage = async ({ params }: Props) => {
         <div className="w-full space-y-2 md:w-[370px]">
           <span className="font-medium uppercase">Package Information</span>
           <div className="relative rounded-md bg-rose-50 px-4">
-            <BiSolidLeftArrow className="absolute -left-4 top-0 hidden size-6 text-rose-50 md:block" />
+            <BiSolidLeftArrow className="absolute top-0 -left-4 hidden size-6 text-rose-50 md:block" />
             <div>
               <ReusableAccordion items={rental.included} label="Inclusion" />
             </div>

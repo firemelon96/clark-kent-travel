@@ -56,7 +56,7 @@ const SinglePage = async ({ params }: Props) => {
             <p className="text-2xl font-medium">{transfer.title}</p>{" "}
           </CardHeader>
           <CardContent>
-            <Button variant="ckBtn" className="w-full" asChild>
+            <Button variant="default" className="w-full" asChild>
               <Link href={"#booking-option"}>Check Availability</Link>
             </Button>
           </CardContent>

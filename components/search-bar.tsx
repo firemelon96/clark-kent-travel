@@ -140,7 +140,7 @@ export const SearchBar = () => {
               )}
             />
             <div className="flex items-center justify-end">
-              <Button variant="ckBtn">Search</Button>
+              <Button variant="default">Search</Button>
             </div>
           </form>
         </Form>

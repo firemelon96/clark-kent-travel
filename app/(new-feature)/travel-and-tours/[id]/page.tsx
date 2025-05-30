@@ -48,7 +48,7 @@ const SinglePage = async (props: SingleProps) => {
             <p className="text-2xl font-medium">{tour.tourName}</p>
           </CardHeader>
           <CardContent>
-            <Button variant="ckBtn" className="w-full" asChild>
+            <Button variant="default" className="w-full" asChild>
               <Link href={"#booking-option"}>Check Availability</Link>
             </Button>
           </CardContent>

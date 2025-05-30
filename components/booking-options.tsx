@@ -145,7 +145,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
-                        variant="ckBtn"
+                        variant="default"
                         className={cn(
                           "w-[240px] pl-3 text-left font-normal",
                           !field.value && "text-muted-foreground",
@@ -202,7 +202,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                         >
                           Clear
                         </Button>
-                        <Button asChild variant="ckBtn">
+                        <Button asChild variant="default">
                           <PopoverClose>Select</PopoverClose>
                         </Button>
                       </div>
@@ -231,7 +231,9 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                     <Button
                       key={type.value}
                       type="button"
-                      variant={field.value === type.value ? "ckBtn" : "outline"}
+                      variant={
+                        field.value === type.value ? "default" : "outline"
+                      }
                       className={cn(
                         "",
                         field.value === type.value &&
@@ -327,7 +329,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
           <Button variant="secondary" type="button">
             Save
           </Button>
-          <Button variant="ckBtn">Book now</Button>
+          <Button variant="default">Book now</Button>
         </div>
       </form>
     </Form>

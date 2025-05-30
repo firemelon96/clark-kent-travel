@@ -363,9 +363,9 @@ export const RentalBookingOptions = ({
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
-                          variant="ckBtn"
+                          variant="default"
                           className={cn(
-                            "w-36 rounded-br-none rounded-tr-none pl-3 text-left font-normal",
+                            "w-36 rounded-tr-none rounded-br-none pl-3 text-left font-normal",
                             !field.value && "text-white",
                           )}
                         >
@@ -405,7 +405,7 @@ export const RentalBookingOptions = ({
                   </FormLabel>
                   <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <SelectTrigger className="w-32 rounded-bl-none rounded-tl-none border-rose-500 bg-rose-500 text-white">
+                      <SelectTrigger className="w-32 rounded-tl-none rounded-bl-none border-rose-500 bg-rose-500 text-white">
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
                     </FormControl>
@@ -437,9 +437,9 @@ export const RentalBookingOptions = ({
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
-                          variant="ckBtn"
+                          variant="default"
                           className={cn(
-                            "w-36 rounded-br-none rounded-tr-none pl-3 text-left font-normal",
+                            "w-36 rounded-tr-none rounded-br-none pl-3 text-left font-normal",
                             !field.value && "text-white",
                           )}
                         >
@@ -485,7 +485,7 @@ export const RentalBookingOptions = ({
                     value={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="w-32 rounded-bl-none rounded-tl-none border-rose-500 bg-rose-500 text-white">
+                      <SelectTrigger className="w-32 rounded-tl-none rounded-bl-none border-rose-500 bg-rose-500 text-white">
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
                     </FormControl>
@@ -693,7 +693,7 @@ export const RentalBookingOptions = ({
           <Button variant="secondary" type="button">
             Save
           </Button>
-          <Button variant="ckBtn">Book now</Button>
+          <Button variant="default">Book now</Button>
         </div>
       </form>
     </Form>
