@@ -73,10 +73,10 @@ export const Filter = () => {
                         variant={
                           field.value === type.value ||
                           type.value === defaultFilter
-                            ? "filterActive"
+                            ? "default"
                             : "link"
                         }
-                        className="text-xs uppercase text-white"
+                        className="text-xs text-white uppercase"
                         onClick={() => field.onChange(type.value)}
                       >
                         {type.label}

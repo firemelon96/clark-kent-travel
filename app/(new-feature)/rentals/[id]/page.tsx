@@ -94,8 +94,8 @@ const RentalSinglePage = async ({ params }: Props) => {
                   <li>
                     <p>
                       Required Documents :
-                      {rental.rentalTerms.requiredDocuments.map((doc) => (
-                        <span>{doc}</span>
+                      {rental.rentalTerms.requiredDocuments.map((doc, i) => (
+                        <span key={i}>{doc}</span>
                       ))}
                     </p>
                   </li>

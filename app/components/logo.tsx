@@ -8,6 +8,7 @@ const logoVariants = cva("shink-0", {
   variants: {
     size: {
       default: "size-10",
+      sm: "size-20",
       lg: "size-70",
     },
   },
@@ -22,14 +23,8 @@ export interface LogoProps extends VariantProps<typeof logoVariants> {
 
 export const Logo = ({ size, className }: LogoProps) => {
   return (
-    <Link href={"/"}>
-      <Image
-        width={140}
-        height={140}
-        src="/resources/logo.png"
-        alt="clark kent travel logo"
-        className={cn(logoVariants({ size }), className)}
-      />
-    </Link>
+    <div className={cn(logoVariants({ size }), "relative")}>
+      <Image fill src="/resources/logo.png" alt="clark kent travel logo" />
+    </div>
   );
 };

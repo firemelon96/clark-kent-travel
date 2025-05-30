@@ -112,18 +112,18 @@ export function NewNavbar() {
                   <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
-                        <a
-                          className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
+                        <Link
+                          className="from-muted/50 to-muted flex h-full w-full flex-col items-center justify-center rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
                           href="/"
                         >
-                          <Logo size="lg" />
+                          <Logo size="sm" />
                           <div className="mt-2 text-center text-lg font-medium uppercase">
                             {item.items?.[0].title}
                           </div>
                           <p className="text-muted-foreground text-center text-sm leading-tight">
                             {item.items?.[0].description}
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <div>

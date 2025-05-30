@@ -318,6 +318,7 @@ export const RentalBookingOptions = ({
     dayCount,
     pricePerHour,
     maxDuration,
+    form,
   ]);
 
   const onSubmit = (values: z.infer<typeof BookingSchema>) => {
@@ -567,10 +568,11 @@ export const RentalBookingOptions = ({
 
         <div className="flex flex-col gap-2 border p-4">
           <p>Extras (Optional)</p>
-          {extras.map((extra) => {
+          {extras.map((extra, i) => {
             const price = extra.pricePerDay || extra.pricePerPerson;
             return (
               <FormField
+                key={i}
                 name="extra"
                 control={form.control}
                 render={({ field }) => (

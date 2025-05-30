@@ -42,14 +42,14 @@ const TripByLocation = () => {
         {trips.map((trip, i) => (
           <Card
             key={i}
-            className="relative h-96 w-full rounded-none shadow-none"
+            className="relative h-90 w-full rounded-none p-0 shadow-none"
           >
             <div className="relative h-full w-full">
               <Image
                 src={trip.imageUrl}
                 fill
                 alt={trip.imageUrl + trip.name}
-                className="object-cover"
+                className="h-full object-cover"
               />
             </div>
             <div className="absolute inset-0 bg-black/30"></div>
