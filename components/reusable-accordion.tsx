@@ -25,7 +25,7 @@ export const ReusableAccordion = ({
       <AccordionItem value="item" className="border-rose-200">
         <AccordionTrigger className="hover:no-underline">
           <Badge
-            variant={isContent ? "outline" : "destructive"}
+            variant={isContent ? "outline-solid" : "destructive"}
             className={`uppercase ${isContent && "border-rose-500 text-rose-500"}`}
           >
             {label}

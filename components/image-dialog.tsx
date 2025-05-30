@@ -53,11 +53,11 @@ export const ImageDialog = ({ images }: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="absolute bottom-2 right-2" variant="outline">
+        <Button className="absolute right-2 bottom-2" variant="outline">
           Gallery
         </Button>
       </DialogTrigger>
-      <DialogContent className="border-none bg-transparent shadow-none sm:min-w-[980px]">
+      <DialogContent className="aspect-video border-none bg-transparent shadow-none sm:min-w-[980px]">
         <DialogHeader>
           <DialogTitle>Images</DialogTitle>
         </DialogHeader>
@@ -68,16 +68,15 @@ export const ImageDialog = ({ images }: Props) => {
               align: "start",
             }}
           >
-            <CarouselContent className="">
+            <CarouselContent>
               {images?.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
+                <CarouselItem key={index} className="">
+                  <div className="relative aspect-video">
                     <Image
                       src={image}
                       alt={image}
-                      width={500}
-                      height={300}
-                      className="h-auto w-full object-cover object-center"
+                      fill
+                      className="h-auto w-full object-cover"
                     />
                   </div>
                 </CarouselItem>
@@ -92,7 +91,7 @@ export const ImageDialog = ({ images }: Props) => {
                 key={index}
                 className={cn(
                   "relative h-16 w-16 overflow-hidden rounded-md transition-all",
-                  current === index ? "ring-2 ring-primary" : "opacity-70",
+                  current === index ? "ring-primary ring-2" : "opacity-70",
                 )}
                 onClick={() => api?.scrollTo(index)}
               >

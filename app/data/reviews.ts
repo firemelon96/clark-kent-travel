@@ -27,7 +27,7 @@ export const reviews = [
     image: "/resources/profile/review3.png",
   },
   {
-    name: "Irvinb Skyforth",
+    name: "Irvinb Skyforth3",
     title: "Traveller",
     starRating: 5,
     heading: "Recommends Clark Kent Travel and Tours",

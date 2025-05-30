@@ -235,7 +235,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                       className={cn(
                         "",
                         field.value === type.value &&
-                          "bg-rose-500 text-primary-foreground",
+                          "text-primary-foreground bg-rose-500",
                       )}
                       onClick={() => field.onChange(type.value)}
                     >

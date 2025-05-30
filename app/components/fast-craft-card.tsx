@@ -19,7 +19,7 @@ const FastCraftCard = ({
 }: OtherServicesProps) => {
   return (
     <Link href={`/fast-craft/${id}`}>
-      <div className="flex w-fit flex-col gap-2 rounded-2xl bg-white p-4 shadow-sm hover:shadow-md sm:shadow-none">
+      <div className="flex w-fit flex-col gap-2 rounded-2xl bg-white p-4 shadow-xs hover:shadow-md sm:shadow-none">
         <div className="h-48 w-60 overflow-hidden rounded-xl">
           <Image
             src={image}

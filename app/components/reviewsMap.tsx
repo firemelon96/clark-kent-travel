@@ -37,7 +37,7 @@ const ReviewsMap = () => {
                   heading: review.heading,
                 });
               }}
-              className={`flex w-full cursor-pointer items-start justify-start gap-4 rounded-md ${selectMessage.index === index && "bg-rose-50"} p-4 shadow-sm`}
+              className={`flex w-full cursor-pointer items-start justify-start gap-4 rounded-md ${selectMessage.index === index && "bg-rose-50"} p-4 shadow-xs`}
             >
               <div className="relative h-20 w-20 overflow-hidden rounded-full">
                 <Image src={review.image} fill alt="avatar" />

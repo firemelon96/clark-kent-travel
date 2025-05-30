@@ -19,6 +19,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { useMedia } from "react-use";
 
+//TODO: Fix the navigation error
+
 export const menuItems = [
   {
     title: "Clark kent",
@@ -111,14 +113,14 @@ export function NewNavbar() {
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
                           href="/"
                         >
                           <Logo size="lg" />
                           <div className="mt-2 text-center text-lg font-medium uppercase">
                             {item.items?.[0].title}
                           </div>
-                          <p className="text-center text-sm leading-tight text-muted-foreground">
+                          <p className="text-muted-foreground text-center text-sm leading-tight">
                             {item.items?.[0].description}
                           </p>
                         </a>
@@ -159,12 +161,11 @@ export function NewNavbar() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      {item.title}
-                    </NavigationMenuLink>
+                  <Link
+                    href={item.href}
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    {item.title}
                   </Link>
                 )}
               </NavigationMenuItem>
@@ -210,7 +211,7 @@ export function NewNavbar() {
                           onClick={onClose}
                           key={subItem.title}
                           href={subItem.href}
-                          className="text-sm text-muted-foreground hover:text-primary"
+                          className="text-muted-foreground hover:text-primary text-sm"
                         >
                           {subItem.title}
                         </Link>
@@ -220,7 +221,7 @@ export function NewNavbar() {
                     <Link
                       onClick={onClose}
                       href={item.href}
-                      className="text-lg font-semibold hover:text-primary"
+                      className="hover:text-primary text-lg font-semibold"
                     >
                       {item.title}
                     </Link>
@@ -245,13 +246,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
             className,
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm leading-none font-medium">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
           </p>
         </a>

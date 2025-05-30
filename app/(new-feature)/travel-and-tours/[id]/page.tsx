@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getFirstAvailablePrice } from "@/lib/utils";
 import Link from "next/link";
 import { BiSolidLeftArrow } from "react-icons/bi";
+import { Description } from "../_components/description";
 
 interface SingleProps {
   params: Promise<{
@@ -18,6 +19,8 @@ interface SingleProps {
 const SinglePage = async (props: SingleProps) => {
   const params = await props.params;
   const tour = getTourById(params.id);
+
+  const isExpand = false;
 
   const joinerPrice = getFirstAvailablePrice(tour.pricing, "joiner");
 
@@ -37,7 +40,7 @@ const SinglePage = async (props: SingleProps) => {
                   : formatPeso(privatePrice || 0)}
               </Badge>
             </div>
-            <p className="text-justify text-slate-700">{tour.description}</p>
+            <Description description={tour.description} />
           </div>
         </div>
         <Card className="h-full w-full border-none shadow-none md:w-[370px]">
@@ -70,7 +73,7 @@ const SinglePage = async (props: SingleProps) => {
         <div className="w-full space-y-2 md:w-[370px]">
           <span className="font-medium uppercase">Package Information</span>
           <div className="relative rounded-md bg-rose-50 px-4">
-            <BiSolidLeftArrow className="absolute -left-4 top-0 hidden size-6 text-rose-50 md:block" />
+            <BiSolidLeftArrow className="absolute top-0 -left-4 hidden size-6 text-rose-50 md:block" />
             <div>
               <ReusableAccordion
                 itineraries={tour.itineraries}
