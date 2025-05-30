@@ -17,7 +17,13 @@ export const ImageBanner = ({ images }: Props) => {
                 key={image}
                 className="relative h-48 w-full overflow-hidden bg-rose-200 first:col-span-3 first:row-span-2 first:h-full even:col-span-2 md:first:col-span-2 md:first:row-span-2 md:even:col-span-1"
               >
-                <Image src={image} fill alt="image" className="object-cover" />
+                <Image
+                  unoptimized
+                  src={image}
+                  fill
+                  alt="image"
+                  className="object-cover"
+                />
               </div>
             ))}
 

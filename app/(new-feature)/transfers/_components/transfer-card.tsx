@@ -50,11 +50,17 @@ export const TransferCard = ({
       <Card className="h-fit overflow-hidden border-none shadow-none">
         <div className="flex flex-col">
           <div className="relative h-48 w-full">
-            <Image src={imageUrl} fill alt={title} className="object-cover" />
+            <Image
+              unoptimized
+              src={imageUrl}
+              fill
+              alt={title}
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-1 flex-col gap-2 p-4">
             <div className="h-14">
-              <h1 className="text-xl font-medium leading-none">{title}</h1>
+              <h1 className="text-xl leading-none font-medium">{title}</h1>
               <div className="flex items-center gap-0.5">
                 <MapPin className="size-3" /> <p className="text-sm">{from}</p>{" "}
                 - <MapPin className="size-3" />

@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { formatPeso } from "../app/lib/helpers";
-import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -59,7 +58,13 @@ export const FeatureCard = ({
           </div>
         </div>
       )}
-      <Image src={imageUrl} fill alt="image" className="object-cover" />
+      <Image
+        unoptimized
+        src={imageUrl}
+        fill
+        alt="image"
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-black/30"></div>
     </Card>
   );
