@@ -1,7 +1,15 @@
+import { NewNavbar } from "@/components/new-navigation";
 import { ReactNode } from "react";
+import Footer from "../components/footer";
 
 const MarketingLayout = ({ children }: { children: ReactNode }) => {
-  return <main className="container mx-auto p-4 md:px-20">{children}</main>;
+  return (
+    <div>
+      <NewNavbar />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
 };
 
 export default MarketingLayout;

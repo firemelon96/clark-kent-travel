@@ -18,6 +18,8 @@ import { Logo } from "@/app/components/logo";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { useMedia } from "react-use";
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 //TODO: Fix the navigation error
 
@@ -84,7 +86,7 @@ export const menuItems = [
 ];
 
 export function NewNavbar() {
-  const isLoggedIn = true;
+  const { data: session } = useSession();
 
   const notMobile = useMedia("(min-width: 767px)", false);
   const [open, setOpen] = React.useState(false);
@@ -173,11 +175,12 @@ export function NewNavbar() {
           </NavigationMenuList>
           {/* Authentication */}
           <div>
-            {isLoggedIn ? (
-              <div className="flex">
+            {session?.user ? (
+              <div className="flex gap-2">
                 <Button asChild>
                   <Link href={`/profile`}>Profile</Link>
                 </Button>
+                <Button onClick={() => signOut()}>Log out</Button>
               </div>
             ) : (
               <div className="flex gap-2">

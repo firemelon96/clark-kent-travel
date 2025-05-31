@@ -1,6 +1,6 @@
 const SuccessPage = async () => {
   const data = await fetch(
-    "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/api/webhook/receive_callbabck",
+    "https://gnat-poetic-uniquely.ngrok-free.app/api/webhook/xendit",
   );
 
   return (

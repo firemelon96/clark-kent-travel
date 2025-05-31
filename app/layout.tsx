@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { NewNavbar } from "@/components/new-navigation";
 import Footer from "./components/footer";
+import { SessionProvider } from "next-auth/react";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -31,11 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${font.className} bg-[#FAF9F6]`}>
-        <NewNavbar />
-        {children}
-        <Footer />
-      </body>
+      <SessionProvider>
+        <body className={`${font.className} bg-[#FAF9F6]`}>{children}</body>
+      </SessionProvider>
     </html>
   );
 }

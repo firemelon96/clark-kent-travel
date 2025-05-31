@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   }
 
   return NextResponse.json(
-    { message: "Callback received successfully" },
+    { message: "Callback received successfully eestong" },
     { status: 200 },
   );
 }

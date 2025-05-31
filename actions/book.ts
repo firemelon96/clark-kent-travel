@@ -33,9 +33,9 @@ export const Book = async (values: BookingProps) => {
         mobile_number: contactNumber,
       },
       success_redirect_url:
-        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-success",
+        "https://gnat-poetic-uniquely.ngrok-free.app/booking/payment-success",
       failure_redirect_url:
-        "https://clark-kent-travel-git-update-firemelon96s-projects.vercel.app/booking/payment-failure",
+        "https://gnat-poetic-uniquely.ngrok-free.app/booking/payment-failure",
       customer_notification_preference: {
         invoice_paid: ["email"],
       },
@@ -50,6 +50,8 @@ export const Book = async (values: BookingProps) => {
     });
 
     if (!data) return;
+
+    // console.log(data.)
 
     return data;
   } catch (error) {

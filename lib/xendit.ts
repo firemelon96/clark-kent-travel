@@ -1,5 +1,4 @@
 import axios from "axios";
-import { redirect } from "next/navigation";
 
 const authToken = Buffer.from(
   "xnd_development_semDoEUETRrKm4nV79YNB24wvTO7UjB7NecsTdqVJrk1Tr83YyaTdg9YelMv1",
