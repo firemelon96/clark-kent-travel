@@ -27,7 +27,7 @@ const SinglePage = async (props: SingleProps) => {
   const privatePrice = getFirstAvailablePrice(tour.pricing, "private");
 
   return (
-    <section className="space-y-5">
+    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-5">
       <ImageBanner images={tour.images} />
       <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">

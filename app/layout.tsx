@@ -4,6 +4,7 @@ import "./globals.css";
 import { NewNavbar } from "@/components/new-navigation";
 import Footer from "./components/footer";
 import { SessionProvider } from "next-auth/react";
+import { Toaster } from "@/components/ui/sonner";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -33,7 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <SessionProvider>
-        <body className={`${font.className} bg-[#FAF9F6]`}>{children}</body>
+        <body className={`${font.className} bg-[#FAF9F6]`}>
+          <Toaster richColors />
+          {children}
+        </body>
       </SessionProvider>
     </html>
   );

@@ -16,10 +16,12 @@ import {
 import { Menu } from "lucide-react";
 import { Logo } from "@/app/components/logo";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { useMedia } from "react-use";
 import { useSession } from "next-auth/react";
 import { signOut } from "next-auth/react";
+import { UserAvatar } from "./user-avatar";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 //TODO: Fix the navigation error
 
@@ -87,23 +89,25 @@ export const menuItems = [
 
 export function NewNavbar() {
   const { data: session } = useSession();
-
-  const notMobile = useMedia("(min-width: 767px)", false);
+  const isMobile = useIsMobile();
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
-    if (notMobile) {
+    if (isMobile) {
       setOpen(false);
     }
-  }, [notMobile]);
+  }, [isMobile]);
 
   const onClose = () => {
     setOpen(false);
   };
+
   return (
     <div className="bg-white">
-      <div className="container mx-auto flex h-12 items-center justify-between px-4 md:px-20">
-        <Logo />
+      <div className="mx-auto flex h-12 max-w-5xl items-center justify-between px-2">
+        <Link href={"/"}>
+          <Logo />
+        </Link>
 
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
@@ -172,23 +176,27 @@ export function NewNavbar() {
                 )}
               </NavigationMenuItem>
             ))}
+            <div>
+              {session?.user ? (
+                <div className="flex gap-2">
+                  <UserAvatar user={session.user} />
+                </div>
+              ) : (
+                <div className="flex gap-2">
+                  <Link
+                    href={"/sign-up"}
+                    className={buttonVariants({ variant: "ghost" })}
+                  >
+                    Sign up
+                  </Link>
+                  <Link className={buttonVariants()} href={"/sign-in"}>
+                    Sign in
+                  </Link>
+                </div>
+              )}
+            </div>
           </NavigationMenuList>
           {/* Authentication */}
-          <div>
-            {session?.user ? (
-              <div className="flex gap-2">
-                <Button asChild>
-                  <Link href={`/profile`}>Profile</Link>
-                </Button>
-                <Button onClick={() => signOut()}>Log out</Button>
-              </div>
-            ) : (
-              <div className="flex gap-2">
-                <Button variant={"secondary"}>Register</Button>
-                <Button variant={"secondary"}>Login</Button>
-              </div>
-            )}
-          </div>
         </NavigationMenu>
         <Button
           variant="outline"
@@ -201,7 +209,7 @@ export function NewNavbar() {
         </Button>
         <Sheet onOpenChange={onClose} open={open}>
           <SheetContent side="right">
-            <nav className="flex flex-col space-y-4">
+            <nav className="mt-10 grid flex-1 auto-rows-min gap-6 px-4">
               {menuItems.map((item) => (
                 <div key={item.title}>
                   {item.items ? (
