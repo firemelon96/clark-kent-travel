@@ -4,24 +4,33 @@ import Credentials from "next-auth/providers/credentials";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "./db";
 import { SignInSchema } from "./types/auth-schema";
-import { UserRole, users } from "./db/schema";
+import { users } from "./db/schema";
 import { eq } from "drizzle-orm";
 import bcrypt from "bcryptjs";
+import { UserRoles } from "./types";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: DrizzleAdapter(db),
   callbacks: {
-    jwt: async ({ token, user }) => {
-      if (user?.role && (user.role === "ADMIN" || user.role === "USER")) {
-        token.role = user.role;
-      }
+    jwt: async ({ token }) => {
+      const [user] = await db
+        .select()
+        .from(users)
+        .where(eq(users.id, token.sub as string))
+        .limit(1);
+
+      if (!user) throw new Error("Invalid user");
+
+      token.role = user.role;
+
       return token;
     },
     session: async ({ token, session }) => {
-      if (token?.role === "ADMIN" || token?.role === "USER") {
-        session.user.role = token.role;
-      }
-
+      // if (token?.role === "ADMIN" || token?.role === "USER") {
+      //   session.user.role = token.role;
+      // }
+      session.user.role = token.role as UserRoles;
+      session.user.id = token.sub as string;
       return session;
     },
   },

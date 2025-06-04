@@ -1,15 +1,18 @@
 import { DefaultSession, DefaultUser } from "next-auth";
-import { UserRole } from "./db/schema"; // Ensure this is a TypeScript `enum` or a union type
+import { Roles } from "./db/schema"; // Ensure this is a TypeScript `enum` or a union type
+import { z } from "zod";
+
+type UserRoles = z.infer<typeof Roles>;
 
 declare module "next-auth" {
   interface Session {
     user: {
-      role: UserRole;
+      role: UserRoles;
     } & DefaultSession["user"];
   }
 
   interface User extends DefaultUser {
-    role: UserRole;
+    role: UserRoles;
   }
 }
 
