@@ -11,7 +11,7 @@ export const HeroService = ({ title, imageUrl, className }: Props) => {
   return (
     <section
       className={cn(
-        "relative -z-10 flex h-[300px] w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-xl p-4 md:h-[200px]",
+        "relative -z-10 flex h-[300px] w-full flex-col items-center justify-center gap-4 overflow-hidden p-4 md:h-[200px]",
         className,
       )}
     >

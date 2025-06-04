@@ -3,7 +3,7 @@ import { partners } from "@/app/data/partners";
 
 const AccomClient = () => {
   return (
-    <div className="space-y-4">
+    <div className="mx-auto max-w-5xl space-y-4">
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {partners.map((accom) => (

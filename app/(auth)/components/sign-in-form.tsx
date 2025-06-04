@@ -34,13 +34,22 @@ import { useTransition } from "react";
 import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { LoaderIcon, LogInIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface SignInFormProps {
   isModal?: boolean;
 }
 
 export const SignInForm = ({ isModal = false }: SignInFormProps) => {
+  const searchParams = useSearchParams();
+
+  const error = searchParams.get("error");
+
+  const errorMessage = {
+    CredentialsSignin: "Invalid email or password.",
+    default: "Something went wrong.",
+  };
+
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -122,6 +131,12 @@ export const SignInForm = ({ isModal = false }: SignInFormProps) => {
 
   return (
     <div className="flex flex-col gap-6">
+      {error && (
+        <p className="text-red-500">
+          {errorMessage[error as keyof typeof errorMessage] ??
+            errorMessage.default}
+        </p>
+      )}
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>

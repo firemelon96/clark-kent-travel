@@ -16,7 +16,7 @@ export const Transfer = () => {
   const filteredTransferData = getTransfer({ type });
 
   return (
-    <div className="space-y-4">
+    <div className="mx-auto max-w-5xl space-y-4">
       <div className="flex flex-col flex-wrap gap-4">
         <Filter />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">

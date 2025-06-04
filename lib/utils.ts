@@ -47,3 +47,7 @@ export const generateTimeSlots = () => {
     return `${hour}:00 ${period}`;
   });
 };
+
+export const stringToUppercase = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};

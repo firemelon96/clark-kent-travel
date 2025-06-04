@@ -13,7 +13,7 @@ export const RentalsClient = () => {
   const filteredRentalsData = getRentalByType({ type });
 
   return (
-    <div className="space-y-4">
+    <div className="mx-auto max-w-5xl space-y-4">
       <div className="flex flex-col gap-4">
         <FilterRental />
         <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3">
