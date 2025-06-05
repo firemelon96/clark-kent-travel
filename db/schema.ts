@@ -9,7 +9,8 @@ import {
   uuid,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters";
-import { createSelectSchema } from "drizzle-zod";
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
+import { z } from "zod";
 
 export const userRole = pgEnum("user_role", ["ADMIN", "USER"]);
 
@@ -112,7 +113,7 @@ export const tourTypes = pgEnum("tour_types", ["Day Tour", "Package"]);
 export const tours = pgTable("tours", {
   id: uuid("id").primaryKey().defaultRandom(),
   title: text("title").notNull(),
-  description: text("description"),
+  description: text("description").notNull(),
   isFeatured: boolean("isFeatured").notNull().default(false),
   images: text("images").array().notNull().default([]),
   duration: integer("duration").notNull().default(1),
@@ -123,6 +124,13 @@ export const tours = pgTable("tours", {
 
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
+});
+
+export const tourInsertSchema = createInsertSchema(tours, {
+  title: z.string().min(1, { message: "Required title" }),
+  description: z.string().min(1, { message: "Description is required" }),
+  durationUnit: z.string(),
+  duration: z.coerce.number(),
 });
 
 export const itinerary = pgTable("itinerary", {
