@@ -35,8 +35,6 @@ export const SearchBar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  console.log(pathname);
-
   const form = useForm<z.infer<typeof searchSchema>>({
     resolver: zodResolver(searchSchema),
     defaultValues: {
@@ -48,7 +46,6 @@ export const SearchBar = () => {
   const locations = [{ address: "all", image: "" }, ...getAllTourLocation()];
 
   const onSearch = (values: z.infer<typeof searchSchema>) => {
-    console.log(values);
     const url = qs.stringifyUrl(
       {
         url: "/search",

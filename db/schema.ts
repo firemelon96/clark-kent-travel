@@ -112,10 +112,14 @@ export const tourTypes = pgEnum("tour_types", ["Day Tour", "Package"]);
 
 export const tours = pgTable("tours", {
   id: uuid("id").primaryKey().defaultRandom(),
-  title: text("title").notNull(),
+  userId: uuid("userId")
+    .references(() => users.id, { onDelete: "cascade" })
+    .notNull(),
+  title: text("title").unique().notNull(),
   description: text("description").notNull(),
   isFeatured: boolean("isFeatured").notNull().default(false),
   images: text("images").array().notNull().default([]),
+  publicIds: text("publicIds").array().notNull().default([]),
   duration: integer("duration").notNull().default(1),
   durationUnit: unitTypes("durationUnit").default("days"),
   type: tourTypes("type").default("Day Tour"),
@@ -129,8 +133,13 @@ export const tours = pgTable("tours", {
 export const tourInsertSchema = createInsertSchema(tours, {
   title: z.string().min(1, { message: "Required title" }),
   description: z.string().min(1, { message: "Description is required" }),
-  durationUnit: z.string(),
-  duration: z.coerce.number(),
+  duration: z.coerce.number().positive(),
+  images: z.array(z.string()).min(1, { message: "Image is required" }),
+  durationUnit: z.enum(unitTypes.enumValues),
+  inclusions: z
+    .array(z.string())
+    .min(1, { message: "Add at least one inclusion" }),
+  userId: z.string().optional(),
 });
 
 export const itinerary = pgTable("itinerary", {
@@ -161,6 +170,30 @@ export const tourPricing = pgTable("tour_pricing", {
 
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
+});
+
+export const itineraryInsertSchema = createInsertSchema(itinerary, {
+  title: z.string().min(1, { message: "Name is required" }),
+  destinations: z
+    .array(z.string())
+    .min(1, { message: "Add at least one item" }),
+  tourId: z.string().optional(),
+});
+export const tourPricingInsertSchema = createInsertSchema(tourPricing, {
+  price: z.coerce.number().positive(),
+  type: z.enum(travellerType.enumValues),
+  minGroupSize: z.coerce.number().positive(),
+  maxGroupSize: z.coerce.number().positive(),
+  tourId: z.string().optional(),
+});
+
+export const fullTourSchema = tourInsertSchema.extend({
+  itineraries: z
+    .array(itineraryInsertSchema)
+    .min(1, { message: "Required at least 1 Itinerary" }),
+  tourPricings: z
+    .array(tourPricingInsertSchema)
+    .min(1, { message: "Required at least 1 Pricing" }),
 });
 
 export const servicesType = pgEnum("services_type", [

@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -20,19 +20,47 @@ import {
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { tourInsertSchema, tourTypes, unitTypes } from "@/db/schema";
+import {
+  fullTourSchema,
+  tourInsertSchema,
+  tourTypes,
+  unitTypes,
+} from "@/db/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { X } from "lucide-react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Image, MoreVerticalIcon, Trash2Icon, X } from "lucide-react";
+import { Suspense, useRef, useState, useTransition } from "react";
+import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
+import { CldImage, CldUploadButton } from "next-cloudinary";
+import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { deleteImage } from "@/actions/cloudinary/delete-images";
+import { ItineraryForm } from "./itinerary-form";
+import { PricingForm } from "./pricing-form";
+import { createTour } from "@/actions/admin/create-tour";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export const TourForm = () => {
   const [inclusionValue, setInclusionValue] = useState("");
   const [exclusioValue, setExclusioValue] = useState("");
+  const [publicId, setPublicId] = useState<string[]>([]);
 
-  const form = useForm<z.infer<typeof tourInsertSchema>>({
-    resolver: zodResolver(tourInsertSchema),
+  const [isPendingDelete, deleteImageTransition] = useTransition();
+  const [isPendingCreate, createTourTransition] = useTransition();
+
+  const imageBufferRef = useRef<string[]>([]);
+  const publicIdRef = useRef<string[]>([]);
+
+  const router = useRouter();
+
+  const form = useForm<z.infer<typeof fullTourSchema>>({
+    resolver: zodResolver(fullTourSchema),
     defaultValues: {
       title: "",
       description: "",
@@ -40,14 +68,22 @@ export const TourForm = () => {
       durationUnit: "days",
       exclusions: [],
       inclusions: [],
+      publicIds: [],
       images: [],
       isFeatured: false,
       type: "Package",
+      itineraries: [
+        { title: "", destinations: [], activities: [], images: [] },
+      ],
+      tourPricings: [
+        { type: "Joiner", minGroupSize: 1, maxGroupSize: 2, price: 0 },
+      ],
     },
   });
 
   const inclusions = form.watch("inclusions") || [];
   const exclusions = form.watch("exclusions") || [];
+  const images = form.watch("images") || [];
 
   const updateInclusions = (array: string[]) => {
     form.setValue("inclusions", array, { shouldValidate: true });
@@ -87,8 +123,27 @@ export const TourForm = () => {
     updateExclusions(exclusions.filter((i) => i !== item));
   };
 
-  const onSubmit = (values: z.infer<typeof tourInsertSchema>) => {
-    console.log(values);
+  // form.setValue("publicIds", publicId, { shouldValidate: true });
+
+  const onSubmit = (values: z.infer<typeof fullTourSchema>) => {
+    // console.log(values);
+    createTourTransition(async () => {
+      const res = await createTour(values);
+      if (res?.success) {
+        toast.success(res.message);
+        form.reset();
+        router.push("/profile/tours");
+      }
+      if (!res.success) {
+        toast.error(res.message);
+      }
+    });
+  };
+
+  const onDeleteImages = (ids: string[]) => {
+    deleteImageTransition(async () => {
+      await deleteImage(ids);
+    });
   };
 
   return (
@@ -103,201 +158,310 @@ export const TourForm = () => {
             <Button type="button" variant={"secondary"}>
               Cancel
             </Button>
-            <Button>Save</Button>
+            <Button type="submit" disabled={isPendingDelete || isPendingCreate}>
+              Save
+            </Button>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
-          <div className="col-span-3 flex flex-col gap-4 rounded-xl border p-4">
-            <FormField
-              name="title"
-              control={form.control}
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
-                  <FormControl>
-                    <Input placeholder="title" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              name="description"
-              control={form.control}
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Description</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      className="h-44"
-                      placeholder="description"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              name="inclusions"
-              control={form.control}
-              render={() => (
-                <FormItem>
-                  <FormLabel>Inclusions</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      value={inclusionValue}
-                      onChange={(e) => setInclusionValue(e.target.value)}
-                      placeholder="Add inclusions and press enter"
-                      onKeyDown={onKeyDownInclusion}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="flex flex-wrap gap-2">
-              {inclusions.map((item) => (
-                <div
-                  key={item}
-                  className="inline-flex items-center rounded-md bg-emerald-100 px-3 py-1 text-sm font-medium text-gray-500"
-                >
-                  {item}
-                  <button
-                    type="button"
-                    onClick={() => removeInclusion(item)}
-                    className="ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full hover:bg-rose-300"
-                    aria-label={`Remove ${item}`}
-                  >
-                    <X className="h-3 w-3" />
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <FormField
-              name="exclusions"
-              control={form.control}
-              render={() => (
-                <FormItem>
-                  <FormLabel>Exclusions</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      value={exclusioValue}
-                      onChange={(e) => setExclusioValue(e.target.value)}
-                      placeholder="Add exclusions and press enter"
-                      onKeyDown={onKeyDownExclusion}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="flex flex-wrap gap-2">
-              {exclusions.map((item) => (
-                <div
-                  key={item}
-                  className="inline-flex items-center rounded-md bg-rose-100 px-3 py-1 text-sm font-medium text-gray-500"
-                >
-                  {item}
-                  <button
-                    type="button"
-                    onClick={() => removeExclusion(item)}
-                    className="ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full hover:bg-rose-300"
-                    aria-label={`Remove ${item}`}
-                  >
-                    <X className="h-3 w-3" />
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="col-span-2 flex flex-col gap-4 rounded-xl border p-4">
-            <div className="flex flex-col gap-1">
-              Image Upload components (Cloudinary)
-              <div className="bg-muted-foreground aspect-video rounded-t-xl"></div>
-              <div className="flex h-24 gap-1 overflow-hidden overflow-x-scroll rounded-b-xl">
-                <div className="bg-accent-foreground aspect-video h-full"></div>
-                <div className="bg-accent-foreground aspect-video h-full"></div>
-                <div className="bg-accent-foreground aspect-video h-full"></div>
-              </div>
-            </div>
-
-            <div className="flex">
+          <div className="col-span-3 flex flex-col gap-4">
+            <div className="flex flex-col gap-4 rounded-xl border p-4">
               <FormField
-                name="duration"
+                name="title"
                 control={form.control}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Duration</FormLabel>
-                    <FormControl className="rounded-tr-none rounded-br-none">
+                    <FormLabel>Title</FormLabel>
+                    <FormControl>
                       <Input
-                        placeholder="Duration number"
+                        disabled={isPendingCreate || isPendingDelete}
+                        placeholder="title"
                         {...field}
-                        type="number"
                       />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                name="description"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Description</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        disabled={isPendingCreate || isPendingDelete}
+                        className="h-44"
+                        placeholder="description"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                name="inclusions"
+                control={form.control}
+                render={() => (
+                  <FormItem>
+                    <FormLabel>Inclusions</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        disabled={isPendingCreate || isPendingDelete}
+                        value={inclusionValue}
+                        onChange={(e) => setInclusionValue(e.target.value)}
+                        placeholder="Add inclusions and press enter"
+                        onKeyDown={onKeyDownInclusion}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="flex flex-wrap gap-2">
+                {inclusions.map((item) => (
+                  <div
+                    key={item}
+                    className="inline-flex items-center rounded-md bg-emerald-100 px-3 py-1 text-sm font-medium text-gray-500"
+                  >
+                    {item}
+                    <button
+                      type="button"
+                      onClick={() => removeInclusion(item)}
+                      className="ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full hover:bg-rose-300"
+                      aria-label={`Remove ${item}`}
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <FormField
+                name="exclusions"
+                control={form.control}
+                render={() => (
+                  <FormItem>
+                    <FormLabel>Exclusions</FormLabel>
+                    <FormControl>
+                      <Input
+                        disabled={isPendingCreate || isPendingDelete}
+                        type="text"
+                        value={exclusioValue}
+                        onChange={(e) => setExclusioValue(e.target.value)}
+                        placeholder="Add exclusions and press enter"
+                        onKeyDown={onKeyDownExclusion}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="flex flex-wrap gap-2">
+                {exclusions.map((item) => (
+                  <div
+                    key={item}
+                    className="inline-flex items-center rounded-md bg-rose-100 px-3 py-1 text-sm font-medium text-gray-500"
+                  >
+                    {item}
+                    <button
+                      type="button"
+                      onClick={() => removeExclusion(item)}
+                      className="ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full hover:bg-rose-300"
+                      aria-label={`Remove ${item}`}
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <ItineraryForm />
+          </div>
+
+          <div className="col-span-2 flex flex-col gap-4">
+            <div className="flex flex-col gap-4 rounded-xl border p-4">
+              <div className="flex flex-col gap-1">
+                <div
+                  className={cn(
+                    "bg-muted flex aspect-video items-center justify-center rounded-xl",
+                    images.length > 0 && "hidden",
+                    form.formState.errors.images && "border border-rose-500",
+                  )}
+                >
+                  <FormField
+                    name="images"
+                    control={form.control}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-shadow-white">
+                          Upload your image
+                        </FormLabel>
+                        <FormControl>
+                          <CldUploadButton
+                            options={{ multiple: true }}
+                            onSuccess={(res: any) => {
+                              console.log(res);
+                              const newUrl = res.info.secure_url;
+                              const publicId = res.info.public_id;
+                              if (newUrl) {
+                                imageBufferRef.current = [
+                                  ...imageBufferRef.current,
+                                  newUrl,
+                                ];
+
+                                field.onChange(imageBufferRef.current);
+                                // field.onChange([...(field.value || []), newUrl]);
+                              }
+
+                              if (publicId) {
+                                publicIdRef.current = [
+                                  ...publicIdRef.current,
+                                  publicId,
+                                ];
+                                form.setValue("publicIds", publicIdRef.current);
+                                // setPublicId(publicIdRef.current);
+                              }
+                            }}
+                            uploadPreset="clark-kent"
+                            className={cn(buttonVariants())}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                {images.length > 0 && (
+                  <div className="relative aspect-video items-center justify-center overflow-hidden rounded-t-xl">
+                    <CldImage
+                      fill
+                      src={images[0]}
+                      alt="Des of my image"
+                      className="object-cover"
+                    />
+                    <DropdownMenu>
+                      <DropdownMenuTrigger
+                        asChild
+                        className="absolute top-2 right-2"
+                      >
+                        <Button variant={"secondary"}>
+                          <MoreVerticalIcon />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent side="left">
+                        <DropdownMenuItem>
+                          <Button
+                            onClick={() => {
+                              onDeleteImages(publicId);
+                              form.setValue("images", [], {
+                                shouldValidate: true,
+                              });
+                              imageBufferRef.current = [];
+                            }}
+                            variant={"secondary"}
+                          >
+                            <Trash2Icon /> Remove Images
+                          </Button>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                )}
+                {images.length > 1 && (
+                  <div className="flex h-20 gap-1 overflow-hidden overflow-x-scroll rounded-b-xl">
+                    {images.slice(1).map((img) => (
+                      <div key={img} className="relative aspect-video">
+                        <CldImage fill src={img} alt="images" />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex">
+                <FormField
+                  name="duration"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Duration</FormLabel>
+                      <FormControl className="rounded-tr-none rounded-br-none">
+                        <Input
+                          placeholder="Duration number"
+                          {...field}
+                          type="number"
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="durationUnit"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Unit</FormLabel>
+                      <Select
+                        value={field.value}
+                        onValueChange={field.onChange}
+                      >
+                        <FormControl className="w-30 rounded-tl-none rounded-bl-none border-l-0">
+                          <SelectTrigger>
+                            <SelectValue placeholder="Unit" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {unitTypes.enumValues.map((value) => (
+                            <SelectItem key={value} value={value}>
+                              {value}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <FormField
+                control={form.control}
+                name="type"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormLabel>Type of tour</FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        value={field.value}
+                        className="flex"
+                      >
+                        {tourTypes.enumValues.map((name) => (
+                          <FormItem
+                            key={name}
+                            className="flex items-center gap-3"
+                          >
+                            <FormControl>
+                              <RadioGroupItem value={name} />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              {name}
+                            </FormLabel>
+                          </FormItem>
+                        ))}
+                      </RadioGroup>
                     </FormControl>
                   </FormItem>
                 )}
               />
-              <FormField
-                name="durationUnit"
-                control={form.control}
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Unit</FormLabel>
-                    <Select value={field.value} onValueChange={field.onChange}>
-                      <FormControl className="w-30 rounded-tl-none rounded-bl-none border-l-0">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Unit" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {unitTypes.enumValues.map((value) => (
-                          <SelectItem key={value} value={value}>
-                            {value}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
             </div>
-
-            <FormField
-              control={form.control}
-              name="type"
-              render={({ field }) => (
-                <FormItem className="space-y-3">
-                  <FormLabel>Type of tour</FormLabel>
-                  <FormControl>
-                    <RadioGroup
-                      onValueChange={field.onChange}
-                      value={field.value}
-                      className="flex"
-                    >
-                      {tourTypes.enumValues.map((name) => (
-                        <FormItem
-                          key={name}
-                          className="flex items-center gap-3"
-                        >
-                          <FormControl>
-                            <RadioGroupItem value={name} />
-                          </FormControl>
-                          <FormLabel className="font-normal">{name}</FormLabel>
-                        </FormItem>
-                      ))}
-                    </RadioGroup>
-                  </FormControl>
-                </FormItem>
-              )}
-            />
 
             <FormField
               name="isFeatured"
@@ -319,6 +483,8 @@ export const TourForm = () => {
                 </FormItem>
               )}
             />
+
+            <PricingForm />
           </div>
         </div>
       </form>

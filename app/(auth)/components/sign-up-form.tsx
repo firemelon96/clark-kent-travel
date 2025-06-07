@@ -21,7 +21,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { SignUpSchema } from "@/types/auth-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { error } from "console";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { startTransition, useTransition } from "react";

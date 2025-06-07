@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -8,9 +9,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { getFullTours } from "@/lib/data";
 import Link from "next/link";
 
-const TourPage = () => {
+const TourPage = async () => {
+  const tours = await getFullTours();
+
+  console.log(tours);
+
   return (
     <div className="mx-auto w-full max-w-7xl">
       <div className="flex justify-between space-y-4">

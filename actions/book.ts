@@ -51,8 +51,6 @@ export const Book = async (values: BookingProps) => {
 
     if (!data) return;
 
-    // console.log(data.)
-
     return data;
   } catch (error) {
     console.log(error);
