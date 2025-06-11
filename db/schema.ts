@@ -9,8 +9,9 @@ import {
   uuid,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters";
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
+import { createSelectSchema } from "drizzle-zod";
 import { z } from "zod";
+import { relations } from "drizzle-orm";
 
 export const userRole = pgEnum("user_role", ["ADMIN", "USER"]);
 
@@ -130,17 +131,10 @@ export const tours = pgTable("tours", {
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 });
 
-export const tourInsertSchema = createInsertSchema(tours, {
-  title: z.string().min(1, { message: "Required title" }),
-  description: z.string().min(1, { message: "Description is required" }),
-  duration: z.coerce.number().positive(),
-  images: z.array(z.string()).min(1, { message: "Image is required" }),
-  durationUnit: z.enum(unitTypes.enumValues),
-  inclusions: z
-    .array(z.string())
-    .min(1, { message: "Add at least one inclusion" }),
-  userId: z.string().optional(),
-});
+export const tourRelations = relations(tours, ({ many }) => ({
+  itineraries: many(itinerary),
+  tourPricings: many(tourPricing),
+}));
 
 export const itinerary = pgTable("itinerary", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -155,6 +149,13 @@ export const itinerary = pgTable("itinerary", {
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 });
+
+export const itineraryRelations = relations(itinerary, ({ one }) => ({
+  tour: one(tours, {
+    fields: [itinerary.tourId],
+    references: [tours.id],
+  }),
+}));
 
 export const travellerType = pgEnum("traveller_type", ["Joiner", "Private"]);
 
@@ -172,29 +173,12 @@ export const tourPricing = pgTable("tour_pricing", {
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 });
 
-export const itineraryInsertSchema = createInsertSchema(itinerary, {
-  title: z.string().min(1, { message: "Name is required" }),
-  destinations: z
-    .array(z.string())
-    .min(1, { message: "Add at least one item" }),
-  tourId: z.string().optional(),
-});
-export const tourPricingInsertSchema = createInsertSchema(tourPricing, {
-  price: z.coerce.number().positive(),
-  type: z.enum(travellerType.enumValues),
-  minGroupSize: z.coerce.number().positive(),
-  maxGroupSize: z.coerce.number().positive(),
-  tourId: z.string().optional(),
-});
-
-export const fullTourSchema = tourInsertSchema.extend({
-  itineraries: z
-    .array(itineraryInsertSchema)
-    .min(1, { message: "Required at least 1 Itinerary" }),
-  tourPricings: z
-    .array(tourPricingInsertSchema)
-    .min(1, { message: "Required at least 1 Pricing" }),
-});
+export const tourPricingRelations = relations(tourPricing, ({ one }) => ({
+  tour: one(tours, {
+    fields: [tourPricing.tourId],
+    references: [tours.id],
+  }),
+}));
 
 export const servicesType = pgEnum("services_type", [
   "Tours",

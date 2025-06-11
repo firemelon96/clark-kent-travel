@@ -21,8 +21,16 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { tourTypes, unitTypes } from "@/db/schema";
+import { fullTourUpdateSchema } from "@/types/drizzle-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Image, MoreVerticalIcon, Trash2Icon, X } from "lucide-react";
+import {
+  Image,
+  Loader2Icon,
+  MoreVerticalIcon,
+  PencilIcon,
+  Trash2Icon,
+  X,
+} from "lucide-react";
 import { Suspense, useRef, useState, useTransition } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -40,12 +48,17 @@ import { PricingForm } from "./pricing-form";
 import { createTour } from "@/actions/admin/create-tour";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { fullTourInsertSchema } from "@/types/drizzle-schema";
+import { updateTour } from "@/actions/admin/update-tour";
 
-export const TourForm = () => {
+interface Props {
+  tourId: string;
+  defaultValues: z.infer<typeof fullTourUpdateSchema>;
+}
+
+export const UpdateTourForm = ({ defaultValues, tourId }: Props) => {
   const [inclusionValue, setInclusionValue] = useState("");
   const [exclusioValue, setExclusioValue] = useState("");
-  const [publicId, setPublicId] = useState<string[]>([]);
+  // const [publicId, setPublicId] = useState<string[]>([]);
 
   const [isPendingDelete, deleteImageTransition] = useTransition();
   const [isPendingCreate, createTourTransition] = useTransition();
@@ -55,31 +68,17 @@ export const TourForm = () => {
 
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof fullTourInsertSchema>>({
-    resolver: zodResolver(fullTourInsertSchema),
-    defaultValues: {
-      title: "",
-      description: "",
-      duration: 2,
-      durationUnit: "days",
-      exclusions: [],
-      inclusions: [],
-      publicIds: [],
-      images: [],
-      isFeatured: false,
-      type: "Package",
-      itineraries: [
-        { title: "", destinations: [], activities: [], images: [] },
-      ],
-      tourPricings: [
-        { type: "Joiner", minGroupSize: 1, maxGroupSize: 2, price: 0 },
-      ],
-    },
+  console.log(defaultValues);
+
+  const form = useForm<z.infer<typeof fullTourUpdateSchema>>({
+    resolver: zodResolver(fullTourUpdateSchema),
+    defaultValues,
   });
 
   const inclusions = form.watch("inclusions") || [];
   const exclusions = form.watch("exclusions") || [];
   const images = form.watch("images") || [];
+  const publicIds = form.watch("publicIds");
 
   const updateInclusions = (array: string[]) => {
     form.setValue("inclusions", array, { shouldValidate: true });
@@ -121,14 +120,12 @@ export const TourForm = () => {
 
   // form.setValue("publicIds", publicId, { shouldValidate: true });
 
-  const onSubmit = (values: z.infer<typeof fullTourInsertSchema>) => {
+  const onSubmit = (values: z.infer<typeof fullTourUpdateSchema>) => {
     // console.log(values);
     createTourTransition(async () => {
-      const res = await createTour(values);
+      const res = await updateTour(values);
       if (res?.success) {
         toast.success(res.message);
-        form.reset();
-        router.push("/profile/tours");
       }
       if (!res.success) {
         toast.error(res.message);
@@ -136,26 +133,41 @@ export const TourForm = () => {
     });
   };
 
-  const onDeleteImages = (ids: string[]) => {
-    deleteImageTransition(async () => {
-      await deleteImage(ids);
-    });
-  };
+  // const onDeleteImages = (ids: string[]) => {
+  //   deleteImageTransition(async () => {
+  //     await deleteImage(ids, tourId);
+  //   });
+  // };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="flex justify-between space-y-4">
           <div>
-            <h1 className="text-xl font-semibold">New Tour</h1>
-            <p className="text-muted-foreground text-xs">Create new Tour.</p>
+            <h1 className="text-xl font-semibold">Update Tour</h1>
+            <p className="text-muted-foreground text-xs">
+              Update existing tour.
+            </p>
           </div>
           <div className="flex gap-2">
-            <Button type="button" variant={"secondary"}>
+            <Button
+              onClick={() => router.back()}
+              type="button"
+              className="cursor-pointer"
+              variant={"secondary"}
+            >
               Cancel
             </Button>
-            <Button type="submit" disabled={isPendingDelete || isPendingCreate}>
-              Save
+            <Button
+              type="submit"
+              disabled={isPendingCreate || !form.formState.isDirty}
+            >
+              {isPendingCreate ? (
+                <Loader2Icon className="size-4 animate-spin" />
+              ) : (
+                <PencilIcon className="size-4" />
+              )}{" "}
+              Update
             </Button>
           </div>
         </div>
@@ -220,7 +232,7 @@ export const TourForm = () => {
               />
 
               <div className="flex flex-wrap gap-2">
-                {inclusions.map((item) => (
+                {inclusions.map((item: string) => (
                   <div
                     key={item}
                     className="inline-flex items-center rounded-md bg-emerald-100 px-3 py-1 text-sm font-medium text-gray-500"
@@ -260,7 +272,7 @@ export const TourForm = () => {
               />
 
               <div className="flex flex-wrap gap-2">
-                {exclusions.map((item) => (
+                {exclusions.map((item: string) => (
                   <div
                     key={item}
                     className="inline-flex items-center rounded-md bg-rose-100 px-3 py-1 text-sm font-medium text-gray-500"
@@ -356,11 +368,9 @@ export const TourForm = () => {
                         <DropdownMenuItem>
                           <Button
                             onClick={() => {
-                              onDeleteImages(publicId);
                               form.setValue("images", [], {
                                 shouldValidate: true,
                               });
-                              imageBufferRef.current = [];
                             }}
                             variant={"secondary"}
                           >
@@ -373,7 +383,7 @@ export const TourForm = () => {
                 )}
                 {images.length > 1 && (
                   <div className="flex h-20 gap-1 overflow-hidden overflow-x-scroll rounded-b-xl">
-                    {images.slice(1).map((img) => (
+                    {images.slice(1).map((img: string) => (
                       <div key={img} className="relative aspect-video">
                         <CldImage fill src={img} alt="images" />
                       </div>

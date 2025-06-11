@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { tours } from "../data/tours";
 import { TourPackage } from "@/types/tour";
+import { hotels } from "../data/hotels";
 // import { transfer_services } from "../data/logistics";
 // import { fastCrafts } from "../data/fast-craft";
 
@@ -121,4 +122,11 @@ export const getTravelTours = ({
   }
 
   return datas;
+};
+
+export const getHotel = (id: string) => {
+  const hotel = hotels.find((hotel) => hotel.id === id);
+  if (!hotel) return notFound();
+
+  return hotel;
 };

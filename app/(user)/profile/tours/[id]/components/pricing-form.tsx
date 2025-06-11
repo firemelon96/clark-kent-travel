@@ -16,12 +16,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { travellerType } from "@/db/schema";
-import { fullTourInsertSchema } from "@/types/drizzle-schema";
-import { X } from "lucide-react";
+import { fullTourUpdateSchema } from "@/types/drizzle-schema";
+import { ActivityIcon, ActivitySquareIcon, MapPinIcon, X } from "lucide-react";
+import { useState } from "react";
 import { useFieldArray, useFormContext, UseFormReturn } from "react-hook-form";
 import { z } from "zod";
 
-type FullTourValues = z.infer<typeof fullTourInsertSchema>;
+type FullTourValues = z.infer<typeof fullTourUpdateSchema>;
 
 export const PricingForm = () => {
   const form = useFormContext<FullTourValues>();

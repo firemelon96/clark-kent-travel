@@ -2,20 +2,17 @@
 
 import { auth } from "@/auth";
 import { db } from "@/db";
-import {
-  fullTourSchema,
-  itinerary,
-  tourPricing,
-  tours,
-  users,
-} from "@/db/schema";
+import { itinerary, tourPricing, tours, users } from "@/db/schema";
+import { fullTourInsertSchema } from "@/types/drizzle-schema";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
-export const createTour = async (data: z.infer<typeof fullTourSchema>) => {
-  const validatedFields = fullTourSchema.safeParse(data);
+export const createTour = async (
+  data: z.infer<typeof fullTourInsertSchema>,
+) => {
+  const validatedFields = fullTourInsertSchema.safeParse(data);
 
   if (!validatedFields.success) {
     return {

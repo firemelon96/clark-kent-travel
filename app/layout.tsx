@@ -5,6 +5,7 @@ import { NewNavbar } from "@/components/new-navigation";
 import Footer from "./components/footer";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "@/components/ui/sonner";
+import ConfirmationDialog from "@/components/confirmation-dialog";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <body className={`${font.className} bg-[#FAF9F6]`}>
           <Toaster richColors />
           {children}
+          <ConfirmationDialog />
         </body>
       </SessionProvider>
     </html>

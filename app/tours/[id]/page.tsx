@@ -5,10 +5,11 @@ import { ReusableAccordion } from "@/components/reusable-accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { getFullTourById } from "@/lib/data";
 import { getFirstAvailablePrice } from "@/lib/utils";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { BiSolidLeftArrow } from "react-icons/bi";
-import { Description } from "../_components/description";
 
 interface SingleProps {
   params: Promise<{
@@ -18,13 +19,13 @@ interface SingleProps {
 
 const SinglePage = async ({ params }: SingleProps) => {
   const { id } = await params;
-  const tour = getTourById(id);
+  const tour = await getFullTourById(id);
 
-  const isExpand = false;
+  const price = tour?.tourPricings.map((price) => price.price).at(0);
 
-  const joinerPrice = getFirstAvailablePrice(tour.pricing, "joiner");
-
-  const privatePrice = getFirstAvailablePrice(tour.pricing, "private");
+  if (!tour) {
+    return notFound();
+  }
 
   return (
     <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-5">
@@ -33,19 +34,14 @@ const SinglePage = async ({ params }: SingleProps) => {
         <div className="flex flex-1 flex-col">
           <div className="space-y-2">
             <div className="hidden md:block">
-              <h1 className="text-2xl font-medium">{tour.tourName}</h1>
-              <Badge>
-                {joinerPrice
-                  ? formatPeso(joinerPrice || 0)
-                  : formatPeso(privatePrice || 0)}
-              </Badge>
+              <h1 className="text-2xl font-medium">{tour.title}</h1>
+              <Badge>{price}</Badge>
             </div>
-            <Description description={tour.description} />
           </div>
         </div>
         <Card className="h-full w-full border-none shadow-none md:w-[370px]">
           <CardHeader>
-            <p className="text-2xl font-medium">{tour.tourName}</p>
+            <p className="text-2xl font-medium">{tour.title}</p>
           </CardHeader>
           <CardContent>
             <Button variant="default" className="w-full" asChild>
@@ -54,7 +50,7 @@ const SinglePage = async ({ params }: SingleProps) => {
           </CardContent>
         </Card>
       </div>
-      <div className="flex flex-col-reverse gap-4 md:flex-row">
+      {/* <div className="flex flex-col-reverse gap-4 md:flex-row">
         <div className="flex flex-1 flex-col space-y-2">
           <span className="border-l-2 border-rose-500 pl-4 font-medium uppercase">
             Options
@@ -85,7 +81,7 @@ const SinglePage = async ({ params }: SingleProps) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
