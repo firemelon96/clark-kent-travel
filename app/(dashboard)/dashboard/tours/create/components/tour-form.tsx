@@ -128,7 +128,7 @@ export const TourForm = () => {
       if (res?.success) {
         toast.success(res.message);
         form.reset();
-        router.push("/profile/tours");
+        router.push("/dashboard/tours");
       }
       if (!res.success) {
         toast.error(res.message);

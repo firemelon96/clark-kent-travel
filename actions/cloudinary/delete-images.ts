@@ -6,7 +6,7 @@ import { tours } from "@/db/schema";
 import { v2 as cloudinary } from "cloudinary";
 import { and, eq } from "drizzle-orm";
 
-export const deleteImage = async (imgUrls: string[], tourId: string) => {
+export const deleteImage = async (imgUrls: string[]) => {
   const session = await auth();
 
   if (!session?.user.id) throw new Error("Unauthorized");

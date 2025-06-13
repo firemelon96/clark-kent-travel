@@ -64,7 +64,7 @@ export const TourTable = ({ tours }: TourTableProps) => {
         {tours.map((tour) => (
           <TableRow key={tour.id}>
             <TableCell>
-              <Link href={`/profile/tours/${tour.id}`}>
+              <Link href={`/dashboard/tours/${tour.id}`}>
                 <TourImage
                   image={tour.images[0]}
                   description={tour.description}
@@ -112,7 +112,9 @@ export const TourTable = ({ tours }: TourTableProps) => {
                       <TrashIcon /> Delete
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      onClick={() => router.push(`/tours/${tour.id}`)}
+                      onClick={() => {
+                        window.open(`/tours/${tour.slug}`, "_blank")?.focus();
+                      }}
                     >
                       <EyeIcon /> View
                     </DropdownMenuItem>

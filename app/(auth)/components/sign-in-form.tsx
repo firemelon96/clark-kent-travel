@@ -59,7 +59,7 @@ export const SignInForm = ({ isModal = false }: SignInFormProps) => {
   });
 
   const onSubmit = (values: z.infer<typeof SignInSchema>) => {
-    signIn("credentials", { ...values, redirectTo: "/profile" });
+    signIn("credentials", { ...values, redirectTo: "/dashboard" });
   };
 
   if (isModal)

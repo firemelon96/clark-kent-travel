@@ -19,7 +19,7 @@ const TourPage = async () => {
           </p>
         </div>
         <Button asChild>
-          <Link href="/profile/tours/create">Create</Link>
+          <Link href="/dashboard/tours/create">Create</Link>
         </Button>
       </div>
       <TourTable tours={tours} />

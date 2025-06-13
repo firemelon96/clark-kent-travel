@@ -1,4 +1,4 @@
-import { formatPeso, getTourById } from "@/app/lib/helpers";
+import { formatPeso } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
@@ -14,25 +14,37 @@ import { format } from "date-fns";
 import { Suspense } from "react";
 import { ContactForm } from "./_components/contact-form";
 import { Stepper } from "@/components/stepper";
+import { getTourById } from "@/lib/data";
 
 interface Props {
   searchParams: Promise<{
     from: Date;
     participants: number;
-    pricingType: string;
     to: Date;
     totalPrice: number;
     tourId: string;
+    type: "Joiner" | "Private";
+    serviceType: "Tours" | "Transfers" | "Rentals" | "Hotels";
+    status: "Pending" | "Canceled" | "Paid" | "Expired" | null | undefined;
   }>;
 }
 
 const BookingPage = async ({ searchParams }: Props) => {
-  const { from, participants, pricingType, to, totalPrice, tourId } =
-    await searchParams;
+  const {
+    from,
+    participants,
+    to,
+    totalPrice,
+    tourId,
+    type,
+    serviceType,
+    status,
+  } = await searchParams;
 
-  const tour = getTourById(tourId);
+  const tour = await getTourById(tourId);
+
   return (
-    <section className="space-y-5">
+    <section className="mx-auto max-w-5xl space-y-5 py-10">
       <Stepper />
 
       <div className="flex flex-col gap-2">
@@ -47,9 +59,9 @@ const BookingPage = async ({ searchParams }: Props) => {
               <Suspense fallback={<BookingPreviewSkeleton />}>
                 <BookingPreview
                   url={tour?.images[0] || ""}
-                  title={tour?.tourName || ""}
+                  title={tour?.title || ""}
                   participants={participants}
-                  type={pricingType}
+                  type={type}
                 />
               </Suspense>
             </CardContent>
@@ -61,7 +73,7 @@ const BookingPage = async ({ searchParams }: Props) => {
             <CardContent className="w-full">
               <ContactForm
                 tourId={tourId}
-                tourName={tour.tourName}
+                tourName={tour.title}
                 participants={participants}
                 totalPrice={totalPrice}
               />
@@ -75,10 +87,8 @@ const BookingPage = async ({ searchParams }: Props) => {
                 ) : (
                   <h1 className="font-semibold">{tour?.title}</h1>
                 )} */}
-                <h1 className="font-semibold">{tour?.tourName}</h1>
-                <span className="text-slate-500">
-                  {pricingType.toLowerCase()}
-                </span>
+                <h1 className="font-semibold">{tour?.title}</h1>
+                <span className="text-slate-500">{type.toLowerCase()}</span>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Separator />

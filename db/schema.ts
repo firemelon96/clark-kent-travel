@@ -7,6 +7,7 @@ import {
   integer,
   pgEnum,
   uuid,
+  unique,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters";
 import { createSelectSchema } from "drizzle-zod";
@@ -117,6 +118,7 @@ export const tours = pgTable("tours", {
     .references(() => users.id, { onDelete: "cascade" })
     .notNull(),
   title: text("title").unique().notNull(),
+  slug: text("slug").unique().notNull(),
   description: text("description").notNull(),
   isFeatured: boolean("isFeatured").notNull().default(false),
   images: text("images").array().notNull().default([]),
@@ -159,19 +161,32 @@ export const itineraryRelations = relations(itinerary, ({ one }) => ({
 
 export const travellerType = pgEnum("traveller_type", ["Joiner", "Private"]);
 
-export const tourPricing = pgTable("tour_pricing", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  tourId: uuid("tourId")
-    .references(() => tours.id, { onDelete: "cascade" })
-    .notNull(),
-  type: travellerType("type").default("Joiner"),
-  minGroupSize: integer("minGroupSize").default(1),
-  maxGroupSize: integer("maxGroupSize").default(1),
-  price: integer("price").notNull(),
+export const tourPricing = pgTable(
+  "tour_pricing",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tourId: uuid("tourId")
+      .references(() => tours.id, { onDelete: "cascade" })
+      .notNull(),
+    type: travellerType("type").default("Joiner"),
+    minGroupSize: integer("minGroupSize").default(1),
+    maxGroupSize: integer("maxGroupSize").default(1),
+    price: integer("price").notNull(),
 
-  createdAt: timestamp("createdAt").defaultNow().notNull(),
-  updatedAt: timestamp("updatedAt").defaultNow().notNull(),
-});
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+    updatedAt: timestamp("updatedAt").defaultNow().notNull(),
+  },
+  (t) => [
+    {
+      uniqueTourTypeGroupSize: unique().on(
+        t.tourId,
+        t.type,
+        t.minGroupSize,
+        t.maxGroupSize,
+      ),
+    },
+  ],
+);
 
 export const tourPricingRelations = relations(tourPricing, ({ one }) => ({
   tour: one(tours, {
@@ -206,6 +221,9 @@ export const bookings = pgTable("bookings", {
   to: timestamp("to").notNull(),
   totalPrice: integer("totalPrice").notNull(),
   status: statusType("status").default("Pending"),
+  contactName: text("contact_name").notNull(),
+  contactEmail: text("contact_email").notNull(),
+  contactNumber: text("contact_number").notNull(),
 
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),

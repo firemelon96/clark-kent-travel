@@ -7,11 +7,7 @@ import { and, desc, eq, getTableColumns } from "drizzle-orm";
 
 // export const
 
-export const getFullTourById = async (tourId: string) => {
-  const session = await auth();
-
-  if (!session?.user?.id) return;
-
+export const getFullTourBySlug = async (slug: string) => {
   // const pri = db
   //   .$with("tour_itineraries")
   //   .as(db.select().from(itinerary).where(eq(itinerary.tourId, tourId)));
@@ -29,11 +25,12 @@ export const getFullTourById = async (tourId: string) => {
   //   .orderBy(tours.id);
 
   const [tour] = await db.query.tours.findMany({
-    where: (tours, { eq, and }) =>
-      and(eq(tours.userId, session.user.id || ""), eq(tours.id, tourId)),
+    where: (tours, { eq }) => eq(tours.slug, slug),
     with: {
       itineraries: true,
-      tourPricings: true,
+      tourPricings: {
+        orderBy: (tourPricing) => [tourPricing.type, tourPricing.minGroupSize],
+      },
     },
   });
 
@@ -44,6 +41,20 @@ export const getFullTourById = async (tourId: string) => {
   if (!parsed.success) return;
 
   return parsed.data;
+};
+
+export const getTourById = async (tourId: string) => {
+  const [data] = await db
+    .select({
+      id: tours.id,
+      title: tours.title,
+      images: tours.images,
+      description: tours.description,
+    })
+    .from(tours)
+    .where(eq(tours.id, tourId));
+
+  return data;
 };
 
 export const getTours = async () => {

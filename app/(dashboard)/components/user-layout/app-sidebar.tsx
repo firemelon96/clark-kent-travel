@@ -34,10 +34,10 @@ const data = {
     {
       name: "Bookings",
       icon: Package2Icon,
-      href: "/profile",
+      href: "/dashboard/bookings",
     },
-    { name: "Wishlists", icon: HeartIcon, href: "/profile/wishlists" },
-    { name: "Settings", icon: Settings, href: "/profile/settings" },
+    { name: "Wishlists", icon: HeartIcon, href: "/dashboard/wishlists" },
+    { name: "Settings", icon: Settings, href: "/dashboard/settings" },
   ],
 };
 

@@ -34,7 +34,7 @@ export const deleteTour = async (tourId: string) => {
     throw new Error("Failed to delete tour");
   }
 
-  revalidatePath("/profile/tours");
+  revalidatePath("/dashboard/tours");
 
   return deletedTour;
 };

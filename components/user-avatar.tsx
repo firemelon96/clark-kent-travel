@@ -14,7 +14,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { LogOutIcon, UserIcon } from "lucide-react";
+import { LayoutDashboardIcon, LogOutIcon, UserIcon } from "lucide-react";
 import { Button, buttonVariants } from "./ui/button";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
@@ -35,9 +35,9 @@ export const UserAvatar = ({ user }: UserAvatarProps) => {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuItem className="flex justify-between">
-            <Link href="/profile" className={"flex w-full justify-between"}>
-              Profile
-              <UserIcon />
+            <Link href="/dashboard" className={"flex w-full justify-between"}>
+              Dashboard
+              <LayoutDashboardIcon />
             </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>

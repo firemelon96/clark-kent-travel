@@ -126,6 +126,7 @@ export const UpdateTourForm = ({ defaultValues, tourId }: Props) => {
       const res = await updateTour(values);
       if (res?.success) {
         toast.success(res.message);
+        router.push("/dashboard/tours");
       }
       if (!res.success) {
         toast.error(res.message);

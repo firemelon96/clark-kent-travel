@@ -8,6 +8,7 @@ import { fullTourUpdateSchema } from "@/types/drizzle-schema";
 import { and, eq, notInArray } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import slugify from "slugify";
 import { z } from "zod";
 
 export const updateTour = async (
@@ -130,6 +131,8 @@ export const updateTour = async (
       ),
     );
 
+  const slug = slugify(title);
+
   try {
     const updateTour = await db.transaction(async (tx) => {
       //update tour
@@ -146,6 +149,7 @@ export const updateTour = async (
           exclusions,
           isFeatured,
           type,
+          slug,
           updatedAt: new Date(),
         })
         .where(and(eq(tours.userId, user.id), eq(tours.id, id)))
@@ -195,7 +199,7 @@ export const updateTour = async (
       }
     });
 
-    revalidatePath("/profile/tours");
+    revalidatePath("/dashboard/tours");
     console.log(updateTour);
     // redirect("/profile/tours");
     return { success: true, message: "Created updated successfully!" };

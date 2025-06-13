@@ -8,6 +8,7 @@ import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import slugify from "slugify";
 
 export const createTour = async (
   data: z.infer<typeof fullTourInsertSchema>,
@@ -57,6 +58,8 @@ export const createTour = async (
     itineraries,
   } = validatedFields.data;
 
+  const slug = slugify(title);
+
   if (tourPricings.length === 0) {
     return {
       success: false,
@@ -97,6 +100,7 @@ export const createTour = async (
           exclusions,
           isFeatured,
           type,
+          slug,
         })
         .returning();
 
@@ -114,7 +118,7 @@ export const createTour = async (
         .values(tourPricings.map((price) => ({ ...price, tourId })));
     });
 
-    revalidatePath("/profile/tours");
+    revalidatePath("/dashboard/tours");
     // redirect("/profile/tours");
     return { success: true, message: "Created tour successfully!" };
 

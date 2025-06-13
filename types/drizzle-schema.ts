@@ -1,4 +1,5 @@
 import {
+  bookings,
   itinerary,
   tourPricing,
   tours,
@@ -6,6 +7,7 @@ import {
   travellerType,
   unitTypes,
 } from "@/db/schema";
+import { date } from "drizzle-orm/pg-core";
 import {
   createInsertSchema,
   createSelectSchema,
@@ -23,6 +25,7 @@ export const tourInsertSchema = createInsertSchema(tours, {
     .array(z.string())
     .min(1, { message: "Add at least one inclusion" }),
   userId: z.string().optional(),
+  slug: z.string().optional(),
 });
 
 export const tourSelectSchema = createSelectSchema(tours);
@@ -81,7 +84,16 @@ export const tourPricingInsertSchema = createInsertSchema(tourPricing, {
   tourId: z.string().optional(),
 });
 
-export const tourPricingSelectSchema = createSelectSchema(tourPricing);
+export const tourPricingSelectSchema = createSelectSchema(tourPricing, {
+  minGroupSize: z.number().positive(),
+  maxGroupSize: z.number().positive(),
+  type: z.enum(travellerType.enumValues),
+}).omit({
+  createdAt: true,
+  updatedAt: true,
+  tourId: true,
+  id: true,
+});
 
 export const tourPricingUpdateSchema = createUpdateSchema(tourPricing, {
   id: z.string().optional(),
@@ -123,3 +135,21 @@ export const fullTourUpdateSchema = tourUpdateSchema.extend({
     .array(tourPricingUpdateSchema)
     .min(1, { message: "Required at least 1 Pricing" }),
 });
+
+export const bookingInsertSchema = createInsertSchema(bookings)
+  .extend({
+    type: z.enum(travellerType.enumValues),
+    dateRange: z.object({
+      from: z.date(),
+      to: z.date(),
+    }),
+  })
+  .omit({
+    from: true,
+    to: true,
+    userId: true,
+    serviceId: true,
+    contactEmail: true,
+    contactName: true,
+    contactNumber: true,
+  });

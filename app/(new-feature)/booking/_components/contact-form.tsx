@@ -3,6 +3,7 @@
 import { Book } from "@/actions/book";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -15,7 +16,8 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { createXenditPayment } from "@/lib/xendit";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTransition } from "react";
+import { useSession } from "next-auth/react";
+import { useEffect, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -25,6 +27,7 @@ export const contactFormSchema = z.object({
   contactName: z.string().min(1, { message: "Name is required" }),
   contactEmail: z.string().email(),
   contactNumber: z.string().min(1, { message: "Contact is required" }),
+  prefill: z.boolean(),
 });
 
 interface Props {
@@ -40,6 +43,8 @@ export const ContactForm = ({
   totalPrice,
   participants,
 }: Props) => {
+  const { data: session } = useSession();
+
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<FormValues>({
@@ -48,6 +53,7 @@ export const ContactForm = ({
       contactName: "",
       contactEmail: "",
       contactNumber: "",
+      prefill: false,
     },
   });
 
@@ -72,6 +78,36 @@ export const ContactForm = ({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          name="prefill"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <div className="flex gap-2">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={(checked) => {
+                      field.onChange(checked);
+
+                      if (checked) {
+                        form.setValue("contactName", session?.user.name || "");
+                        form.setValue(
+                          "contactEmail",
+                          session?.user.email || "",
+                        );
+                      } else {
+                        form.setValue("contactName", "");
+                        form.setValue("contactEmail", "");
+                      }
+                    }}
+                  />
+                </FormControl>
+                <FormLabel>Use my account</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
         <div className="flex flex-col items-center gap-2 md:flex-row">
           <FormField
             control={form.control}
@@ -87,7 +123,6 @@ export const ContactForm = ({
                     className=""
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
@@ -105,7 +140,6 @@ export const ContactForm = ({
                     placeholder="johnDoe@example.com"
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
@@ -122,7 +156,6 @@ export const ContactForm = ({
                     placeholder="09xx-xxx-xxxx"
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />

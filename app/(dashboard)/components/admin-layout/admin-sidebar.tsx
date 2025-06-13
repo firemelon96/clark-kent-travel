@@ -62,22 +62,22 @@ const data = {
   navMain: [
     {
       title: "Tours",
-      url: "/profile/tours",
+      url: "/dashboard/tours",
       icon: MapIcon,
     },
     {
       title: "Transfers",
-      url: "/profile/transfers",
+      url: "/dashboard/transfers",
       icon: Car,
     },
     {
       title: "Rentals",
-      url: "/profile/rentals",
+      url: "/dashboard/rentals",
       icon: KeyIcon,
     },
     {
       title: "Hotels",
-      url: "/profile/hotels",
+      url: "/dashboard/hotels",
       icon: HotelIcon,
     },
   ],
