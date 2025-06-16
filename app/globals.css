@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "react-phone-number-input/style.css";
 /* Custom dark mode variant using :is() */
 @custom-variant dark (&:is(.dark *));
 

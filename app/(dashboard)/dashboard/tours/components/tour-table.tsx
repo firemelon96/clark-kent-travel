@@ -113,7 +113,9 @@ export const TourTable = ({ tours }: TourTableProps) => {
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => {
-                        window.open(`/tours/${tour.slug}`, "_blank")?.focus();
+                        window
+                          .open(`/travel-and-tours/${tour.slug}`, "_blank")
+                          ?.focus();
                       }}
                     >
                       <EyeIcon /> View

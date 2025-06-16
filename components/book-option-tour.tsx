@@ -32,8 +32,11 @@ import {
   bookingInsertSchema,
   tourPricingSelectSchema,
 } from "@/types/drizzle-schema";
-import { tourTypes, travellerType } from "@/db/schema";
+import { statusType, tourTypes, travellerType } from "@/db/schema";
 import { DateRange } from "react-day-picker";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { useSession } from "next-auth/react";
+import { toast } from "sonner";
 
 type Props = {
   tourId: string;
@@ -41,6 +44,16 @@ type Props = {
   durationUnit?: string;
   tourPricing: z.infer<typeof tourPricingSelectSchema>[];
 };
+
+export const bookingOptionSchema = z.object({
+  dateRange: z.object({
+    from: z.date(),
+    to: z.date(),
+  }),
+  participants: z.number(),
+  totalPrice: z.number(),
+  type: z.enum(travellerType.enumValues),
+});
 
 export const BookOptionTour = ({
   durationUnit,
@@ -51,23 +64,15 @@ export const BookOptionTour = ({
   const [price, setPrice] = useState(0);
   const [openDate, setOpenDate] = useState(false);
   const router = useRouter();
+  const { data: session } = useSession();
 
-  //   const filteredTypes = types.filter((type) => {
-  //     const priceForType =
-  //       tourPricing.find((price) => price.pricingType === type.value)?.prices ||
-  //       [];
-  //     return priceForType.length > 0; // Only keep types with prices
-  //   });
-
-  const form = useForm<z.infer<typeof bookingInsertSchema>>({
-    resolver: zodResolver(bookingInsertSchema),
+  const form = useForm<z.infer<typeof bookingOptionSchema>>({
+    resolver: zodResolver(bookingOptionSchema),
     defaultValues: {
       dateRange: {
         from: undefined,
         to: undefined,
       },
-      status: "Pending",
-      servicesType: "Tours",
       participants: 2,
       totalPrice: 0,
       type: "Joiner",
@@ -79,7 +84,17 @@ export const BookOptionTour = ({
 
   const isDay = durationUnit === "days";
 
+  const maxForType = Math.max(
+    ...tourPricing
+      .filter((price) => price.type === type)
+      .map((price) => price.maxGroupSize),
+  );
+
   useEffect(() => {
+    if (participants > maxForType) {
+      form.setValue("participants", maxForType, { shouldValidate: true });
+    }
+
     const matched = tourPricing.find(
       (price) =>
         price.type === type &&
@@ -87,16 +102,23 @@ export const BookOptionTour = ({
         participants <= price.maxGroupSize,
     );
 
-    const total = matched ? matched.price * participants : 0;
+    if (matched) {
+      setPrice(matched.price);
 
-    setPrice(matched?.price);
+      const total = matched.price * participants;
 
-    form.setValue("totalPrice", total, { shouldValidate: true });
+      form.setValue("totalPrice", total, { shouldValidate: true });
+    }
+
+    // form.setValue("participants", maxPax);
   }, [participants, type, tourPricing, form.setValue, form]);
 
-  const onSubmit = (values: z.infer<typeof bookingInsertSchema>) => {
-    const { participants, totalPrice, dateRange, servicesType, type, status } =
-      values;
+  const onSubmit = (values: z.infer<typeof bookingOptionSchema>) => {
+    if (!session?.user) {
+      toast.error("Login first");
+      return;
+    }
+    const { participants, totalPrice, dateRange, type } = values;
 
     const { from, to } = dateRange;
 
@@ -110,8 +132,6 @@ export const BookOptionTour = ({
           participants,
           totalPrice,
           type,
-          servicesType,
-          status,
         },
       },
       { skipNull: true, skipEmptyString: true },
@@ -127,6 +147,9 @@ export const BookOptionTour = ({
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4"
       >
+        {form.formState.errors && (
+          <p>{JSON.stringify(form.formState.errors)}</p>
+        )}
         <FormField
           control={form.control}
           name="dateRange"
@@ -171,7 +194,7 @@ export const BookOptionTour = ({
                           field.onChange({
                             from: range.from,
                             to: isDay
-                              ? addDays(range.from, duration)
+                              ? addDays(range.from, duration - 1)
                               : range.from,
                           });
                         } else {
@@ -207,7 +230,9 @@ export const BookOptionTour = ({
               <FormLabel>Select type</FormLabel>
               <FormControl>
                 <div className="flex flex-wrap gap-2">
-                  {travellerType.enumValues.map((type) => (
+                  {Array.from(
+                    new Set(tourPricing.map((type) => type.type)),
+                  ).map((type) => (
                     <Button
                       key={type}
                       type="button"
@@ -229,11 +254,6 @@ export const BookOptionTour = ({
           <div className="flex items-center rounded-lg border p-4">
             <span>Participants</span>
             <div className="ml-auto flex flex-col-reverse items-center gap-2 md:flex-row">
-              <span className="text-xs text-slate-500 md:text-base">
-                {price === 0
-                  ? "Get qoute for this group size"
-                  : `${formatPeso(price)} x`}
-              </span>
               <FormField
                 control={form.control}
                 name="participants"
@@ -268,9 +288,12 @@ export const BookOptionTour = ({
                           type="button"
                           variant="outline"
                           size="icon"
-                          onClick={() =>
-                            field.onChange(Math.min(12, field.value + 1))
-                          }
+                          disabled={participants === maxForType}
+                          onClick={() => {
+                            field.onChange(
+                              Math.min(maxForType, field.value + 1),
+                            );
+                          }}
                         >
                           <Plus className="h-4 w-4" />
                           <span className="sr-only">Increase participants</span>

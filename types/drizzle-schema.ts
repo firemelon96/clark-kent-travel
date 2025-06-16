@@ -1,6 +1,8 @@
 import {
   bookings,
   itinerary,
+  servicesType,
+  statusType,
   tourPricing,
   tours,
   tourTypes,
@@ -136,20 +138,19 @@ export const fullTourUpdateSchema = tourUpdateSchema.extend({
     .min(1, { message: "Required at least 1 Pricing" }),
 });
 
-export const bookingInsertSchema = createInsertSchema(bookings)
-  .extend({
-    type: z.enum(travellerType.enumValues),
-    dateRange: z.object({
-      from: z.date(),
-      to: z.date(),
-    }),
-  })
-  .omit({
-    from: true,
-    to: true,
-    userId: true,
-    serviceId: true,
-    contactEmail: true,
-    contactName: true,
-    contactNumber: true,
-  });
+export const bookingInsertSchema = createInsertSchema(bookings, {
+  userId: z.string().optional(),
+  serviceId: z.string().optional(),
+  servicesType: z.enum(servicesType.enumValues).optional(),
+  from: z.date(),
+  to: z.date(),
+  totalPrice: z.number(),
+  invoiceUrl: z.string().optional(),
+  participants: z.number(),
+  contactEmail: z.string().email(),
+  contactName: z.string().min(1, { message: "Name is required" }),
+}).omit({
+  createdAt: true,
+  updatedAt: true,
+  id: true,
+});

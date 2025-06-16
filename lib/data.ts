@@ -7,6 +7,26 @@ import { and, desc, eq, getTableColumns } from "drizzle-orm";
 
 // export const
 
+export const getFullTourById = async (tourId: string) => {
+  const [tour] = await db.query.tours.findMany({
+    where: (tours, { eq }) => eq(tours.id, tourId),
+    with: {
+      itineraries: true,
+      tourPricings: {
+        orderBy: (tourPricing) => [tourPricing.type, tourPricing.minGroupSize],
+      },
+    },
+  });
+
+  if (!tour) return;
+
+  const parsed = fullTourUpdateSchema.safeParse(tour);
+
+  if (!parsed.success) return;
+
+  return parsed.data;
+};
+
 export const getFullTourBySlug = async (slug: string) => {
   // const pri = db
   //   .$with("tour_itineraries")

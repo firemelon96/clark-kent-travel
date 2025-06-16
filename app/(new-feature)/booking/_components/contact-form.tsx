@@ -15,45 +15,55 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { createXenditPayment } from "@/lib/xendit";
+import { bookingInsertSchema } from "@/types/drizzle-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
-import { useEffect, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-export type FormValues = z.infer<typeof contactFormSchema>;
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+import PhoneInput from "react-phone-number-input";
 
 export const contactFormSchema = z.object({
   contactName: z.string().min(1, { message: "Name is required" }),
   contactEmail: z.string().email(),
-  contactNumber: z.string().min(1, { message: "Contact is required" }),
-  prefill: z.boolean(),
+  contactNumber: z.string().refine(
+    (value) => {
+      const phoneNumber = parsePhoneNumberFromString(value || "");
+
+      return phoneNumber?.isValid;
+    },
+    { message: "Invalid phone number" },
+  ),
 });
 
 interface Props {
   tourId: string;
   totalPrice: number;
   participants: number;
-  tourName: string;
+  from: Date;
+  to: Date;
+  type: "Joiner" | "Private";
+  userId: string;
 }
 
 export const ContactForm = ({
   tourId,
-  tourName,
   totalPrice,
   participants,
+  from,
+  to,
+  type,
+  userId,
 }: Props) => {
-  const { data: session } = useSession();
-
   const [isPending, startTransition] = useTransition();
 
-  const form = useForm<FormValues>({
+  const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       contactName: "",
       contactEmail: "",
       contactNumber: "",
-      prefill: false,
     },
   });
 
@@ -62,7 +72,16 @@ export const ContactForm = ({
   //   };
 
   const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
-    const newValues = { ...values, tourId, participants, totalPrice, tourName };
+    const newValues = {
+      ...values,
+      serviceId: tourId,
+      totalPrice: Number(totalPrice),
+      from: new Date(from),
+      to: new Date(to),
+      userId,
+      participants: Number(participants),
+      traveller: type,
+    };
 
     startTransition(() => {
       Book(newValues)
@@ -78,36 +97,10 @@ export const ContactForm = ({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <FormField
-          name="prefill"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <div className="flex gap-2">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={(checked) => {
-                      field.onChange(checked);
+        {form.formState.errors && (
+          <p>{JSON.stringify(form.formState.errors)}</p>
+        )}
 
-                      if (checked) {
-                        form.setValue("contactName", session?.user.name || "");
-                        form.setValue(
-                          "contactEmail",
-                          session?.user.email || "",
-                        );
-                      } else {
-                        form.setValue("contactName", "");
-                        form.setValue("contactEmail", "");
-                      }
-                    }}
-                  />
-                </FormControl>
-                <FormLabel>Use my account</FormLabel>
-              </div>
-            </FormItem>
-          )}
-        />
         <div className="flex flex-col items-center gap-2 md:flex-row">
           <FormField
             control={form.control}
@@ -150,10 +143,13 @@ export const ContactForm = ({
               <FormItem className="w-full">
                 <FormLabel>Mobile number</FormLabel>
                 <FormControl>
-                  <Input
+                  <PhoneInput
+                    disabled={isPending}
                     {...field}
-                    // disabled={disabled}
-                    placeholder="09xx-xxx-xxxx"
+                    international
+                    defaultCountry="PH"
+                    placeholder="e.g. 09171234567"
+                    className="[&>input]:border-input [&>input]:bg-background [&>input]:placeholder:text-muted-foreground [&>input]:focus-visible:ring-ring w-full [&>input]:w-full [&>input]:rounded-md [&>input]:border [&>input]:px-3 [&>input]:py-2 [&>input]:text-sm [&>input]:shadow-xs [&>input]:focus-visible:ring-1 [&>input]:focus-visible:outline-none"
                   />
                 </FormControl>
               </FormItem>
@@ -185,6 +181,7 @@ export const ContactForm = ({
           <Button disabled={isPending}>
             {isPending ? "Please wait..." : "Proceed to payment"}
           </Button>
+          {/* <Button type="submit">Submit</Button> */}
         </div>
       </form>
     </Form>

@@ -1,32 +1,61 @@
 "use server";
 
 import { contactFormSchema } from "@/app/(new-feature)/booking/_components/contact-form";
+import { auth } from "@/auth";
+import { db } from "@/db";
+import { bookings, tours } from "@/db/schema";
 import { createXenditPayment } from "@/lib/xendit";
-import { redirect } from "next/navigation";
+import { bookingInsertSchema } from "@/types/drizzle-schema";
+import { and, eq, gt, gte, lt, lte } from "drizzle-orm";
 import { z } from "zod";
 
-interface BookingProps extends z.infer<typeof contactFormSchema> {
-  tourId: string;
-  tourName: string;
-  participants: number;
-  totalPrice: number;
-}
+export const Book = async (values: z.infer<typeof bookingInsertSchema>) => {
+  const session = await auth();
 
-export const Book = async (values: BookingProps) => {
+  const validatedFields = bookingInsertSchema.safeParse(values);
+
+  if (!validatedFields.success) {
+    return;
+  }
+
+  if (!session?.user.id) return;
+
+  const userId = session?.user.id;
+
   const {
-    totalPrice,
-    participants,
     contactEmail,
+    from,
+    serviceId,
     contactName,
     contactNumber,
-    tourId,
-    tourName,
-  } = values;
+    totalPrice,
+    participants,
+    to,
+    traveller,
+  } = validatedFields.data;
+
+  if (!serviceId) return;
+
   try {
+    const [tour] = await db.select().from(tours).where(eq(tours.id, serviceId));
+
+    const overlapping = await db.query.bookings.findFirst({
+      where: and(
+        eq(bookings.serviceId, serviceId),
+        lte(bookings.from, to),
+        gte(bookings.to, from),
+      ),
+    });
+
+    if (overlapping) {
+      console.log("overlap");
+      return;
+    }
+
     const { data } = await createXenditPayment({
-      external_id: `booking_${tourId}`,
+      external_id: `booking_${serviceId}`,
       currency: "PHP",
-      amount: totalPrice,
+      amount: totalPrice || 0,
       customer: {
         email: contactEmail,
         given_names: contactName,
@@ -41,15 +70,32 @@ export const Book = async (values: BookingProps) => {
       },
       items: [
         {
-          name: tourName,
-          price: totalPrice / participants,
+          name: tour.title,
+          price: totalPrice || 0,
           category: "Tour Package",
-          quantity: participants,
+          quantity: participants || 0,
         },
       ],
     });
 
-    if (!data) return;
+    // overlapping booking
+
+    const [createBooking] = await db
+      .insert(bookings)
+      .values({
+        ...validatedFields.data,
+        invoiceUrl: data.invoice_url,
+        servicesType: "Tours",
+        status: "Pending",
+        userId,
+        serviceId,
+        participants,
+        traveller,
+      })
+      .returning();
+
+    // if (!data) return;
+    console.log(createBooking);
 
     return data;
   } catch (error) {

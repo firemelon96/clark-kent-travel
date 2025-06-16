@@ -68,8 +68,6 @@ export const UpdateTourForm = ({ defaultValues, tourId }: Props) => {
 
   const router = useRouter();
 
-  console.log(defaultValues);
-
   const form = useForm<z.infer<typeof fullTourUpdateSchema>>({
     resolver: zodResolver(fullTourUpdateSchema),
     defaultValues,

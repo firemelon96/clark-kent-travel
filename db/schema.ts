@@ -221,9 +221,11 @@ export const bookings = pgTable("bookings", {
   to: timestamp("to").notNull(),
   totalPrice: integer("totalPrice").notNull(),
   status: statusType("status").default("Pending"),
+  invoiceUrl: text("invoice_url"),
   contactName: text("contact_name").notNull(),
   contactEmail: text("contact_email").notNull(),
   contactNumber: text("contact_number").notNull(),
+  traveller: travellerType("traveller").default("Joiner"),
 
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),

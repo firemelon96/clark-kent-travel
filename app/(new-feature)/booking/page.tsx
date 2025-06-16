@@ -15,6 +15,8 @@ import { Suspense } from "react";
 import { ContactForm } from "./_components/contact-form";
 import { Stepper } from "@/components/stepper";
 import { getTourById } from "@/lib/data";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 interface Props {
   searchParams: Promise<{
@@ -24,24 +26,20 @@ interface Props {
     totalPrice: number;
     tourId: string;
     type: "Joiner" | "Private";
-    serviceType: "Tours" | "Transfers" | "Rentals" | "Hotels";
-    status: "Pending" | "Canceled" | "Paid" | "Expired" | null | undefined;
   }>;
 }
 
 const BookingPage = async ({ searchParams }: Props) => {
-  const {
-    from,
-    participants,
-    to,
-    totalPrice,
-    tourId,
-    type,
-    serviceType,
-    status,
-  } = await searchParams;
+  const { from, participants, to, totalPrice, tourId, type } =
+    await searchParams;
+
+  const session = await auth();
+
+  console.log(await searchParams);
 
   const tour = await getTourById(tourId);
+
+  if (!session?.user.id) redirect(`/travel-and-tours/${tourId}`);
 
   return (
     <section className="mx-auto max-w-5xl space-y-5 py-10">
@@ -73,9 +71,12 @@ const BookingPage = async ({ searchParams }: Props) => {
             <CardContent className="w-full">
               <ContactForm
                 tourId={tourId}
-                tourName={tour.title}
                 participants={participants}
                 totalPrice={totalPrice}
+                from={from}
+                to={to}
+                type={type}
+                userId={session?.user.id}
               />
             </CardContent>
           </Card>
@@ -88,7 +89,7 @@ const BookingPage = async ({ searchParams }: Props) => {
                   <h1 className="font-semibold">{tour?.title}</h1>
                 )} */}
                 <h1 className="font-semibold">{tour?.title}</h1>
-                <span className="text-slate-500">{type.toLowerCase()}</span>
+                <span className="text-slate-500">{type}</span>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Separator />
