@@ -149,6 +149,7 @@ export const bookingInsertSchema = createInsertSchema(bookings, {
   participants: z.number(),
   contactEmail: z.string().email(),
   contactName: z.string().min(1, { message: "Name is required" }),
+  traveller: z.enum(travellerType.enumValues),
 }).omit({
   createdAt: true,
   updatedAt: true,

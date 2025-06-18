@@ -39,7 +39,7 @@ const BookingPage = async ({ searchParams }: Props) => {
 
   const tour = await getTourById(tourId);
 
-  if (!session?.user.id) redirect(`/travel-and-tours/${tourId}`);
+  if (!session?.user.id) redirect(`/travel-and-tours`);
 
   return (
     <section className="mx-auto max-w-5xl space-y-5 py-10">

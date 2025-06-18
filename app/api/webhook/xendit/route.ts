@@ -1,3 +1,5 @@
+import { db } from "@/db";
+import { bookings } from "@/db/schema";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -5,6 +7,11 @@ export async function POST(req: NextRequest) {
 
   if (body.status === "PAID") {
     // send an email confirming payment status
+
+    await db.update(bookings).set({
+      status: "Paid",
+      updatedAt: new Date(),
+    });
     console.log(
       `Invoice successfully paid with status ${body.status} and id ${body.id}`,
     );

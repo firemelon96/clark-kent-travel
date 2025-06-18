@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import { db } from "@/db";
 
-import { itinerary, tourPricing, tours } from "@/db/schema";
+import { bookings, itinerary, tourPricing, tours } from "@/db/schema";
 import { fullTourUpdateSchema } from "@/types/drizzle-schema";
 import { and, desc, eq, getTableColumns } from "drizzle-orm";
 
@@ -70,6 +70,7 @@ export const getTourById = async (tourId: string) => {
       title: tours.title,
       images: tours.images,
       description: tours.description,
+      slug: tours.slug,
     })
     .from(tours)
     .where(eq(tours.id, tourId));
@@ -97,4 +98,24 @@ export const getTours = async () => {
   } catch (error) {
     throw error;
   }
+};
+
+export const getUserBoookings = async () => {
+  const session = await auth();
+
+  if (!session?.user.id) throw new Error("Unauthorized");
+
+  const data = await db
+    .select({
+      ...getTableColumns(bookings),
+      tour: {
+        title: tours.title,
+        images: tours.images,
+      },
+    })
+    .from(bookings)
+    .innerJoin(tours, eq(tours.id, bookings.serviceId))
+    .where(eq(bookings.userId, session.user.id));
+
+  return data;
 };
