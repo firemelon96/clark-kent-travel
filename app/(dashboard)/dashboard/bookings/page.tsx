@@ -1,8 +1,19 @@
 import { getUserBoookings } from "@/lib/data";
 import { BookingCard } from "../../components/booking-card";
+import { FilterBookings } from "../components/filter-bookings";
 
-const Bookings = async () => {
-  const bookings = await getUserBoookings();
+interface BookingProps {
+  searchParams?: Promise<{
+    limit: string;
+    page: string;
+  }>;
+}
+
+const Bookings = async ({ searchParams }: BookingProps) => {
+  const params = await searchParams;
+  const limit = Number(params?.limit) || 6;
+  const page = Number(params?.page) || 1;
+  const { data, count } = await getUserBoookings(page, limit);
 
   return (
     <div className="flex flex-col gap-2">
@@ -14,8 +25,9 @@ const Bookings = async () => {
       </div>
 
       <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-        {bookings.map((booking) => (
+        {data.map((booking) => (
           <BookingCard
+            bookingId={booking.id}
             key={booking.id}
             image={booking.tour.images[0]}
             title={booking.tour.title}
@@ -27,6 +39,7 @@ const Bookings = async () => {
           />
         ))}
       </div>
+      <FilterBookings count={count} />
     </div>
   );
 };

@@ -13,7 +13,7 @@ import Link from "next/link";
 import { z } from "zod";
 import { TourImage } from "./tour-image";
 import { Badge } from "@/components/ui/badge";
-import { EyeIcon, MoreVerticalIcon, TrashIcon } from "lucide-react";
+import { CopyIcon, EyeIcon, MoreVerticalIcon, TrashIcon } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -32,6 +32,7 @@ import { deleteTour } from "@/actions/admin/delete-tour";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import useConfirmationStore from "@/hooks/use-confirmation-store";
+import { createCopy } from "@/actions/admin/duplicate";
 
 interface TourTableProps {
   tours: z.infer<typeof tourSelectSchema>[];
@@ -39,6 +40,7 @@ interface TourTableProps {
 
 export const TourTable = ({ tours }: TourTableProps) => {
   const [isPending, startTransition] = useTransition();
+  const [isPendingCreate, startTransitionCopy] = useTransition();
   const { openConfirmation } = useConfirmationStore();
   const router = useRouter();
 
@@ -46,6 +48,12 @@ export const TourTable = ({ tours }: TourTableProps) => {
     startTransition(async () => {
       await deleteTour(id);
       toast.success("Tour deleted successfully");
+    });
+  };
+
+  const onDuplicate = (id: string) => {
+    startTransitionCopy(async () => {
+      await createCopy(id);
     });
   };
 
@@ -119,6 +127,9 @@ export const TourTable = ({ tours }: TourTableProps) => {
                       }}
                     >
                       <EyeIcon /> View
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => onDuplicate(tour.id)}>
+                      <CopyIcon /> Make a copy
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>

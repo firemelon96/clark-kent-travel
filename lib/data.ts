@@ -100,8 +100,9 @@ export const getTours = async () => {
   }
 };
 
-export const getUserBoookings = async () => {
+export const getUserBoookings = async (page: number, limit: number) => {
   const session = await auth();
+  const offset = (page - 1) * limit;
 
   if (!session?.user.id) throw new Error("Unauthorized");
 
@@ -115,7 +116,13 @@ export const getUserBoookings = async () => {
     })
     .from(bookings)
     .innerJoin(tours, eq(tours.id, bookings.serviceId))
-    .where(eq(bookings.userId, session.user.id));
+    .where(eq(bookings.userId, session.user.id))
+    .limit(limit)
+    .offset(offset);
 
-  return data;
+  const [dataCount] = await db
+    .select({ count: db.$count(bookings) })
+    .from(bookings);
+
+  return { data, count: dataCount.count };
 };

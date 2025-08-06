@@ -7,15 +7,20 @@ import { IconType } from "react-icons";
 interface LoginButtonProps {
   provider: string;
   icon: IconType;
+  callbackUrl: string;
 }
 
-export const LoginButton = ({ provider, icon: Icon }: LoginButtonProps) => {
+export const LoginButton = ({
+  callbackUrl,
+  provider,
+  icon: Icon,
+}: LoginButtonProps) => {
   return (
     <Button
       type="button"
       variant="outline"
       className="w-full"
-      onClick={() => signIn(provider, { redirectTo: "/" })}
+      onClick={() => signIn(provider, { redirectTo: callbackUrl })}
     >
       <Icon />
       Login with {provider}

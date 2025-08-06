@@ -44,6 +44,7 @@ export const SignInForm = ({ isModal = false }: SignInFormProps) => {
   const searchParams = useSearchParams();
 
   const error = searchParams.get("error");
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
 
   const errorMessage = {
     CredentialsSignin: "Invalid email or password.",
@@ -59,7 +60,7 @@ export const SignInForm = ({ isModal = false }: SignInFormProps) => {
   });
 
   const onSubmit = (values: z.infer<typeof SignInSchema>) => {
-    signIn("credentials", { ...values, redirectTo: "/dashboard" });
+    signIn("credentials", { ...values, redirectTo: callbackUrl });
   };
 
   if (isModal)
@@ -78,7 +79,11 @@ export const SignInForm = ({ isModal = false }: SignInFormProps) => {
               <form>
                 <div className="grid gap-6">
                   <div className="flex flex-col gap-4">
-                    <LoginButton icon={BsGoogle} provider="google" />
+                    <LoginButton
+                      icon={BsGoogle}
+                      provider="google"
+                      callbackUrl={callbackUrl}
+                    />
                   </div>
                   <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                     <span className="bg-card text-muted-foreground relative z-10 px-2">
@@ -149,7 +154,11 @@ export const SignInForm = ({ isModal = false }: SignInFormProps) => {
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="grid gap-6">
                 <div className="flex flex-col gap-4">
-                  <LoginButton icon={BsGoogle} provider="google" />
+                  <LoginButton
+                    icon={BsGoogle}
+                    provider="google"
+                    callbackUrl={callbackUrl}
+                  />
                 </div>
                 <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                   <span className="bg-card text-muted-foreground relative z-10 px-2">

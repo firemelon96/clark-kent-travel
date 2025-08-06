@@ -226,6 +226,7 @@ export const bookings = pgTable("bookings", {
   contactEmail: text("contact_email").notNull(),
   contactNumber: text("contact_number").notNull(),
   traveller: travellerType("traveller").default("Joiner"),
+  externalId: text("external_id").unique(),
 
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),

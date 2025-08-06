@@ -8,6 +8,7 @@ import { createXenditPayment } from "@/lib/xendit";
 import { bookingInsertSchema } from "@/types/drizzle-schema";
 import { and, eq, gt, gte, lt, lte } from "drizzle-orm";
 import { z } from "zod";
+import { randomUUID } from "crypto";
 
 export const Book = async (values: z.infer<typeof bookingInsertSchema>) => {
   const session = await auth();
@@ -53,7 +54,7 @@ export const Book = async (values: z.infer<typeof bookingInsertSchema>) => {
     }
 
     const { data } = await createXenditPayment({
-      external_id: `booking_${serviceId}`,
+      external_id: `booking_${randomUUID()}`,
       currency: "PHP",
       amount: totalPrice || 0,
       customer: {
@@ -66,7 +67,7 @@ export const Book = async (values: z.infer<typeof bookingInsertSchema>) => {
       failure_redirect_url:
         "https://gnat-poetic-uniquely.ngrok-free.app/booking/payment-failure",
       customer_notification_preference: {
-        invoice_paid: ["email"],
+        invoice_paid: ["email", "whatsapp"],
       },
       items: [
         {
@@ -91,6 +92,7 @@ export const Book = async (values: z.infer<typeof bookingInsertSchema>) => {
         serviceId,
         participants,
         traveller,
+        externalId: data.external_id,
       })
       .returning();
 

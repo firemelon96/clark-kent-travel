@@ -14,9 +14,9 @@ export const TourImage = ({ image, title, description }: TourImageProps) => {
       <div className="relative aspect-video h-20 overflow-hidden rounded-sm">
         <CldImage src={image} fill alt={title} />
       </div>
-      <div>
-        <p className="text-base font-medium">{title}</p>
-        <p className="text-muted-foreground text-xs">{description}</p>
+      <div className="max-w-sm">
+        <p className="truncate text-base font-medium">{title}</p>
+        <p className="text-muted-foreground truncate text-xs">{description}</p>
       </div>
     </div>
   );

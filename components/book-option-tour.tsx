@@ -25,7 +25,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Label } from "./ui/label";
 import { formatPeso } from "@/app/lib/helpers";
 import {
@@ -65,6 +65,8 @@ export const BookOptionTour = ({
   const [openDate, setOpenDate] = useState(false);
   const router = useRouter();
   const { data: session } = useSession();
+
+  const pathname = usePathname();
 
   const form = useForm<z.infer<typeof bookingOptionSchema>>({
     resolver: zodResolver(bookingOptionSchema),
@@ -115,7 +117,8 @@ export const BookOptionTour = ({
 
   const onSubmit = (values: z.infer<typeof bookingOptionSchema>) => {
     if (!session?.user) {
-      toast.error("Login first");
+      router.push(`/sign-in?callbackUrl=${encodeURIComponent(pathname)}`);
+      // console.log(encodeURIComponent(pathname));
       return;
     }
     const { participants, totalPrice, dateRange, type } = values;
