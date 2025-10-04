@@ -73,7 +73,7 @@ export const BookingForm = ({
     if (participantCount) {
       setTotalPrice(participantCount * price);
     }
-  }, [participantCount]);
+  }, [participantCount, price]);
 
   const onSubmit = (data: FieldValues) => {
     const transformedData = {
