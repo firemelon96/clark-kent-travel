@@ -87,12 +87,12 @@ export const partners = [
       "We will require a 50% deposit upon confirmation of reservation and the balance can be settled upon arrival of the guest. Booking agreement is invalid without proof of deposit or full payment",
     ],
     images: [
-      "/resources/mariafe/mariafe000.avif",
-      "/resources/mariafe/mariafe001.avif",
-      "/resources/mariafe/mariafe002.avif",
-      "/resources/mariafe/mariafe003.avif",
-      "/resources/mariafe/mariafe005.avif",
-      "/resources/mariafe/mariafe006.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/mariafe/mariafe000.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/mariafe/mariafe001.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/mariafe/mariafe002.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/mariafe/mariafe003.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/mariafe/mariafe005.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/mariafe/mariafe006.avif",
     ],
   },
 ];

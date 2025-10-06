@@ -10,7 +10,7 @@ const Hero = () => {
           unoptimized
           fill
           alt="Palawan island"
-          src="/resources/hero.avif"
+          src="https://cdn.palawanwebsolutions.com/clarkkent/hero.avif"
           className="w-full object-cover object-top"
           priority
         />

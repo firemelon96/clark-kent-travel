@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-4 md:items-start">
           <div className="">
             <Image
-              src="/resources/logo.png"
+              src="https://cdn.palawanwebsolutions.com/clarkkent/logo.png"
               width={120}
               height={120}
               alt="clark kent travel logo"
@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-2 md:flex-row">
             <Link href="https://beta.tourism.gov.ph/">
               <Image
-                src="/resources/dot.jpg"
+                src="https://cdn.palawanwebsolutions.com/clarkkent/dot.jpg"
                 width={90}
                 height={90}
                 alt="department of tourism"
@@ -47,7 +47,7 @@ const Footer = () => {
             </Link>
             <Link href="https://www.dti.gov.ph/">
               <Image
-                src="/resources/dti.png"
+                src="https://cdn.palawanwebsolutions.com/clarkkent/dti.png"
                 width={90}
                 height={90}
                 alt="department of trade and industry"
@@ -56,7 +56,7 @@ const Footer = () => {
             </Link>
             <Link href="https://www.puertoprincesatourism.com/">
               <Image
-                src="/resources/citytourism.jpg"
+                src="https://cdn.palawanwebsolutions.com/clarkkent/citytourism.jpg"
                 width={90}
                 height={90}
                 alt="department of trade"
@@ -65,7 +65,7 @@ const Footer = () => {
             </Link>
             <Link href="https://www.itsmorefuninthephilippines.co.uk/">
               <Image
-                src="/resources/loveph.png"
+                src="https://cdn.palawanwebsolutions.com/clarkkent/loveph.png"
                 width={90}
                 height={90}
                 alt="department of trade"
@@ -74,7 +74,7 @@ const Footer = () => {
             </Link>
             <Link href="https://notices.philgeps.gov.ph/">
               <Image
-                src="/resources/philgeps.png"
+                src="https://cdn.palawanwebsolutions.com/clarkkent/philgeps.png"
                 width={90}
                 height={90}
                 alt="philgeps"

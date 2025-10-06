@@ -7,18 +7,18 @@ import "slick-carousel/slick/slick-theme.css";
 import "./slider.css";
 
 // const images = [
-//   "/resources/balabac/patawan-island.png",
-//   "/resources/balabac/patawan.png",
-//   "/resources/balabac/onok-island.png",
-//   "/resources/balabac/candaraman.png",
-//   "/resources/balabac/canimeran-island.png",
-//   "/resources/balabac/canimeranp.png",
-//   "/resources/balabac/patawan-island.png",
-//   "/resources/balabac/patawan.png",
-//   "/resources/balabac/onok-island.png",
-//   "/resources/balabac/candaraman.png",
-//   "/resources/balabac/canimeran-island.png",
-//   "/resources/balabac/canimeranp.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/patawan-island.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/patawan.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/onok-island.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/candaraman.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/canimeran-island.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/canimeranp.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/patawan-island.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/patawan.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/onok-island.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/candaraman.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/canimeran-island.png",
+//   "https://cdn.palawanwebsolutions.com/clarkkent/balabac/canimeranp.png",
 // ];
 
 interface ImageProps {

@@ -16,7 +16,7 @@ export const NavbarSingle = () => {
               <Image
                 width={80}
                 height={80}
-                src="/resources/logo.png"
+                src="https://cdn.palawanwebsolutions.com/clarkkent/logo.png"
                 alt="clark kent travel logo"
                 className="rounded-md bg-white"
               />

@@ -7,17 +7,17 @@ export const navLinks = [
   {
     label: "Tours",
     link: "/tours",
-    href: "#tours",
+    href: "/#tours",
   },
   {
     label: "Services",
     link: "/other-services",
-    href: "#other-services",
+    href: "/#other-services",
   },
   {
     label: "Testimonials",
     link: "/testimonials",
-    href: "#testimonial",
+    href: "/#testimonial",
   },
   {
     label: "About",
@@ -27,6 +27,6 @@ export const navLinks = [
   {
     label: "Contact",
     link: "/contact",
-    href: "#contact",
+    href: "/#contact",
   },
 ];

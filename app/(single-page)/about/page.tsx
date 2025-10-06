@@ -119,19 +119,19 @@ const About = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3">
         <Image
-          src="/resources/legal/dot.png"
+          src="https://cdn.palawanwebsolutions.com/clarkkent/legal/dot.png"
           alt="dot"
           width={600}
           height={600}
         />
         <Image
-          src="/resources/legal/dti.png"
+          src="https://cdn.palawanwebsolutions.com/clarkkent/legal/dti.png"
           alt="dti"
           width={600}
           height={600}
         />
         <Image
-          src="/resources/legal/permit.png"
+          src="https://cdn.palawanwebsolutions.com/clarkkent/legal/permit.png"
           alt="permit"
           width={600}
           height={600}
