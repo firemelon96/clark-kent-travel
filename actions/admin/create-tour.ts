@@ -58,7 +58,7 @@ export const createTour = async (
     itineraries,
   } = validatedFields.data;
 
-  const slug = slugify(title);
+  const slug = slugify(title).toLowerCase();
 
   if (tourPricings.length === 0) {
     return {

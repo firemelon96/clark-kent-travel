@@ -13,6 +13,7 @@ type Props = {
   hasText?: boolean;
   description?: string;
   href?: string;
+  slug?: string;
 };
 
 export const FeatureCard = ({
@@ -23,6 +24,7 @@ export const FeatureCard = ({
   hasText = false,
   description,
   href,
+  slug,
 }: Props) => {
   const isArray = Array.isArray(price);
   return (
@@ -58,14 +60,16 @@ export const FeatureCard = ({
           </div>
         </div>
       )}
-      <Image
-        unoptimized
-        src={imageUrl}
-        fill
-        alt="image"
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-black/30"></div>
+      <Link href={`/travel-and-tours/${slug}`}>
+        <Image
+          unoptimized
+          src={imageUrl}
+          fill
+          alt="image"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30"></div>
+      </Link>
     </Card>
   );
 };

@@ -6,7 +6,7 @@ import { fullTourUpdateSchema } from "@/types/drizzle-schema";
 import { and, desc, eq, getTableColumns } from "drizzle-orm";
 
 // export const
-
+//privat server
 export const getFullTourById = async (tourId: string) => {
   const [tour] = await db.query.tours.findMany({
     where: (tours, { eq }) => eq(tours.id, tourId),
@@ -27,6 +27,7 @@ export const getFullTourById = async (tourId: string) => {
   return parsed.data;
 };
 
+//public
 export const getFullTourBySlug = async (slug: string) => {
   // const pri = db
   //   .$with("tour_itineraries")
@@ -63,6 +64,17 @@ export const getFullTourBySlug = async (slug: string) => {
   return parsed.data;
 };
 
+export const getFeaturedTour = async () => {
+  const featuredTours = await db.query.tours.findMany({
+    where: (tour, { eq }) => eq(tour.isFeatured, true),
+  });
+
+  if (!featuredTours) return;
+
+  return featuredTours;
+};
+
+//public
 export const getTourById = async (tourId: string) => {
   const [data] = await db
     .select({
@@ -78,6 +90,7 @@ export const getTourById = async (tourId: string) => {
   return data;
 };
 
+//private for authenticated user
 export const getTours = async () => {
   const session = await auth();
 
@@ -100,6 +113,7 @@ export const getTours = async () => {
   }
 };
 
+//private user auth user oonly
 export const getUserBoookings = async (page: number, limit: number) => {
   const session = await auth();
   const offset = (page - 1) * limit;
