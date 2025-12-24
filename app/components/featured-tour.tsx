@@ -12,8 +12,8 @@ import { getFeaturedTour } from "@/lib/data";
 import { notFound } from "next/navigation";
 
 const FeaturedCard = async () => {
-  // const packageTours = getPackageTours();
-  const featuredTours = (await getFeaturedTour()) || [];
+  const packageTours = getPackageTours();
+  // const featuredTours = (await getFeaturedTour()) || [];
 
   return (
     <div className="mt-10 w-full">
@@ -24,7 +24,7 @@ const FeaturedCard = async () => {
         />
         <Carousel className="w-full">
           <CarouselContent>
-            {featuredTours.map((tour, i) => (
+            {packageTours.map((tour, i) => (
               <CarouselItem
                 className="flex items-center justify-center sm:basis-1/2 md:basis-1/3"
                 key={i}
