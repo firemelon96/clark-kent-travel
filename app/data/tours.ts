@@ -666,8 +666,7 @@ export const tours = [
     maxParticipants: 12,
   },
   {
-    tourId:
-      "5d4n-super-ultimate-escapade-reef-and-wrecks-tour-town-tour-transfer",
+    tourId: "5d4n-super-ultimate-reef-and-wrecks-tour-town-tour-transfer",
     tourName:
       "5D4N Coron Super Ultimate, Reef and Wrecks, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -1978,7 +1977,6 @@ export const tours = [
   {
     tourId: "honda-bay-puerto-princesa-city",
     tourName: "Honda Bay Tour",
-
     type: "day tour",
     price: 2000,
     privatePrice: [8500, 4800, 3800, 2950, 2700, 2400, 2300, 2200, 2100, 2000],
@@ -2119,6 +2117,24 @@ export const tours = [
     maxParticipants: 12,
   },
   //TODO: Add talaudyong data
+  {
+    tourId: "talaudyong-beach",
+    tourName: "Talaudyong Beach",
+    type: "day tour",
+    price: 0,
+    privatePrice: [8000, 4100],
+    address: ["Puerto Princesa, Palawan"],
+    description: "",
+    itineraries: [],
+    duration: [],
+    inclusions: [],
+    exclusions: [],
+    notes: [],
+    reminders: [],
+    images: [],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
   {
     tourId: "firefly-watching-puerto-princesa-city",
     tourName: "Firefy Tour",

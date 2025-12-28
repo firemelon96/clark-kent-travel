@@ -1,13 +1,6 @@
 "use client";
 import { BsMessenger, BsWhatsapp } from "react-icons/bs";
-import dynamic from "next/dynamic";
-
-const Map = dynamic(
-  () => {
-    return import("./map");
-  },
-  { ssr: false },
-);
+import { GoogleMap } from "./google-map";
 
 const fbPageId = "276166685864117";
 
@@ -17,7 +10,7 @@ const Contact = () => {
       <div className="container mx-auto md:px-20">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="w-full p-4 md:w-1/2">
-            <Map />
+            <GoogleMap />
           </div>
           <div className="w-full p-4 md:w-1/2">
             <div className="flex w-full flex-col items-start gap-4">
