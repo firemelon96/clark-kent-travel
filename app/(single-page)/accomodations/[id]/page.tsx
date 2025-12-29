@@ -13,9 +13,9 @@ import { notFound } from "next/navigation";
 import Inclusions from "../components/inclusions";
 
 interface SingleServiceProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -25,7 +25,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: SingleServiceProps): Promise<Metadata> {
-  const accomodationsData = accomodations.find((acc) => acc.id === params.id);
+  const id = (await params).id;
+  const accomodationsData = accomodations.find((acc) => acc.id === id);
 
   return {
     title: accomodationsData?.name,
@@ -36,14 +37,15 @@ export async function generateMetadata({
   };
 }
 
-const SingleService = ({ params }: SingleServiceProps) => {
+const SingleService = async ({ params }: SingleServiceProps) => {
+  const id = (await params).id;
   const accomodationsData = accomodations.find(
-    (accomodation) => accomodation.id === params.id,
+    (accomodation) => accomodation.id === id,
   );
 
   if (!accomodationsData) return notFound();
 
-  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/accomodations/${params.id}`;
+  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/accomodations/${id}`;
 
   return (
     <>
@@ -87,7 +89,7 @@ const SingleService = ({ params }: SingleServiceProps) => {
           </div>
         </div>
       </div>
-      <RecommendedTours id={params.id} />
+      <RecommendedTours id={id} />
     </>
   );
 };

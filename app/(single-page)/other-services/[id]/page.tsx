@@ -9,19 +9,20 @@ import { transfer_services } from "@/app/data/logistics";
 import Details from "../components/details";
 
 interface SingleServiceProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
-  return transfer_services.map(({ id }) => id);
+  return transfer_services.map((tour) => ({ id: tour.id }));
 }
 
 export async function generateMetadata({
   params,
 }: SingleServiceProps): Promise<Metadata> {
-  const otherServices = getOtherServicesById(params.id);
+  const id = (await params).id;
+  const otherServices = getOtherServicesById(id);
   return {
     title: otherServices.service_name,
     description: otherServices.description,
@@ -31,10 +32,11 @@ export async function generateMetadata({
   };
 }
 
-const SingleService = ({ params }: SingleServiceProps) => {
-  const otherServices = getOtherServicesById(params.id);
+const SingleService = async ({ params }: SingleServiceProps) => {
+  const id = (await params).id;
+  const otherServices = getOtherServicesById(id);
 
-  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/other-services/${params.id}`;
+  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/other-services/${id}`;
 
   return (
     <>
@@ -88,7 +90,7 @@ const SingleService = ({ params }: SingleServiceProps) => {
           </div>
         </div>
       </div>
-      <RecommendedTours id={params.id} />
+      <RecommendedTours id={id} />
     </>
   );
 };

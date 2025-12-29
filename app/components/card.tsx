@@ -26,7 +26,7 @@ const Card = ({
         <div className="h-48 w-60 overflow-hidden rounded-xl">
           <Image
             unoptimized
-            src={image}
+            src={image || ""}
             width={300}
             height={300}
             alt={title}

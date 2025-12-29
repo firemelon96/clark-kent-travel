@@ -3,6 +3,7 @@ import Card from "./card";
 
 const FeaturedTour = () => {
   const featuredTours = getFeaturedTours();
+  console.log();
   return (
     <div className="absolute -mt-20 w-full gap-4 overflow-x-scroll pb-8">
       <div className="ml-5 flex w-max gap-4 md:ml-36">
