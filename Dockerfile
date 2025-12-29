@@ -20,7 +20,7 @@ RUN npm install --omit=dev
 # Copy build output only
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.ts ./
+COPY --from=builder /app/next.config.mjs ./
 
 EXPOSE 3000
 CMD ["npm", "start"]
