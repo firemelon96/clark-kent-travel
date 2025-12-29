@@ -13,19 +13,20 @@ import ListContent from "../components/list-content";
 import { Policies } from "../components/policies";
 
 interface SingleServiceProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
-  return accomodations.map(({ id }) => id);
+  return accomodations.map((inn) => ({ id: inn.id }));
 }
 
 export async function generateMetadata({
   params,
 }: SingleServiceProps): Promise<Metadata> {
-  const mariafe = partners.find((partner) => partner.id === params.id);
+  const { id } = await params;
+  const mariafe = partners.find((partner) => partner.id === id);
 
   return {
     title: mariafe?.name,
@@ -36,12 +37,13 @@ export async function generateMetadata({
   };
 }
 
-const SingleService = ({ params }: SingleServiceProps) => {
-  const mariafeData = partners.find((partner) => partner.id === params.id);
+const SingleService = async ({ params }: SingleServiceProps) => {
+  const { id } = await params;
+  const mariafeData = partners.find((partner) => partner.id === id);
 
   if (!mariafeData) return notFound();
 
-  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/mariafe-inn/${params.id}`;
+  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/mariafe-inn/${id}`;
 
   return (
     <>
@@ -87,7 +89,7 @@ const SingleService = ({ params }: SingleServiceProps) => {
           </div>
         </div>
       </div>
-      <RecommendedTours id={params.id} />
+      <RecommendedTours id={id} />
     </>
   );
 };

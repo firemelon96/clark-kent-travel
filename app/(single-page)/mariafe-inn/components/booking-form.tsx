@@ -123,7 +123,7 @@ export const BookingForm = ({ title, roomType }: BookingFormProps) => {
             startDate={startDate!}
             endDate={endDate!}
             placeholderText="Select a date for your trip"
-            className="border-third mt-1 block w-full rounded-md border border-gray-300 p-2 text-2xl shadow-sm"
+            className="border-third mt-1 block w-full rounded-md border border-gray-300 p-2 text-2xl shadow-xs"
             disabled={isLoading || isloadingTransition}
           />
         )}

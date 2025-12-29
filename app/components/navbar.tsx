@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(isMobile);
 
   return (
-    <header className="relative z-[9999]">
+    <header className="relative z-9999">
       <div className="fixed left-0 top-0 z-10 w-full bg-[#E13179]">
         <div className="container mx-auto flex items-center justify-between xl:px-20">
           <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ const Navbar = () => {
           </button>
 
           {isOpen && (
-            <ul className="absolute left-0 top-20 w-full items-center bg-[#E13179]/75 text-center text-2xl tracking-widest text-sky-50 backdrop-blur-sm">
+            <ul className="absolute left-0 top-20 w-full items-center bg-[#E13179]/75 text-center text-2xl tracking-widest text-sky-50 backdrop-blur-xs">
               {navLinks.map((nav) => (
                 <li key={nav.label} className="p-6 uppercase hover:bg-white/30">
                   <Link href={nav.href}>{nav.label}</Link>

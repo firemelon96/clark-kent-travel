@@ -11,19 +11,20 @@ import { SocialShare } from "@/app/components/social-share";
 import Image from "next/image";
 
 interface SingleTourProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
-  return tours.map(({ tourId }) => tourId);
+  return tours.map((tour) => ({ tourId: tour.tourId }));
 }
 
 export async function generateMetadata({
   params,
 }: SingleTourProps): Promise<Metadata> {
-  const tour = getTourById(params.id);
+  const { id } = await params;
+  const tour = getTourById(id);
   return {
     title: tour.tourName,
     description: tour.description,
@@ -33,10 +34,11 @@ export async function generateMetadata({
   };
 }
 
-const SingleTour = ({ params }: SingleTourProps) => {
-  const tour = getTourById(params.id);
+const SingleTour = async ({ params }: SingleTourProps) => {
+  const { id } = await params;
+  const tour = getTourById(id);
 
-  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/tours/${params.id}`;
+  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/tours/${id}`;
 
   return (
     <>
@@ -99,7 +101,7 @@ const SingleTour = ({ params }: SingleTourProps) => {
           </div>
         </div>
       </div>
-      <RecommendedTours id={params.id} />
+      <RecommendedTours id={id} />
     </>
   );
 };

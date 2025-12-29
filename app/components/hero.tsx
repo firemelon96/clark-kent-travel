@@ -24,7 +24,7 @@ const Hero = () => {
             <p className="text-3xl font-semibold uppercase lg:text-6xl">
               Be your <span className="text-rose-300">travel bag</span>.
             </p>
-            {/* <p className="stroke-slate-500 stroke-1 text-xl font-semibold text-[#fff]">
+            {/* <p className="stroke-slate-500 stroke-1 text-xl font-semibold text-white">
               Experience budget friendly with quality tours and hussle free
             </p> */}
 

@@ -15,19 +15,20 @@ import ImageSliderSlick from "@/app/components/image-slider-slick";
 import { fastCrafts } from "@/app/data/fast-craft";
 
 interface SingleServiceProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
-  return fastCrafts.map(({ id }) => id);
+  return fastCrafts.map((craft) => ({ id: craft.id }));
 }
 
 export async function generateMetadata({
   params,
 }: SingleServiceProps): Promise<Metadata> {
-  const otherServices = getFastCraftById(params.id);
+  const { id } = await params;
+  const otherServices = getFastCraftById(id);
   return {
     title: otherServices.service_name,
     description: otherServices.description,
@@ -37,10 +38,11 @@ export async function generateMetadata({
   };
 }
 
-const SingleService = ({ params }: SingleServiceProps) => {
-  const otherServices = getFastCraftById(params.id);
+const SingleService = async ({ params }: SingleServiceProps) => {
+  const { id } = await params;
+  const otherServices = getFastCraftById(id);
 
-  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/other-services/${params.id}`;
+  const shareLink = `${process.env.NEXT_PUBLIC_BASE_URL}/other-services/${id}`;
 
   return (
     <>
@@ -88,7 +90,7 @@ const SingleService = ({ params }: SingleServiceProps) => {
           </div>
         </div>
       </div>
-      <RecommendedTours id={params.id} />
+      <RecommendedTours id={id} />
     </>
   );
 };

@@ -21,7 +21,7 @@ const TripByLocation = () => {
                 alt="balabac"
                 className="object-cover"
               />
-              <div className="absolute inset-y-0 w-full bg-rose-500/20 backdrop-blur-sm">
+              <div className="absolute inset-y-0 w-full bg-rose-500/20 backdrop-blur-xs">
                 <div className="p-4">
                   <span className="text-3xl font-semibold text-sky-50 uppercase">
                     {tour.address}
