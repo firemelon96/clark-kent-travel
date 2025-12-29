@@ -1,6 +1,7 @@
 export const tours = [
   {
     tourId: "4d3n-balabac-1-night-in-mariafe",
+    slug: "4d3n-balabac-1-night-in-mariafe",
     tourName: "4D3N Balabac + 1N in Mariafe",
     isFeatured: true,
     type: "package",

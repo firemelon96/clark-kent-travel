@@ -1,6 +1,5 @@
 "use client";
 import qs from "query-string";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -32,10 +31,8 @@ import {
   bookingInsertSchema,
   tourPricingSelectSchema,
 } from "@/types/drizzle-schema";
-import { statusType, tourTypes, travellerType } from "@/db/schema";
 import { DateRange } from "react-day-picker";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { useSession } from "next-auth/react";
 import { toast } from "sonner";
 
 type Props = {
@@ -44,16 +41,6 @@ type Props = {
   durationUnit?: string;
   tourPricing: z.infer<typeof tourPricingSelectSchema>[];
 };
-
-export const bookingOptionSchema = z.object({
-  dateRange: z.object({
-    from: z.date(),
-    to: z.date(),
-  }),
-  participants: z.number(),
-  totalPrice: z.number(),
-  type: z.enum(travellerType.enumValues),
-});
 
 export const BookOptionTour = ({
   durationUnit,

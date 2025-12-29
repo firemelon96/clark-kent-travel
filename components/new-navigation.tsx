@@ -17,9 +17,6 @@ import { Menu } from "lucide-react";
 import { Logo } from "@/app/components/logo";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button, buttonVariants } from "./ui/button";
-import { useMedia } from "react-use";
-import { useSession } from "next-auth/react";
-import { signOut } from "next-auth/react";
 import { UserAvatar } from "./user-avatar";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -88,7 +85,6 @@ export const menuItems = [
 ];
 
 export function NewNavbar() {
-  const { data: session } = useSession();
   const isMobile = useIsMobile();
   const [open, setOpen] = React.useState(false);
 
@@ -176,7 +172,8 @@ export function NewNavbar() {
                 )}
               </NavigationMenuItem>
             ))}
-            <div>
+            {/* Sign in and sign out button */}
+            {/* <div>
               {session?.user ? (
                 <div className="flex gap-2">
                   <UserAvatar user={session.user} />
@@ -194,7 +191,7 @@ export function NewNavbar() {
                   </Link>
                 </div>
               )}
-            </div>
+            </div> */}
           </NavigationMenuList>
           {/* Authentication */}
         </NavigationMenu>
