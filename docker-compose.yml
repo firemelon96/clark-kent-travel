@@ -1,0 +1,9 @@
+services:
+  nextjs:
+    container_name: clarkkent
+    build: .
+    restart: always
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env
