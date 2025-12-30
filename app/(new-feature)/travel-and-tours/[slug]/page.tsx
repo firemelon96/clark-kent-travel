@@ -30,7 +30,7 @@ const SinglePage = async ({ params }: SingleProps) => {
   const tour = await getFullTourBySlug(slug);
 
   const price = tour?.tourPricings.map((price) => price.price).at(0);
-  console.log(tour?.tourPricings);
+  // console.log(tour?.tourPricings);
 
   if (!tour) {
     return notFound();
