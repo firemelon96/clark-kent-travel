@@ -4,8 +4,8 @@ export const tours = [
     tourName: "4D3N Balabac + 1N in Puerto Princesa",
     isFeatured: true,
     type: "package",
-    price: [16788],
-    privatePrice: [14288],
+    price: 16788,
+    privatePrice: [14288, 15288, 16288, 17288],
     address: ["Balabac, Palawan"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
