@@ -34,23 +34,21 @@ export const contactFormSchema = z.object({
 });
 
 interface Props {
-  tourId: string;
   totalPrice: number;
   participants: number;
   from: Date;
   to: Date;
   type: "Joiner" | "Private";
-  userId: string;
+  tourName: string;
 }
 
 export const ContactForm = ({
-  tourId,
   totalPrice,
   participants,
   from,
   to,
   type,
-  userId,
+  tourName,
 }: Props) => {
   const [isPending, startTransition] = useTransition();
 
@@ -70,24 +68,25 @@ export const ContactForm = ({
   const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
     const newValues = {
       ...values,
-      serviceId: tourId,
       totalPrice: Number(totalPrice),
       from: new Date(from),
       to: new Date(to),
-      userId,
       participants: Number(participants),
       traveller: type,
+      tour: tourName,
     };
 
-    startTransition(() => {
-      Book(newValues)
-        .then((data) => {
-          if (!data) return;
+    // startTransition(() => {
+    //   Book(newValues)
+    //     .then((data) => {
+    //       if (!data) return;
 
-          window.location.href = data.invoice_url;
-        })
-        .catch(() => console.log("Something went wrong"));
-    });
+    //       window.location.href = data.invoice_url;
+    //     })
+    //     .catch(() => console.log("Something went wrong"));
+    // });
+
+    console.log({ newValues });
   };
 
   return (
@@ -164,18 +163,17 @@ export const ContactForm = ({
 
         <div>
           <Badge variant="secondary" className="text-xs">
-            Once your info is submitted, it cannot be changed. Please
-            double-check before proceeding.
+            An email receipt will be sent to you.
           </Badge>
         </div>
 
         <div className="flex flex-col justify-between gap-2 md:flex-row">
           <p className="max-w-sm text-xs">
-            Your booking will be submitted once you go to payment. You can
-            choose your payment method in the next step.
+            Your booking will be submitted once to our system. Please review all
+            details before confirming.
           </p>
           <Button disabled={isPending}>
-            {isPending ? "Please wait..." : "Proceed to payment"}
+            {isPending ? "Please wait..." : "Confirm Booking"}
           </Button>
           {/* <Button type="submit">Submit</Button> */}
         </div>

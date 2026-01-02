@@ -27,9 +27,17 @@ export type Pricing = {
     minGroupSize: number;
     maxGroupSize: number;
     price: number;
-    isGroupPrice?: boolean;
+    isGroupSize?: boolean;
   }[];
 };
+
+export const pricingSchema = z.object({
+  type: z.enum(["joiner", "private"]),
+  minGroupSize: z.number().min(1),
+  maxGroupSize: z.number().min(1),
+  price: z.number().min(0),
+  isGroupSize: z.boolean().optional(),
+});
 
 export type TourPackage = {
   tourId: string;
@@ -51,3 +59,13 @@ export type TourPackage = {
   minParticipants: number;
   maxParticipants: number;
 };
+
+export const bookingOptionSchema = z.object({
+  dateRange: z.object({
+    from: z.date(),
+    to: z.date(),
+  }),
+  participants: z.number().min(1),
+  totalPrice: z.number().min(0),
+  type: z.string(),
+});

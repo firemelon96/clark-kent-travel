@@ -37,6 +37,12 @@ export const getPackageTours = () => {
   return dayTours;
 };
 
+export const getTourBySlug = (slug: string) => {
+  const tour = tours.find((tour) => tour.slug === slug);
+  if (tour === undefined) return notFound();
+  return tour;
+};
+
 export const getTourById = (id: string) => {
   const tour = tours.find((tour) => tour.tourId === id);
   if (tour === undefined) return notFound();

@@ -8,86 +8,88 @@ export const tours = [
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 2,
-            price: 16088,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 3,
-            maxGroupSize: 10,
-            price: 14088,
-            isGroupPrice: false,
-          },
-        ],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 2,
+        price: 16088,
+        isGroupSize: false,
       },
       {
-        pricingType: "private",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 1,
-            price: 40988,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 2,
-            maxGroupSize: 2,
-            price: 24699,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 3,
-            maxGroupSize: 3,
-            price: 20488,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 4,
-            maxGroupSize: 4,
-            price: 18688,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 5,
-            maxGroupSize: 5,
-            price: 16888,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 6,
-            maxGroupSize: 6,
-            price: 15688,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 7,
-            maxGroupSize: 7,
-            price: 14988,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 8,
-            maxGroupSize: 8,
-            price: 14388,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 9,
-            price: 13988,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 10,
-            maxGroupSize: 10,
-            price: 13588,
-            isGroupPrice: false,
-          },
-        ],
+        type: "joiner",
+        minGroupSize: 3,
+        maxGroupSize: 10,
+        price: 14088,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 1,
+        maxGroupSize: 1,
+        price: 40988,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 2,
+        maxGroupSize: 2,
+        price: 24699,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 3,
+        maxGroupSize: 3,
+        price: 20488,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 4,
+        maxGroupSize: 4,
+        price: 18688,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 5,
+        maxGroupSize: 5,
+        price: 16888,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 6,
+        maxGroupSize: 6,
+        price: 15688,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 7,
+        maxGroupSize: 7,
+        price: 14988,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 8,
+        maxGroupSize: 8,
+        price: 14388,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 9,
+        price: 13988,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 10,
+        maxGroupSize: 10,
+        price: 13588,
+        isGroupSize: false,
       },
     ],
     address: ["Balabac"],
@@ -139,7 +141,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["4 Days and 3 Nights"],
+    duration: 4,
     inclusions: [
       "3 Days Island Hopping",
       "Meals: 3B, 3L, 3D",
@@ -225,6 +227,7 @@ export const tours = [
 
   {
     tourId: "3d2n-coron-package-coron-island-tour-a-coron-town-tour-transfers",
+    slug: "3d2n-coron-package-coron-island-tour-a-coron-town-tour-transfers",
     tourName:
       "3D2N Coron Package with Coron Island Tour A & Coron Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -232,19 +235,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 5100,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 5100,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -266,7 +261,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -300,25 +295,18 @@ export const tours = [
   },
   {
     tourId: "3d2n-coron-package-coron-island-tour-b-town-tour-transfers ",
+    slug: "3d2n-coron-package-coron-island-tour-b-town-tour-transfers",
     tourName:
       "3D2N Coron Package with Coron Island Tour B and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 5400,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 5400,
+        isGroupSize: false,
       },
     ],
     type: "package",
@@ -341,7 +329,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -376,6 +364,7 @@ export const tours = [
   },
   {
     tourId: "3d2n-super-ultimate-tour-coron-tour-transfer",
+    slug: "3d2n-super-ultimate-tour-coron-tour-transfer",
     tourName:
       "3D2N Coron Package with Coron Ultimate Tour and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -383,19 +372,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 5800,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 5800,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -417,7 +398,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -451,6 +432,7 @@ export const tours = [
   },
   {
     tourId: "4d3n-island-tour-a-tour-b-town-tour-transfer",
+    slug: "4d3n-island-tour-a-tour-b-town-tour-transfer",
     tourName:
       "4D3N Coron Package with Island Tour A, B, Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -458,19 +440,11 @@ export const tours = [
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 7850,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 7850,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -496,7 +470,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -533,6 +507,7 @@ export const tours = [
   },
   {
     tourId: "4d3n-super-ultimate-tour-escapade-town-tour-transfer",
+    slug: "4d3n-super-ultimate-tour-escapade-town-tour-transfer",
     tourName:
       "4D3N Coron Super Ultimate, Escapade Tour, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -540,19 +515,11 @@ export const tours = [
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 8750,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 8750,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -578,7 +545,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -615,6 +582,7 @@ export const tours = [
   },
   {
     tourId: "4d3n-super-ultimate-tour-calauit-safari-town-tour-transfer",
+    slug: "4d3n-super-ultimate-tour-calauit-safari-town-tour-transfer",
     tourName:
       "4D3N Coron Super Ultimate, Calauit Safari, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -622,19 +590,11 @@ export const tours = [
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 9850,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 9850,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -660,7 +620,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -697,6 +657,7 @@ export const tours = [
   },
   {
     tourId: "5d4n-tour-a-b-escapade-tour-town-tour-transfer",
+    slug: "5d4n-tour-a-b-escapade-tour-town-tour-transfer",
     tourName:
       "5D4N Coron Tour A, B, Escapade Tour, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -704,19 +665,11 @@ export const tours = [
     numOfDays: 5,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 10800,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 10800,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -746,7 +699,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["5 Days 4 Nights"],
+    duration: 5,
     inclusions: [
       "4n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -787,6 +740,7 @@ export const tours = [
   {
     tourId:
       "5d4n-super-ultimate-escapade-reef-and-wrecks-tour-town-tour-transfer",
+    slug: "5d4n-super-ultimate-escapade-reef-and-wrecks-tour-town-tour-transfer",
     tourName:
       "5D4N Super Coron Ultimate, Escapade Tour, Reef and Wrecks, and Town Tour + Transfers (Casa Montemar or R2R Tourist Inn or any similar Hotel)",
     isFeatured: false,
@@ -794,19 +748,11 @@ export const tours = [
     numOfDays: 5,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 11700,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 11700,
+        isGroupSize: false,
       },
     ],
     address: ["Coron"],
@@ -836,7 +782,7 @@ export const tours = [
         activities: ["Drop to Airport then Departure (B/-/-)"],
       },
     ],
-    duration: ["5 Days 4 Nights"],
+    duration: 5,
     inclusions: [
       "4n Aircon room w/ own Toilet and Bath",
       "Complimentary Daily Breakfast",
@@ -876,6 +822,7 @@ export const tours = [
   //elnido package
   {
     tourId: "3d2n-elnido-tour-a-transfer",
+    slug: "3d2n-elnido-tour-a-transfer",
     tourName:
       "3D2N El Nido Package Tour A + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
@@ -883,19 +830,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 4800,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 4800,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
@@ -917,7 +856,7 @@ export const tours = [
         activities: ["Back to Puerto Princesa then Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2n airconditioned room with own toilet and bath",
       "Complimentary breakfast",
@@ -950,6 +889,7 @@ export const tours = [
   },
   {
     tourId: "4d3n-elnido-tour-a-tour-c-transfer",
+    slug: "4d3n-elnido-tour-a-tour-c-transfer",
     tourName:
       "4D3N El Nido Package Tour A, Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
@@ -957,19 +897,11 @@ export const tours = [
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 7200,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 7200,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
@@ -995,7 +927,7 @@ export const tours = [
         activities: ["Back to Puerto Princesa then Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3n airconditioned room with own toilet and bath",
       "Complimentary breakfast",
@@ -1030,6 +962,7 @@ export const tours = [
   },
   {
     tourId: "5d4n-elnido-tour-a-tour-b-tour-c-transfer",
+    slug: "5d4n-elnido-tour-a-tour-b-tour-c-transfer",
     tourName:
       "5D4N El Nido Package Tour A, Tour B, and Tour C + Transfer (Rockview or P. Gomez or any similar Hotel)",
     isFeatured: false,
@@ -1037,19 +970,11 @@ export const tours = [
     numOfDays: 5,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 9300,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 9300,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
@@ -1075,7 +1000,7 @@ export const tours = [
         activities: ["Back to Puerto Princesa then Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "4n airconditioned room with own toilet and bath",
       "Complimentary breakfast",
@@ -1115,32 +1040,25 @@ export const tours = [
   //land arrangement
   {
     tourId: "7d6n-trio-palawan",
+    slug: "7d6n-trio-palawan",
     tourName: "7D6N Trio Palawan",
     isFeatured: false,
     type: "package",
     numOfDays: 7,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 18900,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 18900,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
     description:
       "Discover the best of Palawan in this 7-day, 6-night adventure that takes you to Puerto Princesa, El Nido, and Coron. This comprehensive tour is the perfect combination of cultural discovery, island-hopping escapades, and nature exploration, showcasing the unparalleled beauty of the Philippines' last frontier.",
     itineraries: [],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "7D6N Aircon room with own toilet and bath",
       "Daily Breakfast",
@@ -1167,32 +1085,25 @@ export const tours = [
   },
   {
     tourId: "6d5n-trio-palawan",
+    slug: "6d5n-trio-palawan",
     tourName: "6D5N Trio Palawan",
     isFeatured: false,
     type: "package",
     numOfDays: 6,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 15700,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 15700,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
     description:
       "Embark on a remarkable 6-day, 5-night journey across Palawan’s most iconic destinations—Puerto Princesa, El Nido, and Coron. This carefully crafted itinerary combines cultural exploration, natural wonders, and island adventures, making it the perfect choice for travelers seeking the ultimate Palawan experience.",
     itineraries: [],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "6D5N Aircon room with own toilet and bath",
       "Daily Breakfast",
@@ -1219,32 +1130,25 @@ export const tours = [
   },
   {
     tourId: "5d4n-trio-palawan",
+    slug: "5d4n-trio-palawan",
     tourName: "5D4N Trio Palawan",
     isFeatured: false,
     type: "package",
     numOfDays: 5,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 14800,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 14800,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
     description:
       "Experience the ultimate Palawan escapade with this 5-day, 4-night tour, combining the best of Puerto Princesa, El Nido, and Coron. Discover breathtaking natural wonders, explore world-famous destinations, and create unforgettable memories in the paradise of Palawan.",
     itineraries: [],
-    duration: ["5 Days 4 Nights"],
+    duration: 5,
     inclusions: [
       "5D4N Aircon room with own toilet and bath",
       "Daily Breakfast",
@@ -1270,32 +1174,25 @@ export const tours = [
   },
   {
     tourId: "5d4n-pps-elnido-palawan",
+    slug: "5d4n-pps-elnido-palawan",
     tourName: "5D4N PPS to El nido Palawan",
     isFeatured: false,
     type: "package",
     numOfDays: 5,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 10500,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 10500,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
     description:
       "Immerse yourself in the best of Palawan with this 5-day, 4-night tour that perfectly combines Puerto Princesa's rich culture and natural wonders with El Nido's world-renowned islands. This package is ideal for travelers seeking a complete Palawan experience.",
     itineraries: [],
-    duration: ["5 Days 4 Nights"],
+    duration: 5,
     inclusions: [
       "5D4N Aircon room with own toilet and bath",
       "Daily Breakfast",
@@ -1319,32 +1216,25 @@ export const tours = [
   },
   {
     tourId: "4d3n-pps-elnido-palawan",
+    slug: "4d3n-pps-elnido-palawan",
     tourName: "4D3N PPS to El nido Palawan",
     isFeatured: false,
     type: "package",
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 9100,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 9100,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
     description:
       "Discover the best of Palawan with this 4-day, 3-night tour package, combining the natural wonders of Puerto Princesa with the iconic islands of El Nido. Perfect for those who want to experience Palawan’s top attractions in a short but unforgettable getaway.",
     itineraries: [],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "4D3N Aircon room with own toilet and bath",
       "Daily Breakfast",
@@ -1368,32 +1258,25 @@ export const tours = [
   },
   {
     tourId: "3d2n-pps-elnido-palawan",
+    slug: "3d2n-pps-elnido-palawan",
     tourName: "3D2N PPS to El nido Palawan",
     isFeatured: false,
     type: "package",
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 6900,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 6900,
+        isGroupSize: false,
       },
     ],
     address: ["El Nido"],
     description:
       "Embark on an unforgettable journey combining the natural wonders of Puerto Princesa and the pristine beauty of El Nido. This 3-day, 2-night package offers a perfect blend of exploration and relaxation.",
     itineraries: [],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "3D2N Aircon room w/ own toilet & bath",
       "Daily Breakfast",
@@ -1417,79 +1300,81 @@ export const tours = [
 
   {
     tourId: "batak-the-most-preserved-tribe-in-Palawan",
+    slug: "batak-the-most-preserved-tribe-in-Palawan",
     tourName: "Batak the most preserved tribe in Palawan",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [],
+        type: "private",
+        minGroupSize: 1,
+        maxGroupSize: 1,
+        price: 15800,
+        isGroupSize: false,
       },
       {
-        pricingType: "private",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 1,
-            price: 15800,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 2,
-            maxGroupSize: 2,
-            price: 8900,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 3,
-            maxGroupSize: 3,
-            price: 6800,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 4,
-            maxGroupSize: 4,
-            price: 5650,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 5,
-            maxGroupSize: 5,
-            price: 5000,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 6,
-            maxGroupSize: 6,
-            price: 4550,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 7,
-            maxGroupSize: 7,
-            price: 4300,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 8,
-            maxGroupSize: 8,
-            price: 4000,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 9,
-            price: 3800,
-            isGroupPrice: false,
-          },
-          {
-            minGroupSize: 10,
-            maxGroupSize: 10,
-            price: 3600,
-            isGroupPrice: false,
-          },
-        ],
+        type: "private",
+        minGroupSize: 2,
+        maxGroupSize: 2,
+        price: 8900,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 3,
+        maxGroupSize: 3,
+        price: 6800,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 4,
+        maxGroupSize: 4,
+        price: 5650,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 5,
+        maxGroupSize: 5,
+        price: 5000,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 6,
+        maxGroupSize: 6,
+        price: 4550,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 7,
+        maxGroupSize: 7,
+        price: 4300,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 8,
+        maxGroupSize: 8,
+        price: 4000,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 9,
+        price: 3800,
+        isGroupSize: false,
+      },
+      {
+        type: "private",
+        minGroupSize: 10,
+        maxGroupSize: 10,
+        price: 3600,
+        isGroupSize: false,
       },
     ],
     address: ["Puerto Princesa"],
@@ -1501,7 +1386,7 @@ export const tours = [
         activities: ["Batak visitor center", "Batak community"],
       },
     ],
-    duration: ["1 Day"],
+    duration: 1,
     inclusions: [
       "Air-conditioned van transport for hotel pickup and drop-off",
       "Service of a licensed tour guide",
@@ -1534,6 +1419,7 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour",
+    slug: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour",
     tourName:
       "3 days 2 nights Puerto Princesa w/ Underground River Tour (Mariafe Inn or any similar hotel)",
     isFeatured: true,
@@ -1541,19 +1427,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 4250,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 4250,
+        isGroupSize: false,
       },
     ],
     min: 2,
@@ -1578,7 +1456,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Day 2 Nights"],
+    duration: 3,
     inclusions: [
       "2nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -1615,6 +1493,7 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour-city-tour",
+    slug: "3-days-2-nights-Puerto-Princesa-Underground-River-Tour-city-tour",
     tourName:
       "3 days 2 nights Puerto Princesa with Underground River Tour + City Tour (Mariafe Inn or similar hotel)",
     isFeatured: false,
@@ -1622,19 +1501,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 4998,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 4998,
+        isGroupSize: false,
       },
     ],
     min: 2,
@@ -1659,7 +1530,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Day 2 Nights"],
+    duration: 3,
     inclusions: [
       "2nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -1699,6 +1570,7 @@ export const tours = [
   {
     tourId:
       "3-days-2-nigths-puerto-princesa-underground-river-tour-firefly-watching",
+    slug: "3-days-2-nigths-puerto-princesa-underground-river-tour-firefly-watching",
     tourName:
       "3 Days 2 Nigths Puerto Princesa w/ Underground River Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
@@ -1706,19 +1578,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 5750,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 5750,
+        isGroupSize: false,
       },
     ],
     min: 2,
@@ -1743,7 +1607,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -1781,6 +1645,7 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-puerto-princesa-honda-bay-tour",
+    slug: "3-days-2-nights-puerto-princesa-honda-bay-tour",
     tourName:
       "3 Days 2 Nights Puerto Princesa w/ Honda bay Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
@@ -1788,19 +1653,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 3750,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 3750,
+        isGroupSize: false,
       },
     ],
     min: 2,
@@ -1825,7 +1682,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Day 2 Nights"],
+    duration: 3,
     inclusions: [
       "2nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -1860,6 +1717,7 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-puerto-princesa-honda-bay-tour-city-tour",
+    slug: "3-days-2-nights-puerto-princesa-honda-bay-tour-city-tour",
     tourName:
       "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
@@ -1867,19 +1725,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 4500,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 4500,
+        isGroupSize: false,
       },
     ],
     min: 2,
@@ -1904,7 +1754,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -1943,6 +1793,7 @@ export const tours = [
   },
   {
     tourId: "3-days-2-nights-puerto-princesa-honda-bay-tour-firefly-tour",
+    slug: "3-days-2-nights-puerto-princesa-honda-bay-tour-firefly-tour",
     tourName:
       "3 Days 2 Nights Puerto Princesa w/ Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
@@ -1950,19 +1801,11 @@ export const tours = [
     numOfDays: 3,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 10,
-            price: 5250,
-            isGroupPrice: false,
-          },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 5250,
+        isGroupSize: false,
       },
     ],
     min: 2,
@@ -1987,7 +1830,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["3 Days 2 Nights"],
+    duration: 3,
     inclusions: [
       "2nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -2027,20 +1870,14 @@ export const tours = [
   {
     tourId:
       "4-days-3-nights-puerto-princesa-underground-river-honda-bay-city-tour",
+    slug: "4-days-3-nights-puerto-princesa-underground-river-honda-bay-city-tour",
     tourName:
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     numOfDays: 4,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 7850 }],
-      },
-      {
-        pricingType: "private",
-        prices: [],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 7850 },
     ],
     min: 2,
     address: ["Puerto Princesa"],
@@ -2070,7 +1907,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3 nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -2113,6 +1950,7 @@ export const tours = [
   {
     tourId:
       "4-days-3-nights-puerto-princesa-underground-river-honda-bay-firefly-watching",
+    slug: "4-days-3-nights-puerto-princesa-underground-river-honda-bay-firefly-watching",
     tourName:
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching (Mariafe Inn or any similar hotel)",
     isFeatured: false,
@@ -2120,12 +1958,10 @@ export const tours = [
     numOfDays: 4,
     pricing: [
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 8600 }],
-      },
-      {
-        pricingType: "private",
-        prices: [],
+        type: "joiner",
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 8600,
       },
     ],
     min: 2,
@@ -2156,7 +1992,7 @@ export const tours = [
         activities: ["Departure (B/-/-)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3 nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -2198,20 +2034,14 @@ export const tours = [
   {
     tourId:
       "4-days-3-nights-puerto-princesa-underground-river-honda-bay-firefly-watching-city-tour",
+    slug: "4-days-3-nights-puerto-princesa-underground-river-honda-bay-firefly-watching-city-tour",
     tourName:
       "4 Days 3 Nights Puerto Princesa w/ Underground River + Honda Bay Tour + Firefly Watching + City Tour (Mariafe Inn or any similar hotel)",
     isFeatured: false,
     type: "package",
     numOfDays: 4,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 9350 }],
-      },
-      {
-        pricingType: "private",
-        prices: [],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 9350 },
     ],
     min: 2,
     address: ["Puerto Princesa"],
@@ -2241,7 +2071,7 @@ export const tours = [
         activities: ["City tour AM 8-12pm then Departure (B & light snacks)"],
       },
     ],
-    duration: ["4 Days 3 Nights"],
+    duration: 4,
     inclusions: [
       "3 nights airconditioned Room with toilet & bath, bath towel and hot & cold shower",
       "Complimentary Roundtrip airport transfer",
@@ -2287,31 +2117,23 @@ export const tours = [
   {
     tourId:
       "private-underground-river-tour-with-ultimate-package-with-sidetrips",
+    slug: "private-underground-river-tour-with-ultimate-package-with-sidetrips",
     tourName:
       "Private Underground River Tour with Ultimate Package with Sidetrips (Mariafe Inn or any similar hotel)",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 13000 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 8900 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 7100 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 6100 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 5600 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 5300 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 5100 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 4900 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 4700 },
-          { minGroupSize: 10, maxGroupSize: 13, price: 4600 },
-        ],
-      },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 13000 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 8900 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 7100 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 6100 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 5600 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 5300 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 5100 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 4900 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 4700 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 13, price: 4600 },
     ],
     address: ["Puerto Princesa"],
     description:
@@ -2331,11 +2153,7 @@ export const tours = [
         ],
       },
     ],
-    duration: [
-      "6:30 - 7:15am pickup time",
-      "12:00 Lunch",
-      "4:00-5:00pm end of tour",
-    ],
+    duration: 1,
     inclusions: [
       "Tour Pickup and drop (aircon van with driver)",
       "License Tour Guide",
@@ -2371,30 +2189,23 @@ export const tours = [
   },
   {
     tourId: "city-tour-puerto-princesa-city",
+    slug: "city-tour-puerto-princesa-city",
     tourName: "City Tour",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 850 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 4350 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 2250 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 1750 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 1500 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 1250 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 1100 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 1050 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 1000 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 925 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 850 },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 850 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 4350 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 2250 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 1750 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 1500 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 1250 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 1100 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 1050 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 1000 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 925 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 850 },
     ],
     address: ["Puerto Princesa"],
     description:
@@ -2430,7 +2241,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:00am to 12:00pm", "1:00pm to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide.",
       "Tour pick up and drop around City Proper Only ",
@@ -2471,29 +2282,23 @@ export const tours = [
   },
   {
     tourId: "honda-bay-puerto-princesa-city",
+    slug: "honda-bay-puerto-princesa-city",
     tourName: "Honda Bay Tour",
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2000 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 8500 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 4800 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 3800 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 3000 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 2700 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 2400 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 2300 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 2200 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 2100 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 2000 },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 2000 },
+
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 8500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 4800 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 3800 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 3000 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 2700 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 2400 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 2300 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 2200 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 2100 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 2000 },
     ],
     address: ["Puerto Princesa"],
     description:
@@ -2518,7 +2323,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["7:00am to 8:00am", "3:30pm to 4:30pm"],
+    duration: 1,
     inclusions: [
       "Picnic lunch",
       "Licensed Tour Guide ",
@@ -2558,29 +2363,23 @@ export const tours = [
   },
   {
     tourId: "underground-puerto-princesa-city",
+    slug: "underground-puerto-princesa-city",
     tourName: "Underground Tour",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2500 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 11000 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 6800 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 5000 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 4000 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 3500 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 3200 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 3000 },
-          { minGroupSize: 8, maxGroupSize: 9, price: 2800 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 2500 },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 2500 },
+
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 11000 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 6800 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 5000 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 4000 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 3500 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 3200 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 3000 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 9, price: 2800 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 2500 },
     ],
     address: ["Puerto Princesa"],
     description:
@@ -2606,7 +2405,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["6:30am to 4:00pm", "7:15am to 4:00pm"],
+    duration: 1,
     inclusions: [
       "Buffet lunch",
       "Licensed tour guide.",
@@ -2649,124 +2448,119 @@ export const tours = [
     maxParticipants: 12,
   },
   //TODO: Add talaudyong data
-  {
-    tourId: "talaudyyon-beach-puerto-princesa",
-    tourName: "Talaudyong Beach",
-    isFeatured: true,
-    type: "day tour",
-    numOfDays: 1,
-    pricing: [
-      // {
-      //   pricingType: "joiner",
-      //   prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2500 }],
-      // },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 8000 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 4100 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 3000 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 2400 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 2100 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 1917 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 1800 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 1700 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 1600 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 1500 },
-        ],
-      },
-    ],
-    address: ["Puerto Princesa"],
-    // TODO: Talaudyong description
-    description: "Talaudyong details",
-    itineraries: [
-      {
-        name: "Itineraries",
-        activities: [
-          "06:30-07:15 Pick up time then proceed to tour",
-          "08:30-09:15 Arrived in Sabang wharf",
-          "11:00-12:00 Buffet lunch at sabang",
-          "14:00-15:00 End of tour",
-          "16:00-17:00 Drop to Hotel in Puerto Princesa",
-        ],
-      },
-      {
-        name: "Destinations",
-        activities: [
-          "Buenavista Viewdeck",
-          "Sabang wharf/Beach (sightseeing only)",
-          "Natural Park",
-          "Subterranian river",
-        ],
-      },
-    ],
-    duration: ["6:30am to 4:00pm", "7:15am to 4:00pm"],
-    inclusions: [
-      "Buffet lunch",
-      "Licensed tour guide.",
-      "Tour pick up and drop around City Proper Only",
-      "Motorized Boat transfer",
-      "Paddle boat inside the cave",
-      "Permit",
-      "Audio Device",
-      "Accident Insurance worth 10,000 pesos medical reimbursement only",
-      "Lifevest",
-    ],
-    exclusions: [
-      "Tipping for the guide and driver not included",
-      "Environmental fee 150/person",
-      "Anything not mentioned in inclusions",
-      "Tip for driver and tour guide",
-    ],
-    notes: [
-      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
-    ],
-    reminders: [
-      "Maximum capacity of van is 12 persons only",
-      "Please wear comfortable clothes",
-      "Not applicable to persons with mobility impairments ",
-      "Not applicable to wheelchair users",
-      "Swimming is not allowed ",
-      "Please bring your passport or I.D",
-      "Please wear comfortable slippers",
-      "Not applicable for Cruise ship tourist",
-      "Bring your sunblock",
-      "Bring your camera",
-    ],
-    images: [
-      "/resources/pps/underground-river/ur1.avif",
-      "/resources/pps/underground-river/ur2.avif",
-      "/resources/pps/underground-river/ur3.avif",
-      "/resources/pps/underground-river/ur4.avif",
-    ],
-    minParticipants: 2,
-    maxParticipants: 12,
-  },
+  // {
+  //   tourId: "talaudyyon-beach-puerto-princesa",
+  //   slug: "talaudyyon-beach-puerto-princesa",
+  //   tourName: "Talaudyong Beach",
+  //   isFeatured: true,
+  //   type: "day tour",
+  //   numOfDays: 1,
+  //   pricing: [
+  //     // {
+  //     //   pricingType: "joiner",
+  //     //   prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2500 }],
+  //     // },
+  //     {
+  //       pricingType: "private",
+  //       prices: [
+  //         { minGroupSize: 1, maxGroupSize: 1, price: 8000 },
+  //         { minGroupSize: 2, maxGroupSize: 2, price: 4100 },
+  //         { minGroupSize: 3, maxGroupSize: 3, price: 3000 },
+  //         { minGroupSize: 4, maxGroupSize: 4, price: 2400 },
+  //         { minGroupSize: 5, maxGroupSize: 5, price: 2100 },
+  //         { minGroupSize: 6, maxGroupSize: 6, price: 1917 },
+  //         { minGroupSize: 7, maxGroupSize: 7, price: 1800 },
+  //         { minGroupSize: 8, maxGroupSize: 8, price: 1700 },
+  //         { minGroupSize: 9, maxGroupSize: 9, price: 1600 },
+  //         { minGroupSize: 10, maxGroupSize: 10, price: 1500 },
+  //       ],
+  //     },
+  //   ],
+  //   address: ["Puerto Princesa"],
+  //   // TODO: Talaudyong description
+  //   description: "Talaudyong details",
+  //   itineraries: [
+  //     {
+  //       name: "Itineraries",
+  //       activities: [
+  //         "06:30-07:15 Pick up time then proceed to tour",
+  //         "08:30-09:15 Arrived in Sabang wharf",
+  //         "11:00-12:00 Buffet lunch at sabang",
+  //         "14:00-15:00 End of tour",
+  //         "16:00-17:00 Drop to Hotel in Puerto Princesa",
+  //       ],
+  //     },
+  //     {
+  //       name: "Destinations",
+  //       activities: [
+  //         "Buenavista Viewdeck",
+  //         "Sabang wharf/Beach (sightseeing only)",
+  //         "Natural Park",
+  //         "Subterranian river",
+  //       ],
+  //     },
+  //   ],
+  //   duration: 1,
+  //   inclusions: [
+  //     "Buffet lunch",
+  //     "Licensed tour guide.",
+  //     "Tour pick up and drop around City Proper Only",
+  //     "Motorized Boat transfer",
+  //     "Paddle boat inside the cave",
+  //     "Permit",
+  //     "Audio Device",
+  //     "Accident Insurance worth 10,000 pesos medical reimbursement only",
+  //     "Lifevest",
+  //   ],
+  //   exclusions: [
+  //     "Tipping for the guide and driver not included",
+  //     "Environmental fee 150/person",
+  //     "Anything not mentioned in inclusions",
+  //     "Tip for driver and tour guide",
+  //   ],
+  //   notes: [
+  //     "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
+  //   ],
+  //   reminders: [
+  //     "Maximum capacity of van is 12 persons only",
+  //     "Please wear comfortable clothes",
+  //     "Not applicable to persons with mobility impairments ",
+  //     "Not applicable to wheelchair users",
+  //     "Swimming is not allowed ",
+  //     "Please bring your passport or I.D",
+  //     "Please wear comfortable slippers",
+  //     "Not applicable for Cruise ship tourist",
+  //     "Bring your sunblock",
+  //     "Bring your camera",
+  //   ],
+  //   images: [
+  //     "/resources/pps/underground-river/ur1.avif",
+  //     "/resources/pps/underground-river/ur2.avif",
+  //     "/resources/pps/underground-river/ur3.avif",
+  //     "/resources/pps/underground-river/ur4.avif",
+  //   ],
+  //   minParticipants: 2,
+  //   maxParticipants: 12,
+  // },
   {
     tourId: "firefly-watching-puerto-princesa-city",
+    slug: "firefly-watching-puerto-princesa-city",
     tourName: "Firefy Watching",
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 6000 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 3750 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 2833 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 2375 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 2100 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 1917 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 1786 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 1688 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 1611 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 1550 },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1500 },
+
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 6000 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 3750 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 2833 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 2375 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 2100 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 1917 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 1786 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 1688 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 1611 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 1550 },
     ],
     address: ["Puerto Princesa"],
     description:
@@ -2785,7 +2579,7 @@ export const tours = [
         activities: ["Kitu-kitu Firefly watching"],
       },
     ],
-    duration: ["5:00pm to 9:00pm", "5:30pm to 9:30pm"],
+    duration: 1,
     inclusions: [
       "Buffet dinner",
       "Tour Guide during the tour",
@@ -2816,60 +2610,61 @@ export const tours = [
   },
   {
     tourId: "tour-a-el-nido",
+    slug: "tour-a-el-nido",
     tourName: "Tour A",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1200 },
+
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1200 }],
+        type: "private",
+        minGroupSize: 1,
+        maxGroupSize: 2,
+        price: 11000,
+        isGroupSize: true,
       },
       {
-        pricingType: "private",
-        prices: [
-          {
-            minGroupSize: 1,
-            maxGroupSize: 2,
-            price: 11000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 3,
-            maxGroupSize: 4,
-            price: 12000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 5,
-            maxGroupSize: 6,
-            price: 14500,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 7,
-            maxGroupSize: 8,
-            price: 16000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 18000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 11,
-            maxGroupSize: 12,
-            price: 19000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 13,
-            maxGroupSize: 14,
-            price: 20000,
-            isGroupSize: true,
-          },
-        ],
+        type: "private",
+        minGroupSize: 3,
+        maxGroupSize: 4,
+        price: 12000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 5,
+        maxGroupSize: 6,
+        price: 14500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 7,
+        maxGroupSize: 8,
+        price: 16000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 18000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 11,
+        maxGroupSize: 12,
+        price: 19000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 13,
+        maxGroupSize: 14,
+        price: 20000,
+        isGroupSize: true,
       },
     ],
     address: ["El Nido"],
@@ -2895,7 +2690,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm", "9:00am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Picnic lunch",
       "Tour guide",
@@ -2936,40 +2731,61 @@ export const tours = [
   },
   {
     tourId: "tour-b-el-nido",
+    slug: "tour-b-el-nido",
     tourName: "Tour B",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1300 },
+
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1300 }],
+        type: "private",
+        minGroupSize: 1,
+        maxGroupSize: 2,
+        price: 13000,
+        isGroupSize: true,
       },
       {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 2, price: 13000, isGroupSize: true },
-          { minGroupSize: 3, maxGroupSize: 4, price: 15500, isGroupSize: true },
-          { minGroupSize: 5, maxGroupSize: 6, price: 17500, isGroupSize: true },
-          { minGroupSize: 7, maxGroupSize: 8, price: 19500, isGroupSize: true },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 21000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 11,
-            maxGroupSize: 12,
-            price: 22000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 13,
-            maxGroupSize: 14,
-            price: 23000,
-            isGroupSize: true,
-          },
-        ],
+        type: "private",
+        minGroupSize: 3,
+        maxGroupSize: 4,
+        price: 15500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 5,
+        maxGroupSize: 6,
+        price: 17500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 7,
+        maxGroupSize: 8,
+        price: 19500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 21000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 11,
+        maxGroupSize: 12,
+        price: 22000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 13,
+        maxGroupSize: 14,
+        price: 23000,
+        isGroupSize: true,
       },
     ],
     address: ["El Nido"],
@@ -2994,7 +2810,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm", "9:00am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Picnic lunch",
       "Tour guide",
@@ -3037,41 +2853,62 @@ export const tours = [
   },
   {
     tourId: "tour-c-el-nido",
+    slug: "tour-c-el-nido",
     tourName: "Tour C",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1400 },
+
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1400 }],
+        type: "private",
+        minGroupSize: 1,
+        maxGroupSize: 2,
+        price: 13000,
+        isGroupSize: true,
       },
       {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 2, price: 13000, isGroupSize: true },
-          { minGroupSize: 3, maxGroupSize: 4, price: 15500, isGroupSize: true },
-          { minGroupSize: 5, maxGroupSize: 6, price: 17500, isGroupSize: true },
-          { minGroupSize: 7, maxGroupSize: 8, price: 19500, isGroupSize: true },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 21000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 11,
-            maxGroupSize: 12,
-            price: 22000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 13,
-            maxGroupSize: 14,
-            price: 23000,
-            isGroupSize: true,
-          },
-        ],
+        type: "private",
+        minGroupSize: 3,
+        maxGroupSize: 4,
+        price: 15500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 5,
+        maxGroupSize: 6,
+        price: 17500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 7,
+        maxGroupSize: 8,
+        price: 19500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 21000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 11,
+        maxGroupSize: 12,
+        price: 22000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 13,
+        maxGroupSize: 14,
+        price: 23000,
+        isGroupSize: true,
       },
     ],
     address: ["El Nido"],
@@ -3097,7 +2934,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm", "9:00am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Picnic lunch",
       "Tour guide",
@@ -3140,40 +2977,61 @@ export const tours = [
   },
   {
     tourId: "tour-d-el-nido",
+    slug: "tour-d-el-nido",
     tourName: "Tour D",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1200 },
+
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1200 }],
+        type: "private",
+        minGroupSize: 1,
+        maxGroupSize: 2,
+        price: 11000,
+        isGroupSize: true,
       },
       {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 2, price: 11000, isGroupSize: true },
-          { minGroupSize: 3, maxGroupSize: 4, price: 12000, isGroupSize: true },
-          { minGroupSize: 5, maxGroupSize: 6, price: 14500, isGroupSize: true },
-          { minGroupSize: 7, maxGroupSize: 8, price: 16000, isGroupSize: true },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 18000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 11,
-            maxGroupSize: 12,
-            price: 19000,
-            isGroupSize: true,
-          },
-          {
-            minGroupSize: 13,
-            maxGroupSize: 14,
-            price: 20000,
-            isGroupSize: true,
-          },
-        ],
+        type: "private",
+        minGroupSize: 3,
+        maxGroupSize: 4,
+        price: 12000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 5,
+        maxGroupSize: 6,
+        price: 14500,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 7,
+        maxGroupSize: 8,
+        price: 16000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 18000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 11,
+        maxGroupSize: 12,
+        price: 19000,
+        isGroupSize: true,
+      },
+      {
+        type: "private",
+        minGroupSize: 13,
+        maxGroupSize: 14,
+        price: 20000,
+        isGroupSize: true,
       },
     ],
     address: ["El Nido"],
@@ -3199,7 +3057,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm", "9:00am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Picnic lunch",
       "Tour guide",
@@ -3242,32 +3100,25 @@ export const tours = [
   //coron
   {
     tourId: "coron-town-tour",
+    slug: "coron-town-tour",
     tourName: "Coron Town Tour",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 900 },
+
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 4000 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 2300 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 1700 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 1500 },
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 900 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 4000 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 2300 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 1700 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 1500 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 1300,
-          },
-        ],
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 1300,
       },
     ],
-    // price: 900,
-    // privatePrice: [4000, 2300, 2300, 1700, 1700, 1500, 1500, 1500, 1300, 1300],
     address: ["Coron"],
     description:
       "Discover the charm of Coron Town and experience its rich history, culture, and scenic spots with this comprehensive Coron Town Tour. This half-day tour will take you through the town’s must-see attractions, offering a perfect blend of history, relaxation, and stunning views. Whether you're looking to learn more about the local way of life or just want to explore the hidden gems of Coron, this tour has something for everyone.",
@@ -3294,7 +3145,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["4:00pm to 8:00pm"],
+    duration: 1,
     inclusions: [
       "Complimentary Tour pick up and drop",
       "Entrance fees",
@@ -3326,28 +3177,17 @@ export const tours = [
   },
   {
     tourId: "coron-island-tour-a",
+    slug: "coron-island-tour-a",
     tourName: "Coron town tour A",
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1200 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 6000 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 4000 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 3200 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 2800 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 2600,
-          },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1200 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 6000 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 4000 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 3200 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 2800 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 10, price: 2600 },
     ],
     address: ["Coron"],
     description:
@@ -3374,7 +3214,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 4:30pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3412,27 +3252,22 @@ export const tours = [
   },
   {
     tourId: "coron-island-tour-b",
+    slug: "coron-island-tour-b",
     tourName: "Coron island tour B",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1500 },
+
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 6500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 4200 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 3200 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 2700 },
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 6500 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 4200 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 3200 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 2700 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 2500,
-          },
-        ],
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 2500,
       },
     ],
     address: ["Coron"],
@@ -3459,7 +3294,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 4:30pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3497,27 +3332,21 @@ export const tours = [
   //escapade
   {
     tourId: "coron-island-escapade",
+    slug: "coron-island-escapade",
     tourName: "Coron Island Escapade",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1700 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 4700 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 3300 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 3000 },
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1700 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 4700 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 3300 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 3000 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 2600,
-          },
-        ],
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 2600,
       },
     ],
     address: ["Coron"],
@@ -3529,7 +3358,7 @@ export const tours = [
         activities: ["Malcapuya Island", "Banana Island", "Bulog Bos Beach"],
       },
     ],
-    duration: ["8:30am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3565,27 +3394,21 @@ export const tours = [
   },
   {
     tourId: "coron-reef-and-wrecks",
+    slug: "coron-reef-and-wrecks",
     tourName: "Reef and Wrecks Tour",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1700 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 4700 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 3300 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 3000 },
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1700 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 4700 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 3300 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 3000 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 2600,
-          },
-        ],
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 2600,
       },
     ],
     address: ["Coron"],
@@ -3602,7 +3425,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3640,27 +3463,21 @@ export const tours = [
   //ultimate
   {
     tourId: "coron-island-ultimate-tour",
+    slug: "coron-island-ultimate-tour",
     tourName: "Coron Ultimate Tour",
     type: "day tour",
     numOfDays: 1,
     pricing: [
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1700 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 4700 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 3300 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 3000 },
       {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1700 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 4700 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 3300 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 3000 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 2600,
-          },
-        ],
+        type: "private",
+        minGroupSize: 9,
+        maxGroupSize: 10,
+        price: 2600,
       },
     ],
     address: ["Coron"],
@@ -3680,7 +3497,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3719,29 +3536,18 @@ export const tours = [
   //super ultimate
   {
     tourId: "coron-island-super-ultimate-tour",
+    slug: "coron-island-super-ultimate-tour",
     tourName: "Coron island super ultimate tour",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1900 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 7700 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 4900 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 3500 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 3200 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 2800,
-          },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1900 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 7700 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 4900 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 3500 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 3200 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 10, price: 2800 },
     ],
     address: ["Coron"],
     description:
@@ -3760,7 +3566,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3801,29 +3607,18 @@ export const tours = [
   //calauit
   {
     tourId: "calauit-safari-tour",
+    slug: "calauit-safari-tour",
     tourName: "Calauit Safari Tour",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 2800 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 15000 },
-          { minGroupSize: 2, maxGroupSize: 3, price: 7600 },
-          { minGroupSize: 4, maxGroupSize: 5, price: 5000 },
-          { minGroupSize: 6, maxGroupSize: 8, price: 4000 },
-          {
-            minGroupSize: 9,
-            maxGroupSize: 10,
-            price: 3400,
-          },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 2800 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 15000 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 3, price: 7600 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 5, price: 5000 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 8, price: 4000 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 10, price: 3400 },
     ],
     address: ["Coron"],
     description:
@@ -3839,7 +3634,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["7:00am to 4:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed tour guide",
       "Boat transfer with life vest",
@@ -3878,44 +3673,36 @@ export const tours = [
   //port barton
   {
     tourId: "port-barton-tour-from-pps",
+    slug: "port-barton-tour-from-pps",
     tourName: "Port Barton Day Tour from Puerto Princesa",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [
-          // { minGroupSize: 1, maxGroupSize: 1, price: 8800 },
-          // { minGroupSize: 2, maxGroupSize: 2, price: 4990 },
-          // { minGroupSize: 3, maxGroupSize: 3, price: 4500 },
-          // { minGroupSize: 4, maxGroupSize: 4, price: 3800 },
-          // { minGroupSize: 5, maxGroupSize: 5, price: 3500 },
-          // { minGroupSize: 6, maxGroupSize: 6, price: 3250 },
-          // { minGroupSize: 7, maxGroupSize: 7, price: 2950 },
-          // { minGroupSize: 8, maxGroupSize: 8, price: 2750 },
-          // { minGroupSize: 9, maxGroupSize: 9, price: 2600 },
-          // { minGroupSize: 10, maxGroupSize: 11, price: 2450 },
-          // { minGroupSize: 12, maxGroupSize: 12, price: 2350 },
-        ],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 17500 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 9250 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 6667 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 5375 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 4600 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 4083 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 3714 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 3438 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 3222 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 3050 },
-          { minGroupSize: 11, maxGroupSize: 11, price: 2909 },
-          { minGroupSize: 12, maxGroupSize: 12, price: 2792 },
-        ],
-      },
+      // { minGroupSize: 1, maxGroupSize: 1, price: 8800 },
+      // { minGroupSize: 2, maxGroupSize: 2, price: 4990 },
+      // { minGroupSize: 3, maxGroupSize: 3, price: 4500 },
+      // { minGroupSize: 4, maxGroupSize: 4, price: 3800 },
+      // { minGroupSize: 5, maxGroupSize: 5, price: 3500 },
+      // { minGroupSize: 6, maxGroupSize: 6, price: 3250 },
+      // { minGroupSize: 7, maxGroupSize: 7, price: 2950 },
+      // { minGroupSize: 8, maxGroupSize: 8, price: 2750 },
+      // { minGroupSize: 9, maxGroupSize: 9, price: 2600 },
+      // { minGroupSize: 10, maxGroupSize: 11, price: 2450 },
+      // { minGroupSize: 12, maxGroupSize: 12, price: 2350 },
+
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 17500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 9250 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 6667 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 5375 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 4600 },
+      { type: "joiner", minGroupSize: 6, maxGroupSize: 6, price: 4083 },
+      { type: "joiner", minGroupSize: 7, maxGroupSize: 7, price: 3714 },
+      { type: "joiner", minGroupSize: 8, maxGroupSize: 8, price: 3438 },
+      { type: "joiner", minGroupSize: 9, maxGroupSize: 9, price: 3222 },
+      { type: "joiner", minGroupSize: 10, maxGroupSize: 10, price: 3050 },
+      { type: "joiner", minGroupSize: 11, maxGroupSize: 11, price: 2909 },
+      { type: "joiner", minGroupSize: 12, maxGroupSize: 12, price: 2792 },
     ],
     address: ["Port Barton"],
     description:
@@ -3933,7 +3720,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["5:45am to 9:00pm"],
+    duration: 1,
     inclusions: [
       "Aircon van roundtrip PPS-Port barton",
       "Licensed toour guide",
@@ -3976,32 +3763,25 @@ export const tours = [
   },
   {
     tourId: "port-barton-tour-from-port-barton",
+    slug: "port-barton-tour-from-port-barton",
     tourName: "Port Barton Island Tour from Port Barton Proper",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 7500 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 4250 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 3334 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 2875 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 2600 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 2417 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 2286 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 2188 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 2111 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 2050 },
-          { minGroupSize: 11, maxGroupSize: 11, price: 2000 },
-          { minGroupSize: 12, maxGroupSize: 12, price: 1953 },
-        ],
-      },
+      { type: "joiner", minGroupSize: 1, maxGroupSize: 10, price: 1500 },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 7500 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 4250 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 3334 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 2875 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 2600 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 2417 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 2286 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 2188 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 2111 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 2050 },
+      { type: "private", minGroupSize: 11, maxGroupSize: 11, price: 2000 },
+      { type: "private", minGroupSize: 12, maxGroupSize: 12, price: 1953 },
     ],
     address: ["Port Barton"],
     description:
@@ -4019,7 +3799,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:30am to 4:00pm"],
+    duration: 1,
     inclusions: [
       "Licensed toour guide",
       "Accident Insurance worth 10,000 medical reinbursement only",
@@ -4062,32 +3842,24 @@ export const tours = [
   //Bohol
   {
     tourId: "bohol-countryside-tour",
+    slug: "bohol-countryside-tour",
     tourName: "Countryside Bohol",
     isFeatured: true,
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 5150 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 3650 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 3150 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 3000 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 2850 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 2750 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 2680 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 2650 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 2600 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 2550 },
-          { minGroupSize: 11, maxGroupSize: 11, price: 2500 },
-          { minGroupSize: 12, maxGroupSize: 12, price: 2450 },
-        ],
-      },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 5150 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 3650 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 3150 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 3000 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 2850 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 2750 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 2680 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 2650 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 2600 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 2550 },
+      { type: "private", minGroupSize: 11, maxGroupSize: 11, price: 2500 },
+      { type: "private", minGroupSize: 12, maxGroupSize: 12, price: 2450 },
     ],
     address: ["Bohol"],
     description:
@@ -4105,7 +3877,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["8:00am to 4:30pm", "8:30am to 5:00pm"],
+    duration: 1,
     inclusions: [
       "Transportation Driver/Guide",
       "Entrance Fees",
@@ -4135,31 +3907,23 @@ export const tours = [
   },
   {
     tourId: "bohol-panglao-tour",
+    slug: "bohol-panglao-tour",
     tourName: "Panglao Bohol",
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 3900 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 2350 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 1850 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 1750 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 1600 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 1480 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 1430 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 1380 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 1330 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 1280 },
-          { minGroupSize: 11, maxGroupSize: 11, price: 1230 },
-          { minGroupSize: 12, maxGroupSize: 12, price: 1190 },
-        ],
-      },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 3900 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 2350 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 1850 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 1750 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 1600 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 1480 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 1430 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 1380 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 1330 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 1280 },
+      { type: "private", minGroupSize: 11, maxGroupSize: 11, price: 1230 },
+      { type: "private", minGroupSize: 12, maxGroupSize: 12, price: 1190 },
     ],
     address: ["Bohol"],
     description:
@@ -4177,7 +3941,7 @@ export const tours = [
         ],
       },
     ],
-    duration: ["9:00am to 1:00pm", "9:30am to 1:30pm"],
+    duration: 1,
     inclusions: [
       "Transportation Driver/Guide",
       "Entrance Fees",
@@ -4206,31 +3970,23 @@ export const tours = [
   },
   {
     tourId: "island-hopping-bohol",
+    slug: "island-hopping-bohol",
     tourName: "Island Hopping",
     type: "day tour",
     numOfDays: 1,
     pricing: [
-      {
-        pricingType: "joiner",
-        prices: [],
-      },
-      {
-        pricingType: "private",
-        prices: [
-          { minGroupSize: 1, maxGroupSize: 1, price: 5450 },
-          { minGroupSize: 2, maxGroupSize: 2, price: 3450 },
-          { minGroupSize: 3, maxGroupSize: 3, price: 2850 },
-          { minGroupSize: 4, maxGroupSize: 4, price: 2600 },
-          { minGroupSize: 5, maxGroupSize: 5, price: 2500 },
-          { minGroupSize: 6, maxGroupSize: 6, price: 2400 },
-          { minGroupSize: 7, maxGroupSize: 7, price: 2300 },
-          { minGroupSize: 8, maxGroupSize: 8, price: 2200 },
-          { minGroupSize: 9, maxGroupSize: 9, price: 2100 },
-          { minGroupSize: 10, maxGroupSize: 10, price: 2000 },
-          { minGroupSize: 11, maxGroupSize: 11, price: 1900 },
-          { minGroupSize: 12, maxGroupSize: 12, price: 1850 },
-        ],
-      },
+      { type: "private", minGroupSize: 1, maxGroupSize: 1, price: 5450 },
+      { type: "private", minGroupSize: 2, maxGroupSize: 2, price: 3450 },
+      { type: "private", minGroupSize: 3, maxGroupSize: 3, price: 2850 },
+      { type: "private", minGroupSize: 4, maxGroupSize: 4, price: 2600 },
+      { type: "private", minGroupSize: 5, maxGroupSize: 5, price: 2500 },
+      { type: "private", minGroupSize: 6, maxGroupSize: 6, price: 2400 },
+      { type: "private", minGroupSize: 7, maxGroupSize: 7, price: 2300 },
+      { type: "private", minGroupSize: 8, maxGroupSize: 8, price: 2200 },
+      { type: "private", minGroupSize: 9, maxGroupSize: 9, price: 2100 },
+      { type: "private", minGroupSize: 10, maxGroupSize: 10, price: 2000 },
+      { type: "private", minGroupSize: 11, maxGroupSize: 11, price: 1900 },
+      { type: "private", minGroupSize: 12, maxGroupSize: 12, price: 1850 },
     ],
     address: ["Bohol"],
     description:
@@ -4241,7 +3997,7 @@ export const tours = [
         activities: ["Dolphin Watching", "Balicasag island", "Virgin island"],
       },
     ],
-    duration: ["9:00am to 1:00pm", "9:30am to 1:30pm"],
+    duration: 1,
     inclusions: [
       "Boat Service",
       "Roundtrip transfer Hotel- Boat Terminal-Hotel",

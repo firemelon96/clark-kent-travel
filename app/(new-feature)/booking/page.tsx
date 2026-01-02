@@ -1,4 +1,4 @@
-import { formatPeso } from "@/app/lib/helpers";
+import { formatPeso, getTourById } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
@@ -14,8 +14,7 @@ import { format } from "date-fns";
 import { Suspense } from "react";
 import { ContactForm } from "./_components/contact-form";
 import { Stepper } from "@/components/stepper";
-import { getTourById } from "@/lib/data";
-import { auth } from "@/auth";
+// import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
 interface Props {
@@ -33,13 +32,14 @@ const BookingPage = async ({ searchParams }: Props) => {
   const { from, participants, to, totalPrice, tourId, type } =
     await searchParams;
 
-  const session = await auth();
+  console.log(from, participants, to, totalPrice, type);
+  // const session = await auth();
 
-  console.log(await searchParams);
+  // console.log(await searchParams);
 
-  const tour = await getTourById(tourId);
+  const tour = getTourById(tourId);
 
-  if (!session?.user.id) redirect(`/travel-and-tours`);
+  // if (!session?.user.id) redirect(`/travel-and-tours`);
 
   return (
     <section className="mx-auto max-w-5xl space-y-5 py-10">
@@ -56,8 +56,8 @@ const BookingPage = async ({ searchParams }: Props) => {
             <CardContent>
               <Suspense fallback={<BookingPreviewSkeleton />}>
                 <BookingPreview
-                  url={tour?.images[0] || ""}
-                  title={tour?.title || ""}
+                  url={tour.images[0]}
+                  title={tour.tourName}
                   participants={participants}
                   type={type}
                 />
@@ -70,13 +70,12 @@ const BookingPage = async ({ searchParams }: Props) => {
             </CardHeader>
             <CardContent className="w-full">
               <ContactForm
-                tourId={tourId}
+                tourName={tour.tourName}
                 participants={participants}
                 totalPrice={totalPrice}
                 from={from}
                 to={to}
                 type={type}
-                userId={session?.user.id}
               />
             </CardContent>
           </Card>
@@ -88,7 +87,7 @@ const BookingPage = async ({ searchParams }: Props) => {
                 ) : (
                   <h1 className="font-semibold">{tour?.title}</h1>
                 )} */}
-                <h1 className="font-semibold">{tour?.title}</h1>
+                <h1 className="font-semibold">{}</h1>
                 <span className="text-slate-500">{type}</span>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -120,7 +119,7 @@ const BookingPage = async ({ searchParams }: Props) => {
                   <span>{formatPeso(totalPrice)}</span>
                 </div>
                 <div className="flex justify-between text-xl">
-                  <p>Total payment</p>
+                  <p>Total</p>
                   <span className="font-bold tracking-wide text-rose-500">
                     {formatPeso(totalPrice)}
                   </span>
