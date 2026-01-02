@@ -5,7 +5,7 @@ import { Controller, FieldValues, useForm } from "react-hook-form";
 import { BiMinus, BiPlus } from "react-icons/bi";
 
 import "react-datepicker/dist/react-datepicker.css";
-import { useEffect, useState, useMemo, useTransition } from "react";
+import { useEffect, useState, useMemo, useTransition, useId } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formatPeso } from "@/app/lib/helpers";
 import DatePicker from "react-datepicker";
@@ -224,6 +224,7 @@ export const FormWithZOD = ({
           name="nationality"
           render={({ field }) => (
             <Select
+              instanceId={useId()}
               isDisabled={isLoading || isLoadingTransition}
               options={options}
               value={options.find((option) => option.label === field.value)}
@@ -400,7 +401,7 @@ export const FormWithZOD = ({
       <button
         type="submit"
         disabled={isLoading || isLoadingTransition}
-        className="w-full rounded-full bg-sky-500 p-2 font-bold uppercase tracking-widest text-white disabled:bg-slate-500"
+        className="w-full rounded-full bg-sky-500 p-2 font-bold tracking-widest text-white uppercase disabled:bg-slate-500"
       >
         {isLoadingTransition ? "Booking..." : "Book this trip"}
       </button>

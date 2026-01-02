@@ -17,6 +17,18 @@ export const formatPeso = (amount: number) => {
   return peso;
 };
 
+// With proper decimal points
+// export const formatPeso = (amount: number) => {
+//   const peso = new Intl.NumberFormat("en-PH", {
+//     style: "currency",
+//     currency: "PHP",
+//     minimumFractionDigits: 0,
+//     maximumFractionDigits: 0,
+//   }).format(amount / 100);
+
+//   return peso;
+// };
+
 export const getFeaturedTours = () => {
   const featuredTours = tours.filter((tour) => tour.isFeatured === true);
 

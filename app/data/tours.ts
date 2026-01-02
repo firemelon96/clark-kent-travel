@@ -5,7 +5,7 @@ export const tours = [
     isFeatured: true,
     type: "package",
     price: 16788,
-    privatePrice: [14288, 15288, 16288, 17288],
+    privatePrice: [14288],
     address: ["Balabac, Palawan"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
@@ -916,6 +916,7 @@ export const tours = [
   },
 
   //land arrangement
+
   {
     tourId: "7d6n-trio-palawan",
     tourName: "7D6N Trio Palawan",
@@ -1882,7 +1883,7 @@ export const tours = [
   },
   {
     tourId: "city-tour-puerto-princesa-city",
-    tourName: "City Tour",
+    tourName: "City Tour with light snacks",
     isFeatured: true,
     type: "day tour",
     price: 850,
@@ -1910,31 +1911,32 @@ export const tours = [
       {
         name: "Destinations",
         activities: [
-          "Mitras ranch",
-          "Crocodile farm or Butterfly Garden",
-          "Bakers Hill",
-          "Cathedral",
+          "Crocodile Farm or Butterfly Garden",
+          "Bakers Hills",
+          "Mitras Ranch",
+          "Binuatan Creations",
           "Baywalk",
-          "Plaza Quartel",
-          "Binuatan creations",
+          "Plaza Cuartel",
+          "Cathedral",
           "Souvenir Shop",
         ],
       },
     ],
     duration: ["8:00am to 12:00pm", "1:00pm to 5:00pm"],
     inclusions: [
-      "Licensed tour guide.",
-      "Tour pick up and drop around City Proper Only ",
-      "Light snacks",
-      "Driver & gas",
-      "Parking fee",
-      "Entrances",
-      "Accident insurance worth 10,000 pesos medical reimbursement only",
+      "Licensed Tour Guide",
+      "Tourist Boat with Life vest",
+      "Meals Mentioned",
+      "Airconditioned Van Transfer within the City Proper",
+      "Accident Insurance worth PHP10,000 medical reimbursement",
+      "Permits & Entrances",
+      "Audio Device & Cottage Fees",
     ],
     exclusions: [
-      "Tipping for the guide and driver not included",
-      "Anything not mentioned in inclusions ",
-      "Extra activities on site",
+      "Environmental Fee PHP150/pax (Payable on site)",
+      "Mask and Snorkeling Gears",
+      "Any optional activities on site",
+      "Pocket Money",
     ],
     notes: [
       "Non Refundable",
@@ -1963,7 +1965,7 @@ export const tours = [
   },
   {
     tourId: "honda-bay-puerto-princesa-city",
-    tourName: "Honda Bay Tour",
+    tourName: "Honda Bay Tour with Picnic Lunch",
     type: "day tour",
     price: 2000,
     privatePrice: [8500, 4800, 3800, 2950, 2700, 2400, 2300, 2200, 2100, 2000],
@@ -1985,7 +1987,7 @@ export const tours = [
         name: "Destinations",
         activities: [
           "Luli Island",
-          "Starfish Island or Pambato Island",
+          "Pambato Reef or Starfish Island",
           "Cowrie Island",
         ],
       },
@@ -2031,11 +2033,11 @@ export const tours = [
   },
   {
     tourId: "underground-puerto-princesa-city",
-    tourName: "Underground Tour",
+    tourName: "Underground River with Buffet Lunch",
     isFeatured: true,
     type: "day tour",
-    price: 2500,
-    privatePrice: [11000, 6800, 5000, 4000, 3500, 3200, 3000, 2800, 2800, 2500],
+    price: 2700,
+    privatePrice: [11000, 6400, 4866, 4100, 3640, 3333, 3114, 2950, 2822, 2720],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Explore one of the New 7 Wonders of Nature and a UNESCO World Heritage Site on this breathtaking Underground River Tour. Journey into the heart of Palawan and discover the natural beauty and incredible geology of the Puerto Princesa Subterranean River National Park. This tour offers an unforgettable adventure through ancient limestone caves, stunning rock formations, and a world-class ecosystem.",
@@ -2053,10 +2055,9 @@ export const tours = [
       {
         name: "Destinations",
         activities: [
+          "Subterranean River",
+          "Sabang Wharf",
           "Buenavista Viewdeck",
-          "Sabang wharf/Beach (sightseeing only)",
-          "Natural Park",
-          "Subterranian river",
         ],
       },
     ],
@@ -2103,33 +2104,81 @@ export const tours = [
     minParticipants: 2,
     maxParticipants: 12,
   },
-  //TODO: Add talaudyong data
-  // {
-  //   tourId: "talaudyong-beach",
-  //   tourName: "Talaudyong Beach",
-  //   type: "day tour",
-  //   price: 0,
-  //   privatePrice: [8000, 4100],
-  //   address: ["Puerto Princesa, Palawan"],
-  //   description: "",
-  //   itineraries: [],
-  //   duration: [],
-  //   inclusions: [],
-  //   exclusions: [],
-  //   notes: [],
-  //   reminders: [],
-  //   images: [],
-  //   minParticipants: 2,
-  //   maxParticipants: 12,
-  // },
+  {
+    tourId: "talaudyong-beach",
+    tourName: "Talaudyong Beach",
+    isFeatured: true,
+    type: "day tour",
+    // price: 2700,
+    privatePrice: [8000, 4100, 3000, 2400, 2100, 1916, 1800, 1700, 1600, 1500],
+    address: ["Puerto Princesa, Palawan"],
+    description:
+      "Talaudyong Beach is a quiet tropical escape featuring powdery white sand, clear turquoise waters, and a peaceful atmosphere. Ideal for swimming, relaxing, and taking stunning photos, this hidden gem offers a calm and authentic beach experience away from the crowds.",
+    itineraries: [
+      {
+        name: "Itineraries",
+        activities: [
+          "06:30-07:15 Pick up time then proceed to tour",
+          "08:30-09:15 Arrived in Talaudyong Beach",
+          "11:00-12:00 Buffet lunch at the beach",
+          "14:00-15:00 End of tour",
+          "16:00-17:00 Drop to Hotel in Puerto Princesa",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: ["Pak-pak lauin", "Talaudyong Beach"],
+      },
+    ],
+    duration: ["6:30am to 4:00pm", "7:15am to 4:00pm"],
+    inclusions: [
+      "Buffet lunch",
+      "Licensed tour guide.",
+      "Tour pick up and drop around City Proper Only",
+      "Motorized Boat transfer",
+      "Paddle boat inside the cave",
+      "Permit",
+      "Audio Device",
+      "Accident Insurance worth 10,000 pesos medical reimbursement only",
+      "Lifevest",
+    ],
+    exclusions: [
+      "Tipping for the guide and driver not included",
+      "Environmental fee 150/person",
+      "Anything not mentioned in inclusions",
+      "Tip for driver and tour guide",
+    ],
+    notes: [
+      "Non Refundable",
+      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
+    ],
+    reminders: [
+      "Maximum capacity of van is 12 persons only",
+      "Please wear comfortable clothes",
+      "Not applicable to persons with mobility impairments ",
+      "Not applicable to wheelchair users",
+      "Swimming is not allowed ",
+      "Please bring your passport or I.D",
+      "Please wear comfortable slippers",
+      "Not applicable for Cruise ship tourist",
+      "Bring your sunblock",
+      "Bring your camera",
+    ],
+    images: [
+      "https://cdn.palawanwebsolutions.com/talaudyong/pakpak-lauin-day-tour.jpg",
+      "https://cdn.palawanwebsolutions.com/talaudyong/photo0jpg.jpg",
+      "https://cdn.palawanwebsolutions.com/talaudyong/talaudyong-beach.jpg",
+      "https://cdn.palawanwebsolutions.com/talaudyong/talaudyong.jpg",
+    ],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
   {
     tourId: "firefly-watching-puerto-princesa-city",
-    tourName: "Firefy Tour",
+    tourName: "Firefly Tour with Buffet Dinner",
     type: "day tour",
-    price: 1500,
-    privatePrice: [
-      5500, 3300, 2567, 2200, 1980, 1834, 1729, 1650, 1589, 1540, 1500,
-    ],
+    price: 1800,
+    privatePrice: [6000, 3750, 2833, 2375, 2100, 1916, 1785, 1687, 1611, 1550],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Embark on a magical journey through the serene waters of Puerto Princesa as you experience the enchanting spectacle of Firefly Watching. This evening tour is perfect for nature lovers and those looking for a peaceful, unforgettable night under the stars. Witness the mesmerizing glow of fireflies lighting up the mangrove forests along the riverbanks, creating a truly magical and serene atmosphere.",
@@ -2178,9 +2227,63 @@ export const tours = [
     maxParticipants: 12,
   },
   {
+    tourId: "whaleshark-watching-w-picnic-lunch",
+    tourName: "Whaleshark Watching with Picnic Lunch",
+    type: "day tour",
+    price: 2700,
+    privatePrice: [],
+    address: ["Puerto Princesa, Palawan"],
+    description:
+      "Join us for an unforgettable Whaleshark Watching experience with a delightful picnic lunch. This tour offers a unique opportunity to encounter the gentle giants of the sea in their natural habitat while enjoying a delicious meal amidst the stunning backdrop of Puerto Princesa.",
+    itineraries: [
+      {
+        name: "Itineraries",
+        activities: [
+          "07:00-07:30 Pick up time then proceed to tour",
+          "08:00-12:00 Whaleshark Watching",
+          "12:00-13:00 Picnic Lunch",
+          "13:00-14:00 End of tour then drop to hotel",
+        ],
+      },
+      {
+        name: "Destination",
+        activities: ["Whaleshark watching"],
+      },
+    ],
+    duration: ["5:00pm to 9:00pm", "5:30pm to 9:30pm"],
+    inclusions: [
+      "Picnic lunch",
+      "Tour guide during the tour",
+      "Tour pick up and drop around City Proper",
+      "Accident insurance worth 10,000 pesos medical reimbursement",
+      "Life-vest",
+    ],
+    exclusions: [
+      "Tipping for the guide and driver not included",
+      "Environmental fee 150/person",
+      "Anything not mentioned in inclusions ",
+    ],
+    notes: [
+      "Non Refundable",
+      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
+    ],
+    reminders: [
+      "Not suitable for people with mobility impairments",
+      "Do not use insect repellent lotions as it drives away the firefly",
+      "Wear any comfortable clothes & Slippers/shoes",
+    ],
+    images: [
+      "https://cdn.palawanwebsolutions.com/whaleshark-watching/whaleshark2.jpeg",
+      "https://cdn.palawanwebsolutions.com/whaleshark-watching/whalesharrk.jpeg",
+      "https://cdn.palawanwebsolutions.com/whaleshark-watching/ws.jpeg",
+    ],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
+
+  {
     tourId: "tour-a-el-nido",
     tourName: "Tour A",
-
     type: "day tour",
     price: 1200,
     isPax: true,
@@ -2474,7 +2577,7 @@ export const tours = [
 
     type: "day tour",
     price: 900,
-    privatePrice: [4000, 2300, 2300, 1700, 1700, 1500, 1500, 1500, 1300, 1300],
+    privatePrice: [4000, 2300, 2300, 1900, 1900, 1700, 1700, 1700, 1500, 1500],
     address: ["Coron, Palawan"],
     description:
       "Discover the charm of Coron Town and experience its rich history, culture, and scenic spots with this comprehensive Coron Town Tour. This half-day tour will take you through the town’s must-see attractions, offering a perfect blend of history, relaxation, and stunning views. Whether you're looking to learn more about the local way of life or just want to explore the hidden gems of Coron, this tour has something for everyone.",
@@ -2536,8 +2639,8 @@ export const tours = [
     tourName: "Coron town tour A",
 
     type: "day tour",
-    price: 1200,
-    privatePrice: [6000, 4000, 4000, 3200, 3200, 2800, 2800, 2800, 2600, 2600],
+    price: 1400,
+    privatePrice: [6200, 4000, 4000, 3200, 3200, 2800, 2800, 2800, 2600, 2600],
     address: ["Coron, Palawan"],
     description:
       "Explore the breathtaking natural wonders of Coron Island with Tour A, an island-hopping adventure that showcases the best of what Coron has to offer. Known for its crystal-clear waters, stunning limestone cliffs, and vibrant marine life, Coron Island is a paradise for nature lovers, snorkelers, and adventurers alike. This full-day tour will take you to some of the most iconic and picturesque spots, giving you an unforgettable experience in one of the world’s most beautiful destinations.",
@@ -2671,9 +2774,8 @@ export const tours = [
   {
     tourId: "coron-island-escapade",
     tourName: "Coron Island Escapade",
-
     type: "day tour",
-    price: 1700,
+    price: 1800,
     privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
     address: ["Coron, Palawan"],
     description:
@@ -2724,7 +2826,7 @@ export const tours = [
     tourName: "Reef and Wrecks Tour",
 
     type: "day tour",
-    price: 1700,
+    price: 1800,
     privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
     address: ["Coron, Palawan"],
     description:
@@ -2782,7 +2884,7 @@ export const tours = [
     tourName: "Coron Ultimate Tour",
 
     type: "day tour",
-    price: 1700,
+    price: 1800,
     privatePrice: [7500, 4700, 4700, 3300, 3300, 3000, 3000, 3000, 2600, 2600],
     address: ["Coron, Palawan"],
     description:
@@ -2845,7 +2947,7 @@ export const tours = [
     isFeatured: true,
 
     type: "day tour",
-    price: 1900,
+    price: 2000,
     privatePrice: [7700, 4900, 4900, 3500, 3500, 3200, 3200, 3200, 2800, 2800],
     address: ["Coron, Palawan"],
     description:
@@ -2911,7 +3013,7 @@ export const tours = [
 
     type: "day tour",
     price: 2800,
-    privatePrice: [15000, 7600, 7600, 5000, 5000, 4000, 4000, 4000, 3400, 3400],
+    privatePrice: [15000, 7600, 7600, 5000, 5000, 4200, 4200, 4200, 3600, 3600],
     address: ["Coron, Palawan"],
     description:
       "Discover a slice of Africa in the heart of the Philippines with our Calauit Safari Tour. Nestled on Calauit Island, just off the coast of Coron, Palawan, this unique safari park offers an extraordinary adventure where you can encounter exotic wildlife, stunning landscapes, and immerse yourself in a conservation success story.",
@@ -2969,11 +3071,11 @@ export const tours = [
     tourName: "Port Barton Day Tour from Puerto Princesa",
     isFeatured: true,
     type: "day tour",
-    price: [
-      8800, 4990, 4500, 3800, 3500, 3250, 2950, 2750, 2600, 2450, 2450, 2350,
-    ],
+    // price: [
+    //   8800, 4990, 4500, 3800, 3500, 3250, 2950, 2750, 2600, 2450, 2450, 2350,
+    // ],
     privatePrice: [
-      14988, 7588, 5288, 4388, 3888, 3488, 3188, 2988, 2788, 2688, 2588, 2488,
+      17500, 9250, 6666, 5375, 4600, 4083, 3714, 3437, 3222, 3050, 2909, 2791,
     ],
     address: ["Port barton, Palawan"],
     description:
@@ -2993,22 +3095,16 @@ export const tours = [
     ],
     duration: ["5:45am to 9:00pm"],
     inclusions: [
-      "Aircon van roundtrip PPS-Port barton",
-      "Licensed toour guide",
-      "Accident Insurance worth 10,000 medical reinbursement only",
-      "All entrances & permits",
-      "Gopro shots (Under water)",
-      "Mask & snorkel",
-      "Parking fee",
-      "Terminal fee",
-      "Wharfage fee",
-      "lifevest",
-      "Picnic lunch",
+      "Aircon Van Puerto – Port Barton-Puerto",
+      "8:30-4:00pm Island Tour with Picnic Lunch (Maxima Island, Turtle Spot, Twin Reef, Starfish, Fantastic Reef, Paradise Island)",
+      "Licensed tour guide",
+      "Accident Insurance worth 10,000 Medical reimbursement only",
+      "All Entrances & Permits",
+      "Gopro Shot (Under water)",
+      "Mask & Snorkel",
+      "Parking fee, Terminal fee, wharfage fee & Lifevest",
     ],
-    exclusions: [
-      "tippingTfor the guide and driver not included",
-      "Environmental fee 200/person",
-    ],
+    exclusions: ["Environmental fee 200/person"],
     notes: [
       "Non Refundable",
       "2 yrs old and below is free of charge",
@@ -3039,7 +3135,9 @@ export const tours = [
     isFeatured: true,
     type: "day tour",
     price: 1500,
-    privatePrice: [6000, 3250, 2334, 1875, 1760, 1667, 1615, 1575, 1545, 1500],
+    privatePrice: [
+      7500, 4250, 3333, 2875, 2600, 2416, 2285, 2187, 2111, 2050, 2000, 1958,
+    ],
     address: ["Port barton, Palawan"],
     description:
       "Embark on an unforgettable island-hopping adventure in Port Barton, where pristine waters, vibrant marine life, and breathtaking landscapes await you. This tour will take you to some of the most stunning and diverse destinations in the region",
@@ -3058,21 +3156,16 @@ export const tours = [
     ],
     duration: ["8:30am to 4:00pm"],
     inclusions: [
-      "Licensed toour guide",
-      "Accident Insurance worth 10,000 medical reinbursement only",
-      "All entrances & permits",
-      "Gopro shots (Under water)",
-      "Mask & snorkel",
-      "Parking fee",
-      "Terminal fee",
-      "Wharfage fee",
-      "lifevest",
-      "Picnic lunch",
+      "Aircon Van Puerto – Port Barton-Puerto",
+      "8:30-4:00pm Island Tour with Picnic Lunch (Maxima Island, Turtle Spot, Twin Reef, Starfish, Fantastic Reef, Paradise Island)",
+      "Licensed tour guide",
+      "Accident Insurance worth 10,000 Medical reimbursement only",
+      "All Entrances & Permits",
+      "Gopro Shot (Under water)",
+      "Mask & Snorkel",
+      "Parking fee, Terminal fee, wharfage fee & Lifevest",
     ],
-    exclusions: [
-      "tippingTfor the guide and driver not included",
-      "Environmental fee 200/person",
-    ],
+    exclusions: ["Environmental fee 200/person"],
     notes: [
       "Non Refundable",
       "2 yrs old and below is free of charge",
@@ -3106,7 +3199,7 @@ export const tours = [
     type: "day tour",
     // price: 1700,
     privatePrice: [
-      5150, 3650, 3150, 3000, 2850, 2750, 2680, 2650, 2600, 2550, 2500, 2450,
+      4750, 3250, 2750, 2600, 2450, 2350, 2280, 2250, 2220, 2150, 2100, 2050,
     ],
     address: ["Bohol"],
     description:
@@ -3160,7 +3253,7 @@ export const tours = [
     type: "day tour",
     // price: 1700,
     privatePrice: [
-      3900, 2350, 1850, 1750, 1600, 1480, 1430, 1380, 1330, 1280, 1230, 1190,
+      3500, 1950, 1450, 1350, 1200, 1080, 1030, 980, 930, 880, 830, 790,
     ],
     address: ["Bohol"],
     description:
@@ -3213,7 +3306,7 @@ export const tours = [
     type: "day tour",
     // price: 1700,
     privatePrice: [
-      5450, 3450, 2850, 2600, 2500, 2400, 2300, 2200, 2100, 2000, 1900, 1850,
+      5000, 3050, 2450, 2200, 2100, 2000, 1900, 1800, 1700, 1600, 1500, 1450,
     ],
     address: ["Bohol"],
     description:
