@@ -1,5 +1,6 @@
 "use server";
 
+import { z } from "zod";
 import { Resend } from "resend";
 import { TourFormSchema } from "@/types/tour";
 import { FieldValues } from "react-hook-form";
@@ -7,8 +8,10 @@ import TourEmailTemplate from "@/emails/tour-email-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const BookTour = async (values: FieldValues) => {
+export const BookTour = async (values: z.infer<typeof TourFormSchema>) => {
   const validatedFields = TourFormSchema.safeParse(values);
+
+  console.log({ ApiCall: validatedFields.data });
 
   if (!validatedFields.success) {
     return {
@@ -17,46 +20,25 @@ export const BookTour = async (values: FieldValues) => {
     };
   }
 
-  const {
-    name,
-    email,
-    age,
-    contact,
-    count,
-    date,
-    gender,
-    nationality,
-    notes,
-    travellerType,
-    total,
-    title,
-    pickupLocation,
-  } = validatedFields.data;
+  const { name, number, type, email, count, date, total, title } =
+    validatedFields.data;
 
   try {
     const { data, error } = await resend.emails.send({
       from: "Clark Kent Travel and Tours <sales@clarkkenttravelandtours.com>",
       to: [email],
-      cc: [
-        "sales@clarkkenttravelandtours.com",
-        "info.clarkkenttravelandtours@yahoo.com",
-      ],
+      cc: ["estong.jamion@gmail.com"],
       replyTo: email,
-      subject: title!,
+      subject: title || "",
       react: TourEmailTemplate({
-        name,
-        email,
-        age,
-        contact,
         count,
         date,
-        gender,
-        nationality,
-        notes,
-        travellerType,
+        type,
+        name,
+        email,
+        number,
         total,
         title,
-        pickupLocation,
       }),
     });
 
@@ -64,14 +46,17 @@ export const BookTour = async (values: FieldValues) => {
       return { success: false, message: "Internal server error" };
     }
 
+    console.log(data);
+
     return {
       success: true,
       message: "Booked successfully, Check your email",
     };
   } catch (error) {
+    console.log(error);
     return {
       success: false,
-      error,
+      message: "Internal server error" + error,
     };
   }
 };

@@ -41,6 +41,8 @@ const BookingPage = async ({ searchParams }: Props) => {
 
   // if (!session?.user.id) redirect(`/travel-and-tours`);
 
+  
+
   return (
     <section className="mx-auto max-w-5xl space-y-5 py-10">
       <Stepper />

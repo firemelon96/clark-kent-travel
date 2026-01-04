@@ -29,17 +29,17 @@ type Props = z.input<typeof TourFormSchema>;
 export const TourEmailTemplate = ({
   count,
   date,
-  notes,
-  travellerType,
-  age,
-  gender,
+  // notes,
+  type,
+  // age,
+  // gender,
   name,
-  nationality,
+  // nationality,
   email,
-  contact,
+  number,
   total,
   title,
-  pickupLocation,
+  // pickupLocation,
 }: Props) => {
   const previewText = `Your Booking for ${title} Awaits`;
 
@@ -63,17 +63,17 @@ export const TourEmailTemplate = ({
                 </Column>
               </Row>
             </Section>
-            <Section className="border border-solid border-[#eaeaea] p-[20px]">
-              <Heading className="mx-0 my-[20px] p-0 text-center text-[24px] font-bold text-black">
+            <Section className="border border-solid border-[#eaeaea] p-5">
+              <Heading className="mx-0 my-5 p-0 text-center text-[24px] font-bold text-black">
                 Hi, {name} 👋🏻
               </Heading>
-              <Heading className="mx-0 my-[10px] p-0 text-center text-[24px] font-bold text-black">
+              <Heading className="mx-0 my-2.5 p-0 text-center text-[24px] font-bold text-black">
                 Thank you for reaching out to Clark Kent Travel and Tours.
                 We&apos;re thrilled to receive your inquiry about our {title}.
               </Heading>
               <Row>
                 <Column>
-                  <Text className="text-base leading-[24px] tracking-wider text-black">
+                  <Text className="text-base leading-6 tracking-wider text-black">
                     Details Below
                   </Text>
                 </Column>
@@ -81,40 +81,40 @@ export const TourEmailTemplate = ({
               <Hr />
               <Text className="text-[14px]leading-4 tracking-widest text-black">
                 <strong>Travel Date:</strong>
-                {format(new Date(date), "MMM dd EEEE")}
+                {date}
               </Text>
-              <Text className="text-[14px]leading-4 tracking-widest text-black">
+              {/* <Text className="text-[14px]leading-4 tracking-widest text-black">
                 <strong>Pick up location</strong>
                 {pickupLocation}
-              </Text>
+              </Text> */}
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Traveller Name:</strong> {name}
               </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
+              {/* <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Nationality:</strong> {nationality}
-              </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
+              </Text> */}
+              {/* <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Age & Gender: </strong> {age} years old, {gender}
-              </Text>
+              </Text> */}
               <Text className="text-[14px]leading-4 tracking-widest text-black">
                 <strong>Tour:</strong>
-                {travellerType} | {title}
+                {type} | {title}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Number of Participants:</strong> {count} pax
+                <strong>Number of Participants:</strong> {count} person(s)
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Email:</strong> {email}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Contact Number:</strong> {contact}
+                <strong>Contact Number:</strong> {number}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Total Price:</strong> {formatPeso(total || 0)}
               </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
+              {/* <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Additional Message:</strong> {notes}
-              </Text>
+              </Text> */}
               <Hr />
               <Section className="text-slate-600">
                 <Text className="text-xs leading-5">
@@ -136,7 +136,7 @@ export const TourEmailTemplate = ({
               </Section>
             </Section>
             <Text className="mt-5 text-center text-xs text-slate-500">
-              &copy; 2024 | <strong>Clark Kent Travel and Tours</strong>, Lagan
+              &copy; 2026 | <strong>Clark Kent Travel and Tours</strong>, Lagan
               St., Puerto Princesa City Palawan 5300, PH |{" "}
               <Link href="icapturetravelservices.com">
                 www.clarkkenttravelandtours.com

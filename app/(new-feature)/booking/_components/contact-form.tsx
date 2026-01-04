@@ -19,6 +19,10 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import PhoneInput from "react-phone-number-input";
+import { BookTour } from "@/actions/tour-booking";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { format } from "date-fns";
 
 export const contactFormSchema = z.object({
   contactName: z.string().min(1, { message: "Name is required" }),
@@ -51,6 +55,7 @@ export const ContactForm = ({
   tourName,
 }: Props) => {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -67,14 +72,28 @@ export const ContactForm = ({
 
   const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
     const newValues = {
-      ...values,
-      totalPrice: Number(totalPrice),
-      from: new Date(from),
-      to: new Date(to),
-      participants: Number(participants),
+      name: values.contactName,
+      email: values.contactEmail,
+      number: values.contactNumber,
+      total: Number(totalPrice),
+      date: `${format(new Date(from), "EEE, MMM d")} - ${format(new Date(to), "EEE, MMM d")}`,
+      count: Number(participants),
       traveller: type,
-      tour: tourName,
+      title: tourName,
+      type,
     };
+
+    startTransition(() => {
+      BookTour(newValues)
+        .then((data) => {
+          toast.success(data.message);
+          form.reset();
+          // router.push("/booking/success");
+        })
+        .catch((err) => {
+          toast.error(err.message);
+        });
+    });
 
     // startTransition(() => {
     //   Book(newValues)

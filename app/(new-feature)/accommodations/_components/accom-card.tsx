@@ -33,7 +33,7 @@ export const AccomCard = ({ id, imageUrl, title, rooms }: AccomProps) => {
 
   return (
     <Link href={`/accommodations/${id}`}>
-      <Card className="h-full overflow-hidden border-sky-600 shadow-none">
+      <div className="flex min-h-80 w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
         <div className="flex flex-col">
           <div className="relative h-48 w-full">
             <Image
@@ -53,7 +53,7 @@ export const AccomCard = ({ id, imageUrl, title, rooms }: AccomProps) => {
             </div>
           </div>
         </div>
-      </Card>
+      </div>
     </Link>
   );
 };

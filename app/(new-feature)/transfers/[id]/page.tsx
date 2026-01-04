@@ -23,7 +23,7 @@ const SinglePage = async ({ params }: Props) => {
   if (!transfer) notFound();
 
   return (
-    <section className="space-y-4">
+    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4">
       <ImageBanner images={transfer?.image} />
       <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">

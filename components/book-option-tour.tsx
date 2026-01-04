@@ -49,6 +49,9 @@ export const BookOptionTour = ({
   const [openDate, setOpenDate] = useState(false);
   const router = useRouter();
 
+  const priceType = Array.from(new Set(tourPricing.map((price) => price.type)));
+  console.log(priceType);
+
   const form = useForm<z.infer<typeof bookingOptionSchema>>({
     resolver: zodResolver(bookingOptionSchema),
     defaultValues: {
@@ -58,7 +61,7 @@ export const BookOptionTour = ({
       },
       participants: 2,
       totalPrice: 0,
-      type: "joiner",
+      type: priceType[0],
     },
   });
 

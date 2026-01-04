@@ -48,7 +48,7 @@ export const RentalCard = ({
 }: RentalProps) => {
   return (
     <Link href={`/rentals/${id}`}>
-      <Card className="h-fit overflow-hidden shadow-none hover:border-rose-500">
+      <div className="flex min-h-[360px] w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
         <div className="flex flex-col">
           <div className="relative h-48 w-full">
             <Image
@@ -106,7 +106,7 @@ export const RentalCard = ({
             </div>
           </div>
         </div>
-      </Card>
+      </div>
     </Link>
   );
 };

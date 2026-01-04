@@ -47,9 +47,9 @@ export const TransferCard = ({
   const isAvailabilityString = typeof availability === "string";
   return (
     <Link href={`/transfers/${id}`}>
-      <Card className="h-fit overflow-hidden border-none shadow-none">
+      <div className="flex min-h-[360px] w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
         <div className="flex flex-col">
-          <div className="relative h-48 w-full">
+          <div className="relative h-64 w-full md:h-52">
             <Image
               unoptimized
               src={imageUrl}
@@ -93,7 +93,7 @@ export const TransferCard = ({
             </div>
           </div>
         </div>
-      </Card>
+      </div>
     </Link>
   );
 };

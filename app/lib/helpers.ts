@@ -111,7 +111,7 @@ export const getTravelTours = ({
   location: string;
   type: string;
 }) => {
-  let datas: TourPackage[] = [];
+  let datas = [];
 
   if (location === "all" && type === "all types") {
     datas = tours;

@@ -1,6 +1,7 @@
 import { rentals } from "@/app/data/rentals";
+import { z } from "zod";
 import { transfers } from "@/app/data/transfer";
-import { Pricing } from "@/types/tour";
+import { Pricing, pricingSchema } from "@/types/tour";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -9,11 +10,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getFirstAvailablePrice = (
-  tour: Pricing[],
-  type: "joiner" | "private",
+  tour: z.infer<typeof pricingSchema>[],
+  type: string,
 ) => {
-  const pricing = tour.find((p) => p.pricingType === type);
-  return pricing && pricing.prices.length > 0 ? pricing.prices[0].price : null;
+  const pricing = tour.find((p) => p.type === type);
+  return pricing && pricing;
 };
 
 export const getTransfer = ({ type }: { type: string }) => {

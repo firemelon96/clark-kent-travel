@@ -18,7 +18,7 @@ const TourCard = ({ image, title, address, id, price }: CardProps) => {
 
   return (
     <Link href={`/travel-and-tours/${id}`}>
-      <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500 md:w-fit">
+      <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
         <div className="relative h-64 w-full md:h-52">
           <Image
             unoptimized

@@ -19,7 +19,7 @@ export const Transfer = () => {
     <div className="mx-auto max-w-5xl space-y-4">
       <div className="flex flex-col flex-wrap gap-4">
         <Filter />
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
           {filteredTransferData.map((transfer) => (
             <TransferCard
               key={transfer.id}

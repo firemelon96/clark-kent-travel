@@ -1,19 +1,20 @@
 import { z } from "zod";
 
 export const TourFormSchema = z.object({
-  date: z.date(),
-  travellerType: z.enum(["Private", "Joiners"]),
-  notes: z.string().min(1, "Notes are required"),
+  date: z.string(),
+  type: z.string(),
+  // notes: z.string().min(1, "Notes are required"),
   count: z.number().min(1, "Count is required"),
   name: z.string().min(1, "Name is required!"),
-  age: z.number(),
-  gender: z.enum(["male", "female", "others"]),
-  nationality: z.string(),
+  // age: z.number(),
+  // gender: z.enum(["male", "female", "others"]),
+  // nationality: z.string(),
   email: z.string().email(),
-  contact: z.string(),
+  number: z.string(),
   total: z.number().optional(),
   title: z.string().optional(),
-  pickupLocation: z.string(),
+
+  // pickupLocation: z.string(),
 });
 
 type Itinerary = {
@@ -32,7 +33,7 @@ export type Pricing = {
 };
 
 export const pricingSchema = z.object({
-  type: z.enum(["joiner", "private"]),
+  type: z.string(),
   minGroupSize: z.number().min(1),
   maxGroupSize: z.number().min(1),
   price: z.number().min(0),
@@ -45,7 +46,7 @@ export type TourPackage = {
   isFeatured?: boolean | undefined;
   type: string;
   min?: number;
-  pricing: Pricing[];
+  pricing: z.infer<typeof pricingSchema>[];
   isPax?: boolean | undefined;
   address: string[];
   description: string;

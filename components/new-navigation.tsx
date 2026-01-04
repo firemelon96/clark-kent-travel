@@ -81,7 +81,7 @@ export const menuItems = [
       },
     ],
   },
-  { title: "🇵🇭", href: "/currency" },
+  // { title: "🇵🇭", href: "/currency" },
 ];
 
 export function NewNavbar() {
@@ -145,31 +145,36 @@ export function NewNavbar() {
             ))}
             {menuItems.slice(1, 3).map((item) => (
               <NavigationMenuItem key={item.title}>
-                {item.items ? (
-                  <>
-                    <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {item.items.map((subItem) => (
-                          <ListItem
-                            key={subItem.title}
-                            title={subItem.title}
-                            href={subItem.href}
-                          >
-                            {subItem.description}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    {item.title}
-                  </Link>
-                )}
+                {
+                  item.items && (
+                    <>
+                      <NavigationMenuTrigger>
+                        {item.title}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                          {item.items.map((subItem) => (
+                            <ListItem
+                              key={subItem.title}
+                              title={subItem.title}
+                              href={subItem.href}
+                            >
+                              {subItem.description}
+                            </ListItem>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </>
+                  )
+                  // : (
+                  //   <Link
+                  //     href={item.href}
+                  //     className={navigationMenuTriggerStyle()}
+                  //   >
+                  //     {item.title}
+                  //   </Link>
+                  // )
+                }
               </NavigationMenuItem>
             ))}
             {/* Sign in and sign out button */}
@@ -209,31 +214,34 @@ export function NewNavbar() {
             <nav className="mt-10 grid flex-1 auto-rows-min gap-6 px-4">
               {menuItems.map((item) => (
                 <div key={item.title}>
-                  {item.items ? (
-                    <div className="flex flex-col space-y-2">
-                      <span className="text-lg font-semibold">
-                        {item.title}
-                      </span>
-                      {item.items.map((subItem) => (
-                        <Link
-                          onClick={onClose}
-                          key={subItem.title}
-                          href={subItem.href}
-                          className="text-muted-foreground hover:text-primary text-sm"
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
-                    </div>
-                  ) : (
-                    <Link
-                      onClick={onClose}
-                      href={item.href}
-                      className="hover:text-primary text-lg font-semibold"
-                    >
-                      {item.title}
-                    </Link>
-                  )}
+                  {
+                    item.items && (
+                      <div className="flex flex-col space-y-2">
+                        <span className="text-lg font-semibold">
+                          {item.title}
+                        </span>
+                        {item.items.map((subItem) => (
+                          <Link
+                            onClick={onClose}
+                            key={subItem.title}
+                            href={subItem.href}
+                            className="text-muted-foreground hover:text-primary text-sm"
+                          >
+                            {subItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )
+                    // : (
+                    //   <Link
+                    //     onClick={onClose}
+                    //     href={item.href}
+                    //     className="hover:text-primary text-lg font-semibold"
+                    //   >
+                    //     {item.title}
+                    //   </Link>
+                    // )
+                  }
                 </div>
               ))}
             </nav>

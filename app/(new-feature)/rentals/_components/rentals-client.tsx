@@ -16,7 +16,7 @@ export const RentalsClient = () => {
     <div className="mx-auto max-w-5xl space-y-4">
       <div className="flex flex-col gap-4">
         <FilterRental />
-        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3">
+        <div className="mb-10 grid grid-cols-1 items-center gap-4 md:grid-cols-3">
           {filteredRentalsData.map((rental) => (
             <RentalCard
               key={rental.id}
