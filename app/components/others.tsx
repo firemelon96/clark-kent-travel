@@ -14,7 +14,7 @@ const Others = () => {
   const accomodationsData = accomodations.map((accomodation) => ({
     ...accomodation,
   }));
-  const partnersData = partners.map((partner) => ({ ...partner }));
+  // const partnersData = partners.map((partner) => ({ ...partner }));
 
   return (
     <>
@@ -42,12 +42,12 @@ const Others = () => {
       >
         <AccomodationsList name="Accomodations" data={accomodationsData} />
       </section>
-      <section
+      {/* <section
         className="container mx-auto scroll-mt-6 text-center md:px-20 md:text-start"
         id="partners"
       >
         <MarianfeList name="Mariafe Inn" data={partnersData} />
-      </section>
+      </section> */}
     </>
   );
 };
