@@ -9,6 +9,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import {
   Dialog,
@@ -35,7 +36,7 @@ type Props = {
 };
 
 export const ImageDialog = ({ images }: Props) => {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -57,51 +58,43 @@ export const ImageDialog = ({ images }: Props) => {
           Gallery
         </Button>
       </DialogTrigger>
-      <DialogContent className="aspect-video border-none bg-transparent shadow-none sm:min-w-[980px]">
+      <DialogContent className="sm:min-w-2xl md:min-w-3xl lg:min-w-5xl">
         <DialogHeader>
-          <DialogTitle>Images</DialogTitle>
+          <DialogTitle>Gallery</DialogTitle>
         </DialogHeader>
-        <div className="w-full">
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "start",
-            }}
-          >
-            <CarouselContent>
-              {images?.map((image, index) => (
-                <CarouselItem key={index} className="">
-                  <div className="relative aspect-video">
-                    <Image
-                      src={image}
-                      alt={image}
-                      fill
-                      className="h-auto w-full object-cover"
-                    />
-                  </div>
+        <div className="flex flex-col items-center gap-2">
+          <Carousel setApi={setApi} className="w-full items-center">
+            <CarouselContent className="">
+              {images?.map((image) => (
+                <CarouselItem key={image}>
+                  <Image
+                    key={image}
+                    src={image}
+                    height={800}
+                    width={1000}
+                    alt="test"
+                    className="aspect-video rounded-md object-contain"
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-          <div className="flex justify-center gap-2 overflow-x-auto py-4">
-            {images?.map((image, index) => (
-              <button
-                key={index}
+          <div className="flex gap-2 overflow-x-auto">
+            {images?.map((image, i) => (
+              <Image
+                key={image + i}
+                onClick={() => api?.scrollTo(i)}
+                src={image}
+                height={40}
+                width={40}
+                alt="thumbnail"
                 className={cn(
-                  "relative h-16 w-16 overflow-hidden rounded-md transition-all",
-                  current === index ? "ring-primary ring-2" : "opacity-70",
+                  "aspect-square rounded-sm",
+                  current === i && "border-2 border-rose-500 opacity-70",
                 )}
-                onClick={() => api?.scrollTo(index)}
-              >
-                <Image
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </button>
+              />
             ))}
           </div>
         </div>
