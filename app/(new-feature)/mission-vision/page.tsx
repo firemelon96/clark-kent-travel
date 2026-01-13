@@ -1,29 +1,26 @@
 const MisionPage = () => {
   return (
-    <div className="mt-10 flex flex-col gap-4">
-      <div className="mx-auto flex max-w-3xl flex-col text-center">
-        <h2 className="pb-5 text-xl font-semibold">VISION</h2>
+    <div className="mx-auto my-10 flex max-w-4xl flex-col gap-4 rounded-md bg-white p-4 shadow-sm">
+      <div className="mx-auto flex max-w-3xl flex-col">
+        <h2 className="heading-rose">VISION</h2>
         <p className="">
-          Our vision is being recognized for the high quality of our services
-          and to be the compass guiding wanderers to the heart of their travel
-          aspirations.
+          To be recognized for the excellence of our services and to serve as
+          the compass guiding travelers toward the heart of their aspirations.
         </p>
       </div>
-      <div className="mx-auto flex max-w-3xl flex-col text-center">
-        <h2 className="pb-5 text-xl font-semibold">MISION</h2>
+      <div className="mx-auto flex max-w-3xl flex-col">
+        <h2 className="heading-rose">MISION</h2>
         <p>
-          Our mission is to turn wanderlust into lifelong memories and to serve
-          our customers by ensuring their complete satisfaction and providing
-          the best tourism services while remaining committed to our
-          country&apos;s social, cultural, and environmental aspects.
+          Our mission is to transform wanderlust into lifelong memories by
+          providing complete customer satisfaction through world-class tourism
+          services, while being still deeply committed to the social, cultural,
+          and environmental values of our country.
         </p>
       </div>
       <div className="mx-auto flex max-w-3xl flex-col text-start">
-        <h2 className="pb-5 text-center text-xl font-semibold">
-          OUR CORE VALUES
-        </h2>
+        <h2 className="heading-rose">OUR CORE VALUES</h2>
 
-        <ul className="text-center">
+        <ul className="list-inside list-disc pl-4">
           <li>Services Quality</li>
           <li>Open to feedback</li>
           <li>

@@ -3,6 +3,12 @@
 /* Custom dark mode variant using :is() */
 @custom-variant dark (&:is(.dark *));
 
+@layer components {
+  .heading-rose {
+    @apply text-3xl font-semibold text-rose-500;
+  }
+}
+
 /* Theme declarations */
 @theme {
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));

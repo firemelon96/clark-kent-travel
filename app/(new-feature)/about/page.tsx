@@ -10,82 +10,55 @@ export const metadata: Metadata = {
 const About = () => {
   return (
     <div className="container mx-auto space-y-4 md:px-20">
-      <h1 className="pt-10 text-center text-3xl font-semibold text-rose-500 md:px-20">
-        Company Profile
+      <div className="mx-auto mt-5 flex max-w-4xl gap-4">
+        <div className="rounded-full bg-slate-200">
+          <Image src={""} width={300} height={300} alt="Owner" />
+        </div>
+        <div className="flex flex-col justify-center">
+          <p>
+            <strong>Owner :</strong> Mrs. Kathlyn Poquis-Cayabyab
+          </p>
+          <p>
+            <strong>Head Office :</strong> Manalo Extension, Bgy. Milagrosa,
+            <br />
+            Puerto Princesa City, Palawan, Philippines
+          </p>
+        </div>
+      </div>
+
+      <h1 className="text-center text-3xl font-semibold text-rose-500 md:px-20">
+        Company Background
       </h1>
 
-      <div className="mx-auto max-w-6xl space-y-4 pb-10">
+      <div className="mx-auto max-w-5xl space-y-4 pb-10">
         <p>
-          <span className="font-semibold">CLARK KENT TRAVEL AND TOURS</span>, a
-          Department of Tourism (DOT) and City Tourism Office (CTO) Accredited
-          tour operator owned by Mrs. Kathlyn Poquis- Cayabyab and Mr. Chris
-          Salazar Cayabyab.{" "}
-          <span className="font-semibold">CLARK KENT TRAVEL AND TOURS</span>{" "}
-          offers excursions, primarily around Palawan to local and foreign
-          tourists from around the world. Its main office is located in City
-          proper at Manalo Extension, Bgy. Milagrosa, Puerto Princesa City,
-          Palawan. The business currently has five (5) office staff and five (5)
-          tour guides as human resources in Puerto Princesa City only not
-          included in El Nido.
+          Clark Kent Travel and Tours is a Department of Tourism (DOT), City
+          Tourism Office (CTO) accredited, and PhilGEPS registered tour
+          operator, proudly owned and managed by Mrs. Kathlyn Poquis-Cayabyab.
         </p>
         <p>
-          <span className="font-semibold">CLARK KENT TRAVEL AND TOURS</span> has
-          been a booking office since January 13, 2014, and it was upgraded as a
-          Tour Operator in Puerto Princesa City on January 15, 2020. They own
-          the Clark Kent Tourist Boat in El Nido, Palawan, Short term rentals
-          Homestay/Apartmente, Motorcycle and Car Rentals, and Clark Kent
-          Tourist Van Transport in Puerto Princesa City, Palawan. CLARK KENT
-          TRAVEL AND TOURS also manages several social media accounts, which
-          serves as a channel for the booking officers and guests to discuss
-          transactions regarding the tours offered by the business. The social
-          media accounts are the following: Facebook:{" "}
-          <span className="font-semibold">
-            CLARK KENT TRAVEL AND TOURS & TICKETING SERVICES
-          </span>{" "}
-          with 5-star reviews since 2014. Instagram:{" "}
-          <span className="font-semibold">@clarkkenttravelandtours</span>
-          and Email: clarkkent_ts@yahoo.com
+          The company first began as a booking office on January 13, 2014, and
+          officially expanded as a tour operator on January 15, 2020.
         </p>
         <p>
-          <span className="font-semibold">CLARK KENT TRAVEL AND TOURS</span> is
-          a local tour operator offering{" "}
-          <span className="font-semibold">
-            Underground River tours, Honda Bay Tours, Puerto Princesa City
-            Tours, Firefly watching Tours, Ugong Rock and Sabang Zipline,
-            Mangrove paddle-boat, Dos Palmas day tours, Van Transportation, El
-            Nido Island Hoping, Coron Island Hoping, Balabac Tour, Port Barton
-            Tours, Van/ Car / Motorcycle Rental, Domestic and International
-            Airline Ticket and Domestic and International Hotel Booking.
-          </span>{" "}
-          We are also a highly recommended tour operator in Palawan due to the
-          positive feedback and satisfaction of our guests during their stays in
-          Palawan.
+          With more than a decade of experience in the travel and tourism
+          industry, the company has earned a formidable reputation for providing
+          quality, reliable, and memorable travel experiences to both local and
+          international tourists visiting Palawan.
         </p>
       </div>
 
-      <h1 className="pt-20 text-center text-3xl font-semibold text-rose-500 md:px-20">
-        Legalities
-      </h1>
+      <h2 className="text-center text-3xl font-semibold text-rose-500 md:px-20">
+        Reputation
+      </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        <Image
-          src="/resources/legal/dot.png"
-          alt="dot"
-          width={600}
-          height={600}
-        />
-        <Image
-          src="/resources/legal/dti.png"
-          alt="dti"
-          width={600}
-          height={600}
-        />
-        <Image
-          src="/resources/legal/permit.png"
-          alt="permit"
-          width={600}
-          height={600}
-        />
+      <div className="mx-auto max-w-5xl pb-10 text-center">
+        <p>
+          Through excellent service and consistent positive feedback, Clark Kent
+          Travel and Tours have become a highly recommended tour operator in
+          Palawan. Guests consistently commend the company for professionalism,
+          reliability, and memorable travel experiences.
+        </p>
       </div>
     </div>
   );
