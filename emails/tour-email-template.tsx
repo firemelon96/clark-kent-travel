@@ -39,6 +39,7 @@ export const TourEmailTemplate = ({
   number,
   total,
   title,
+  mapLink,
   // pickupLocation,
 }: Props) => {
   const previewText = `Your Booking for ${title} Awaits`;
@@ -108,6 +109,10 @@ export const TourEmailTemplate = ({
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Contact Number:</strong> {number}
+              </Text>
+              <Text className="text-[14px] leading-4 tracking-widest text-black">
+                <strong>Pick up Hotel/location:</strong>{" "}
+                <Link href={mapLink}>View map</Link>
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Total Price:</strong> {formatPeso(total || 0)}

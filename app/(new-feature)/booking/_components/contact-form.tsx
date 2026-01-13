@@ -44,6 +44,7 @@ interface Props {
   to: Date;
   type: "Joiner" | "Private";
   tourName: string;
+  mapLink: string;
 }
 
 export const ContactForm = ({
@@ -53,6 +54,7 @@ export const ContactForm = ({
   to,
   type,
   tourName,
+  mapLink,
 }: Props) => {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -81,6 +83,7 @@ export const ContactForm = ({
       traveller: type,
       title: tourName,
       type,
+      mapLink,
     };
 
     startTransition(() => {
@@ -88,7 +91,7 @@ export const ContactForm = ({
         .then((data) => {
           toast.success(data.message);
           form.reset();
-          // router.push("/booking/success");
+          router.push("/booking/success");
         })
         .catch((err) => {
           toast.error(err.message);

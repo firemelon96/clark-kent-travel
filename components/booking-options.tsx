@@ -147,7 +147,7 @@ export const BookingOptions = ({ tourId, pricing, duration }: Props) => {
                       <Button
                         variant="default"
                         className={cn(
-                          "w-[240px] pl-3 text-left font-normal",
+                          "w-60 pl-3 text-left font-normal",
                           !field.value && "text-muted-foreground",
                         )}
                       >

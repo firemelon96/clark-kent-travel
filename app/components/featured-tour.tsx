@@ -10,9 +10,10 @@ import { FeatureCard } from "../../components/feature-card";
 import { ServiceLabel } from "@/components/service-label";
 import { getFeaturedTour } from "@/lib/data";
 import { notFound } from "next/navigation";
+import { landArrangements } from "../data/land-arrangements";
 
 const FeaturedCard = async () => {
-  const packageTours = getPackageTours();
+  // const packageTours = getPackageTours();
   // const featuredTours = (await getFeaturedTour()) || [];
 
   return (
@@ -24,7 +25,7 @@ const FeaturedCard = async () => {
         />
         <Carousel className="w-full">
           <CarouselContent>
-            {packageTours.map((tour, i) => (
+            {landArrangements.map((tour, i) => (
               <CarouselItem
                 className="flex items-center justify-center sm:basis-1/2 md:basis-1/3"
                 key={i}

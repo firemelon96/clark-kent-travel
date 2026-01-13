@@ -13,6 +13,7 @@ export const TourFormSchema = z.object({
   number: z.string(),
   total: z.number().optional(),
   title: z.string().optional(),
+  mapLink: z.string().optional(),
 
   // pickupLocation: z.string(),
 });
@@ -38,6 +39,7 @@ export const pricingSchema = z.object({
   maxGroupSize: z.number().min(1),
   price: z.number().min(0),
   isGroupSize: z.boolean().optional(),
+  label: z.string().optional(),
 });
 
 export type TourPackage = {

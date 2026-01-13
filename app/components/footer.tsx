@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col items-center gap-4 p-2">
-            <span className="text-xl font-semibold uppercase text-[#E13179]">
+            <span className="text-xl font-semibold text-[#E13179] uppercase">
               Contact Details
             </span>
             <ul className="flex w-fit flex-col items-center text-base text-[#E13179]/70 md:items-center">
@@ -108,48 +108,57 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <FaFacebook />{" "}
-                <span className="flex-1 text-base">
+                <Link
+                  href={"https://www.facebook.com/clarkkentaffordabletours"}
+                  className="flex-1 text-base"
+                >
                   Clark Kent Travel and Tours & Ticketing Services
-                </span>
+                </Link>
               </li>
               <li className="flex items-center space-x-2">
                 <FaInstagram />{" "}
-                <span className="flex-1 text-base">
+                <Link
+                  href={"https://www.instagram.com/clarkkenttravelandtours/"}
+                  className="flex-1 text-base"
+                >
                   @clarkkenttravelandtours
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="flex flex-col items-center md:items-end">
-            <span className="text-xl font-semibold uppercase text-[#E13179]">
+            <span className="text-xl font-semibold text-[#E13179] uppercase">
               Useful Links
             </span>
             <div className="flex gap-4 text-start text-base text-[#E13179]/75 md:flex-col md:text-end">
               {menuItems.map((item) => (
                 <div key={item.title}>
-                  {item.items ? (
-                    <div className="flex flex-col space-y-2">
-                      <span className="text-lg font-semibold">
-                        {item.title}
-                      </span>
-                      {item.items.map((subItem) => (
-                        <Link
-                          key={subItem.title}
-                          href={subItem.href}
-                          className="text-sm text-rose-500 hover:text-rose-500/80"
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="text-lg font-semibold hover:text-primary"
-                    >
-                      {item.title}
-                    </Link>
-                  )}
+                  {
+                    item.items && (
+                      <div className="flex flex-col space-y-2">
+                        <span className="text-lg font-semibold">
+                          {item.title}
+                        </span>
+                        {item.items.map((subItem) => (
+                          <Link
+                            key={subItem.title}
+                            href={subItem.href}
+                            className="text-sm text-rose-500 hover:text-rose-500/80"
+                          >
+                            {subItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )
+                    // : (
+                    //   <Link
+                    //     href={item.href}
+                    //     className="hover:text-primary text-lg font-semibold"
+                    //   >
+                    //     {item.title}
+                    //   </Link>
+                    // )
+                  }
                 </div>
               ))}
             </div>

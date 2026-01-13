@@ -11,7 +11,7 @@ export const Stepper = ({ isSucces = false }: StepperProps) => {
     <div className="flex items-center">
       <div className="flex flex-col items-center justify-center text-sm">
         <CheckCircle className="size-4 text-slate-300" />
-        <p className="text-slate-300">Choose Tour</p>
+        <p className="text-slate-300">Activity</p>
       </div>
       <div className="flex-1 border-t border-slate-300" />
       <div className="flex flex-col items-center justify-center text-sm">
@@ -29,7 +29,7 @@ export const Stepper = ({ isSucces = false }: StepperProps) => {
         ) : (
           <BsBank className="size-4" />
         )}
-        <p className={isSucces ? "text-slate-300" : ""}>Payment Status</p>
+        <p className={isSucces ? "text-slate-300" : ""}>Status</p>
       </div>
     </div>
   );

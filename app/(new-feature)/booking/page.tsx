@@ -25,11 +25,12 @@ interface Props {
     totalPrice: number;
     tourId: string;
     type: "Joiner" | "Private";
+    mapLink: string;
   }>;
 }
 
 const BookingPage = async ({ searchParams }: Props) => {
-  const { from, participants, to, totalPrice, tourId, type } =
+  const { from, participants, to, totalPrice, tourId, type, mapLink } =
     await searchParams;
 
   console.log(from, participants, to, totalPrice, type);
@@ -40,8 +41,6 @@ const BookingPage = async ({ searchParams }: Props) => {
   const tour = getTourById(tourId);
 
   // if (!session?.user.id) redirect(`/travel-and-tours`);
-
-  
 
   return (
     <section className="mx-auto max-w-5xl space-y-5 py-10">
@@ -78,6 +77,7 @@ const BookingPage = async ({ searchParams }: Props) => {
                 from={from}
                 to={to}
                 type={type}
+                mapLink={mapLink}
               />
             </CardContent>
           </Card>
@@ -89,7 +89,7 @@ const BookingPage = async ({ searchParams }: Props) => {
                 ) : (
                   <h1 className="font-semibold">{tour?.title}</h1>
                 )} */}
-                <h1 className="font-semibold">{}</h1>
+                <h1 className="font-semibold">{tour.tourName}</h1>
                 <span className="text-slate-500">{type}</span>
               </CardHeader>
               <CardContent className="space-y-4">

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { tours } from "../data/tours";
 import { TourPackage } from "@/types/tour";
 import { hotels } from "../data/hotels";
+import { landArrangements } from "../data/land-arrangements";
 // import { transfer_services } from "../data/logistics";
 // import { fastCrafts } from "../data/fast-craft";
 
@@ -135,4 +136,15 @@ export const getHotel = (id: string) => {
   if (!hotel) return notFound();
 
   return hotel;
+};
+
+export const generateGoogleMapLink = (data: {
+  lat: number;
+  lng: number;
+  placeId?: string;
+}) => {
+  if (data.placeId) {
+    return `https://www.google.com/maps/place/?q=place_id:${data.placeId}`;
+  }
+  return `https://www.google.com/maps?q=${data.lat},${data.lng}`;
 };

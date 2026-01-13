@@ -19,10 +19,10 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { addDays, format } from "date-fns";
-import { CalendarIcon, Minus, Plus } from "lucide-react";
+import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter } from "next/navigation";
 import { Label } from "./ui/label";
@@ -32,6 +32,7 @@ import { DateRange } from "react-day-picker";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { toast } from "sonner";
 import { bookingOptionSchema, pricingSchema } from "@/types/tour";
+import { MapLocation } from "./map-location";
 
 type Props = {
   tourId: string;
@@ -47,7 +48,9 @@ export const BookOptionTour = ({
   duration,
 }: Props) => {
   const [openDate, setOpenDate] = useState(false);
+  const [mapLink, setMapLink] = useState("");
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   const priceType = Array.from(new Set(tourPricing.map((price) => price.type)));
   console.log(priceType);
@@ -65,6 +68,15 @@ export const BookOptionTour = ({
     },
   });
 
+  const uniqueSet = Array.from(
+    new Map(
+      tourPricing.map((t) => [
+        `${t.type}-${t.label}`,
+        { type: t.type, label: t.label },
+      ]),
+    ).values(),
+  );
+
   const participants = form.watch("participants");
   const type = form.watch("type");
 
@@ -77,7 +89,11 @@ export const BookOptionTour = ({
     return max;
   }, 0);
 
-  console.log(type, maxForType);
+  const minForType = Math.min(
+    ...tourPricing.filter((t) => type === t.type).map((t) => t.minGroupSize),
+  );
+
+  console.log(type, maxForType, uniqueSet);
 
   if (participants > maxForType) {
     form.setValue("participants", maxForType, { shouldValidate: true });
@@ -114,6 +130,11 @@ export const BookOptionTour = ({
 
     const { from, to } = dateRange;
 
+    if (mapLink === "") {
+      toast.error("Please select a location on the map");
+      return;
+    }
+
     const url = qs.stringifyUrl(
       {
         url: "/booking",
@@ -124,12 +145,15 @@ export const BookOptionTour = ({
           participants,
           totalPrice,
           type,
+          mapLink,
         },
       },
       { skipNull: true, skipEmptyString: true },
     );
 
-    router.push(url);
+    startTransition(() => {
+      router.push(url);
+    });
   };
 
   return (
@@ -142,6 +166,8 @@ export const BookOptionTour = ({
         {form.formState.errors && (
           <p>{JSON.stringify(form.formState.errors)}</p>
         )}
+        <p>{mapLink}</p>
+        <MapLocation setMaplink={setMapLink} />
         <FormField
           control={form.control}
           name="dateRange"
@@ -222,17 +248,14 @@ export const BookOptionTour = ({
               <FormLabel>Select type</FormLabel>
               <FormControl>
                 <div className="flex flex-wrap gap-2">
-                  {Array.from(
-                    new Set(tourPricing.map((price) => price.type)),
-                  ).map((type) => (
+                  {uniqueSet.map((p) => (
                     <Button
-                      key={type}
-                      className="uppercase"
+                      key={p.type}
                       type="button"
-                      variant={field.value === type ? "default" : "outline"}
-                      onClick={() => field.onChange(type)}
+                      variant={field.value === p.type ? "default" : "outline"}
+                      onClick={() => field.onChange(p.type)}
                     >
-                      {type}
+                      {p.label ? <span>{p.label}</span> : <span>{p.type}</span>}
                     </Button>
                   ))}
                 </div>
@@ -259,9 +282,11 @@ export const BookOptionTour = ({
                           variant="outline"
                           size="icon"
                           onClick={() =>
-                            field.onChange(Math.max(1, field.value - 1))
+                            field.onChange(
+                              Math.max(minForType, field.value - 1),
+                            )
                           }
-                          disabled={field.value <= 1}
+                          disabled={field.value <= minForType}
                         >
                           <Minus className="h-4 w-4" />
                           <span className="sr-only">Decrease participants</span>
@@ -315,10 +340,14 @@ export const BookOptionTour = ({
         />
 
         <div className="flex justify-end gap-2">
-          <Button variant="secondary" type="button">
+          {/* Make this persist in localstorage when saved */}
+          {/* <Button variant="secondary" type="button">
             Save
+          </Button> */}
+          <Button variant="default">
+            {isPending && <Loader2Icon />}{" "}
+            {isPending ? "Loading..." : "Book now"}
           </Button>
-          <Button variant="default">Book now</Button>
         </div>
       </form>
     </Form>

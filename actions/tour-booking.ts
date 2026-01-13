@@ -20,7 +20,7 @@ export const BookTour = async (values: z.infer<typeof TourFormSchema>) => {
     };
   }
 
-  const { name, number, type, email, count, date, total, title } =
+  const { name, number, type, email, count, date, total, title, mapLink } =
     validatedFields.data;
 
   try {
@@ -39,6 +39,7 @@ export const BookTour = async (values: z.infer<typeof TourFormSchema>) => {
         number,
         total,
         title,
+        mapLink,
       }),
     });
 
