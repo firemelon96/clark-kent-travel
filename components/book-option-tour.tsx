@@ -80,7 +80,7 @@ export const BookOptionTour = ({
   const participants = form.watch("participants");
   const type = form.watch("type");
 
-  const isDay = durationUnit === "days";
+  const isDay = duration === 1;
 
   const maxForType = tourPricing.reduce((max, price) => {
     if (price.type === type) {
@@ -186,16 +186,18 @@ export const BookOptionTour = ({
                         )}
                       >
                         {field.value?.from ? (
-                          field.value.to ? (
+                          field.value.to &&
+                          field.value.to.getTime() ===
+                            field.value.from.getTime() ? (
+                            format(field.value.from, "LLL dd, y")
+                          ) : (
                             <>
                               {format(field.value.from, "LLL dd, y")} -{" "}
                               {format(field.value.to, "LLL dd, y")}
                             </>
-                          ) : (
-                            format(field.value.from, "LLL dd, y")
                           )
                         ) : (
-                          <span>Pick a date</span>
+                          <span>Pick a desired date</span>
                         )}
                         <CalendarIcon className="ml-auto h-4 w-4" />
                       </Button>
@@ -207,17 +209,26 @@ export const BookOptionTour = ({
                       mode="range"
                       defaultMonth={field.value?.from}
                       selected={(field.value as DateRange) || undefined}
-                      onSelect={(range) => {
-                        if (range?.from) {
-                          field.onChange({
-                            from: range.from,
-                            to: isDay
-                              ? addDays(range.from, duration - 1)
-                              : range.from,
-                          });
-                        } else {
-                          field.onChange(undefined); // Handle cases where range is cleared
-                        }
+                      // onSelect={(range) => {
+                      //   if (range?.from) {
+                      //     field.onChange({
+                      //       from: range.from,
+                      //       to: isDay
+                      //         ? range.from
+                      //         : addDays(range.from, duration - 1),
+                      //     });
+                      //   } else {
+                      //     field.onChange(undefined); // Handle cases where range is cleared
+                      //   }
+                      // }}
+                      onDayClick={(day) => {
+                        const range: DateRange = {
+                          from: day,
+                          to: isDay ? day : addDays(day, duration - 1),
+                        };
+
+                        field.onChange(range);
+                        setOpenDate(false);
                       }}
                       numberOfMonths={2}
                       disabled={(date) =>

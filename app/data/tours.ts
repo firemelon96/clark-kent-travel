@@ -558,7 +558,7 @@ export const tours = [
     tourId: "5d4n-el-nido-package-ac-free-day",
     tourName: "5D4N El Nido Package (Tours A & C + Free Day)",
     slug: "5d4n-el-nido-package-ac-free-day",
-    duration: "5",
+    duration: 5,
     bestSeller: true,
     type: "package",
     address: ["El Nido"],
@@ -1330,7 +1330,7 @@ export const tours = [
   //   maxParticipants: 12,
   // },
 
-  //new entry
+  //====coron-package=====
 
   {
     tourId: "3d2n-coron-package-coron-island-tour-a-coron-town-tour-transfers",
@@ -1925,6 +1925,8 @@ export const tours = [
     minParticipants: 2,
     maxParticipants: 12,
   },
+
+  //====end-coron-package====
 
   //elnido package
   {
