@@ -7,15 +7,15 @@ export const landArrangements = [
     description:
       "Experience the beauty of Puerto Princesa with our exclusive land arrangement package.",
     type: "package",
-    hotel: [
+    options: [
       {
         name: "ADLAW INN",
         description:
           "A cozy 2-star hotel located in the heart of Puerto Princesa.",
         options: [
           {
-            numOfStay: 3,
-            price: 6050,
+            duration: 3,
+            pricing: [],
             itineraries: [
               {
                 day: 1,

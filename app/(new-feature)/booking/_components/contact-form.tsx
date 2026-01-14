@@ -176,8 +176,7 @@ export const ContactForm = ({
 
         <div>
           <span className="text-sm text-slate-700">
-            By continuing, you acknowledge and agree to Terms of use and Privacy
-            policy
+            By continuing, you acknowledge and agree to Terms and Privacy policy
           </span>
         </div>
 

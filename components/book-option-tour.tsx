@@ -22,7 +22,13 @@ import { addDays, format } from "date-fns";
 import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import { useEffect, useState, useTransition } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+  useTransition,
+} from "react";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter } from "next/navigation";
 import { Label } from "./ui/label";
@@ -37,15 +43,15 @@ import { MapLocation } from "./map-location";
 type Props = {
   tourId: string;
   duration: number;
-  durationUnit?: string;
   tourPricing: z.infer<typeof pricingSchema>[];
+  setShowForm?: (value: boolean) => void;
 };
 
 export const BookOptionTour = ({
-  durationUnit,
   tourId,
   tourPricing,
   duration,
+  setShowForm,
 }: Props) => {
   const [openDate, setOpenDate] = useState(false);
   const [mapLink, setMapLink] = useState("");
@@ -161,7 +167,7 @@ export const BookOptionTour = ({
       <form
         id="booking-option"
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4"
+        className="w-full space-y-4"
       >
         {form.formState.errors && (
           <p>{JSON.stringify(form.formState.errors)}</p>
@@ -203,24 +209,11 @@ export const BookOptionTour = ({
                       </Button>
                     </FormControl>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
+                  <PopoverContent className="w-auto p-2" align="start">
                     <Calendar
-                      initialFocus
                       mode="range"
                       defaultMonth={field.value?.from}
                       selected={(field.value as DateRange) || undefined}
-                      // onSelect={(range) => {
-                      //   if (range?.from) {
-                      //     field.onChange({
-                      //       from: range.from,
-                      //       to: isDay
-                      //         ? range.from
-                      //         : addDays(range.from, duration - 1),
-                      //     });
-                      //   } else {
-                      //     field.onChange(undefined); // Handle cases where range is cleared
-                      //   }
-                      // }}
                       onDayClick={(day) => {
                         const range: DateRange = {
                           from: day,
@@ -236,8 +229,6 @@ export const BookOptionTour = ({
                         date.getDay() === 0 ||
                         date.getDay() === 6
                       }
-
-                      // max={duration}
                     />
                   </PopoverContent>
                 </Popover>
@@ -352,9 +343,15 @@ export const BookOptionTour = ({
 
         <div className="flex justify-end gap-2">
           {/* Make this persist in localstorage when saved */}
-          {/* <Button variant="secondary" type="button">
-            Save
-          </Button> */}
+          {!!setShowForm && (
+            <Button
+              onClick={() => setShowForm(false)}
+              variant="secondary"
+              type="button"
+            >
+              Close
+            </Button>
+          )}
           <Button variant="default">
             {isPending && <Loader2Icon />}{" "}
             {isPending ? "Loading..." : "Book now"}

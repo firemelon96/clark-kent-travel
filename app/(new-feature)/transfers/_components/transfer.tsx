@@ -24,7 +24,7 @@ export const Transfer = () => {
             <TransferCard
               key={transfer.id}
               pricePerTrip={transfer.price_per_trip}
-              imageUrl={transfer.image}
+              imageUrl={transfer.images[0]}
               title={transfer.title}
               from={transfer.from}
               to={transfer.to}

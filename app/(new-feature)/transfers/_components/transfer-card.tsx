@@ -78,7 +78,7 @@ export const TransferCard = ({
                   <span>{availability}</span>
                 </div>
               )}
-              {!isAvailabilityString && (
+              {/* {!isAvailabilityString && (
                 <>
                   <div className="flex gap-0.5">
                     <Sun className="mr-1 size-4" />{" "}
@@ -89,7 +89,7 @@ export const TransferCard = ({
                     <span>{availability.afternoon}</span>
                   </div>
                 </>
-              )}
+              )} */}
             </div>
           </div>
         </div>

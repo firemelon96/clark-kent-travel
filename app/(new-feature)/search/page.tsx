@@ -26,6 +26,7 @@ const SearchPage = async ({ searchParams }: Props) => {
             address={tour.address[0]}
             price={tour.pricing[0].price}
             title={tour.tourName}
+            bestSeller={tour.bestSeller}
           />
         ))}
       </div>

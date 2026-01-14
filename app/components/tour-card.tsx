@@ -43,7 +43,7 @@ const TourCard = ({
         </div>
 
         <div className="px-2 pb-4 md:w-64">
-          <h2 className="line-clamp-2 font-medium text-slate-600">{title}</h2>
+          <h2 className="line-clamp-1 font-medium text-slate-600">{title}</h2>
           <div className="flex gap-2">
             {price && (
               <Badge variant="secondary" className="text-slate-500">
