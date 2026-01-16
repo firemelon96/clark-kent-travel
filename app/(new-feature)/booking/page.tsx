@@ -17,6 +17,8 @@ import { Stepper } from "@/components/stepper";
 // import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { getTransfer } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { PromoButton } from "@/components/promo-button";
 
 interface Props {
   searchParams: Promise<{
@@ -118,6 +120,9 @@ const BookingPage = async ({ searchParams }: Props) => {
                     <span>Person x {participants}</span>
                   </div>
                   <Separator />
+                  <div>
+                    <PromoButton />
+                  </div>
                 </CardContent>
                 <CardFooter className="flex items-center justify-between">
                   <p className="text-sm text-slate-500">Total</p>

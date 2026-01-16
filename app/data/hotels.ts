@@ -1,7 +1,7 @@
 export const hotels = [
   {
     id: "HTL001",
-    name: "Mariafe Traveller Inn",
+    name: "",
     description:
       "Mariafe Travellers Inn is a charming and affordable accommodation option, perfect for budget-conscious travelers looking for comfort and convenience. Located in a peaceful area but close to key attractions, shops, and local dining spots, the inn provides a relaxing environment for guests to unwind after a day of exploring. The rooms are clean and well-maintained, offering essential amenities such as air conditioning, free Wi-Fi, and en suite bathrooms. Guests can also enjoy friendly service, with staff dedicated to making your stay comfortable and enjoyable. Mariafe Travellers Inn is an ideal choice for solo travelers, families, or groups seeking a welcoming home away from home.",
     location: {

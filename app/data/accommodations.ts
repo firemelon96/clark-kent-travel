@@ -1,0 +1,56 @@
+export const accommodtions = [
+  {
+    name: "Clark Kent Homestay",
+    location: "Puerto Princesa",
+    inclusions: ["Breakfast", "Free WiFi", "Airport Shuttle"],
+    exclusions: ["Mini Bar", "Laundry Service"],
+    amenities: [
+      "Kitchen",
+      "Laundry area",
+      "Towels",
+      "Beddings",
+      "Dining utensils",
+      "Airconditioned room",
+      "Tv",
+      "Ref",
+      "Wifi",
+    ],
+    pricing: [
+      {
+        isGroupSize: true,
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 3500,
+      },
+    ],
+    rating: 4.5,
+    images: [""],
+  },
+  {
+    name: "CKC Loftstyle Apartment",
+    location: "Puerto Princesa",
+    inclusions: ["Breakfast", "Welcome Drink", "Parking"],
+    exclusions: ["Room Service", "Pet Accommodation"],
+    amenities: [
+      "Kitchen",
+      "Laundry area",
+      "Towels",
+      "Beddings",
+      "Dining utensils",
+      "Airconditioned room",
+      "Tv",
+      "Ref",
+      "Wifi",
+    ],
+    pricing: [
+      {
+        isGroupSize: true,
+        minGroupSize: 1,
+        maxGroupSize: 10,
+        price: 3500,
+      },
+    ],
+    rating: 4.7,
+    images: [""],
+  },
+];
