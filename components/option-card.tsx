@@ -7,6 +7,7 @@ import { BookOptionTour } from "./book-option-tour";
 import { Pricing, pricingSchema } from "@/types/tour";
 import z from "zod";
 import { useState } from "react";
+import useOptionStore from "@/hooks/use-option-store";
 
 type Props = {
   name: string;
@@ -15,7 +16,9 @@ type Props = {
 };
 
 export const OptionCard = ({ name, pricing, id }: Props) => {
-  const [showForm, setShowForm] = useState(false);
+  const { id: selectedId, setId } = useOptionStore();
+
+  console.log(selectedId);
 
   return (
     <Card className="">
@@ -25,21 +28,25 @@ export const OptionCard = ({ name, pricing, id }: Props) => {
         </span>
       </CardHeader>
       <CardContent className="flex flex-col">
-        {!showForm && (
+        {selectedId !== id && (
           <div className="flex items-center justify-between">
             <div className="leading-2">
               <p className="font-semibold">{pricing[0].price}</p>
-              <span className="text-sm">Per way</span>
+              <span className="text-sm">
+                {pricing[0].isGroupSize ? "Per Way/Van" : "Per Person"}
+              </span>
             </div>
-            <Button onClick={() => setShowForm((v) => !v)}>Select</Button>
+            <Button onClick={() => setId(id)}>Select</Button>
           </div>
         )}
-        {showForm && (
+
+        {selectedId === id && (
           <BookOptionTour
-            setShowForm={setShowForm}
             duration={1}
             tourId={id}
             tourPricing={pricing}
+            service="transfer"
+            title={name}
           />
         )}
       </CardContent>

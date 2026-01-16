@@ -3,6 +3,7 @@ import { tours } from "../data/tours";
 import { TourPackage } from "@/types/tour";
 import { hotels } from "../data/hotels";
 import { landArrangements } from "../data/land-arrangements";
+import { transfers } from "../data/transfer";
 // import { transfer_services } from "../data/logistics";
 // import { fastCrafts } from "../data/fast-craft";
 
@@ -48,6 +49,12 @@ export const getTourById = (id: string) => {
   const tour = tours.find((tour) => tour.tourId === id);
   if (tour === undefined) return notFound();
   return tour;
+};
+
+export const getTransferById = (id: string) => {
+  const transfer = transfers.find((transfer) => transfer.id === id);
+  if (transfer === undefined) return notFound();
+  return transfer;
 };
 
 export const getPackageToursByLocation = (address: string) => {

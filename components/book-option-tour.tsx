@@ -39,20 +39,25 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { toast } from "sonner";
 import { bookingOptionSchema, pricingSchema } from "@/types/tour";
 import { MapLocation } from "./map-location";
+import useOptionStore from "@/hooks/use-option-store";
 
 type Props = {
   tourId: string;
   duration: number;
   tourPricing: z.infer<typeof pricingSchema>[];
-  setShowForm?: (value: boolean) => void;
+  service: string;
+  title?: string;
 };
 
 export const BookOptionTour = ({
   tourId,
   tourPricing,
   duration,
-  setShowForm,
+  service,
+  title,
 }: Props) => {
+  const { id, onClose } = useOptionStore();
+
   const [openDate, setOpenDate] = useState(false);
   const [mapLink, setMapLink] = useState("");
   const router = useRouter();
@@ -145,13 +150,15 @@ export const BookOptionTour = ({
       {
         url: "/booking",
         query: {
-          tourId,
+          id: tourId,
           from: from ? format(from, "yyyy-MM-dd") : undefined,
           to: to ? format(to, "yyyy-MM-dd") : undefined,
           participants,
           totalPrice,
           type,
           mapLink,
+          service,
+          title,
         },
       },
       { skipNull: true, skipEmptyString: true },
@@ -343,16 +350,12 @@ export const BookOptionTour = ({
 
         <div className="flex justify-end gap-2">
           {/* Make this persist in localstorage when saved */}
-          {!!setShowForm && (
-            <Button
-              onClick={() => setShowForm(false)}
-              variant="secondary"
-              type="button"
-            >
+          {id && (
+            <Button onClick={() => onClose()} variant="secondary" type="button">
               Close
             </Button>
           )}
-          <Button variant="default">
+          <Button variant="default" className="">
             {isPending && <Loader2Icon />}{" "}
             {isPending ? "Loading..." : "Book now"}
           </Button>

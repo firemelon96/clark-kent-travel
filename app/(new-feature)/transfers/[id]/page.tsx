@@ -74,7 +74,7 @@ const SinglePage = async ({ params }: Props) => {
             <OptionCard
               key={option.name}
               name={option.name}
-              id={transfer.id}
+              id={option.id}
               pricing={option.pricing}
             />
           ))}

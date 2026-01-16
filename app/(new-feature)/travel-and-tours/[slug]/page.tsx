@@ -67,6 +67,7 @@ const SinglePage = async ({ params }: SingleProps) => {
                 duration={tour.duration}
                 tourId={tour.tourId}
                 tourPricing={tour.pricing}
+                service="tour"
               />
             </CardContent>
           </Card>

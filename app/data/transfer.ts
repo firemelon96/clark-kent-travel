@@ -11,12 +11,18 @@ export const transfers = [
         name: "Puerto Princesa Airport Transfer: City Proper only",
         travelTime: ["6:00 AM", "12:00 PM"],
         pricing: [
-          { type: "shared", minGroupSize: 1, maxGroupSize: 10, price: 700 },
+          {
+            isGroupSize: true,
+            type: "shared",
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 700,
+          },
         ],
       },
       {
         id: "puerto-princesa-to-elnido-shared",
-        name: "Puerto princesa to Elnido: 1-Way Shared Transfer",
+        name: "Puerto princesa to Elnido: Shared Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
         pricing: [
           { type: "shared", minGroupSize: 1, maxGroupSize: 10, price: 750 },
@@ -24,7 +30,7 @@ export const transfers = [
       },
       {
         id: "elnido-to-puerto-princesa-shared",
-        name: "Elnido to Puerto princesa: 1-Way Shared Transfer",
+        name: "Elnido to Puerto princesa: Shared Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
         pricing: [
           { type: "shared", minGroupSize: 1, maxGroupSize: 10, price: 750 },
@@ -35,7 +41,13 @@ export const transfers = [
         name: "Puerto Princesa to Elnido: 1-Way Private Transfer",
         travelTime: [],
         pricing: [
-          { type: "private", minGroupSize: 1, maxGroupSize: 10, price: 7500 },
+          {
+            type: "private",
+            isGroupSize: true,
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 7500,
+          },
         ],
       },
       {
@@ -43,11 +55,19 @@ export const transfers = [
         name: "Elnido to Puerto Princesa: 1-Way Private Transfer",
         travelTime: [],
         pricing: [
-          { type: "private", minGroupSize: 1, maxGroupSize: 10, price: 7500 },
+          {
+            type: "private",
+            isGroupSize: true,
+            minGroupSize: 1,
+            maxGroupSize: 10,
+            price: 7500,
+          },
         ],
       },
     ],
-    images: ["/resources/logistics/van.jpg", "/resources/logistics/ckvan.jpg"],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/pps-elnido-transfer.avif",
+    ],
   },
   {
     id: "transfer-between-puerto-princesa-and-port-barton",
@@ -56,17 +76,21 @@ export const transfers = [
     vehicle: "Urvan Premium",
     options: [
       {
+        id: "puerto-princesa-to-port-barton",
         name: "Puerto princesa to Port Barton: 1-Way Shared Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
         pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 700 }],
       },
       {
+        id: "port-barton-to-puerto-princesa",
         name: "Port Barton to Puerto princesa: 1-Way Shared Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
         pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 700 }],
       },
     ],
-    images: ["/resources/logistics/van.jpg"],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/pps-port-barton.avif",
+    ],
   },
   {
     id: "private-el-nido-transfer",
@@ -75,17 +99,25 @@ export const transfers = [
     vehicle: "Urvan Premium",
     options: [
       {
+        id: "lio-beach-to-el-nido-town",
         name: "Lio Beach to El Nido Town: 1-Way Private Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 2000 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 2000 },
+        ],
       },
       {
+        id: "el-nido-town-to-lio",
         name: "El Nido Town to Lio Beach: 1-Way Private Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 2000 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 2000 },
+        ],
       },
     ],
-    images: ['"/resources/logistics/van.jpg"'],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/pps-elnido-transfer.avif",
+    ],
   },
   {
     id: "private-nacpan-day-tour",
@@ -94,9 +126,12 @@ export const transfers = [
     vehicle: "Urvan Premium",
     options: [
       {
-        name: "Private Van Nacpan Day Tour",
+        id: "nacpan-day-tour",
+        name: "Nacpan Day Tour: Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 5000 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 5000 },
+        ],
       },
     ],
     images: ['"/resources/logistics/van.jpg"'],
@@ -108,9 +143,12 @@ export const transfers = [
     vehicle: "Urvan Premium",
     options: [
       {
-        name: "Private Van Lio Day Tour",
+        id: "lio-day-tour",
+        name: "Lio Day Tour: Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 4000 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 4000 },
+        ],
       },
     ],
     images: ['"/resources/logistics/van.jpg"'],
@@ -122,23 +160,29 @@ export const transfers = [
     vehicle: "Urvan Premium",
     options: [
       {
-        name: "Private Van Talaudyong Day Tour",
+        id: "talaudyong-day-tour",
+        name: "Talaudyong Day Tour: Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 4000 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 4000 },
+        ],
       },
     ],
     images: ['"/resources/logistics/van.jpg"'],
   },
   {
     id: "roundtrip-private-port-barton-day-tour",
-    title: "Private Talaudyong Day tour",
+    title: "Private Port Barton Day tour",
     description: "",
     vehicle: "Urvan Premium",
     options: [
       {
-        name: "Private Van Port Barton Day Tour: Roundtrip",
+        id: "port-barton-day-tour",
+        name: "Port Barton Day Tour: Roundtrip Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 8500 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 8500 },
+        ],
       },
     ],
     images: ['"/resources/logistics/van.jpg"'],
@@ -150,14 +194,20 @@ export const transfers = [
     vehicle: "Urvan Premium",
     options: [
       {
+        id: "puerto-princesa-to-astoria",
         name: "Puerto Princesa to Astoria: 1-Way Transfer",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 3500 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 3500 },
+        ],
       },
       {
+        id: "astoria-to-puerto-princesa",
         name: "Astoria to Puerto Princesa: 1-Way Transfer",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 3500 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 3500 },
+        ],
       },
     ],
     images: ['"/resources/logistics/van.jpg"'],
@@ -169,9 +219,12 @@ export const transfers = [
     vehicle: "Van",
     options: [
       {
+        id: "bohol-airport-transfer",
         name: "Bohol Airport Transfer",
         travelTime: ["9:00 AM - 4:00 PM"],
-        pricing: [{ minGroupSize: 1, maxGroupSize: 10, price: 1500 }],
+        pricing: [
+          { isGroupSize: true, minGroupSize: 1, maxGroupSize: 10, price: 1500 },
+        ],
       },
     ],
     images: ['"/resources/logistics/van.jpg"'],
