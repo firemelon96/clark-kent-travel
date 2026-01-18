@@ -23,6 +23,7 @@ import { BookTour } from "@/actions/tour-booking";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { format } from "date-fns";
+import { useUrlParams } from "@/hooks/use-url-params";
 
 export const contactFormSchema = z.object({
   contactName: z.string().min(1, { message: "Name is required" }),
@@ -38,26 +39,13 @@ export const contactFormSchema = z.object({
 });
 
 interface Props {
-  totalPrice: number;
-  participants: number;
-  from: Date;
-  to: Date;
-  type: "Joiner" | "Private";
   tourName: string;
   mapLink: string;
 }
 
-export const ContactForm = ({
-  totalPrice,
-  participants,
-  from,
-  to,
-  type,
-  tourName,
-  mapLink,
-}: Props) => {
+export const ContactForm = ({ tourName, mapLink }: Props) => {
+  const { eachParams, params, pathname, router } = useUrlParams();
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -77,35 +65,29 @@ export const ContactForm = ({
       name: values.contactName,
       email: values.contactEmail,
       number: values.contactNumber,
-      total: Number(totalPrice),
-      date: `${format(new Date(from), "EEE, MMM d")} - ${format(new Date(to), "EEE, MMM d")}`,
-      count: Number(participants),
-      traveller: type,
+      total: eachParams.discountedPrice
+        ? +eachParams.discountedPrice
+        : +eachParams.totalPrice,
+      date: `${format(new Date(eachParams.from), "EEE, MMM d")} - ${format(new Date(eachParams.to), "EEE, MMM d")}`,
+      count: +eachParams.participants,
+      type: eachParams.type,
       title: tourName,
-      type,
       mapLink,
+      withPromo: eachParams.discountedPrice
+        ? "Availed discount"
+        : "No discount",
     };
 
-    startTransition(() => {
-      BookTour(newValues)
-        .then((data) => {
-          toast.success(data.message);
-          form.reset();
-          router.push("/booking/success");
-        })
-        .catch((err) => {
-          toast.error(err.message);
-        });
-    });
-
     // startTransition(() => {
-    //   Book(newValues)
+    //   BookTour(newValues)
     //     .then((data) => {
-    //       if (!data) return;
-
-    //       window.location.href = data.invoice_url;
+    //       toast.success(data.message);
+    //       form.reset();
+    //       router.push("/booking/success");
     //     })
-    //     .catch(() => console.log("Something went wrong"));
+    //     .catch((err) => {
+    //       toast.error(err.message);
+    //     });
     // });
 
     console.log({ newValues });

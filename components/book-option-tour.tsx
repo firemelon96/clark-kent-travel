@@ -47,6 +47,8 @@ type Props = {
   tourPricing: z.infer<typeof pricingSchema>[];
   service: string;
   title?: string;
+  serviceType?: string;
+  location: string;
 };
 
 export const BookOptionTour = ({
@@ -55,6 +57,8 @@ export const BookOptionTour = ({
   duration,
   service,
   title,
+  serviceType,
+  location,
 }: Props) => {
   const { id, onClose } = useOptionStore();
 
@@ -159,6 +163,8 @@ export const BookOptionTour = ({
           mapLink,
           service,
           title,
+          serviceType,
+          location,
         },
       },
       { skipNull: true, skipEmptyString: true },

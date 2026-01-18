@@ -14,6 +14,8 @@ const AccomClient = () => {
               imageUrl={accom.images[0]}
               title={accom.name}
               pricing={accom.pricing}
+              location={accom.location}
+              maxPax={accom.maxPax}
             />
           ))}
         </div>

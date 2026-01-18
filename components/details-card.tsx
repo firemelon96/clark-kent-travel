@@ -10,10 +10,15 @@ import { formatPeso } from "@/app/lib/helpers";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import qs from "query-string";
 import { cn } from "@/lib/utils";
+import { useUrlParams } from "@/hooks/use-url-params";
 
 const coupons = {
   code: "CKANNIVERSARY",
   type: "percentage",
+  eligible: {
+    type: "day tour",
+    location: ["El Nido", "Puerto Princesa"],
+  },
   value: 20,
   maxDiscount: 500,
   minBookingAmount: 3000,
@@ -25,46 +30,54 @@ const coupons = {
 
 type Props = {
   name: string;
-  type: string;
-  from: Date;
-  to: Date;
-  participants: number;
-  price: number;
 };
 
-export const DetailsCard = ({
-  name,
-  type,
-  from,
-  to,
-  participants,
-  price,
-}: Props) => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+export const DetailsCard = ({ name }: Props) => {
+  // const router = useRouter();
+  // const searchParams = useSearchParams();
+  // const pathname = usePathname();
 
-  const params = new URLSearchParams(searchParams.toString());
+  // // console.log(paramsAll.serviceType);
+
+  // const params = new URLSearchParams(searchParams.toString());
+
+  // const eachParams = Object.fromEntries(params);
+
+  const [showField, setShowField] = useState(false);
+
+  const { pathname, router, eachParams, params } = useUrlParams();
+
   // const totalPrice = searchParams.getAll();
-  console.log(params);
+  // console.log(Object.fromEntries(paramsAll));
 
-  const addPromo = (prev: number | undefined, data: FormData) => {
+  const addPromo = (prev: any, data: FormData) => {
     const promoCode = data.get("promo");
 
-    let discPrice;
+    const isEligible =
+      coupons.eligible.location.some((loc) => loc === eachParams.location) &&
+      coupons.eligible.type === eachParams.serviceType;
+
+    if (!isEligible) {
+      return "This tour is not eligible of discount.";
+    }
+
+    const isExpired = new Date(coupons.expiryDate).getTime() < Date.now();
+
+    if (isExpired) {
+      return "Promo already expired.";
+    }
 
     if (promoCode === coupons.code && coupons.type === "percentage") {
-      discPrice = price * (1 - coupons.value / 100);
-      params.set("discountedPrice", discPrice.toString());
+      const discountedPrice =
+        +eachParams.totalPrice * (1 - coupons.value / 100);
+      params.set("discountedPrice", discountedPrice.toString());
 
       router.replace(`${pathname}?${params.toString()}`);
     }
-    return discPrice;
+
+    return "Enjoy our anniversary with 20% discount";
   };
 
-  const discPrice = searchParams.get("discountedPrice");
-
-  const [showField, setShowField] = useState(false);
   const [message, formAction, isPending] = useActionState(addPromo, undefined);
 
   return (
@@ -77,23 +90,24 @@ export const DetailsCard = ({
                   <h1 className="font-semibold">{tour?.title}</h1>
                 )} */}
           <h1 className="font-semibold">{name}</h1>
-          <span className="text-slate-500">{type}</span>
+          <span className="text-slate-500">{eachParams.type}</span>
         </CardHeader>
         <CardContent className="space-y-4">
           <Separator />
           <div className="flex justify-between text-sm">
             <p className="text-slate-500">Date</p>
             <span>
-              {format(from, "LLL dd, yyyy")} - {format(to, "LLL dd, yyyy")}
+              {format(eachParams.from, "LLL dd, yyyy")} -{" "}
+              {format(eachParams.to, "LLL dd, yyyy")}
             </span>
           </div>
           <div className="flex justify-between text-sm">
             <p className="text-slate-500">Quantity</p>
-            <span>Person x {participants}</span>
+            <span>Person x {eachParams.participants}</span>
           </div>
           <Separator />
           <div>
-            {!showField && (
+            {!showField && !eachParams.discountedPrice && (
               <Button
                 onClick={() => setShowField(true)}
                 variant={"link"}
@@ -103,17 +117,13 @@ export const DetailsCard = ({
                 Enter promo code
               </Button>
             )}
-            {showField && !discPrice && (
+            {showField && !eachParams.discountedPrice && (
               <form action={formAction} className="flex items-center gap-2">
                 <Input name="promo" type="text" />{" "}
                 <Button size={"sm"}>Redeem</Button>
               </form>
             )}
-            {discPrice && (
-              <span className="text-sm text-rose-500">
-                {coupons.description}
-              </span>
-            )}
+            <span className="text-sm text-rose-500">{message}</span>
           </div>
         </CardContent>
         <CardFooter className="flex items-center justify-between">
@@ -122,14 +132,15 @@ export const DetailsCard = ({
             <span
               className={cn(
                 "text-xl font-semibold",
-                discPrice && "text-sm text-slate-500 line-through",
+                eachParams.discountedPrice &&
+                  "text-sm text-slate-500 line-through",
               )}
             >
-              {formatPeso(price)}
+              {formatPeso(+eachParams.totalPrice)}
             </span>
-            {discPrice && (
+            {eachParams.discountedPrice && (
               <span className="text-xl font-semibold">
-                {formatPeso(Number(discPrice))}
+                {formatPeso(Number(eachParams.discountedPrice))}
               </span>
             )}
           </div>
@@ -139,22 +150,22 @@ export const DetailsCard = ({
         <div className="p-6">
           <div className="flex justify-between">
             <p className="text-slate-500">Subtotal</p>
-            {!discPrice ? (
-              <span>{formatPeso(price)}</span>
+            {!eachParams.discountedPrice ? (
+              <span>{formatPeso(+eachParams.totalPrice)}</span>
             ) : (
-              <span>{formatPeso(Number(discPrice))}</span>
+              <span>{formatPeso(Number(eachParams.discountedPrice))}</span>
             )}
           </div>
 
           <div className="flex justify-between text-xl">
-            <p>Total</p>
-            {!discPrice ? (
+            <p>Total</p> {isPending && "loading..."}
+            {!eachParams.discountedPrice ? (
               <span className="font-bold tracking-wide text-rose-500">
-                {formatPeso(price)}
+                {formatPeso(+eachParams.totalPrice)}
               </span>
             ) : (
               <span className="font-bold tracking-wide text-rose-500">
-                {formatPeso(Number(discPrice))}
+                {formatPeso(Number(eachParams.discountedPrice))}
               </span>
             )}
           </div>

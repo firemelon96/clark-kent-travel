@@ -11,9 +11,18 @@ interface AccomProps {
   imageUrl: string;
   title: string;
   pricing: z.infer<typeof pricingSchema>[];
+  location: string;
+  maxPax: number;
 }
 
-export const AccomCard = ({ id, imageUrl, title, pricing }: AccomProps) => {
+export const AccomCard = ({
+  id,
+  imageUrl,
+  title,
+  pricing,
+  location,
+  maxPax,
+}: AccomProps) => {
   return (
     <Link href={`/accommodations/${id}`}>
       <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
@@ -31,10 +40,12 @@ export const AccomCard = ({ id, imageUrl, title, pricing }: AccomProps) => {
             <div>
               <h1 className="text-xl leading-none font-medium">{title}</h1>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Badge variant={"secondary"}>
                 {formatPeso(pricing[0].price)}
               </Badge>
+              <Badge variant={"secondary"}>Maximum of {maxPax} Pax</Badge>
+              <Badge variant={"secondary"}>{location}</Badge>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { addDays, format } from "date-fns";
+import { addDays, differenceInCalendarDays, format } from "date-fns";
 import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
@@ -81,8 +81,11 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
 
   const participants = form.watch("participants");
   const type = form.watch("type");
+  const range = form.watch("dateRange");
 
   const isDay = duration === 1;
+
+  const numOfNights = differenceInCalendarDays(range.to, range.from);
 
   const maxForType = pricing.reduce((max, price) => {
     if (price.type === type) {
@@ -95,24 +98,22 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
     ...pricing.filter((t) => type === t.type).map((t) => t.minGroupSize),
   );
 
-  console.log(type, maxForType, uniqueSet);
-
   if (participants > maxForType) {
     form.setValue("participants", maxForType, { shouldValidate: true });
   }
+
+  const matched = pricing
+    .filter((price) => price.type === type)
+    .find(
+      (price) =>
+        participants >= price.minGroupSize &&
+        participants <= price.maxGroupSize,
+    );
 
   useEffect(() => {
     if (participants > maxForType) {
       form.setValue("participants", maxForType, { shouldValidate: true });
     }
-
-    const matched = pricing
-      .filter((price) => price.type === type)
-      .find(
-        (price) =>
-          participants >= price.minGroupSize &&
-          participants <= price.maxGroupSize,
-      );
 
     if (!matched) return;
 
@@ -125,7 +126,13 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
         shouldValidate: true,
       });
     }
-  }, [participants, type, pricing, form.setValue, form]);
+
+    if (numOfNights > 1) {
+      form.setValue("totalPrice", matched.price * numOfNights, {
+        shouldValidate: true,
+      });
+    }
+  }, [participants, type, pricing, form.setValue, form, numOfNights]);
 
   const onSubmit = (values: z.infer<typeof bookingOptionSchema>) => {
     const { participants, totalPrice, dateRange, type } = values;
@@ -212,6 +219,9 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
                       mode="range"
                       defaultMonth={field.value?.from}
                       selected={(field.value as DateRange) || undefined}
+                      onSelect={(range) => {
+                        field.onChange(range);
+                      }}
                       numberOfMonths={2}
                       disabled={(date) =>
                         date < new Date() ||
@@ -230,7 +240,6 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
             );
           }}
         />
-
         <FormField
           control={form.control}
           name="type"
@@ -255,7 +264,6 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
             </FormItem>
           )}
         />
-
         <FormItem>
           <FormLabel>Quantity</FormLabel>
           <div className="flex items-center rounded-lg border p-4">
@@ -315,7 +323,12 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
             </div>
           </div>
         </FormItem>
-
+        {numOfNights > 1 && (
+          <div className="px-4 text-right text-slate-500">
+            <span>{numOfNights} nights x</span>
+            <span> {formatPeso(matched?.price || 0)}</span>
+          </div>
+        )}
         <FormField
           control={form.control}
           name="totalPrice"
@@ -329,7 +342,6 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
             </FormItem>
           )}
         />
-
         <div className="flex justify-end gap-2">
           {/* Make this persist in localstorage when saved */}
           {/* {id && (

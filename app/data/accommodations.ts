@@ -4,6 +4,14 @@ export const accommodtions = [
     name: "Clark Kent Homestay",
     description:
       "Clark Kent Homestay offers a cozy and welcoming environment in Puerto Princesa, perfect for families and groups. Enjoy air-conditioned rooms, a fully equipped kitchen, and convenient amenities such as free WiFi, breakfast, and airport shuttle service for a comfortable stay.",
+    information: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 NN",
+      mapCoords: {
+        lat: 23,
+        lng: 12,
+      },
+    },
     location: "Puerto Princesa",
     inclusions: ["Breakfast", "Free WiFi", "Airport Shuttle"],
     exclusions: ["Mini Bar", "Laundry Service"],
@@ -38,6 +46,7 @@ export const accommodtions = [
       "/resources/ckhomestay/ckhomestay006.avif",
       "/resources/ckhomestay/ckhomestay007.avif",
     ],
+    maxPax: 10,
   },
   {
     id: "ckc-loftstyle-apartment",
@@ -45,6 +54,14 @@ export const accommodtions = [
     location: "Puerto Princesa",
     description:
       "CKC Loftstyle Apartment provides a modern and stylish stay in Puerto Princesa, ideal for travelers seeking comfort and convenience. The apartment features spacious loft-style interiors, air-conditioned rooms, a fully equipped kitchen, and essential amenities. Guests can enjoy complimentary breakfast, a welcome drink, and secure parking, making it a perfect choice for both short and extended stays.",
+    information: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 NN",
+      mapCoords: {
+        lat: 23,
+        lng: 12,
+      },
+    },
     inclusions: ["Breakfast", "Welcome Drink", "Parking"],
     exclusions: ["Room Service", "Pet Accommodation"],
     amenities: [
@@ -76,5 +93,6 @@ export const accommodtions = [
       "/resources/ckc/ckc004.avif",
       "/resources/ckc/ckc005.avif",
     ],
+    maxPax: 10,
   },
 ];

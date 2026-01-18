@@ -84,25 +84,10 @@ const BookingPage = async ({ searchParams }: Props) => {
                 </span>
               </CardHeader>
               <CardContent className="w-full">
-                <ContactForm
-                  tourName={tour.tourName}
-                  participants={participants}
-                  totalPrice={totalPrice}
-                  from={from}
-                  to={to}
-                  type={type}
-                  mapLink={mapLink}
-                />
+                <ContactForm tourName={tour.tourName} mapLink={mapLink} />
               </CardContent>
             </Card>
-            <DetailsCard
-              name={tour.tourName}
-              participants={participants}
-              price={totalPrice}
-              from={from}
-              to={to}
-              type={type}
-            />
+            <DetailsCard name={tour.tourName} />
           </div>
         </div>
       </section>

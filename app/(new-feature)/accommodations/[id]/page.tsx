@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { BookOptionTour } from "@/components/book-option-tour";
+import { BookRange } from "@/components/book-range";
 
 interface SingleProps {
   params: Promise<{
@@ -64,10 +65,10 @@ const Page = async ({ params }: SingleProps) => {
           <Card className="">
             <CardHeader>Select Options</CardHeader>
             <CardContent>
-              <BookOptionTour
+              <BookRange
                 duration={1}
-                tourId={accommodation.id}
-                tourPricing={accommodation.pricing}
+                id={accommodation.id}
+                pricing={accommodation.pricing}
                 service="accommodation"
               />
             </CardContent>

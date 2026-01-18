@@ -2,6 +2,10 @@ export const coupons = [
   {
     code: "CKANNIVERSARY",
     type: "percentage",
+    eligible: {
+      type: "day tour",
+      location: ["El Nido", "Puerto Princesa"],
+    },
     value: 20,
     maxDiscount: 500,
     minBookingAmount: 3000,
