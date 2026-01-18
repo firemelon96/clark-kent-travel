@@ -182,9 +182,6 @@ export const BookOptionTour = ({
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full space-y-4"
       >
-        {form.formState.errors && (
-          <p>{JSON.stringify(form.formState.errors)}</p>
-        )}
         <p>{mapLink}</p>
         <MapLocation setMaplink={setMapLink} />
         <FormField
