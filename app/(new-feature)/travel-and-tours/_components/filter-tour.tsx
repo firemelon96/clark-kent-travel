@@ -67,7 +67,7 @@ export const FilterTour = () => {
   }, [location, type, pathname, router]);
 
   return (
-    <Card className="-mt-36 flex h-32 w-full items-center justify-center border-none bg-transparent p-2 shadow-none md:-mt-20 md:h-fit md:p-4">
+    <Card className="-mt-32 flex h-32 w-full items-center justify-center border-none bg-transparent p-2 shadow-none md:-mt-20 md:h-fit md:p-4">
       <Form {...form}>
         <form className="flex">
           <FormField

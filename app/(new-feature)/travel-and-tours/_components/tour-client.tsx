@@ -17,7 +17,7 @@ export const TourClient = () => {
   return (
     <div className="mx-auto max-w-5xl space-y-4">
       <FilterTour />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {filteredTours.map((tour) => (
           <TourCard
             id={tour.tourId}

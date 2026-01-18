@@ -1,3 +1,4 @@
+import { getGoogleReviews } from "@/actions/google-reviews";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -9,9 +10,9 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <div className="container mx-auto space-y-4 md:px-20">
-      <div className="mx-auto mt-5 flex max-w-4xl gap-4">
-        <div className="rounded-full bg-slate-200">
+    <div className="container mx-auto space-y-4 p-4 md:px-20">
+      <div className="mx-auto mt-5 flex max-w-4xl flex-col items-center justify-center gap-4 p-4 md:flex-row">
+        <div className="size-56 rounded-full bg-slate-200">
           <Image src={""} width={300} height={300} alt="Owner" />
         </div>
         <div className="flex flex-col justify-center">

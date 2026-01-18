@@ -1,4 +1,5 @@
 import { transfers } from "@/app/data/transfer";
+import { formatPeso } from "@/app/lib/helpers";
 import { BookOptionTour } from "@/components/book-option-tour";
 import { BookingOptions } from "@/components/booking-options";
 import { ImageBanner } from "@/components/image-banner";
@@ -26,21 +27,26 @@ const SinglePage = async ({ params }: Props) => {
   if (!transfer) notFound();
 
   return (
-    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4">
+    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4 p-4">
       <ImageBanner images={transfer.images[0]} />
       <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">
           <div className="space-y-2">
             <div className="hidden md:block">
               <h1 className="text-2xl font-medium">{transfer.title}</h1>
-              <Badge>From {transfer.options[0].pricing[0].price}</Badge>
+              <Badge>
+                From {formatPeso(transfer.options[0].pricing[0].price)}
+              </Badge>
             </div>
-            <div>{transfer.description}</div>
+            <div className="text-justify">{transfer.description}</div>
           </div>
         </div>
         <Card className="h-full w-full border-none shadow-none md:w-[370px]">
           <CardHeader>
             <p className="text-2xl font-medium">{transfer.title}</p>{" "}
+            <span className="md:hidden">
+              Starts at {formatPeso(transfer.options[0].pricing[0].price)}
+            </span>
           </CardHeader>
           <CardContent>
             <Button variant="default" className="w-full" asChild>

@@ -27,6 +27,7 @@ export const Transfer = () => {
               imageUrl={transfer.images[0]}
               title={transfer.title}
               id={transfer.id}
+              price={transfer.options[0].pricing[0].price}
             />
           ))}
         </div>

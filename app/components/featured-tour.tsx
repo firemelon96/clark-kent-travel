@@ -13,7 +13,7 @@ import { notFound } from "next/navigation";
 import { landArrangements } from "../data/land-arrangements";
 
 const FeaturedCard = async () => {
-  // const packageTours = getPackageTours();
+  const packageTours = getPackageTours();
   // const featuredTours = (await getFeaturedTour()) || [];
 
   return (
@@ -25,7 +25,7 @@ const FeaturedCard = async () => {
         />
         <Carousel className="w-full">
           <CarouselContent>
-            {landArrangements.map((tour, i) => (
+            {packageTours.map((tour, i) => (
               <CarouselItem
                 className="flex items-center justify-center sm:basis-1/2 md:basis-1/3"
                 key={i}

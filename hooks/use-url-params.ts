@@ -5,8 +5,6 @@ export const useUrlParams = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  // console.log(paramsAll.serviceType);
-
   const params = new URLSearchParams(searchParams.toString());
 
   const eachParams = Object.fromEntries(params);

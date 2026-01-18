@@ -1,6 +1,24 @@
 import { ServiceLabel } from "@/components/service-label";
 import { reviews } from "../data/reviews";
 import { ReviewCard } from "./review-card";
+import { getGoogleReviews } from "@/actions/google-reviews";
+
+type ReviewType = {
+  author_name: string;
+  author_url: string;
+  language: string;
+  original_languange: string;
+  profile_photo_url: string;
+  rating: number;
+  relative_time_description: string;
+  text: string;
+  time: number;
+  translated: boolean;
+};
+
+interface Props {
+  reviews: ReviewType[];
+}
 
 export const Testimonials = () => {
   return (

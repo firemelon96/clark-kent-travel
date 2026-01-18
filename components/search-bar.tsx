@@ -76,7 +76,7 @@ export const SearchBar = () => {
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
-                    <FormControl>
+                    <FormControl className="w-full">
                       <SelectTrigger
                         className={cn(
                           "md:w-96",
@@ -116,7 +116,7 @@ export const SearchBar = () => {
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
-                    <FormControl>
+                    <FormControl className="w-full">
                       <SelectTrigger
                         className={cn(
                           "max-full md:w-52",
@@ -137,7 +137,9 @@ export const SearchBar = () => {
               )}
             />
             <div className="flex items-center justify-end">
-              <Button variant="default">Search</Button>
+              <Button className="w-full md:w-auto" variant="default">
+                Search
+              </Button>
             </div>
           </form>
         </Form>

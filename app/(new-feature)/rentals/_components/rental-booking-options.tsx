@@ -17,7 +17,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   add,
   differenceInDays,
@@ -358,16 +358,15 @@ export const RentalBookingOptions = ({
               control={form.control}
               name="pickup.date"
               render={({ field }) => (
-                <FormItem className="flex flex-col">
+                <FormItem className="flex w-full flex-col">
                   <FormLabel className="text-slate-500">Pickup Date</FormLabel>
                   <Popover open={openDate} onOpenChange={setOpenDate}>
                     <PopoverTrigger asChild>
-                      <FormControl>
+                      <FormControl className="">
                         <Button
-                          variant="default"
+                          variant="outline"
                           className={cn(
-                            "w-36 rounded-tr-none rounded-br-none pl-3 text-left font-normal",
-                            !field.value && "text-white",
+                            "rounded-tr-none rounded-br-none pl-3 text-left font-normal md:w-36",
                           )}
                         >
                           {field.value ? (
@@ -381,7 +380,6 @@ export const RentalBookingOptions = ({
                     </PopoverTrigger>
                     <PopoverContent className="flex w-auto p-0" align="start">
                       <Calendar
-                        initialFocus
                         mode="single"
                         onSelect={(date) => field.onChange(date)}
                         selected={field.value}
@@ -405,8 +403,13 @@ export const RentalBookingOptions = ({
                     Time
                   </FormLabel>
                   <Select onValueChange={field.onChange} value={field.value}>
-                    <FormControl>
-                      <SelectTrigger className="w-32 rounded-tl-none rounded-bl-none border-rose-500 bg-rose-500 text-white">
+                    <FormControl className="w-full">
+                      <SelectTrigger
+                        className={cn(
+                          buttonVariants({ variant: "outline" }),
+                          "rounded-tl-none rounded-bl-none border-l-0 focus:ring-0 focus-visible:right-0 active:ring-0",
+                        )}
+                      >
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
                     </FormControl>
@@ -429,7 +432,7 @@ export const RentalBookingOptions = ({
               control={form.control}
               name="return.date"
               render={({ field }) => (
-                <FormItem className="flex flex-col">
+                <FormItem className="flex w-full flex-col">
                   <FormLabel className="text-slate-500">Return Date</FormLabel>
                   <Popover
                     open={openReturnDate}
@@ -438,10 +441,9 @@ export const RentalBookingOptions = ({
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
-                          variant="default"
+                          variant="outline"
                           className={cn(
-                            "w-36 rounded-tr-none rounded-br-none pl-3 text-left font-normal",
-                            !field.value && "text-white",
+                            "rounded-tr-none rounded-br-none pl-3 text-left font-normal md:w-36",
                           )}
                         >
                           {field.value ? (
@@ -485,8 +487,13 @@ export const RentalBookingOptions = ({
                     }}
                     value={field.value}
                   >
-                    <FormControl>
-                      <SelectTrigger className="w-32 rounded-tl-none rounded-bl-none border-rose-500 bg-rose-500 text-white">
+                    <FormControl className="w-full">
+                      <SelectTrigger
+                        className={cn(
+                          buttonVariants({ variant: "outline" }),
+                          "rounded-tl-none rounded-bl-none border-l-0 focus:ring-0 focus-visible:right-0 active:ring-0",
+                        )}
+                      >
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
                     </FormControl>

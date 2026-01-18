@@ -188,11 +188,11 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
                 <FormLabel>Travel Date</FormLabel>
                 <Popover open={openDate} onOpenChange={setOpenDate}>
                   <PopoverTrigger asChild>
-                    <FormControl>
+                    <FormControl className="">
                       <Button
                         variant="default"
                         className={cn(
-                          "w-60 pl-3 text-left font-normal",
+                          "w-full pl-3 text-left font-normal md:w-60",
                           !field.value && "text-muted-foreground",
                         )}
                       >
@@ -324,7 +324,7 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
           </div>
         </FormItem>
         {numOfNights > 1 && (
-          <div className="px-4 text-right text-slate-500">
+          <div className="px-4 text-right text-sm tracking-wide text-slate-500">
             <span>{numOfNights} nights x</span>
             <span> {formatPeso(matched?.price || 0)}</span>
           </div>

@@ -31,9 +31,10 @@ export const OptionCard = ({ name, pricing, id }: Props) => {
   return (
     <Card className="">
       <CardHeader>
-        <span className="flex gap-2 text-xl font-medium">
-          <Car /> {name}
-        </span>
+        <div className="flex gap-2">
+          <Car className="size-6" />
+          <span className="flex-1 text-xl font-medium"> {name}</span>
+        </div>
       </CardHeader>
       <CardContent className="flex flex-col">
         {!isVisible && (

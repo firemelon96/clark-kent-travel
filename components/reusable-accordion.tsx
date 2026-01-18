@@ -21,7 +21,7 @@ export const ReusableAccordion = ({
   isContent = false,
 }: Props) => {
   return (
-    <Accordion type="single" collapsible>
+    <Accordion type="single" defaultValue="item">
       <AccordionItem value="item" className="border-rose-200">
         <AccordionTrigger className="hover:no-underline">
           <Badge

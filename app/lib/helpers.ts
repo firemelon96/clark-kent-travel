@@ -35,9 +35,11 @@ export const getDayTours = () => {
 };
 
 export const getPackageTours = () => {
-  const dayTours = tours.filter((tour) => tour.type === "package");
+  const packageTour = tours.filter(
+    (tour) => tour.type === "package" && tour.bestSeller,
+  );
 
-  return dayTours;
+  return packageTour;
 };
 
 export const getTourBySlug = (slug: string) => {

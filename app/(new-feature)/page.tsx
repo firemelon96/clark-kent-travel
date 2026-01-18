@@ -5,6 +5,7 @@ import OtherServices from "../components/other-services";
 import TripByLocation from "../components/trip-by-location";
 import { SearchBar } from "@/components/search-bar";
 import { Testimonials } from "../components/testimonials";
+import { getGoogleReviews } from "@/actions/google-reviews";
 
 export default function Home() {
   return (

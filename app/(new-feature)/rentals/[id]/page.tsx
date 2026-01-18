@@ -32,31 +32,36 @@ const RentalSinglePage = async ({ params }: Props) => {
     rental.rentalTerms.maximumRentalPeriod <= 30; //consider as day
 
   return (
-    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4">
+    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4 p-4">
       <ImageBanner images={rental?.images} />
-      <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
+      <div className="flex flex-col-reverse gap-4 md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">
           <div className="space-y-2">
             <div className="hidden md:block">
-              <h1 className="text-2xl font-medium">{rental.name}</h1>
+              <h1 className="text-2xl font-medium">
+                {rental.name}: {rental.type}
+              </h1>
               <Badge>{formatPeso(rental.pricePerDay)}</Badge>
             </div>
             <div className="space-y-4">
               <p className="text-justify text-slate-700">
                 {rental.brand} {rental.type} {rental.modelYear}
               </p>
-              <ul className="flex gap-4 rounded-md border p-2 text-sm text-slate-500">
-                <li className="flex items-center">
-                  <Dot /> {rental.transmission}
+              <ul className="flex flex-wrap gap-2">
+                <li>
+                  <Badge variant={"outline"}> {rental.transmission}</Badge>
                 </li>
-                <li className="flex items-center">
-                  <Dot /> {rental.fuelType}
+                <li>
+                  <Badge variant={"outline"}>{rental.fuelType}</Badge>
                 </li>
-                <li className="flex items-center">
-                  <Dot /> {rental.seatingCapacity} Seater
+                <li>
+                  <Badge variant={"outline"}>
+                    {" "}
+                    {rental.seatingCapacity} Seater
+                  </Badge>
                 </li>
-                <li className="flex items-center">
-                  <Dot /> {rental.luggageCapacity}
+                <li>
+                  <Badge variant={"outline"}> {rental.luggageCapacity}</Badge>
                 </li>
               </ul>
               <div>
@@ -110,9 +115,14 @@ const RentalSinglePage = async ({ params }: Props) => {
             </div>
           </div>
         </div>
-        <Card className="h-full w-full border-none shadow-none md:w-[370px]">
+        <Card className="h-full w-full border-none text-center shadow-none md:w-[370px]">
           <CardHeader>
-            <p className="text-2xl font-medium">{rental.name}</p>{" "}
+            <p className="text-2xl font-medium">
+              {rental.name}: {rental.type}
+            </p>{" "}
+            <span className="md:hidden">
+              Starts at {formatPeso(rental.pricePerDay)}
+            </span>
           </CardHeader>
           <CardContent>
             <Button variant="default" className="w-full" asChild>

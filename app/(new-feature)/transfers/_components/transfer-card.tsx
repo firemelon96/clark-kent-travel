@@ -1,3 +1,4 @@
+import { formatPeso } from "@/app/lib/helpers";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import {
   Car,
   CloudSun,
   Cog,
+  Currency,
   Fuel,
   Luggage,
   MapPin,
@@ -17,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BiMoney } from "react-icons/bi";
 import { BsGear } from "react-icons/bs";
 import { SiTransmission } from "react-icons/si";
 
@@ -25,6 +28,7 @@ interface TransferProps {
   title: string;
   id: string;
   location: string[];
+  price: number;
 }
 
 export const TransferCard = ({
@@ -32,6 +36,7 @@ export const TransferCard = ({
   title,
   id,
   location,
+  price,
 }: TransferProps) => {
   return (
     <Link href={`/transfers/${id}`}>
@@ -47,15 +52,14 @@ export const TransferCard = ({
             />
           </div>
           <div className="flex flex-1 flex-col gap-2 p-4">
-            <div className="h-14">
-              <h1 className="text-xl leading-none font-medium">{title}</h1>
-              <div className="flex items-center gap-2">
-                {location.map((loc) => (
-                  <Badge variant={"secondary"}>
-                    <MapPin /> {loc}
-                  </Badge>
-                ))}
-              </div>
+            <h1 className="text-xl leading-none font-medium">{title}</h1>
+            <div className="flex items-center gap-2">
+              <Badge variant={"secondary"}>{formatPeso(price)}</Badge>
+              {location.map((loc) => (
+                <Badge variant={"secondary"}>
+                  <MapPin /> {loc}
+                </Badge>
+              ))}
             </div>
           </div>
         </div>

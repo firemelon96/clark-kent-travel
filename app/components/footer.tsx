@@ -35,9 +35,8 @@ const Footer = () => {
                 Travel and Tours
               </span>
               <p className="text-base text-[#E13179]/75">
-                GSFM Bldg., Manalo Street, Puerto Princesa City,Palawan
+                GSFM Bldg., Manalo Street, Puerto Princesa City, Palawan, 5300
               </p>
-              <span className="text-base text-[#E13179]/75">Palawan 5300</span>
             </div>
             <h6 className="text-[#E13179]">Accredited by</h6>
             <div className="flex flex-row items-center gap-2">
@@ -112,7 +111,7 @@ const Footer = () => {
                   href={"https://www.facebook.com/clarkkentaffordabletours"}
                   className="flex-1 text-base"
                 >
-                  Clark Kent Travel and Tours & Ticketing Services
+                  Clark Kent Travel and Tours
                 </Link>
               </li>
               <li className="flex items-center space-x-2">
@@ -165,10 +164,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center border-t border-sky-300 py-2 text-xs text-slate-500">
-        <p> &copy; Copyright 2024. All Rights Reserved.</p>
-        <span>Design and developed by: Almujahid Jamion</span>
-      </div>
+      {/* <div className="flex flex-col items-center border-t border-sky-300 py-2 text-xs text-slate-500">
+        <p> &copy; Copyright 2026. All Rights Reserved.</p>
+      </div> */}
     </footer>
   );
 };

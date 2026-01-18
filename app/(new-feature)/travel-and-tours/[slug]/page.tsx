@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Check, MapPinned, X } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BiSolidLeftArrow } from "react-icons/bi";
@@ -32,7 +33,7 @@ const SinglePage = async ({ params }: SingleProps) => {
   }
 
   return (
-    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-5">
+    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-5 p-4">
       <ImageBanner images={tour.images} />
       <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">
@@ -47,6 +48,7 @@ const SinglePage = async ({ params }: SingleProps) => {
         <Card className="h-full w-full border-none shadow-none md:w-[370px]">
           <CardHeader>
             <p className="text-2xl font-medium">{tour.tourName}</p>
+            <span className="md:hidden">Starts at {formatPeso(price)}</span>
           </CardHeader>
           <CardContent>
             <Button variant="default" className="w-full" asChild>
@@ -81,7 +83,6 @@ const SinglePage = async ({ params }: SingleProps) => {
             <div>
               <Accordion
                 type="single"
-                collapsible
                 className="mt-2 w-full"
                 defaultValue={tour.itineraries[0].name}
               >
@@ -93,7 +94,9 @@ const SinglePage = async ({ params }: SingleProps) => {
                     <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
                       <ul>
                         {itinerary.activities.map((item) => (
-                          <li key={item}>{item}</li>
+                          <li key={item} className="flex gap-2">
+                            <MapPinned className="size-4" /> {item}
+                          </li>
                         ))}
                       </ul>
                     </AccordionContent>
@@ -106,7 +109,10 @@ const SinglePage = async ({ params }: SingleProps) => {
                   <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
                     <ul>
                       {tour.inclusions.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item} className="flex gap-2">
+                          <Check className="size-4" />
+                          {item}
+                        </li>
                       ))}
                     </ul>
                   </AccordionContent>
@@ -118,7 +124,10 @@ const SinglePage = async ({ params }: SingleProps) => {
                   <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
                     <ul>
                       {tour.exclusions.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item} className="flex gap-2">
+                          <X className="size-4" />
+                          {item}
+                        </li>
                       ))}
                     </ul>
                   </AccordionContent>

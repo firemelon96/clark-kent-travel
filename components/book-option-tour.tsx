@@ -48,7 +48,7 @@ type Props = {
   service: string;
   title?: string;
   serviceType?: string;
-  location: string;
+  location?: string;
 };
 
 export const BookOptionTour = ({

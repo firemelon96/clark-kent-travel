@@ -38,11 +38,11 @@ const TripByLocation = () => {
         label="Unforgettable Journeys"
         subHeading="Explore, Experience, and Enjoy Every Moment!"
       />
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {trips.map((trip, i) => (
           <Card
             key={i}
-            className="relative h-90 w-full rounded-none p-0 shadow-none"
+            className="relative h-28 w-full rounded-none p-0 shadow-none md:h-90"
           >
             <div className="relative h-full w-full">
               <Image
