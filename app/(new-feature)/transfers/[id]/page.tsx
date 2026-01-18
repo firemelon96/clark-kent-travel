@@ -36,22 +36,6 @@ const SinglePage = async ({ params }: Props) => {
               <Badge>From {transfer.options[0].pricing[0].price}</Badge>
             </div>
             <div>{transfer.description}</div>
-            <div className="space-y-4">
-              <p className="text-justify text-slate-700">
-                from {transfer.from} - to {transfer.to}
-              </p>
-              <ul className="flex gap-4 rounded-md border p-2 text-sm text-slate-500">
-                <li className="flex items-center">
-                  <Dot /> {transfer.capacity} Seater
-                </li>
-                <li className="flex items-center">
-                  <Dot /> {transfer.vehicle_type}
-                </li>
-                <li className="flex items-center">
-                  <Dot /> {transfer.type}
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         <Card className="h-full w-full border-none shadow-none md:w-[370px]">

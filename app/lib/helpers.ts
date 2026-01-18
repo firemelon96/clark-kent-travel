@@ -4,6 +4,7 @@ import { TourPackage } from "@/types/tour";
 import { hotels } from "../data/hotels";
 import { landArrangements } from "../data/land-arrangements";
 import { transfers } from "../data/transfer";
+import { accommodtions } from "../data/accommodations";
 // import { transfer_services } from "../data/logistics";
 // import { fastCrafts } from "../data/fast-craft";
 
@@ -139,7 +140,7 @@ export const getTravelTours = ({
 };
 
 export const getHotel = (id: string) => {
-  const hotel = hotels.find((hotel) => hotel.id === id);
+  const hotel = accommodtions.find((hotel) => hotel.id === id);
   if (!hotel) return notFound();
 
   return hotel;

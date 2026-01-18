@@ -18,7 +18,7 @@ import { Stepper } from "@/components/stepper";
 import { redirect } from "next/navigation";
 import { getTransfer } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { PromoButton } from "@/components/promo-button";
+import { DetailsCard } from "@/components/details-card";
 
 interface Props {
   searchParams: Promise<{
@@ -95,57 +95,14 @@ const BookingPage = async ({ searchParams }: Props) => {
                 />
               </CardContent>
             </Card>
-            <div className="w-full space-y-4 md:w-1/3">
-              <Card>
-                <CardHeader>
-                  {/* {isLoading ? (
-                  <Skeleton className="h-5 w-full" />
-                ) : (
-                  <h1 className="font-semibold">{tour?.title}</h1>
-                )} */}
-                  <h1 className="font-semibold">{tour.tourName}</h1>
-                  <span className="text-slate-500">{type}</span>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <Separator />
-                  <div className="flex justify-between text-sm">
-                    <p className="text-slate-500">Date</p>
-                    <span>
-                      {format(from, "LLL dd, yyyy")} -{" "}
-                      {format(to, "LLL dd, yyyy")}
-                    </span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <p className="text-slate-500">Quantity</p>
-                    <span>Person x {participants}</span>
-                  </div>
-                  <Separator />
-                  <div>
-                    <PromoButton />
-                  </div>
-                </CardContent>
-                <CardFooter className="flex items-center justify-between">
-                  <p className="text-sm text-slate-500">Total</p>
-                  <span className="text-xl font-semibold">
-                    {formatPeso(totalPrice)}
-                  </span>
-                </CardFooter>
-              </Card>
-              <Card className="space-y-4">
-                <div className="p-6">
-                  <div className="flex justify-between">
-                    <p className="text-slate-500">Subtotal</p>
-                    <span>{formatPeso(totalPrice)}</span>
-                  </div>
-                  <div className="flex justify-between text-xl">
-                    <p>Total</p>
-                    <span className="font-bold tracking-wide text-rose-500">
-                      {formatPeso(totalPrice)}
-                    </span>
-                  </div>
-                </div>
-              </Card>
-            </div>
+            <DetailsCard
+              name={tour.tourName}
+              participants={participants}
+              price={totalPrice}
+              from={from}
+              to={to}
+              type={type}
+            />
           </div>
         </div>
       </section>

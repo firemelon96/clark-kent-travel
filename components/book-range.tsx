@@ -33,7 +33,6 @@ import { Input } from "@/components/ui/input";
 import { usePathname, useRouter } from "next/navigation";
 import { Label } from "./ui/label";
 import { formatPeso } from "@/app/lib/helpers";
-import { tourPricingSelectSchema } from "@/types/drizzle-schema";
 import { DateRange } from "react-day-picker";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { toast } from "sonner";
@@ -42,28 +41,20 @@ import { MapLocation } from "./map-location";
 import useOptionStore from "@/hooks/use-option-store";
 
 type Props = {
-  tourId: string;
+  id: string;
   duration: number;
-  tourPricing: z.infer<typeof pricingSchema>[];
+  pricing: z.infer<typeof pricingSchema>[];
   service: string;
   title?: string;
 };
 
-export const BookOptionTour = ({
-  tourId,
-  tourPricing,
-  duration,
-  service,
-  title,
-}: Props) => {
-  const { id, onClose } = useOptionStore();
-
+export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
   const [openDate, setOpenDate] = useState(false);
   const [mapLink, setMapLink] = useState("");
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  const priceType = Array.from(new Set(tourPricing.map((price) => price.type)));
+  const priceType = Array.from(new Set(pricing.map((price) => price.type)));
   console.log(priceType);
 
   const form = useForm<z.infer<typeof bookingOptionSchema>>({
@@ -81,7 +72,7 @@ export const BookOptionTour = ({
 
   const uniqueSet = Array.from(
     new Map(
-      tourPricing.map((t) => [
+      pricing.map((t) => [
         `${t.type}-${t.label}`,
         { type: t.type, label: t.label },
       ]),
@@ -93,7 +84,7 @@ export const BookOptionTour = ({
 
   const isDay = duration === 1;
 
-  const maxForType = tourPricing.reduce((max, price) => {
+  const maxForType = pricing.reduce((max, price) => {
     if (price.type === type) {
       return Math.max(max, price.maxGroupSize);
     }
@@ -101,7 +92,7 @@ export const BookOptionTour = ({
   }, 0);
 
   const minForType = Math.min(
-    ...tourPricing.filter((t) => type === t.type).map((t) => t.minGroupSize),
+    ...pricing.filter((t) => type === t.type).map((t) => t.minGroupSize),
   );
 
   console.log(type, maxForType, uniqueSet);
@@ -115,7 +106,7 @@ export const BookOptionTour = ({
       form.setValue("participants", maxForType, { shouldValidate: true });
     }
 
-    const matched = tourPricing
+    const matched = pricing
       .filter((price) => price.type === type)
       .find(
         (price) =>
@@ -134,7 +125,7 @@ export const BookOptionTour = ({
         shouldValidate: true,
       });
     }
-  }, [participants, type, tourPricing, form.setValue, form]);
+  }, [participants, type, pricing, form.setValue, form]);
 
   const onSubmit = (values: z.infer<typeof bookingOptionSchema>) => {
     const { participants, totalPrice, dateRange, type } = values;
@@ -150,7 +141,7 @@ export const BookOptionTour = ({
       {
         url: "/booking",
         query: {
-          id: tourId,
+          id,
           from: from ? format(from, "yyyy-MM-dd") : undefined,
           to: to ? format(to, "yyyy-MM-dd") : undefined,
           participants,
@@ -221,15 +212,6 @@ export const BookOptionTour = ({
                       mode="range"
                       defaultMonth={field.value?.from}
                       selected={(field.value as DateRange) || undefined}
-                      onDayClick={(day) => {
-                        const range: DateRange = {
-                          from: day,
-                          to: isDay ? day : addDays(day, duration - 1),
-                        };
-
-                        field.onChange(range);
-                        setOpenDate(false);
-                      }}
                       numberOfMonths={2}
                       disabled={(date) =>
                         date < new Date() ||
@@ -350,11 +332,11 @@ export const BookOptionTour = ({
 
         <div className="flex justify-end gap-2">
           {/* Make this persist in localstorage when saved */}
-          {id && (
+          {/* {id && (
             <Button onClick={() => onClose()} variant="secondary" type="button">
               Close
             </Button>
-          )}
+          )} */}
           <Button variant="default" className="">
             {isPending && <Loader2Icon />}{" "}
             {isPending ? "Loading..." : "Book now"}

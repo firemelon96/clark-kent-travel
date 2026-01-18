@@ -2,9 +2,11 @@ export const transfers = [
   {
     id: "transfer-between-puerto-princesa-and-el-nido",
     title: "Transfer between Puerto Princesa and El Nido",
-    description: "",
+    description:
+      "Enjoy a comfortable and convenient transfer between Puerto Princesa and El Nido in a premium Urvan van. Perfect for solo travelers, families, or groups, this service offers multiple daily departures, air-conditioned comfort, and scenic views along the way. Choose between shared or private options to suit your travel needs.",
     type: "transfer",
     vehicle: "Urvan Premium",
+    location: ["Puerto Princesa", "El Nido"],
     options: [
       {
         id: "puerto-princesa-airport-transfer-city-proper",
@@ -72,8 +74,10 @@ export const transfers = [
   {
     id: "transfer-between-puerto-princesa-and-port-barton",
     title: "Transfer between Puerto Princesa and Port Barton",
-    description: "",
+    description:
+      "Travel seamlessly between Puerto Princesa and Port Barton in a comfortable, air-conditioned Urvan van. This transfer service is ideal for solo travelers, families, or groups, offering multiple daily departures and scenic views along the way. Choose from shared transfer options for a budget-friendly and convenient journey to your destination.",
     vehicle: "Urvan Premium",
+    location: ["Puerto Princesa", "Port Barton"],
     options: [
       {
         id: "puerto-princesa-to-port-barton",
@@ -98,9 +102,11 @@ export const transfers = [
   },
   {
     id: "private-el-nido-transfer",
-    title: "Private Elnido Transfer",
-    description: "",
+    title: "Private Transfer between Elnido and Lio Beach",
+    description:
+      "Experience a seamless and exclusive transfer between El Nido Town and Lio Beach in a premium, air-conditioned van. Perfect for families, groups, or couples seeking privacy and comfort, this private service offers flexible departure times and a hassle-free journey. Enjoy the scenic drive and arrive at your destination relaxed and ready to explore.",
     vehicle: "Urvan Premium",
+    location: ["Elnido"],
     options: [
       {
         id: "lio-beach-to-el-nido-town",
@@ -138,8 +144,10 @@ export const transfers = [
   {
     id: "private-nacpan-day-tour",
     title: "Private Nacpan Day tour",
-    description: "",
+    description:
+      "Discover the beauty of Nacpan Beach with our Private Nacpan Day Tour. Travel in comfort and privacy in a premium, air-conditioned van, perfect for families, groups, or couples. Enjoy a flexible schedule, scenic drive, and a full day to relax, swim, and explore the stunning coastline. Experience hassle-free transportation and make unforgettable memories at one of Palawan's most picturesque beaches.",
     vehicle: "Urvan Premium",
+    location: ["Puerto Princesa"],
     options: [
       {
         id: "nacpan-day-tour",
@@ -163,8 +171,10 @@ export const transfers = [
   {
     id: "private-lio-day-tour",
     title: "Private Lio Day tour",
-    description: "",
+    description:
+      "Enjoy a relaxing day at Lio Beach with our Private Lio Day Tour. Travel in comfort and privacy in a premium, air-conditioned van, perfect for families, groups, or couples. Experience the beauty of Lio's white sand beaches, clear waters, and vibrant surroundings at your own pace. This hassle-free service includes flexible departure times, allowing you to make the most of your day exploring, swimming, and unwinding in one of El Nido's most picturesque destinations.",
     vehicle: "Urvan Premium",
+    location: ["El Nido"],
     options: [
       {
         id: "lio-day-tour",
@@ -188,8 +198,10 @@ export const transfers = [
   {
     id: "private-talaudyong-day-tour",
     title: "Private Talaudyong Day tour",
-    description: "",
+    description:
+      "Escape to the tranquil Talaudyong Beach with our Private Talaudyong Day Tour. Travel in comfort and privacy in a premium, air-conditioned van, ideal for families, groups, or couples. Enjoy a flexible schedule, scenic drive, and a full day to relax, swim, and explore the unspoiled beauty of Talaudyong. Experience hassle-free transportation and make lasting memories at one of Palawan's hidden gems.",
     vehicle: "Urvan Premium",
+    location: ["Puerto Princesa"],
     options: [
       {
         id: "talaudyong-day-tour",
@@ -213,7 +225,9 @@ export const transfers = [
   {
     id: "roundtrip-private-port-barton-day-tour",
     title: "Private Port Barton Day tour",
-    description: "",
+    location: ["Port Barton"],
+    description:
+      "Book our Bohol Airport Transfer for a convenient and comfortable ride to your destination. Enjoy air-conditioned comfort and reliable service, whether you're heading to a hotel, resort, or any location in Bohol. Perfect for solo travelers, families, or groups, this transfer ensures a smooth and hassle-free journey from the airport, allowing you to relax and start your Bohol adventure with ease.",
     vehicle: "Urvan Premium",
     options: [
       {
@@ -238,8 +252,10 @@ export const transfers = [
   {
     id: "private-puerto-princesa-and-astoria-transfer",
     title: "Private Puerto Princesa and Astoria Transfer",
-    description: "",
+    description:
+      "Experience the beauty of Port Barton with our Private Day Tour. Travel in comfort and privacy in a premium, air-conditioned van, perfect for families, groups, or couples. Enjoy a flexible schedule, scenic drive, and a full day to relax, swim, and explore the stunning beaches and natural wonders of Port Barton. Hassle-free transportation ensures a memorable and relaxing adventure at one of Palawan's hidden gems.",
     vehicle: "Urvan Premium",
+    location: ["Puerto Princesa"],
     options: [
       {
         id: "puerto-princesa-to-astoria",
@@ -277,8 +293,10 @@ export const transfers = [
   {
     id: "bohol-transfer",
     title: "Bohol Transfer",
-    description: "",
+    description:
+      "Book our Bohol Airport Transfer for a convenient and comfortable ride to your destination. Enjoy air-conditioned comfort and reliable service, whether you're heading to a hotel, resort, or any location in Bohol. Perfect for solo travelers, families, or groups, this transfer ensures a smooth and hassle-free journey from the airport, allowing you to relax and start your Bohol adventure with ease.",
     vehicle: "Van",
+    location: ["Bohol"],
     options: [
       {
         id: "bohol-airport-transfer",

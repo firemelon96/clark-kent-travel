@@ -1,6 +1,9 @@
 export const accommodtions = [
   {
+    id: "clark-kent-homestay",
     name: "Clark Kent Homestay",
+    description:
+      "Clark Kent Homestay offers a cozy and welcoming environment in Puerto Princesa, perfect for families and groups. Enjoy air-conditioned rooms, a fully equipped kitchen, and convenient amenities such as free WiFi, breakfast, and airport shuttle service for a comfortable stay.",
     location: "Puerto Princesa",
     inclusions: ["Breakfast", "Free WiFi", "Airport Shuttle"],
     exclusions: ["Mini Bar", "Laundry Service"],
@@ -17,18 +20,31 @@ export const accommodtions = [
     ],
     pricing: [
       {
+        type: "Homestay",
         isGroupSize: true,
         minGroupSize: 1,
         maxGroupSize: 10,
-        price: 3500,
+        price: 3800,
       },
     ],
     rating: 4.5,
-    images: [""],
+    images: [
+      "/resources/ckhomestay/ckhomestay000.avif",
+      "/resources/ckhomestay/ckhomestay001.avif",
+      "/resources/ckhomestay/ckhomestay002.avif",
+      "/resources/ckhomestay/ckhomestay003.avif",
+      "/resources/ckhomestay/ckhomestay004.avif",
+      "/resources/ckhomestay/ckhomestay005.avif",
+      "/resources/ckhomestay/ckhomestay006.avif",
+      "/resources/ckhomestay/ckhomestay007.avif",
+    ],
   },
   {
+    id: "ckc-loftstyle-apartment",
     name: "CKC Loftstyle Apartment",
     location: "Puerto Princesa",
+    description:
+      "CKC Loftstyle Apartment provides a modern and stylish stay in Puerto Princesa, ideal for travelers seeking comfort and convenience. The apartment features spacious loft-style interiors, air-conditioned rooms, a fully equipped kitchen, and essential amenities. Guests can enjoy complimentary breakfast, a welcome drink, and secure parking, making it a perfect choice for both short and extended stays.",
     inclusions: ["Breakfast", "Welcome Drink", "Parking"],
     exclusions: ["Room Service", "Pet Accommodation"],
     amenities: [
@@ -44,13 +60,21 @@ export const accommodtions = [
     ],
     pricing: [
       {
+        type: "Apartment",
         isGroupSize: true,
         minGroupSize: 1,
         maxGroupSize: 10,
-        price: 3500,
+        price: 3800,
       },
     ],
     rating: 4.7,
-    images: [""],
+    images: [
+      "/resources/ckc/ckc000.avif",
+      "/resources/ckc/ckc001.avif",
+      "/resources/ckc/ckc002.avif",
+      "/resources/ckc/ckc003.avif",
+      "/resources/ckc/ckc004.avif",
+      "/resources/ckc/ckc005.avif",
+    ],
   },
 ];

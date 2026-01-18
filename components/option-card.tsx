@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { BookOptionTour } from "./book-option-tour";
 import { Pricing, pricingSchema } from "@/types/tour";
 import z from "zod";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useOptionStore from "@/hooks/use-option-store";
 
 type Props = {
@@ -18,7 +18,15 @@ type Props = {
 export const OptionCard = ({ name, pricing, id }: Props) => {
   const { id: selectedId, setId } = useOptionStore();
 
-  console.log(selectedId);
+  const isVisible = selectedId === id;
+
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isVisible) {
+      divRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [isVisible]);
 
   return (
     <Card className="">
@@ -28,7 +36,7 @@ export const OptionCard = ({ name, pricing, id }: Props) => {
         </span>
       </CardHeader>
       <CardContent className="flex flex-col">
-        {selectedId !== id && (
+        {!isVisible && (
           <div className="flex items-center justify-between">
             <div className="leading-2">
               <p className="font-semibold">{pricing[0].price}</p>
@@ -40,14 +48,16 @@ export const OptionCard = ({ name, pricing, id }: Props) => {
           </div>
         )}
 
-        {selectedId === id && (
-          <BookOptionTour
-            duration={1}
-            tourId={id}
-            tourPricing={pricing}
-            service="transfer"
-            title={name}
-          />
+        {isVisible && (
+          <div className="scroll-mt-40" ref={divRef}>
+            <BookOptionTour
+              duration={1}
+              tourId={id}
+              tourPricing={pricing}
+              service="transfer"
+              title={name}
+            />
+          </div>
         )}
       </CardContent>
     </Card>
