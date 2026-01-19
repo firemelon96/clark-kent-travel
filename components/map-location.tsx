@@ -20,6 +20,7 @@ import { set } from "date-fns";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import { generateGoogleMapLink } from "@/app/lib/helpers";
+import { cn } from "@/lib/utils";
 
 type MapLink = {
   lat: number;
@@ -82,7 +83,7 @@ export const MapLocation = ({
   return (
     <Popover>
       <PopoverTrigger
-        className="text-xs text-blue-500 underline"
+        className={cn("text-xs text-blue-500 underline")}
         onClick={() => setOpen(!open)}
       >
         Add pickup location

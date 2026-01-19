@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/accordion";
 import { BookOptionTour } from "@/components/book-option-tour";
 import { BookRange } from "@/components/book-range";
+import { AccomMap } from "../_components/accom-map";
 
 interface SingleProps {
   params: Promise<{
@@ -63,7 +64,6 @@ const Page = async ({ params }: SingleProps) => {
             Options
           </span>
           <Card className="">
-            <CardHeader>Select Options</CardHeader>
             <CardContent>
               <BookRange
                 duration={1}
@@ -76,56 +76,50 @@ const Page = async ({ params }: SingleProps) => {
         </div>
         <div className="w-full space-y-2 md:w-[370px]">
           <span className="font-medium uppercase">Package Information</span>
-          {/* <div className="relative rounded-md bg-rose-50 px-4">
+          <div className="relative rounded-md bg-rose-50 p-4">
             <BiSolidLeftArrow className="absolute top-0 -left-4 hidden size-6 text-rose-50 md:block" />
             <div>
-              <Accordion
-                type="single"
-                collapsible
-                className="mt-2 w-full"
-                defaultValue={accommodation.itineraries[0].name}
-              >
-                {tour.itineraries.map((itinerary) => (
-                  <AccordionItem key={itinerary.name} value={itinerary.name}>
-                    <AccordionTrigger className="hover:no-underline">
-                      <Badge>{itinerary.name}</Badge>
-                    </AccordionTrigger>
-                    <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
-                      <ul>
-                        {itinerary.activities.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-                <AccordionItem value="item-2">
+              <Accordion type="single" className="w-full" defaultValue="item-1">
+                <AccordionItem value="item-1">
                   <AccordionTrigger className="hover:no-underline">
-                    <Badge>Inclusions</Badge>
+                    <Badge>Map location</Badge>
                   </AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
-                    <ul>
-                      {tour.inclusions.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
+                  <AccordionContent className="flex flex-col gap-4 text-balance">
+                    <AccomMap mapLink={accommodation.information.mapLink} />
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-3">
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="hover:no-underline">
+                    <Badge>Details</Badge>
+                  </AccordionTrigger>
+                  <AccordionContent className="flex flex-col gap-4 text-balance">
+                    <p className="text-justify">
+                      {accommodation.information.about}
+                    </p>
+                    <p className="text-sm tracking-wide">
+                      Check in {accommodation.information.checkIn} - Check out{" "}
+                      {accommodation.information.checkOut}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                {/* <AccordionItem value="item-3">
                   <AccordionTrigger className="hover:no-underline">
                     <Badge>Exclusions</Badge>
                   </AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
                     <ul>
                       {tour.exclusions.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item} className="flex gap-2">
+                          <X className="size-4" />
+                          {item}
+                        </li>
                       ))}
                     </ul>
                   </AccordionContent>
-                </AccordionItem>
+                </AccordionItem> */}
               </Accordion>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 

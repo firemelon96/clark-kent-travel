@@ -55,7 +55,6 @@ export const OptionCard = ({ name, pricing, id }: Props) => {
               duration={1}
               tourId={id}
               tourPricing={pricing}
-              service="transfer"
               title={name}
             />
           </div>

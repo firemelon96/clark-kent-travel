@@ -66,7 +66,7 @@ export type TourPackage = {
 export const bookingOptionSchema = z.object({
   dateRange: z.object({
     from: z.date(),
-    to: z.date(),
+    to: z.date({ required_error: "Select date to" }),
   }),
   participants: z.number().min(1),
   totalPrice: z.number().min(0),

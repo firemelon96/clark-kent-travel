@@ -45,7 +45,6 @@ type Props = {
   tourId: string;
   duration: number;
   tourPricing: z.infer<typeof pricingSchema>[];
-  service: string;
   title?: string;
   serviceType?: string;
   location?: string;
@@ -55,7 +54,6 @@ export const BookOptionTour = ({
   tourId,
   tourPricing,
   duration,
-  service,
   title,
   serviceType,
   location,
@@ -145,10 +143,10 @@ export const BookOptionTour = ({
 
     const { from, to } = dateRange;
 
-    // if (mapLink === "") {
-    //   toast.error("Please select a location on the map");
-    //   return;
-    // }
+    if (mapLink === "") {
+      toast.error("Please select a location on the map");
+      return;
+    }
 
     const url = qs.stringifyUrl(
       {
@@ -161,7 +159,6 @@ export const BookOptionTour = ({
           totalPrice,
           type,
           mapLink,
-          service,
           title,
           serviceType,
           location,
@@ -182,7 +179,6 @@ export const BookOptionTour = ({
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full space-y-4"
       >
-        <p>{mapLink}</p>
         <MapLocation setMaplink={setMapLink} />
         <FormField
           control={form.control}
@@ -193,11 +189,11 @@ export const BookOptionTour = ({
                 <FormLabel>Travel Date</FormLabel>
                 <Popover open={openDate} onOpenChange={setOpenDate}>
                   <PopoverTrigger asChild>
-                    <FormControl>
+                    <FormControl className="">
                       <Button
                         variant="default"
                         className={cn(
-                          "w-60 pl-3 text-left font-normal",
+                          "w-full pl-3 text-left font-normal md:w-60",
                           !field.value && "text-muted-foreground",
                         )}
                       >

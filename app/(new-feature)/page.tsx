@@ -6,17 +6,21 @@ import TripByLocation from "../components/trip-by-location";
 import { SearchBar } from "@/components/search-bar";
 import { Testimonials } from "../components/testimonials";
 import { getGoogleReviews } from "@/actions/google-reviews";
+import { PromoBanner } from "@/components/promo-banner";
 
-export default function Home() {
+export default async function Home() {
+  const reviews = await getGoogleReviews();
+
   return (
     <>
       <Hero />
       <SearchBar />
       <main className="container mx-auto space-y-14 p-4 md:px-20">
+        <PromoBanner />
         <FeaturedCard />
         <Tours />
         <OtherServices />
-        <Testimonials />
+        <Testimonials reviews={reviews} />
         <TripByLocation />
       </main>
     </>

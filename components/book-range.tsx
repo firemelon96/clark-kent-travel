@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { addDays, differenceInCalendarDays, format } from "date-fns";
+import { add, addDays, differenceInCalendarDays, format } from "date-fns";
 import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,6 @@ type Props = {
 
 export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
   const [openDate, setOpenDate] = useState(false);
-  const [mapLink, setMapLink] = useState("");
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
@@ -84,6 +83,8 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
   const range = form.watch("dateRange");
 
   const isDay = duration === 1;
+
+  console.log(range);
 
   const numOfNights = differenceInCalendarDays(range.to, range.from);
 
@@ -139,6 +140,11 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
 
     const { from, to } = dateRange;
 
+    if (from.getTime() === to.getTime()) {
+      toast.error("Select valid date range.");
+      return;
+    }
+
     // if (mapLink === "") {
     //   toast.error("Please select a location on the map");
     //   return;
@@ -154,7 +160,6 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
           participants,
           totalPrice,
           type,
-          mapLink,
           service,
           title,
         },
@@ -174,18 +179,13 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full space-y-4"
       >
-        {form.formState.errors && (
-          <p>{JSON.stringify(form.formState.errors)}</p>
-        )}
-        <p>{mapLink}</p>
-        <MapLocation setMaplink={setMapLink} />
         <FormField
           control={form.control}
           name="dateRange"
           render={({ field }) => {
             return (
-              <FormItem className="flex flex-col">
-                <FormLabel>Travel Date</FormLabel>
+              <FormItem className="flex w-full flex-col">
+                <FormLabel>Reservation Date</FormLabel>
                 <Popover open={openDate} onOpenChange={setOpenDate}>
                   <PopoverTrigger asChild>
                     <FormControl className="">
@@ -220,7 +220,12 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
                       defaultMonth={field.value?.from}
                       selected={(field.value as DateRange) || undefined}
                       onSelect={(range) => {
-                        field.onChange(range);
+                        if (range?.from) {
+                          field.onChange({
+                            from: range.from,
+                            to: range.to,
+                          });
+                        }
                       }}
                       numberOfMonths={2}
                       disabled={(date) =>
@@ -229,6 +234,28 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
                         date.getDay() === 6
                       }
                     />
+                    <div className="flex items-center justify-between px-4">
+                      <div className="flex flex-col leading-4">
+                        <span className="font-medium">
+                          {formatPeso(matched?.price || 0)}
+                        </span>
+                        {numOfNights > 1 ? (
+                          <span className="text-xs font-light tracking-wide text-slate-500">
+                            x {numOfNights} nights
+                          </span>
+                        ) : (
+                          <span className="text-xs font-light tracking-wide text-slate-500">
+                            Per night
+                          </span>
+                        )}
+                      </div>
+                      {range.from &&
+                        range.to.getTime() !== range.from.getTime() && (
+                          <Button onClick={() => setOpenDate(false)}>
+                            Select date
+                          </Button>
+                        )}
+                    </div>
                   </PopoverContent>
                 </Popover>
                 <FormDescription
@@ -323,12 +350,7 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
             </div>
           </div>
         </FormItem>
-        {numOfNights > 1 && (
-          <div className="px-4 text-right text-sm tracking-wide text-slate-500">
-            <span>{numOfNights} nights x</span>
-            <span> {formatPeso(matched?.price || 0)}</span>
-          </div>
-        )}
+
         <FormField
           control={form.control}
           name="totalPrice"

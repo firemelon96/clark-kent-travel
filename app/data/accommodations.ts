@@ -7,10 +7,10 @@ export const accommodtions = [
     information: {
       checkIn: "2:00 PM",
       checkOut: "12:00 NN",
-      mapCoords: {
-        lat: 23,
-        lng: 12,
-      },
+      mapLink:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.9847532849335!2d118.75335960000001!3d9.767356999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b5636784f4dc75%3A0x795a26301846cb50!2sClark%20Kent%20Homestay%20%2F%20Transient!5e0!3m2!1sen!2sph!4v1768803529221!5m2!1sen!2sph",
+      about:
+        "Clark Kent Homestay / Transient is conveniently located along Libis C. Factor Road in Puerto Princesa City, Palawan, offering a quiet yet highly accessible place to stay. The property sits just minutes away from Robinsons Place Palawan, making it easy for guests to access shopping, dining, groceries, and essential services.",
     },
     location: "Puerto Princesa",
     inclusions: ["Breakfast", "Free WiFi", "Airport Shuttle"],
@@ -57,10 +57,10 @@ export const accommodtions = [
     information: {
       checkIn: "2:00 PM",
       checkOut: "12:00 NN",
-      mapCoords: {
-        lat: 23,
-        lng: 12,
-      },
+      mapLink:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3469.8636873767787!2d118.745096402026!3d9.73765078688158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b563f337ae9c73%3A0xc7be529ee74cae42!2sCKC%20Loftstyle%20Apartment!5e0!3m2!1sen!2sph!4v1768807513641!5m2!1sen!2sph",
+      about:
+        "CKC Loftstyle Apartment is centrally located along Tamilok Road in Puerto Princesa City, Palawan, placing guests right in the heart of the city's cultural and dining district. The apartment is just a short walk or drive from Rizal Avenue, home to some of Puerto Princesa's most popular restaurants such as Kinabuchs Grill and Bar, Kalui Seafood Restaurant, and other well-known local dining spots.",
     },
     inclusions: ["Breakfast", "Welcome Drink", "Parking"],
     exclusions: ["Room Service", "Pet Accommodation"],

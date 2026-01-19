@@ -17,7 +17,7 @@ const FeaturedCard = async () => {
   // const featuredTours = (await getFeaturedTour()) || [];
 
   return (
-    <div className="mt-10 w-full">
+    <div className="w-full">
       <div className="space-y-4">
         <ServiceLabel
           label="Epic Getaways"

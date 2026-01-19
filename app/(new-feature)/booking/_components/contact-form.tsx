@@ -40,11 +40,10 @@ export const contactFormSchema = z.object({
 
 interface Props {
   tourName: string;
-  mapLink: string;
 }
 
-export const ContactForm = ({ tourName, mapLink }: Props) => {
-  const { eachParams, params, pathname, router } = useUrlParams();
+export const ContactForm = ({ tourName }: Props) => {
+  const { eachParams, router } = useUrlParams();
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
@@ -72,25 +71,23 @@ export const ContactForm = ({ tourName, mapLink }: Props) => {
       count: +eachParams.participants,
       type: eachParams.type,
       title: tourName,
-      mapLink,
+      mapLink: eachParams.mapLink,
       withPromo: eachParams.discountedPrice
         ? "Availed discount"
         : "No discount",
     };
 
-    // startTransition(() => {
-    //   BookTour(newValues)
-    //     .then((data) => {
-    //       toast.success(data.message);
-    //       form.reset();
-    //       router.push("/booking/success");
-    //     })
-    //     .catch((err) => {
-    //       toast.error(err.message);
-    //     });
-    // });
-
-    console.log({ newValues });
+    startTransition(() => {
+      BookTour(newValues)
+        .then((data) => {
+          toast.success(data.message);
+          form.reset();
+          router.push("/booking/success");
+        })
+        .catch((err) => {
+          toast.error(err.message);
+        });
+    });
   };
 
   return (

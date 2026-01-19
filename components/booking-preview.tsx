@@ -1,14 +1,15 @@
+"use client";
 import Image from "next/image";
 import { Skeleton } from "./ui/skeleton";
+import { useUrlParams } from "@/hooks/use-url-params";
 
 type Props = {
   url: string;
   title: string;
-  participants: number;
-  type: string;
 };
 
-export const BookingPreview = ({ url, title, participants, type }: Props) => {
+export const BookingPreview = ({ url, title }: Props) => {
+  const { eachParams } = useUrlParams();
   return (
     <div className="flex gap-2 rounded-md border p-4">
       <Image
@@ -21,7 +22,7 @@ export const BookingPreview = ({ url, title, participants, type }: Props) => {
       <div className="space-y-2">
         <p>{title}</p>
         <span className="text-slate-500">
-          {type.toLowerCase()} x{participants} person(s)
+          {eachParams.type.toLowerCase()} x{eachParams.participants} person(s)
         </span>
       </div>
     </div>

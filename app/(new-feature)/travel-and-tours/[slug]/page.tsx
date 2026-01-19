@@ -71,7 +71,6 @@ const SinglePage = async ({ params }: SingleProps) => {
                 duration={tour.duration}
                 tourId={tour.tourId}
                 tourPricing={tour.pricing}
-                service="tour"
               />
             </CardContent>
           </Card>
@@ -95,7 +94,8 @@ const SinglePage = async ({ params }: SingleProps) => {
                       <ul>
                         {itinerary.activities.map((item) => (
                           <li key={item} className="flex gap-2">
-                            <MapPinned className="size-4" /> {item}
+                            <MapPinned className="size-4" />{" "}
+                            <span className="flex-1">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -111,7 +111,7 @@ const SinglePage = async ({ params }: SingleProps) => {
                       {tour.inclusions.map((item) => (
                         <li key={item} className="flex gap-2">
                           <Check className="size-4" />
-                          {item}
+                          <span className="flex-1">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -126,7 +126,7 @@ const SinglePage = async ({ params }: SingleProps) => {
                       {tour.exclusions.map((item) => (
                         <li key={item} className="flex gap-2">
                           <X className="size-4" />
-                          {item}
+                          <span className="flex-1">{item}</span>
                         </li>
                       ))}
                     </ul>

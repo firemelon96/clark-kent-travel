@@ -56,7 +56,7 @@ export const TransferCard = ({
             <div className="flex items-center gap-2">
               <Badge variant={"secondary"}>{formatPeso(price)}</Badge>
               {location.map((loc) => (
-                <Badge variant={"secondary"}>
+                <Badge key={loc} variant={"secondary"}>
                   <MapPin /> {loc}
                 </Badge>
               ))}

@@ -33,22 +33,9 @@ type Props = {
 };
 
 export const DetailsCard = ({ name }: Props) => {
-  // const router = useRouter();
-  // const searchParams = useSearchParams();
-  // const pathname = usePathname();
-
-  // // console.log(paramsAll.serviceType);
-
-  // const params = new URLSearchParams(searchParams.toString());
-
-  // const eachParams = Object.fromEntries(params);
-
   const [showField, setShowField] = useState(false);
 
   const { pathname, router, eachParams, params } = useUrlParams();
-
-  // const totalPrice = searchParams.getAll();
-  // console.log(Object.fromEntries(paramsAll));
 
   const addPromo = (prev: any, data: FormData) => {
     const promoCode = data.get("promo");

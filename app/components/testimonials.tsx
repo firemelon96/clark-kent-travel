@@ -20,7 +20,7 @@ interface Props {
   reviews: ReviewType[];
 }
 
-export const Testimonials = () => {
+export const Testimonials = ({ reviews }: Props) => {
   return (
     <section className="scroll-mt-6 space-y-4 md:text-start" id="tours">
       <ServiceLabel
@@ -30,11 +30,12 @@ export const Testimonials = () => {
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {reviews.map((review) => (
           <ReviewCard
-            key={review.name}
-            imageUrl={review.image}
-            name={review.name}
-            title={review.title}
-            message={review.message}
+            key={review.author_name}
+            imageUrl={review.profile_photo_url}
+            name={review.author_name}
+            time={review.relative_time_description}
+            message={review.text}
+            rating={review.rating}
           />
         ))}
       </div>
