@@ -12,6 +12,9 @@ export const transfers = [
         id: "puerto-princesa-airport-transfer-city-proper",
         name: "Puerto Princesa Airport Transfer: City Proper only",
         travelTime: ["6:00 AM", "12:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840.9844793850052!2d118.74719623800014!3d9.746142401207397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b563ef3b32222b%3A0xe7d9bdc0c148ed24!2sPuerto%20Princesa%20Airport!5e0!3m2!1sen!2sph!4v1768883336269!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/4xpYc4BeLCxeF8Kz5",
         pricing: [
           {
             isGroupSize: true,
@@ -34,6 +37,9 @@ export const transfers = [
         id: "elnido-to-puerto-princesa-shared",
         name: "Elnido to Puerto princesa: Shared Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15656.859552950098!2d119.3835885257036!3d11.171719200000018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b655b2c9eee5b7%3A0x34cc64b7e2244b08!2sEl%20Nido%20Bus%20Terminal!5e0!3m2!1sen!2sph!4v1768882713949!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/93BXfZVEjuzoBD6p9",
         pricing: [
           { type: "Shared", minGroupSize: 1, maxGroupSize: 10, price: 750 },
         ],
@@ -56,6 +62,9 @@ export const transfers = [
         id: "elnido-to-puerto-princesa-private",
         name: "Elnido to Puerto Princesa: 1-Way Private Transfer",
         travelTime: [],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15656.859552950098!2d119.3835885257036!3d11.171719200000018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b655b2c9eee5b7%3A0x34cc64b7e2244b08!2sEl%20Nido%20Bus%20Terminal!5e0!3m2!1sen!2sph!4v1768882713949!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/93BXfZVEjuzoBD6p9",
         pricing: [
           {
             type: "Private",
@@ -91,6 +100,9 @@ export const transfers = [
         id: "port-barton-to-puerto-princesa",
         name: "Port Barton to Puerto princesa: 1-Way Shared Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.4767802688084!2d119.1742751964753!3d10.409172850856896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b5c58c04926fab%3A0x275604c93a51239b!2sPort%20Barton%20Bus%20Terminal!5e0!3m2!1sen!2sph!4v1768883164745!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/kAdY1kiRGeUXBPPH7",
         pricing: [
           { type: "Shared", minGroupSize: 1, maxGroupSize: 10, price: 700 },
         ],
@@ -112,6 +124,9 @@ export const transfers = [
         id: "lio-beach-to-el-nido-town",
         name: "Lio Beach to El Nido Town: 1-Way Private Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7827.475349429605!2d119.40995560886265!3d11.207034515087567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b7aaa86995c247%3A0x6ef654479d4ccef2!2sLio%20Beach!5e0!3m2!1sen!2sph!4v1768882962804!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/mtNAgxnkMbastjtGA",
         pricing: [
           {
             type: "Private",
@@ -126,6 +141,9 @@ export const transfers = [
         id: "el-nido-town-to-lio",
         name: "El Nido Town to Lio Beach: 1-Way Private Transfer",
         travelTime: ["6:00 AM", "12:00 PM", "5:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15656.859552950098!2d119.3835885257036!3d11.171719200000018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b655b2c9eee5b7%3A0x34cc64b7e2244b08!2sEl%20Nido%20Bus%20Terminal!5e0!3m2!1sen!2sph!4v1768882713949!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/93BXfZVEjuzoBD6p9",
         pricing: [
           {
             type: "Private",
@@ -153,6 +171,9 @@ export const transfers = [
         id: "nacpan-day-tour",
         name: "Nacpan Day Tour: Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.214888385907!2d119.3925784752925!3d11.17171918900209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b655b2c9eee5b7%3A0x34cc64b7e2244b08!2sEl%20Nido%20Bus%20Terminal!5e0!3m2!1sen!2sph!4v1768889860069!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/71PyLpNzD9zdMadZ8",
         pricing: [
           {
             type: "Private",
@@ -180,6 +201,9 @@ export const transfers = [
         id: "lio-day-tour",
         name: "Lio Day Tour: Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15656.859552950098!2d119.3835885257036!3d11.171719200000018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b655b2c9eee5b7%3A0x34cc64b7e2244b08!2sEl%20Nido%20Bus%20Terminal!5e0!3m2!1sen!2sph!4v1768882713949!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/hL7Qsahn6pQfrYZF6",
         pricing: [
           {
             type: "Private",
@@ -234,6 +258,9 @@ export const transfers = [
         id: "port-barton-day-tour",
         name: "Port Barton Day Tour: Roundtrip Private Van",
         travelTime: ["9:00 AM - 4:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.3058891523706!2d123.77054047527159!3d9.568878290515611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33abadc2c1a8daff%3A0x3eb63c82c7bb3fe7!2sPanglao%20International%20Airport!5e0!3m2!1sen!2sph!4v1768890076952!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/RsnaJfapGyBmCsbw7",
         pricing: [
           {
             type: "Private",
@@ -275,6 +302,9 @@ export const transfers = [
         id: "astoria-to-puerto-princesa",
         name: "Astoria to Puerto Princesa: 1-Way Transfer",
         travelTime: ["9:00 AM - 4:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.384543114697!2d118.96369287527682!3d9.985059490119564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b5b9e4bc4c1585%3A0xbc2d94e5aa9856f4!2sAstoria%20Palawan!5e0!3m2!1sen!2sph!4v1768883077804!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/rCnvF5CdFXeRKKfX6",
         pricing: [
           {
             type: "Shared",
@@ -302,6 +332,9 @@ export const transfers = [
         id: "bohol-airport-transfer",
         name: "Bohol Airport Transfer",
         travelTime: ["9:00 AM - 4:00 PM"],
+        pickUpLocation:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.3058891523706!2d123.77054047527159!3d9.568878290515611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33abadc2c1a8daff%3A0x3eb63c82c7bb3fe7!2sPanglao%20International%20Airport!5e0!3m2!1sen!2sph!4v1768890314383!5m2!1sen!2sph",
+        shareLink: "https://maps.app.goo.gl/RsnaJfapGyBmCsbw7",
         pricing: [
           {
             type: "Shared",

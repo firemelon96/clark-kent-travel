@@ -27,7 +27,7 @@ const SinglePage = async ({ params }: Props) => {
   if (!transfer) notFound();
 
   return (
-    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4 p-4">
+    <section className="mx-auto mb-10 max-w-5xl space-y-4 p-4">
       <ImageBanner images={transfer.images[0]} />
       <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">
@@ -66,6 +66,8 @@ const SinglePage = async ({ params }: Props) => {
               name={option.name}
               id={option.id}
               pricing={option.pricing}
+              pickUpLocation={option.pickUpLocation}
+              shareLink={option.shareLink}
             />
           ))}
         </div>

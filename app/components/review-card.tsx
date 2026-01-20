@@ -30,12 +30,12 @@ export const ReviewCard = ({
           <p className="text-xs text-slate-500">{time}</p>
           <span className="flex gap-1">
             {Array.from({ length: rating }).map((_, i) => (
-              <BsStarFill className="fill-amber-300" />
+              <BsStarFill key={i} className="fill-amber-300" />
             ))}
           </span>
         </div>
       </div>
-      <span className="text-base text-slate-500">{message}</span>
+      <span className="text-justify text-base text-slate-500">{message}</span>
     </Card>
   );
 };

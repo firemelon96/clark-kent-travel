@@ -55,7 +55,9 @@ export const getTourById = (id: string) => {
 };
 
 export const getTransferById = (id: string) => {
-  const transfer = transfers.find((transfer) => transfer.id === id);
+  const transfer = transfers.find((transfer) =>
+    transfer.options.map((opt) => opt.id === id),
+  );
   if (transfer === undefined) return notFound();
   return transfer;
 };

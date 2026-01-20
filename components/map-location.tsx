@@ -4,7 +4,6 @@ import {
   GoogleMap,
   Marker,
   Rectangle,
-  Circle,
   useJsApiLoader,
   Autocomplete,
 } from "@react-google-maps/api";
@@ -16,7 +15,6 @@ import {
   PopoverClose,
 } from "./ui/popover";
 import { useRef, useState } from "react";
-import { set } from "date-fns";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import { generateGoogleMapLink } from "@/app/lib/helpers";
@@ -83,19 +81,19 @@ export const MapLocation = ({
   return (
     <Popover>
       <PopoverTrigger
-        className={cn("text-xs text-blue-500 underline")}
+        className={cn("text-xs underline")}
         onClick={() => setOpen(!open)}
       >
         Add pickup location
       </PopoverTrigger>
-      <PopoverContent className="mr-2 w-96 rounded-none p-1" align="start">
+      <PopoverContent className="mr-2 w-80 rounded-none p-1" align="start">
         {/*  */}
         {!isLoaded ? (
           <p>Loading map...</p>
         ) : (
           <div className="relative space-y-1">
             <Autocomplete
-              className="absolute top-2 left-2 z-10 w-72"
+              className="absolute top-2 left-2 z-10 w-68"
               onLoad={(auto) => (autocompleteRef.current = auto)}
               onPlaceChanged={() => {
                 const place = autocompleteRef.current?.getPlace();

@@ -8,14 +8,23 @@ import { Pricing, pricingSchema } from "@/types/tour";
 import z from "zod";
 import { useEffect, useRef, useState } from "react";
 import useOptionStore from "@/hooks/use-option-store";
+import { BookOptionTransfer } from "./book-option-transfer";
 
 type Props = {
   name: string;
   pricing: z.infer<typeof pricingSchema>[];
   id: string;
+  pickUpLocation?: string;
+  shareLink?: string;
 };
 
-export const OptionCard = ({ name, pricing, id }: Props) => {
+export const OptionCard = ({
+  name,
+  pricing,
+  id,
+  pickUpLocation,
+  shareLink,
+}: Props) => {
   const { id: selectedId, setId } = useOptionStore();
 
   const isVisible = selectedId === id;
@@ -51,11 +60,13 @@ export const OptionCard = ({ name, pricing, id }: Props) => {
 
         {isVisible && (
           <div className="scroll-mt-40" ref={divRef}>
-            <BookOptionTour
+            <BookOptionTransfer
               duration={1}
-              tourId={id}
-              tourPricing={pricing}
+              id={id}
+              pricing={pricing}
               title={name}
+              pickUpLocation={pickUpLocation}
+              shareLink={shareLink}
             />
           </div>
         )}

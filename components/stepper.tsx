@@ -8,7 +8,7 @@ interface StepperProps {
 
 export const Stepper = ({ isSucces = false }: StepperProps) => {
   return (
-    <div className="flex items-center">
+    <div className="mx-auto flex max-w-xl items-center p-4">
       <div className="flex flex-col items-center justify-center text-sm">
         <CheckCircle className="size-4 text-slate-300" />
         <p className="text-slate-300">Activity</p>
@@ -20,7 +20,7 @@ export const Stepper = ({ isSucces = false }: StepperProps) => {
         ) : (
           <Package className="size-4" />
         )}
-        <p className={isSucces ? "text-slate-300" : ""}>Confirm Booking</p>
+        <p className={isSucces ? "text-slate-300" : ""}>Confirm Details</p>
       </div>
       <div className="flex-1 border-t border-slate-300" />
       <div className="flex flex-col items-center justify-center text-sm">
