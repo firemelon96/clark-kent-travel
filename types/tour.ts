@@ -43,6 +43,21 @@ export const AccomFormSchema = z.object({
   numOfNights: z.number(),
 });
 
+export const RentalFormSchema = z.object({
+  startDate: z.string(),
+  returnDate: z.string(),
+  participantCount: z.number().min(1, "Count is required"),
+  name: z.string().min(1, "Name is required!"),
+  email: z.string().email(),
+  number: z.string(),
+  totalPrice: z.number().optional(),
+  duration: z.string().optional(),
+  title: z.string().optional(),
+  additionalHour: z.string().optional(),
+  price: z.string(),
+  extras: z.array(z.string()),
+});
+
 type Itinerary = {
   name: string;
   activities: string[];

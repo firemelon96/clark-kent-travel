@@ -9,7 +9,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BiSolidLeftArrow } from "react-icons/bi";
 import { RentalBookingOptions } from "../_components/rental-booking-options";
-import { Dot } from "lucide-react";
 import { formatPeso } from "@/app/lib/helpers";
 
 interface Props {
@@ -32,7 +31,7 @@ const RentalSinglePage = async ({ params }: Props) => {
     rental.rentalTerms.maximumRentalPeriod <= 30; //consider as day
 
   return (
-    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-4 p-4">
+    <section className="mx-auto mb-10 max-w-5xl space-y-4 p-4">
       <ImageBanner images={rental?.images} />
       <div className="flex flex-col-reverse gap-4 md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">
@@ -144,10 +143,10 @@ const RentalSinglePage = async ({ params }: Props) => {
                 rentId={rental.id}
                 extras={rental.extras}
                 pricePerHour={rental.pricePerHour}
-                isHourMinDuration={isHourMinDuration}
                 isDayMaxDuration={isDayMaxDuration}
                 minDuration={rental.rentalTerms.minimumRentalPeriod}
                 maxDuration={rental.rentalTerms.maximumRentalPeriod}
+                title={rental.name}
               />
             </CardContent>
           </Card>

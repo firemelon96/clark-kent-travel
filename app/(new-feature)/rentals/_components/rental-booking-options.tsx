@@ -10,7 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { date, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Popover,
@@ -25,12 +25,12 @@ import {
   format,
   parse,
 } from "date-fns";
-import { CalendarIcon, Info, Minus, Plus } from "lucide-react";
+import { CalendarIcon, Info, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn, generateTimeSlots } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
+import { useTransition, useEffect, useState } from "react";
 import { Switch } from "@/components/ui/switch";
 import {
   Select,
@@ -64,6 +64,7 @@ const BookingSchema = z.object({
     }),
   ),
   participants: z.number(),
+  totalPrice: z.number(),
 });
 
 type Extras = {
@@ -80,8 +81,8 @@ interface Props {
   pricePerHour: number;
   minDuration: number;
   maxDuration: number;
-  isHourMinDuration: boolean;
   isDayMaxDuration: boolean;
+  title: string;
 }
 
 const timeSlots = generateTimeSlots();
@@ -97,15 +98,18 @@ export const RentalBookingOptions = ({
   minDuration,
   maxDuration,
   isDayMaxDuration,
-  isHourMinDuration,
+  title,
 }: Props) => {
-  const [totalPrice, setTotalPrice] = useState(pricePerDay);
+  // const [totalPrice, setTotalPrice] = useState(pricePerDay);
+  const [isPending, startTransition] = useTransition();
   const [openDate, setOpenDate] = useState(false);
   // const [dayCount, setDayCount] = useState();
   const [openReturnDate, setOpenReturnDate] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
+
+  // console.log(isHourMinDuration);
 
   const form = useForm<z.infer<typeof BookingSchema>>({
     resolver: zodResolver(BookingSchema),
@@ -114,6 +118,7 @@ export const RentalBookingOptions = ({
       return: { date: undefined, time: undefined },
       extra: [],
       participants: 1,
+      totalPrice: pricePerDay || 0,
     },
   });
 
@@ -125,13 +130,9 @@ export const RentalBookingOptions = ({
 
   const selectedExtra = form.watch("extra");
   const participants = form.watch("participants");
+  const totalPrice = form.watch("totalPrice");
 
   const dayCount = differenceInDays(returnDate, pickupDate) + 1 || 0;
-
-  // const reducedPrice = selectedExtra.reduce(
-  //   (sum, extra) => sum + extra.price,
-  //   totalPrice,
-  // );
 
   const availableEndTimes = startTime
     ? timeSlots.filter(
@@ -150,100 +151,18 @@ export const RentalBookingOptions = ({
       ),
   );
 
-  // Calculate hours and charge when end time is selected
-  // const calculateCharge = (selectedEndTime: string) => {
-  //   if (dayCount === 0) {
-  //     if (startTime) {
-  //       const startDate = parse(startTime, "h:mm a", new Date());
-  //       const endDate = parse(selectedEndTime, "h:mm a", new Date());
-  //       const hoursDiff = differenceInHours(endDate, startDate);
-
-  //       // Reset charge if total hours is exactly BASE_HOURS
-  //       const extraHours = Math.max(0, hoursDiff - minDuration);
-  //       const extraCharge = extraHours > 0 ? extraHours * pricePerHour : 0;
-
-  //       setTotalPrice(pricePerDay + extraCharge);
-  //     } else {
-  //       setTotalPrice(pricePerDay);
-  //     }
-  //   } else {
-  //     setTotalPrice(pricePerDay);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (pickupDate && (!returnDate || returnDate < pickupDate)) {
-  //     form.setValue("return.date", pickupDate);
-  //   }
-
-  //   if (pickupDate && !startTime) {
-  //     form.setValue("pickup.time", "8:00 AM");
-  //   }
-
-  //   if (startTime) {
-  //     const pickupIndex = timeSlots.indexOf(startTime);
-  //     if (pickupIndex !== -1) {
-  //       const newReturnTime =
-  //         timeSlots[pickupIndex + minDuration] ||
-  //         timeSlots[timeSlots.length - 1];
-  //       if (!endTime || timeSlots.indexOf(endTime) <= pickupIndex) {
-  //         form.setValue("return.time", newReturnTime);
-  //       }
-  //     }
-  //   }
-
-  //   let total = pricePerDay;
-
-  //   if (selectedExtra?.length) {
-  //     const reducedPrice = selectedExtra.reduce(
-  //       (sum, extra) => sum + extra.price,
-  //       0,
-  //     );
-  //     total += reducedPrice;
-  //   }
-
-  //   let extraCharge = 0;
-  //   if (startTime && endTime) {
-  //     const startDate = parse(startTime, "h:mm a", new Date());
-  //     const endDate = parse(endTime, "h:mm a", new Date());
-  //     const hoursDiff = differenceInHours(endDate, startDate);
-
-  //     // Reset charge if total hours is exactly BASE_HOURS
-  //     const extraHours = Math.max(0, hoursDiff - minDuration);
-  //     extraCharge = extraHours > 0 ? extraHours * pricePerHour : 0;
-  //   }
-
-  //   if (dayCount > 1) {
-  //     total *= dayCount;
-  //   } else {
-  //     total += extraCharge;
-  //   }
-
-  //   setTotalPrice(total);
-  // }, [
-  //   pickupDate,
-  //   selectedExtra,
-  //   startTime,
-  //   endTime,
-  //   pricePerDay,
-  //   minDuration,
-  //   dayCount,
-  //   pricePerHour,
-  //   returnDate,
-  // ]);
-
   useEffect(() => {
     setError(null);
 
     if (pickupDate) {
       // Ensure return date is at least pickup date
       if (!returnDate || returnDate < pickupDate) {
-        form.setValue("return.date", pickupDate);
+        form.setValue("return.date", pickupDate, { shouldValidate: true });
       }
 
       // Set default pickup time to 8:00 AM if not selected
       if (!startTime) {
-        form.setValue("pickup.time", "8:00 AM");
+        form.setValue("pickup.time", "8:00 AM", { shouldValidate: true });
       }
     }
 
@@ -256,7 +175,9 @@ export const RentalBookingOptions = ({
 
         // Ensure return time is valid
         if (!endTime || timeSlots.indexOf(endTime) <= pickupIndex) {
-          form.setValue("return.time", suggestedReturnTime);
+          form.setValue("return.time", suggestedReturnTime, {
+            shouldValidate: true,
+          });
         }
       }
     }
@@ -306,7 +227,8 @@ export const RentalBookingOptions = ({
       }
     }
 
-    setTotalPrice(total);
+    // setTotalPrice(total);
+    form.setValue("totalPrice", total, { shouldValidate: true });
   }, [
     pickupDate,
     returnDate,
@@ -324,24 +246,64 @@ export const RentalBookingOptions = ({
   const onSubmit = (values: z.infer<typeof BookingSchema>) => {
     if (error) return;
 
-    console.log(selectedExtra, values);
-    // const { participants, totalPrice, pricingType, date, time } = values;
+    // console.log(selectedExtra, values);
+    const {
+      extra,
+      participants,
+      pickup,
+      return: returnDate,
+      totalPrice,
+    } = values;
 
-    // const url = qs.stringifyUrl(
-    //   {
-    //     url: "/booking",
-    //     query: {
-    //       rentId,
-    //       date: format(date, "yyyy-MM-dd"),
-    //       participants,
-    //       totalPrice,
-    //       pricingType,
-    //     },
-    //   },
-    //   { skipNull: true, skipEmptyString: true },
-    // );
+    const url = qs.stringifyUrl(
+      {
+        url: "/rentals/reservation",
+        query: {
+          rentId,
+          startDate: `${format(pickup.date, "EEEE, LLL dd")}: ${pickup.time}`,
+          returnDate: `${format(returnDate.date, "EEEE, LLL dd")}: ${returnDate.time}`,
+          participantCount: participants,
+          totalPrice,
+          extra: extra.map(
+            (ex) => `${ex.name}: ${formatPeso(ex.price)} per day`,
+          ),
+          duration:
+            dayCount <= 1
+              ? hourCount > minDuration
+                ? `${minDuration} + ${hourCount - minDuration} extra hours`
+                : `${hourCount} hours`
+              : `${dayCount} Days`,
+          title,
+          additionalHour:
+            dayCount <= 1 && hourCount > minDuration
+              ? `Additional hour: ${formatPeso(pricePerHour)} per hour`
+              : "",
+          price: `Price: ${formatPeso(pricePerDay)} per day`,
+        },
+      },
+      { skipNull: true, skipEmptyString: true },
+    );
 
-    // router.push(url);
+    // console.log({
+    //   rentId,
+    //   startDate: `${format(pickupDate, "EEEE, LLL dd")}: ${startTime}`,
+    //   returnDate: `${format(returnDate, "EEEE, LLL dd")}: ${endTime}`,
+    //   participantCount: participants,
+    //   totalPrice,
+    //   extra: selectedExtra.map((ex) => `${ex.name}: ${ex.price} per day`),
+    //   duration:
+    //     dayCount <= 1
+    //       ? hourCount > minDuration
+    //         ? `${minDuration} + ${hourCount - minDuration} extra hours`
+    //         : `${hourCount} hours`
+    //       : `${dayCount} Days`,
+    //   title,
+    // });
+
+    // console.log({ isDayMaxDuration, isHourMinDuration });
+    startTransition(() => {
+      router.push(url);
+    });
   };
 
   return (
@@ -367,6 +329,8 @@ export const RentalBookingOptions = ({
                           variant="outline"
                           className={cn(
                             "rounded-tr-none rounded-br-none pl-3 text-left font-normal md:w-36",
+                            form.formState.errors.pickup?.date &&
+                              "border-rose-500",
                           )}
                         >
                           {field.value ? (
@@ -381,7 +345,9 @@ export const RentalBookingOptions = ({
                     <PopoverContent className="flex w-auto p-0" align="start">
                       <Calendar
                         mode="single"
-                        onSelect={(date) => field.onChange(date)}
+                        onSelect={(date) => {
+                          field.onChange(date);
+                        }}
                         selected={field.value}
                         disabled={(date) =>
                           date < new Date() ||
@@ -415,7 +381,11 @@ export const RentalBookingOptions = ({
                     </FormControl>
                     <SelectContent>
                       {timeSlots.map((time) => (
-                        <SelectItem value={time} key={time}>
+                        <SelectItem
+                          className="border-none"
+                          value={time}
+                          key={time}
+                        >
                           {time}
                         </SelectItem>
                       ))}
@@ -444,6 +414,8 @@ export const RentalBookingOptions = ({
                           variant="outline"
                           className={cn(
                             "rounded-tr-none rounded-br-none pl-3 text-left font-normal md:w-36",
+                            form.formState.errors.pickup?.date &&
+                              "border-rose-500",
                           )}
                         >
                           {field.value ? (
@@ -457,7 +429,6 @@ export const RentalBookingOptions = ({
                     </PopoverTrigger>
                     <PopoverContent className="flex w-auto p-0" align="start">
                       <Calendar
-                        initialFocus
                         mode="single"
                         onSelect={(date) => field.onChange(date)}
                         selected={field.value}
@@ -512,7 +483,7 @@ export const RentalBookingOptions = ({
         </div>
 
         {error && (
-          <div className="bg-rose-50 p-2 text-rose-500">
+          <div className="text-xs text-rose-500">
             <p>{error}</p>
           </div>
         )}
@@ -620,19 +591,84 @@ export const RentalBookingOptions = ({
           })}
         </div>
 
-        {/* <FormField
+        <FormField
           control={form.control}
           name="totalPrice"
           render={({ field }) => (
-            <FormItem className="flex items-center justify-between rounded-md bg-slate-50 p-4">
-              <FormLabel className="font-light">Total Price</FormLabel>
+            <FormItem className="flex flex-col gap-2 rounded-md bg-slate-50 p-4">
+              {pickupDate && returnDate && startTime && endTime && (
+                <div className="flex items-center justify-between text-sm text-slate-500">
+                  <span className="flex gap-2">
+                    Duration
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger type="button">
+                          <Info className="size-4" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <div>
+                            <p>Minimum Rental {minDuration} Hours</p>
+                            <p>
+                              Maximum Rental {maxDuration}{" "}
+                              {isDayMaxDuration ? "Days" : "Hours"}
+                            </p>
+                          </div>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </span>
+                  {dayCount > 1 && (
+                    <p>
+                      {dayCount} {dayCount > 1 ? "Days" : "Day"}
+                    </p>
+                  )}
+                  {dayCount <= 1 && endTime && (
+                    <p>
+                      {hourCount} {hourCount > 1 ? "Hours" : "Hour"}
+                    </p>
+                  )}
+                </div>
+              )}
+              {dayCount <= 1 && hourCount > minDuration && (
+                <div className="flex items-center justify-between text-xs text-slate-500">
+                  <span>Add'l Hours ({formatPeso(pricePerHour)} per hour)</span>
+                  <p>
+                    + {formatPeso(pricePerHour * (hourCount - minDuration))}
+                  </p>
+                </div>
+              )}
+              {selectedExtra.map((extra) => (
+                <div
+                  className="flex items-center justify-between text-xs text-slate-500"
+                  key={extra.name}
+                >
+                  <span>
+                    {extra.name} ({formatPeso(extra.price)} per day)
+                  </span>
+                  <p>
+                    +{" "}
+                    {dayCount > 1
+                      ? formatPeso(extra.price * dayCount)
+                      : formatPeso(extra.price)}
+                  </p>
+                </div>
+              ))}
+              <div className="flex items-center justify-between text-xs text-slate-500">
+                <span>Price</span>
+                <p>{formatPeso(pricePerDay)}</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <FormLabel className="font-light">Total Price</FormLabel>
 
-              <Label className="p-2 text-xl font-medium">{field.value}</Label>
+                <Label className="text-xl font-medium">
+                  {formatPeso(field.value)}
+                </Label>
+              </div>
             </FormItem>
           )}
-        /> */}
+        />
 
-        <div className="rounded-md bg-slate-50 p-4">
+        {/* <div className="rounded-md bg-slate-50 p-4">
           {pickupDate && returnDate && startTime && endTime && (
             <div className="flex items-center justify-between text-sm text-slate-500">
               <span className="flex gap-2">
@@ -668,10 +704,7 @@ export const RentalBookingOptions = ({
           )}
           {dayCount <= 1 && hourCount > minDuration && (
             <div className="flex items-center justify-between text-sm text-slate-500">
-              <span>
-                Additional Hours ({formatPeso(pricePerHour)} *{" "}
-                {hourCount - minDuration} Extra Hours)
-              </span>
+              <span>Add'l Hours ({formatPeso(pricePerHour)} per hour)</span>
               <p>+ {formatPeso(pricePerHour * (hourCount - minDuration))}</p>
             </div>
           )}
@@ -696,13 +729,12 @@ export const RentalBookingOptions = ({
             <span>Total Price: </span>
             <p>{formatPeso(totalPrice)}</p>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex justify-end gap-2">
-          <Button variant="secondary" type="button">
-            Save
+          <Button variant="default">
+            {isPending && <Loader2Icon />} {isPending ? "Loading" : "Rent now"}
           </Button>
-          <Button variant="default">Book now</Button>
         </div>
       </form>
     </Form>

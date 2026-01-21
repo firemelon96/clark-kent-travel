@@ -289,7 +289,7 @@ export const rentals = [
         pricePerDay: 1200,
       },
       {
-        name: "Additional Insurance",
+        name: "Add'l Insurance",
         pricePerDay: 600,
       },
       {
@@ -340,7 +340,7 @@ export const rentals = [
         pricePerDay: 1500,
       },
       {
-        name: "Additional Insurance",
+        name: "Add'l Insurance",
         pricePerDay: 700,
       },
       {
@@ -400,7 +400,7 @@ export const rentals = [
         pricePerDay: 1800,
       },
       {
-        name: "Additional Insurance",
+        name: "Add'l Insurance",
         pricePerDay: 800,
       },
       {
@@ -458,7 +458,7 @@ export const rentals = [
         pricePerDay: 1200,
       },
       {
-        name: "Additional Insurance",
+        name: "Add'l Insurance",
         pricePerDay: 500,
       },
       {
@@ -500,7 +500,7 @@ export const rentals = [
     included: ["Helmet", "Free city-wide delivery", "Full tank upon rental"],
     extras: [
       {
-        name: "Additional Helmet",
+        name: "Add'l Helmet",
         pricePerDay: 100,
       },
       {
@@ -542,7 +542,7 @@ export const rentals = [
     included: ["Helmet", "Free city-wide delivery", "Full tank upon rental"],
     extras: [
       {
-        name: "Additional Helmet",
+        name: "Add'l Helmet",
         pricePerDay: 100,
       },
       {
@@ -584,7 +584,7 @@ export const rentals = [
     included: ["Helmet", "Free city-wide delivery", "Full tank upon rental"],
     extras: [
       {
-        name: "Additional Helmet",
+        name: "Add'l Helmet",
         pricePerDay: 100,
       },
       {

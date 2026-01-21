@@ -17,29 +17,30 @@ import {
 import { format } from "date-fns";
 import { z } from "zod";
 import * as React from "react";
-import { AccomodationFormSchema } from "@/types/other-services";
+import { RentalFormSchema } from "@/types/tour";
 import { formatPeso } from "@/app/lib/helpers";
 
-type Props = z.input<typeof AccomodationFormSchema>;
+type Props = z.input<typeof RentalFormSchema>;
 
 // const baseUrl = process.env.VERCEL_URL
 //   ? `https://${process.env.VERCEL_URL}`
 //   : "http://localhost:3001";
 
-export const AccomodationEmailTemplate = ({
+export const RentalEmailTemplate = ({
   name,
+  number,
+  additionalHour,
   email,
-  age,
-  contact,
-  dates,
-  gender,
-  nationality,
-  notes,
-  title,
+  participantCount,
+  startDate,
   totalPrice,
-  nights,
+  returnDate,
+  title,
+  duration,
+  extras,
+  price,
 }: Props) => {
-  const previewText = `Your Booking for ${title} Awaits`;
+  const previewText = `Your Reservation for ${title} Awaits`;
 
   return (
     <Html>
@@ -61,51 +62,68 @@ export const AccomodationEmailTemplate = ({
                 </Column>
               </Row>
             </Section>
-            <Section className="border border-solid border-[#eaeaea] p-[20px]">
-              <Heading className="mx-0 my-[20px] p-0 text-center text-[24px] font-bold text-black">
+            <Section className="border border-solid border-[#eaeaea] p-5">
+              <Heading className="mx-0 my-5 p-0 text-center text-[24px] font-bold text-black">
                 Hi, {name} 👋🏻
               </Heading>
-              <Heading className="mx-0 my-[10px] p-0 text-center text-base font-semibold text-black">
+              <Heading className="mx-0 my-2.5 p-0 text-center text-[24px] font-bold text-black">
                 Thank you for reaching out to Clark Kent Travel and Tours.
-                We&apos;re thrilled to receive your inquiry about our {title}.
+                We&apos;re thrilled to receive your rental reservation on{" "}
+                {title}.
               </Heading>
               <Row>
                 <Column>
-                  <Text className="text-base leading-[24px] tracking-wider text-black">
+                  <Text className="text-base leading-6 tracking-wider text-black">
                     Details Below
                   </Text>
                 </Column>
               </Row>
               <Hr />
               <Text className="text-[14px]leading-4 tracking-widest text-black">
-                <strong>Booking Date: </strong>
-                {format(new Date(dates.start!), "MMM dd EEEE")} -{" "}
-                {format(new Date(dates.end!), "MMM dd EEEE")}
+                <strong>Start:</strong>
+                {startDate}
               </Text>
               <Text className="text-[14px]leading-4 tracking-widest text-black">
-                <strong>Service: </strong>
-                {title} | {nights} nights
+                <strong>Return:</strong>
+                {returnDate}
+              </Text>
+              <Text className="text-[14px]leading-4 tracking-widest text-black">
+                <strong>Duration: </strong>
+                {duration}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Name:</strong> {name}
+                <strong>Contact Person:</strong> {name}
               </Text>
+
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Nationality:</strong> {nationality}
-              </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Age & Gender: </strong> {age} years old, {gender}
+                <strong>Number of Participants:</strong> {participantCount}{" "}
+                {participantCount > 1 ? "persons" : "person"}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Email:</strong> {email}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Contact Number:</strong> {contact}
+                <strong>Contact Number:</strong> {number}
+              </Text>
+
+              {extras.length > 0 && (
+                <Text className="text-[14px] leading-4 tracking-widest text-black">
+                  <strong>Extras:</strong>{" "}
+                  {extras.map((ex) => (
+                    <Text>{ex}</Text>
+                  ))}
+                </Text>
+              )}
+              {additionalHour && (
+                <Text className="text-[14px] leading-4 tracking-widest text-black">
+                  <strong>Additional hour:</strong> {additionalHour}
+                </Text>
+              )}
+              <Text className="text-[14px] leading-4 tracking-widest text-black">
+                <strong>Original price:</strong> {price}
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Total Price:</strong> {formatPeso(totalPrice || 0)}
-              </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Additional Message:</strong> {notes}
               </Text>
               <Hr />
               <Section className="text-slate-600">
@@ -128,8 +146,8 @@ export const AccomodationEmailTemplate = ({
               </Section>
             </Section>
             <Text className="mt-5 text-center text-xs text-slate-500">
-              &copy; 2024 | <strong>Clark Kent Travel and Tours</strong>, Lagan
-              St., Puerto Princesa City Palawan 5300, PH |{" "}
+              &copy; 2026 | <strong>Clark Kent Travel and Tours</strong>, GSFM
+              Bldg., Manalo Street, Puerto Princesa City, Palawan, 5300, PH |{" "}
               <Link href="icapturetravelservices.com">
                 www.clarkkenttravelandtours.com
               </Link>
@@ -141,4 +159,4 @@ export const AccomodationEmailTemplate = ({
   );
 };
 
-export default AccomodationEmailTemplate;
+export default RentalEmailTemplate;

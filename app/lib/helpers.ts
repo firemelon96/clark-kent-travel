@@ -5,6 +5,7 @@ import { hotels } from "../data/hotels";
 import { landArrangements } from "../data/land-arrangements";
 import { transfers } from "../data/transfer";
 import { accommodtions } from "../data/accommodations";
+import { rentals } from "../data/rentals";
 // import { transfer_services } from "../data/logistics";
 // import { fastCrafts } from "../data/fast-craft";
 
@@ -67,6 +68,13 @@ export const getAccomById = (id: string) => {
   if (!accom) return notFound();
 
   return accom;
+};
+
+export const getRentalById = (id: string) => {
+  const rental = rentals.find((rental) => rental.id === id);
+  if (!rental) return notFound();
+
+  return rental;
 };
 
 export const getPackageToursByLocation = (address: string) => {
