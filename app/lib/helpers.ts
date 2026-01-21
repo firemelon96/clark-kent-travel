@@ -62,6 +62,13 @@ export const getTransferById = (id: string) => {
   return transfer;
 };
 
+export const getAccomById = (id: string) => {
+  const accom = accommodtions.find((accom) => accom.id === id);
+  if (!accom) return notFound();
+
+  return accom;
+};
+
 export const getPackageToursByLocation = (address: string) => {
   const tour = tours.filter(
     (tour) =>

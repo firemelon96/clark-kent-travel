@@ -17,16 +17,16 @@ import {
 import { format } from "date-fns";
 import { z } from "zod";
 import * as React from "react";
-import { TranferFormSchema } from "@/types/tour";
+import { AccomFormSchema } from "@/types/tour";
 import { formatPeso } from "@/app/lib/helpers";
 
-type Props = z.input<typeof TranferFormSchema>;
+type Props = z.input<typeof AccomFormSchema>;
 
 // const baseUrl = process.env.VERCEL_URL
 //   ? `https://${process.env.VERCEL_URL}`
 //   : "http://localhost:3001";
 
-export const TransferEmailTemplate = ({
+export const AccomEmailTemplate = ({
   count,
   date,
   name,
@@ -34,10 +34,9 @@ export const TransferEmailTemplate = ({
   number,
   total,
   title,
-  location,
-  time,
+  numOfNights,
 }: Props) => {
-  const previewText = `Your Booking for ${title} Awaits`;
+  const previewText = `Your Reservation for ${title} Awaits`;
 
   return (
     <Html>
@@ -79,13 +78,14 @@ export const TransferEmailTemplate = ({
                 <strong>Reservation Date:</strong>
                 {date}
               </Text>
+              <Text className="text-[14px]leading-4 tracking-widest text-black">
+                <strong>Number of stay: </strong>
+                {numOfNights} {numOfNights > 1 ? "nights" : "night"}
+              </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Contact Person:</strong> {name}
               </Text>
-              <Text className="text-[14px]leading-4 tracking-widest text-black">
-                <strong>Service: </strong>
-                {title} - {time}
-              </Text>
+
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Number of Participants:</strong> {count}{" "}
                 {count > 1 ? "persons" : "person"}
@@ -95,10 +95,6 @@ export const TransferEmailTemplate = ({
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Contact Number:</strong> {number}
-              </Text>
-              <Text className="text-[14px] leading-4 tracking-widest text-black">
-                <strong>Pick up Hotel/location:</strong>{" "}
-                <Link href={location}>View map</Link>
               </Text>
               <Text className="text-[14px] leading-4 tracking-widest text-black">
                 <strong>Total Price:</strong> {formatPeso(total || 0)}
@@ -137,4 +133,4 @@ export const TransferEmailTemplate = ({
   );
 };
 
-export default TransferEmailTemplate;
+export default AccomEmailTemplate;

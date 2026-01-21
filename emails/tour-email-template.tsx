@@ -141,8 +141,8 @@ export const TourEmailTemplate = ({
               </Section>
             </Section>
             <Text className="mt-5 text-center text-xs text-slate-500">
-              &copy; 2026 | <strong>Clark Kent Travel and Tours</strong>, Lagan
-              St., Puerto Princesa City Palawan 5300, PH |{" "}
+              &copy; 2026 | <strong>Clark Kent Travel and Tours</strong>, GSFM
+              Bldg., Manalo Street, Puerto Princesa City, Palawan, 5300, PH |{" "}
               <Link href="icapturetravelservices.com">
                 www.clarkkenttravelandtours.com
               </Link>

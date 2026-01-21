@@ -31,6 +31,18 @@ export const TranferFormSchema = z.object({
   time: z.string(),
 });
 
+export const AccomFormSchema = z.object({
+  date: z.string(),
+  type: z.string(),
+  count: z.number().min(1, "Count is required"),
+  name: z.string().min(1, "Name is required!"),
+  email: z.string().email(),
+  number: z.string(),
+  total: z.number().optional(),
+  title: z.string().optional(),
+  numOfNights: z.number(),
+});
+
 type Itinerary = {
   name: string;
   activities: string[];
@@ -77,6 +89,16 @@ export type TourPackage = {
 };
 
 export const bookingOptionSchema = z.object({
+  dateRange: z.object({
+    from: z.date(),
+    to: z.date({ required_error: "Select date to" }),
+  }),
+  participants: z.number().min(1),
+  totalPrice: z.number().min(0),
+  type: z.string(),
+});
+
+export const accomOptionSchema = z.object({
   dateRange: z.object({
     from: z.date(),
     to: z.date({ required_error: "Select date to" }),

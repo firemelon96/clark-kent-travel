@@ -18,46 +18,38 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { add, addDays, differenceInCalendarDays, format } from "date-fns";
+import { differenceInCalendarDays, format } from "date-fns";
 import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-  useTransition,
-} from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Input } from "@/components/ui/input";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Label } from "./ui/label";
 import { formatPeso } from "@/app/lib/helpers";
 import { DateRange } from "react-day-picker";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { toast } from "sonner";
-import { bookingOptionSchema, pricingSchema } from "@/types/tour";
-import { MapLocation } from "./map-location";
-import useOptionStore from "@/hooks/use-option-store";
+import {
+  bookingOptionSchema,
+  pricingSchema,
+  accomOptionSchema,
+} from "@/types/tour";
 
 type Props = {
   id: string;
-  duration: number;
   pricing: z.infer<typeof pricingSchema>[];
-  service: string;
-  title?: string;
+  title: string;
 };
 
-export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
+export const BookRange = ({ id, pricing, title }: Props) => {
   const [openDate, setOpenDate] = useState(false);
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   const priceType = Array.from(new Set(pricing.map((price) => price.type)));
-  console.log(priceType);
 
-  const form = useForm<z.infer<typeof bookingOptionSchema>>({
-    resolver: zodResolver(bookingOptionSchema),
+  const form = useForm<z.infer<typeof accomOptionSchema>>({
+    resolver: zodResolver(accomOptionSchema),
     defaultValues: {
       dateRange: {
         from: undefined,
@@ -81,10 +73,6 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
   const participants = form.watch("participants");
   const type = form.watch("type");
   const range = form.watch("dateRange");
-
-  const isDay = duration === 1;
-
-  console.log(range);
 
   const numOfNights = differenceInCalendarDays(range.to, range.from);
 
@@ -135,7 +123,7 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
     }
   }, [participants, type, pricing, form.setValue, form, numOfNights]);
 
-  const onSubmit = (values: z.infer<typeof bookingOptionSchema>) => {
+  const onSubmit = (values: z.infer<typeof accomOptionSchema>) => {
     const { participants, totalPrice, dateRange, type } = values;
 
     const { from, to } = dateRange;
@@ -145,14 +133,9 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
       return;
     }
 
-    // if (mapLink === "") {
-    //   toast.error("Please select a location on the map");
-    //   return;
-    // }
-
     const url = qs.stringifyUrl(
       {
-        url: "/booking",
+        url: "/accommodations/reservation",
         query: {
           id,
           from: from ? format(from, "yyyy-MM-dd") : undefined,
@@ -160,8 +143,8 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
           participants,
           totalPrice,
           type,
-          service,
           title,
+          numOfNights,
         },
       },
       { skipNull: true, skipEmptyString: true },
@@ -365,15 +348,9 @@ export const BookRange = ({ id, pricing, duration, service, title }: Props) => {
           )}
         />
         <div className="flex justify-end gap-2">
-          {/* Make this persist in localstorage when saved */}
-          {/* {id && (
-            <Button onClick={() => onClose()} variant="secondary" type="button">
-              Close
-            </Button>
-          )} */}
           <Button variant="default" className="">
             {isPending && <Loader2Icon />}{" "}
-            {isPending ? "Loading..." : "Book now"}
+            {isPending ? "Loading..." : "Reserve now"}
           </Button>
         </div>
       </form>

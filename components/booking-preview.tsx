@@ -22,8 +22,7 @@ export const BookingPreview = ({ url, title }: Props) => {
       <div className="space-y-2">
         <p>{title}</p>
         <span className="text-slate-500">
-          {eachParams.type.toLowerCase()} transfer x {eachParams.participants}{" "}
-          pax
+          {eachParams.type.toLowerCase()} x {eachParams.participants} pax
         </span>
       </div>
     </div>
