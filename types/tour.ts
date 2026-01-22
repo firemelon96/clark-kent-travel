@@ -82,27 +82,6 @@ export const pricingSchema = z.object({
   label: z.string().optional(),
 });
 
-export type TourPackage = {
-  tourId: string;
-  tourName: string;
-  isFeatured?: boolean | undefined;
-  type: string;
-  min?: number;
-  pricing: z.infer<typeof pricingSchema>[];
-  isPax?: boolean | undefined;
-  address: string[];
-  description: string;
-  itineraries: Itinerary[];
-  duration: string[];
-  inclusions: string[];
-  exclusions: string[];
-  note?: string[] | undefined;
-  reminders?: string[] | undefined;
-  images: string[];
-  minParticipants: number;
-  maxParticipants: number;
-};
-
 export const bookingOptionSchema = z.object({
   dateRange: z.object({
     from: z.date(),
