@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { NewNavbar } from "@/components/new-navigation";
-import Footer from "./components/footer";
 import { Toaster } from "@/components/ui/sonner";
-import ConfirmationDialog from "@/components/confirmation-dialog";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -36,7 +33,6 @@ export default function RootLayout({
       <body className={`${font.className} bg-[#FAF9F6]`}>
         <Toaster richColors />
         {children}
-        <ConfirmationDialog />
       </body>
     </html>
   );

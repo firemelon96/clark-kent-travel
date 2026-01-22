@@ -8,13 +8,9 @@ import {
 import { getPackageTours } from "../lib/helpers";
 import { FeatureCard } from "../../components/feature-card";
 import { ServiceLabel } from "@/components/service-label";
-import { getFeaturedTour } from "@/lib/data";
-import { notFound } from "next/navigation";
-import { landArrangements } from "../data/land-arrangements";
 
 const FeaturedCard = async () => {
   const packageTours = getPackageTours();
-  // const featuredTours = (await getFeaturedTour()) || [];
 
   return (
     <div className="w-full">

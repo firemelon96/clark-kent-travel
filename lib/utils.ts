@@ -1,7 +1,4 @@
 import { rentals } from "@/app/data/rentals";
-import { z } from "zod";
-import { transfers } from "@/app/data/transfer";
-import { Pricing, pricingSchema } from "@/types/tour";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

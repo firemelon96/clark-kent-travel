@@ -25,13 +25,13 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState, useTransition } from "react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import { Label } from "../../../../components/ui/label";
+import { Label } from "@/components/ui/label";
 import { formatPeso } from "@/app/lib/helpers";
 import { toast } from "sonner";
 import { pricingSchema, transferOptionSchema } from "@/types/tour";
-import { MapLocation } from "../../../../components/map-location";
+import { MapLocation } from "@/components/map-location";
 import useOptionStore from "@/hooks/use-option-store";
-import { MeetUpLocation } from "../../../../components/mee-up-location";
+import { MeetUpLocation } from "@/components/meet-up-location";
 
 type Props = {
   id: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -39,19 +39,17 @@ export function CountdownBlocks({
   className,
   onComplete,
 }: CountdownBlocksProps) {
-  const target = React.useMemo(() => new Date(targetDate), [targetDate]);
-  const [time, setTime] = React.useState<TimeLeft | null>(() =>
-    getTimeLeft(target),
-  );
+  const target = useMemo(() => new Date(targetDate), [targetDate]);
+  const [time, setTime] = useState<TimeLeft | null>(null);
 
-  React.useEffect(() => {
-    const id = window.setInterval(() => {
+  useEffect(() => {
+    const id = setInterval(() => {
       const next = getTimeLeft(target);
       setTime(next);
       if (!next && onComplete) onComplete();
     }, 1000);
 
-    return () => window.clearInterval(id);
+    return () => clearInterval(id);
   }, [target, onComplete]);
 
   return (

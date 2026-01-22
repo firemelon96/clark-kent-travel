@@ -21,16 +21,6 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-// const images = [
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 1' },
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 2' },
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 3' },
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 4' },
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 5' },
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 4' },
-//   { src: '/placeholder.svg?height=400&width=600', alt: 'Image 5' },
-// ];
-
 type Props = {
   images?: string[];
 };
