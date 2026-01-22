@@ -25,15 +25,11 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState, useTransition } from "react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import { Label } from "./ui/label";
+import { Label } from "../../../../components/ui/label";
 import { formatPeso } from "@/app/lib/helpers";
 import { DateRange } from "react-day-picker";
 import { toast } from "sonner";
-import {
-  bookingOptionSchema,
-  pricingSchema,
-  accomOptionSchema,
-} from "@/types/tour";
+import { pricingSchema, accomOptionSchema } from "@/types/tour";
 
 type Props = {
   id: string;

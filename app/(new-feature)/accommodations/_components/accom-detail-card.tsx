@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -11,9 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { format } from "date-fns";
 import { formatPeso } from "@/app/lib/helpers";
 import { useUrlParams } from "@/hooks/use-url-params";
-import { MeetUpLocation } from "@/components/mee-up-location";
-import { MapLocation } from "@/components/map-location";
-import { Calendar, Clock1, Link, MoonStar, PinIcon, User } from "lucide-react";
+import { Calendar, MoonStar, User } from "lucide-react";
 
 export const AccomDetailCard = () => {
   const { eachParams } = useUrlParams();

@@ -1,9 +1,8 @@
 "use client";
 
-import { Book } from "@/actions/book";
+import { z } from "zod";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -14,17 +13,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState, useTransition } from "react";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import PhoneInput from "react-phone-number-input";
-import { BookTour } from "@/actions/tour-booking";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import { useUrlParams } from "@/hooks/use-url-params";
-import { TransferReserve } from "@/actions/tranfer-reservation";
 import { AccomReservation } from "@/actions/accom-reservation";
 
 export const contactFormSchema = z.object({
@@ -90,12 +85,7 @@ export const AccomContactDetail = () => {
               <FormItem className="w-full">
                 <FormLabel>Full name</FormLabel>
                 <FormControl>
-                  <Input
-                    // disabled={disabled}
-                    {...field}
-                    placeholder="John Doe"
-                    className=""
-                  />
+                  <Input {...field} placeholder="John Doe" className="" />
                 </FormControl>
               </FormItem>
             )}
@@ -160,7 +150,6 @@ export const AccomContactDetail = () => {
           <Button disabled={isPending}>
             {isPending ? "Please wait..." : "Confirm Reservation"}
           </Button>
-          {/* <Button type="submit">Submit</Button> */}
         </div>
       </form>
     </Form>

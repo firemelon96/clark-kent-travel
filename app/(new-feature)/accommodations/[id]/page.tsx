@@ -4,7 +4,6 @@ import { Description } from "../_components/description";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { RoomTable } from "../_components/room-table";
 import { Badge } from "@/components/ui/badge";
 import { BiSolidLeftArrow } from "react-icons/bi";
 import {
@@ -13,8 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BookOptionTour } from "@/components/book-option-tour";
-import { BookRange } from "@/components/book-range";
+import { BookRange } from "@/app/(new-feature)/accommodations/_components/book-range";
 import { AccomMap } from "../_components/accom-map";
 
 interface SingleProps {
@@ -101,28 +99,11 @@ const Page = async ({ params }: SingleProps) => {
                     </p>
                   </AccordionContent>
                 </AccordionItem>
-                {/* <AccordionItem value="item-3">
-                  <AccordionTrigger className="hover:no-underline">
-                    <Badge>Exclusions</Badge>
-                  </AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-4 px-4 text-balance">
-                    <ul>
-                      {tour.exclusions.map((item) => (
-                        <li key={item} className="flex gap-2">
-                          <X className="size-4" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem> */}
               </Accordion>
             </div>
           </div>
         </div>
       </div>
-
-      {/* <RoomTable rooms={hotel.rooms} /> */}
     </section>
   );
 };

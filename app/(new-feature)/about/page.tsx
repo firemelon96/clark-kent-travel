@@ -1,4 +1,3 @@
-import { getGoogleReviews } from "@/actions/google-reviews";
 import { Metadata } from "next";
 import Image from "next/image";
 

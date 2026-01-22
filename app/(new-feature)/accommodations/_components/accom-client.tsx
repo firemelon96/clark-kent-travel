@@ -1,6 +1,5 @@
 import { accommodtions } from "@/app/data/accommodations";
 import { AccomCard } from "./accom-card";
-import { hotels } from "@/app/data/hotels";
 
 const AccomClient = () => {
   return (
