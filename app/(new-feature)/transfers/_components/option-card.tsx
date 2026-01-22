@@ -1,14 +1,13 @@
 "use client";
 
-import { Car } from "lucide-react";
-import { Card, CardContent, CardHeader } from "./ui/card";
-import { Button } from "./ui/button";
-import { BookOptionTour } from "./book-option-tour";
-import { Pricing, pricingSchema } from "@/types/tour";
 import z from "zod";
-import { useEffect, useRef, useState } from "react";
+import { Car } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { pricingSchema } from "@/types/tour";
+import { Button } from "@/components/ui/button";
 import useOptionStore from "@/hooks/use-option-store";
 import { BookOptionTransfer } from "./book-option-transfer";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 type Props = {
   name: string;

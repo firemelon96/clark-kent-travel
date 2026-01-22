@@ -1,14 +1,10 @@
 import { transfers } from "@/app/data/transfer";
 import { formatPeso } from "@/app/lib/helpers";
-import { BookOptionTour } from "@/components/book-option-tour";
-import { BookingOptions } from "@/components/booking-options";
 import { ImageBanner } from "@/components/image-banner";
-import { OptionCard } from "@/components/option-card";
-import { ReusableAccordion } from "@/components/reusable-accordion";
+import { OptionCard } from "@/app/(new-feature)/transfers/_components/option-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Car, Dot } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BiSolidLeftArrow } from "react-icons/bi";

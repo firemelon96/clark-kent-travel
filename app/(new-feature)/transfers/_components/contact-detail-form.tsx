@@ -1,9 +1,7 @@
 "use client";
 
-import { Book } from "@/actions/book";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -14,14 +12,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState, useTransition } from "react";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import PhoneInput from "react-phone-number-input";
-import { BookTour } from "@/actions/tour-booking";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import { useUrlParams } from "@/hooks/use-url-params";
 import { TransferReserve } from "@/actions/tranfer-reservation";
@@ -69,15 +65,18 @@ export const ContactDetailForm = () => {
     startTransition(() => {
       TransferReserve(newValues)
         .then((data) => {
-          toast.success(data.message);
-          form.reset();
-          router.push("/booking/success");
+          if (data.success) {
+            toast.success(data.message);
+            form.reset();
+            router.push("/booking/success");
+          } else {
+            toast.error(data.message);
+          }
         })
         .catch((err) => {
           toast.error(err.message);
         });
     });
-    // console.log(newValues);
   };
 
   return (
@@ -92,7 +91,7 @@ export const ContactDetailForm = () => {
                 <FormLabel>Full name</FormLabel>
                 <FormControl>
                   <Input
-                    // disabled={disabled}
+                    disabled={isPending}
                     {...field}
                     placeholder="John Doe"
                     className=""
@@ -111,7 +110,7 @@ export const ContactDetailForm = () => {
                   <Input
                     {...field}
                     type="email"
-                    // disabled={disabled}
+                    disabled={isPending}
                     placeholder="johnDoe@example.com"
                   />
                 </FormControl>
@@ -161,7 +160,6 @@ export const ContactDetailForm = () => {
           <Button disabled={isPending}>
             {isPending ? "Please wait..." : "Confirm Reservation"}
           </Button>
-          {/* <Button type="submit">Submit</Button> */}
         </div>
       </form>
     </Form>

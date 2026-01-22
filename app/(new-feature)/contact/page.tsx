@@ -1,5 +1,4 @@
 import { GoogleMap } from "@/components/google-map";
-import React from "react";
 
 function Contact() {
   return (

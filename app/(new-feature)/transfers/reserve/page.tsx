@@ -1,23 +1,11 @@
-import { formatPeso, getTourById, getTransferById } from "@/app/lib/helpers";
+import { getTransferById } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
 } from "@/components/booking-preview";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { format } from "date-fns";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Suspense } from "react";
-import { ContactForm } from "../../booking/_components/contact-form";
 import { Stepper } from "@/components/stepper";
-// import { auth } from "@/auth";
-import { redirect } from "next/navigation";
-import { getTransfer } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { ContactDetailForm } from "../_components/contact-detail-form";
 import { DetailsCard } from "../_components/details-card";
 

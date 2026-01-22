@@ -1,6 +1,4 @@
 import { ImageBanner } from "@/components/image-banner";
-import Image from "next/image";
-import React from "react";
 
 const legalDocs = [
   "https://cdn.palawanwebsolutions.com/clarkkent/legal/DOT.png",
@@ -18,7 +16,7 @@ function Legalities() {
       <p>
         Below are the official legal and regulatory documents of the company,
         including registrations and permits issued by the appropriate government
-        authorities. These documents demonstrate the company’s legal standing,
+        authorities. These documents demonstrate the company's legal standing,
         compliance, and authorization to operate.
       </p>
 

@@ -1,10 +1,5 @@
 "use client";
 import { transfers } from "@/app/data/transfer";
-import { Filter } from "@/components/filter";
-import { ServiceCard } from "@/components/service-card";
-import { ServiceLabel } from "@/components/service-label";
-import { getTransfer } from "@/lib/utils";
-import { useSearchParams } from "next/navigation";
 import { TransferCard } from "./transfer-card";
 
 export const Transfer = () => {

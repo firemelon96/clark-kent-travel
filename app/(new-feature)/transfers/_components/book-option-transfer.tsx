@@ -18,33 +18,20 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { addDays, format } from "date-fns";
+import { format } from "date-fns";
 import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-  useTransition,
-} from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Input } from "@/components/ui/input";
-import { usePathname, useRouter } from "next/navigation";
-import { Label } from "./ui/label";
+import { useRouter } from "next/navigation";
+import { Label } from "../../../../components/ui/label";
 import { formatPeso } from "@/app/lib/helpers";
-import { tourPricingSelectSchema } from "@/types/drizzle-schema";
-import { DateRange } from "react-day-picker";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { toast } from "sonner";
-import {
-  bookingOptionSchema,
-  pricingSchema,
-  transferOptionSchema,
-} from "@/types/tour";
-import { MapLocation } from "./map-location";
+import { pricingSchema, transferOptionSchema } from "@/types/tour";
+import { MapLocation } from "../../../../components/map-location";
 import useOptionStore from "@/hooks/use-option-store";
-import { MeetUpLocation } from "./mee-up-location";
+import { MeetUpLocation } from "../../../../components/mee-up-location";
 
 type Props = {
   id: string;
@@ -67,7 +54,6 @@ export const BookOptionTransfer = ({
   const { onClose } = useOptionStore();
 
   const router = useRouter();
-  const pathname = usePathname();
   const [openDate, setOpenDate] = useState(false);
   const [mapLink, setMapLink] = useState("");
   const [isPending, startTransition] = useTransition();
@@ -168,17 +154,6 @@ export const BookOptionTransfer = ({
     startTransition(() => {
       router.push(url);
     });
-
-    // console.log({
-    //   participants,
-    //   totalPrice,
-    //   date,
-    //   type,
-    //   time,
-    //   location: shareLink ? shareLink : mapLink,
-    //   title,
-    //   pathname,
-    // });
   };
 
   return (

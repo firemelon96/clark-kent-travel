@@ -6,27 +6,28 @@ import { Card } from "@/components/ui/card";
 const trips = [
   {
     name: "Balabac",
-    imageUrl: "/resources/trips/balabac.webp",
+    imageUrl:
+      "https://cdn.palawanwebsolutions.com/clarkkent/trips/Balabac.avif",
   },
   {
     name: "Coron",
-    imageUrl: "/resources/trips/coron.jpg",
+    imageUrl: "https://cdn.palawanwebsolutions.com/clarkkent/trips/Coron.avif",
   },
   {
     name: "El Nido",
-    imageUrl: "/resources/trips/elnido.jpg",
+    imageUrl: "https://cdn.palawanwebsolutions.com/clarkkent/trips/Elnido.avif",
   },
   {
     name: "Puerto Princesa",
-    imageUrl: "/resources/trips/ppc.webp",
+    imageUrl: "https://cdn.palawanwebsolutions.com/clarkkent/trips/Puerto.avif",
   },
   {
     name: "Port Barton",
-    imageUrl: "/resources/trips/portbarton.jpeg",
+    imageUrl: "https://cdn.palawanwebsolutions.com/clarkkent/trips/Barton.avif",
   },
   {
     name: "Bohol",
-    imageUrl: "/resources/trips/bohol.jpg",
+    imageUrl: "https://cdn.palawanwebsolutions.com/clarkkent/trips/Bohol.avif",
   },
 ];
 
