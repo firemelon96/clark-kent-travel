@@ -11,13 +11,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Menu } from "lucide-react";
 import { Logo } from "@/app/components/logo";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button, buttonVariants } from "./ui/button";
-import { UserAvatar } from "./user-avatar";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Button } from "./ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 //TODO: Fix the navigation error

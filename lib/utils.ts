@@ -9,24 +9,24 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const getFirstAvailablePrice = (
-  tour: z.infer<typeof pricingSchema>[],
-  type: string,
-) => {
-  const pricing = tour.find((p) => p.type === type);
-  return pricing && pricing;
-};
+// export const getFirstAvailablePrice = (
+//   tour: z.infer<typeof pricingSchema>[],
+//   type: string,
+// ) => {
+//   const pricing = tour.find((p) => p.type === type);
+//   return pricing && pricing;
+// };
 
-export const getTransfer = ({ type }: { type: string }) => {
-  let transferData = [];
-  if (type === "all") {
-    transferData = transfers;
-  } else {
-    transferData = transfers.filter((data) => data.type.toLowerCase() === type);
-  }
+// export const getTransfer = ({ type }: { type: string }) => {
+//   let transferData = [];
+//   if (type === "all") {
+//     transferData = transfers;
+//   } else {
+//     transferData = transfers.filter((data) => data.type.toLowerCase() === type);
+//   }
 
-  return transferData;
-};
+//   return transferData;
+// };
 
 export const getRentalByType = ({ type }: { type: string }) => {
   let rentalData = [];

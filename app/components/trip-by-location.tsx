@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getAllTourLocation } from "../lib/helpers";
 import { ServiceLabel } from "@/components/service-label";
 import { Card } from "@/components/ui/card";
 
@@ -32,7 +31,6 @@ const trips = [
 ];
 
 const TripByLocation = () => {
-  const tourByLocation = getAllTourLocation();
   return (
     <section className="space-y-4 pb-10">
       <ServiceLabel

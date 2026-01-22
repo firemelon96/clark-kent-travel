@@ -12,7 +12,6 @@ import {
   FormLabel,
   FormMessage,
 } from "./ui/form";
-import { Input } from "./ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "./ui/button";
 import { getAllTourLocation } from "@/app/lib/helpers";
@@ -23,7 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const searchSchema = z.object({
@@ -32,7 +31,6 @@ const searchSchema = z.object({
 });
 
 export const SearchBar = () => {
-  const pathname = usePathname();
   const router = useRouter();
 
   const form = useForm<z.infer<typeof searchSchema>>({

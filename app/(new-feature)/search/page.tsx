@@ -1,7 +1,5 @@
 import TourCard from "@/app/components/tour-card";
-import Card from "@/app/components/tour-card";
 import { getTravelTours } from "@/app/lib/helpers";
-import { getFirstAvailablePrice } from "@/lib/utils";
 
 type Props = {
   searchParams: Promise<{ location: string; type: string }>;

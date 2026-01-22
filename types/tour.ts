@@ -110,3 +110,22 @@ export const transferOptionSchema = z.object({
   time: z.string().optional(),
   location: z.string(),
 });
+
+export const rentalOptionSchema = z.object({
+  pickup: z.object({
+    date: z.date(),
+    time: z.string(),
+  }),
+  return: z.object({
+    date: z.date(),
+    time: z.string(),
+  }),
+  extra: z.array(
+    z.object({
+      name: z.string(),
+      price: z.number(),
+    }),
+  ),
+  participants: z.number(),
+  totalPrice: z.number(),
+});

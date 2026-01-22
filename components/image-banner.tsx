@@ -14,7 +14,7 @@ export const ImageBanner = ({ images }: Props) => {
           {isArray &&
             images?.slice(0, 3).map((image, i) => (
               <div
-                key={image}
+                key={`${image}-${i}`}
                 className="relative h-48 w-full overflow-hidden bg-rose-200 first:col-span-3 first:row-span-2 first:h-full even:col-span-2 md:first:col-span-2 md:first:row-span-2 md:even:col-span-1"
               >
                 <Image

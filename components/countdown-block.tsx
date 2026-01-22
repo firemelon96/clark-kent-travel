@@ -70,7 +70,7 @@ function Block({ value, label }: { value: string; label: string }) {
   return (
     <Card className="w-[75px] border-0 bg-black p-4 shadow-sm md:w-[100px]">
       <CardContent className="flex flex-col items-center justify-center md:gap-2">
-        <div className="leading-none font-bold tracking-tight text-white tabular-nums md:text-5xl">
+        <div className="leading-none font-bold tracking-tight text-white md:text-5xl">
           {value}
         </div>
         <div className="font-medium text-white/90 md:text-xl">{label}</div>

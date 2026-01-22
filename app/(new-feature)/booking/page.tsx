@@ -3,21 +3,10 @@ import {
   BookingPreview,
   BookingPreviewSkeleton,
 } from "@/app/(new-feature)/travel-and-tours/_components/booking-preview";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { format } from "date-fns";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Suspense } from "react";
 import { ContactForm } from "./_components/contact-form";
 import { Stepper } from "@/components/stepper";
-// import { auth } from "@/auth";
-import { redirect } from "next/navigation";
-import { getTransfer } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { DetailsCard } from "@/app/(new-feature)/travel-and-tours/_components/details-card";
 
 interface Props {

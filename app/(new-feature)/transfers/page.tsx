@@ -1,6 +1,5 @@
 import { HeroService } from "@/components/hero-service";
 import { Transfer } from "./_components/transfer";
-import { getTransfer } from "@/lib/utils";
 import { Suspense } from "react";
 
 const TransferPage = async () => {

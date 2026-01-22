@@ -72,16 +72,6 @@ export const getRentalById = (id: string) => {
   return rental;
 };
 
-export const getPackageToursByLocation = (address: string) => {
-  const tour = tours.filter(
-    (tour) =>
-      tour.address[0].toLowerCase().includes(address.toLowerCase()) &&
-      tour.type === "package",
-  );
-
-  return tour;
-};
-
 export const getAllTourLocation = () => {
   const uniqueAddressesWithImage: TourLocationProps[] = tours.reduce(
     (acc, item) => {

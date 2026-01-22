@@ -41,25 +41,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-const BookingSchema = z.object({
-  pickup: z.object({
-    date: z.date(),
-    time: z.string(),
-  }),
-  return: z.object({
-    date: z.date(),
-    time: z.string(),
-  }),
-  extra: z.array(
-    z.object({
-      name: z.string(),
-      price: z.number(),
-    }),
-  ),
-  participants: z.number(),
-  totalPrice: z.number(),
-});
+import { rentalOptionSchema } from "@/types/tour";
 
 type Extras = {
   name: string;
@@ -101,8 +83,8 @@ export const RentalBookingOptions = ({
 
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof BookingSchema>>({
-    resolver: zodResolver(BookingSchema),
+  const form = useForm<z.infer<typeof rentalOptionSchema>>({
+    resolver: zodResolver(rentalOptionSchema),
     defaultValues: {
       pickup: { date: undefined, time: undefined },
       return: { date: undefined, time: undefined },
@@ -119,8 +101,6 @@ export const RentalBookingOptions = ({
   const endTime = form.watch("return.time");
 
   const selectedExtra = form.watch("extra");
-  const participants = form.watch("participants");
-  const totalPrice = form.watch("totalPrice");
 
   const dayCount = differenceInDays(returnDate, pickupDate) + 1 || 0;
 
@@ -233,7 +213,7 @@ export const RentalBookingOptions = ({
     form,
   ]);
 
-  const onSubmit = (values: z.infer<typeof BookingSchema>) => {
+  const onSubmit = (values: z.infer<typeof rentalOptionSchema>) => {
     if (error) return;
 
     const {
