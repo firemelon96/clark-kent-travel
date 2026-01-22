@@ -1,9 +1,9 @@
 "use client";
 
 import { RentalCard } from "./rental-card";
+import { getRentalByType } from "@/lib/utils";
 import { FilterRental } from "./filter-rental";
 import { useSearchParams } from "next/navigation";
-import { getRentalByType } from "@/lib/utils";
 
 export const RentalsClient = () => {
   const searchParams = useSearchParams();

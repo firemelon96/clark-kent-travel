@@ -1,5 +1,4 @@
 import { rentals } from "@/app/data/rentals";
-import { BookingOptions } from "@/components/booking-options";
 import { ImageBanner } from "@/components/image-banner";
 import { ReusableAccordion } from "@/components/reusable-accordion";
 import { Badge } from "@/components/ui/badge";

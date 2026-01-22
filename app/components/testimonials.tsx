@@ -1,7 +1,5 @@
 import { ServiceLabel } from "@/components/service-label";
-import { reviews } from "../data/reviews";
 import { ReviewCard } from "./review-card";
-import { getGoogleReviews } from "@/actions/google-reviews";
 
 type ReviewType = {
   author_name: string;

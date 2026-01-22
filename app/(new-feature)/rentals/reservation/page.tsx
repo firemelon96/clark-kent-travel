@@ -1,8 +1,6 @@
 import { getRentalById } from "@/app/lib/helpers";
-import { BookingPreview } from "@/app/(new-feature)/travel-and-tours/_components/booking-preview";
 import { Stepper } from "@/components/stepper";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { getRentalByType } from "@/lib/utils";
 import { Suspense } from "react";
 import { RentalDetailCard } from "../_components/rental-detail-card";
 import { RentalPreview } from "../_components/rental-preview";

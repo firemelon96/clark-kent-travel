@@ -1,7 +1,5 @@
 import { formatPeso } from "@/app/lib/helpers";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import {
   Bike,
   Car,
@@ -14,8 +12,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { BsGear } from "react-icons/bs";
-import { SiTransmission } from "react-icons/si";
 
 interface RentalProps {
   imageUrl: string;
@@ -37,7 +33,6 @@ export const RentalCard = ({
   title,
   brand,
   type,
-  modelYear,
   serviceType,
   fuelType,
   seatingCapacity,

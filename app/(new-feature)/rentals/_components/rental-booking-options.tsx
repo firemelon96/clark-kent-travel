@@ -1,5 +1,19 @@
 "use client";
+import { z } from "zod";
 import qs from "query-string";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { formatPeso } from "@/app/lib/helpers";
+import { Switch } from "@/components/ui/switch";
+import { Calendar } from "@/components/ui/calendar";
+import { cn, generateTimeSlots } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useTransition, useEffect, useState } from "react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { CalendarIcon, Info, Loader2Icon, Minus, Plus } from "lucide-react";
+import { differenceInDays, differenceInHours, format, parse } from "date-fns";
 import {
   Form,
   FormControl,
@@ -9,29 +23,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
-import { date, z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  add,
-  differenceInDays,
-  differenceInHours,
-  format,
-  parse,
-} from "date-fns";
-import { CalendarIcon, Info, Loader2Icon, Minus, Plus } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import { cn, generateTimeSlots } from "@/lib/utils";
-import { useRouter } from "next/navigation";
-import { Label } from "@/components/ui/label";
-import { useTransition, useEffect, useState } from "react";
-import { Switch } from "@/components/ui/switch";
 import {
   Select,
   SelectContent,
@@ -39,14 +35,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { formatPeso } from "@/app/lib/helpers";
 
 const BookingSchema = z.object({
   pickup: z.object({
@@ -100,16 +94,12 @@ export const RentalBookingOptions = ({
   isDayMaxDuration,
   title,
 }: Props) => {
-  // const [totalPrice, setTotalPrice] = useState(pricePerDay);
   const [isPending, startTransition] = useTransition();
   const [openDate, setOpenDate] = useState(false);
-  // const [dayCount, setDayCount] = useState();
   const [openReturnDate, setOpenReturnDate] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
-
-  // console.log(isHourMinDuration);
 
   const form = useForm<z.infer<typeof BookingSchema>>({
     resolver: zodResolver(BookingSchema),
@@ -246,7 +236,6 @@ export const RentalBookingOptions = ({
   const onSubmit = (values: z.infer<typeof BookingSchema>) => {
     if (error) return;
 
-    // console.log(selectedExtra, values);
     const {
       extra,
       participants,
@@ -284,23 +273,6 @@ export const RentalBookingOptions = ({
       { skipNull: true, skipEmptyString: true },
     );
 
-    // console.log({
-    //   rentId,
-    //   startDate: `${format(pickupDate, "EEEE, LLL dd")}: ${startTime}`,
-    //   returnDate: `${format(returnDate, "EEEE, LLL dd")}: ${endTime}`,
-    //   participantCount: participants,
-    //   totalPrice,
-    //   extra: selectedExtra.map((ex) => `${ex.name}: ${ex.price} per day`),
-    //   duration:
-    //     dayCount <= 1
-    //       ? hourCount > minDuration
-    //         ? `${minDuration} + ${hourCount - minDuration} extra hours`
-    //         : `${hourCount} hours`
-    //       : `${dayCount} Days`,
-    //   title,
-    // });
-
-    // console.log({ isDayMaxDuration, isHourMinDuration });
     startTransition(() => {
       router.push(url);
     });
@@ -667,69 +639,6 @@ export const RentalBookingOptions = ({
             </FormItem>
           )}
         />
-
-        {/* <div className="rounded-md bg-slate-50 p-4">
-          {pickupDate && returnDate && startTime && endTime && (
-            <div className="flex items-center justify-between text-sm text-slate-500">
-              <span className="flex gap-2">
-                Duration
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <Info className="size-4" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <div>
-                        <p>Minimum Rental {minDuration} Hours</p>
-                        <p>
-                          Maximum Rental {maxDuration}{" "}
-                          {isDayMaxDuration ? "Days" : "Hours"}
-                        </p>
-                      </div>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </span>
-              {dayCount > 1 && (
-                <p>
-                  {dayCount} {dayCount > 1 ? "Days" : "Day"}
-                </p>
-              )}
-              {dayCount <= 1 && endTime && (
-                <p>
-                  {hourCount} {hourCount > 1 ? "Hours" : "Hour"}
-                </p>
-              )}
-            </div>
-          )}
-          {dayCount <= 1 && hourCount > minDuration && (
-            <div className="flex items-center justify-between text-sm text-slate-500">
-              <span>Add'l Hours ({formatPeso(pricePerHour)} per hour)</span>
-              <p>+ {formatPeso(pricePerHour * (hourCount - minDuration))}</p>
-            </div>
-          )}
-          {selectedExtra.map((extra) => (
-            <div
-              className="flex items-center justify-between text-sm text-slate-500"
-              key={extra.name}
-            >
-              <span>
-                {extra.name} ({formatPeso(extra.price)}
-                {dayCount > 1 ? `* ${dayCount} Days` : ""})
-              </span>
-              <p>
-                +{" "}
-                {dayCount > 1
-                  ? formatPeso(extra.price * dayCount)
-                  : formatPeso(extra.price)}
-              </p>
-            </div>
-          ))}
-          <div className="flex items-center justify-between">
-            <span>Total Price: </span>
-            <p>{formatPeso(totalPrice)}</p>
-          </div>
-        </div> */}
 
         <div className="flex justify-end gap-2">
           <Button variant="default">

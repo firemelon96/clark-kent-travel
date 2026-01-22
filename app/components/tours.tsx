@@ -1,8 +1,7 @@
 import { ServiceLabel } from "@/components/service-label";
 import { getDayTours } from "../lib/helpers";
 import Card from "./tour-card";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { getFirstAvailablePrice } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 const Tours = () => {

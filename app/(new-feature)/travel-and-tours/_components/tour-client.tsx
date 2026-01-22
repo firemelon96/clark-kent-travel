@@ -1,8 +1,6 @@
 "use client";
 
-import { tours } from "@/app/data/tours";
 import { FilterTour } from "./filter-tour";
-import { getFirstAvailablePrice } from "@/lib/utils";
 import TourCard from "@/app/components/tour-card";
 import { useSearchParams } from "next/navigation";
 import { getTravelTours } from "@/app/lib/helpers";
