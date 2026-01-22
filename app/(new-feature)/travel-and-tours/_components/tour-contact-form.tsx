@@ -1,8 +1,20 @@
 "use client";
 
+import { z } from "zod";
+import { toast } from "sonner";
+import { format } from "date-fns";
+import { useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+import { BookTour } from "@/actions/tour-booking";
+import PhoneInput from "react-phone-number-input";
+import { Separator } from "@/components/ui/separator";
+import { useUrlParams } from "@/hooks/use-url-params";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+
 import {
   Form,
   FormControl,
@@ -10,19 +22,6 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState, useTransition } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { parsePhoneNumberFromString } from "libphonenumber-js";
-import PhoneInput from "react-phone-number-input";
-import { BookTour } from "@/actions/tour-booking";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
-import { format } from "date-fns";
-import { useUrlParams } from "@/hooks/use-url-params";
 
 export const contactFormSchema = z.object({
   contactName: z.string().min(1, { message: "Name is required" }),
@@ -41,7 +40,7 @@ interface Props {
   tourName: string;
 }
 
-export const ContactForm = ({ tourName }: Props) => {
+export const TourContactForm = ({ tourName }: Props) => {
   const { eachParams, router } = useUrlParams();
   const [isPending, startTransition] = useTransition();
 
@@ -53,10 +52,6 @@ export const ContactForm = ({ tourName }: Props) => {
       contactNumber: "",
     },
   });
-
-  //   const onSubmit = (values: FormValues) => {
-  //     onHandleSubmit(values);
-  //   };
 
   const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
     const newValues = {

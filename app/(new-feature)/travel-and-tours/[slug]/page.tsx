@@ -1,20 +1,21 @@
-import { Description } from "@/app/(new-feature)/travel-and-tours/_components/description";
-import { formatPeso, getTourBySlug } from "@/app/lib/helpers";
-import { BookOptionTour } from "@/components/book-option-tour";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { BiSolidLeftArrow } from "react-icons/bi";
+import { Check, MapPinned, X } from "lucide-react";
 import { ImageBanner } from "@/components/image-banner";
+import { formatPeso, getTourBySlug } from "@/app/lib/helpers";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Description } from "@/app/(new-feature)/travel-and-tours/_components/description";
+import { BookOptionTour } from "@/app/(new-feature)/travel-and-tours/_components/book-option-tour";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Check, MapPinned, X } from "lucide-react";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { BiSolidLeftArrow } from "react-icons/bi";
 
 interface SingleProps {
   params: Promise<{

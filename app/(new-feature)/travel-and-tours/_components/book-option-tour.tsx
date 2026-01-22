@@ -1,5 +1,22 @@
 "use client";
+import { z } from "zod";
 import qs from "query-string";
+import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import { useForm } from "react-hook-form";
+import { addDays, format } from "date-fns";
+import { DateRange } from "react-day-picker";
+import { useRouter } from "next/navigation";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { formatPeso } from "@/app/lib/helpers";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import useOptionStore from "@/hooks/use-option-store";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { MapLocation } from "@/components/map-location";
+import { bookingOptionSchema, pricingSchema } from "@/types/tour";
+import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -9,37 +26,12 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
-import { addDays, format } from "date-fns";
-import { CalendarIcon, Loader2Icon, Minus, Plus } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import { cn } from "@/lib/utils";
-import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-  useTransition,
-} from "react";
-import { Input } from "@/components/ui/input";
-import { usePathname, useRouter } from "next/navigation";
-import { Label } from "./ui/label";
-import { formatPeso } from "@/app/lib/helpers";
-import { tourPricingSelectSchema } from "@/types/drizzle-schema";
-import { DateRange } from "react-day-picker";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { toast } from "sonner";
-import { bookingOptionSchema, pricingSchema } from "@/types/tour";
-import { MapLocation } from "./map-location";
-import useOptionStore from "@/hooks/use-option-store";
+import { useEffect, useState, useTransition } from "react";
 
 type Props = {
   tourId: string;
@@ -150,7 +142,7 @@ export const BookOptionTour = ({
 
     const url = qs.stringifyUrl(
       {
-        url: "/booking",
+        url: "/travel-and-tours/booking",
         query: {
           id: tourId,
           from: from ? format(from, "yyyy-MM-dd") : undefined,

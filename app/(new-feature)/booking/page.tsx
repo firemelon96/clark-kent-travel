@@ -2,7 +2,7 @@ import { formatPeso, getTourById, getTransferById } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
-} from "@/components/booking-preview";
+} from "@/app/(new-feature)/travel-and-tours/_components/booking-preview";
 import {
   Card,
   CardContent,
@@ -18,7 +18,7 @@ import { Stepper } from "@/components/stepper";
 import { redirect } from "next/navigation";
 import { getTransfer } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { DetailsCard } from "@/components/details-card";
+import { DetailsCard } from "@/app/(new-feature)/travel-and-tours/_components/details-card";
 
 interface Props {
   searchParams: Promise<{

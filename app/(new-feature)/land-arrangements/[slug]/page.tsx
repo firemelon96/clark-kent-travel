@@ -1,6 +1,6 @@
 import { Description } from "@/app/(new-feature)/travel-and-tours/_components/description";
 import { formatPeso, getTourBySlug } from "@/app/lib/helpers";
-import { BookOptionTour } from "@/components/book-option-tour";
+import { BookOptionTour } from "@/app/(new-feature)/travel-and-tours/_components/book-option-tour";
 import { ImageBanner } from "@/components/image-banner";
 import {
   Accordion,

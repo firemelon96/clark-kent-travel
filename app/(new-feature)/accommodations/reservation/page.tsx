@@ -2,7 +2,7 @@ import { getAccomById } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
-} from "@/components/booking-preview";
+} from "@/app/(new-feature)/travel-and-tours/_components/booking-preview";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Suspense } from "react";
 import { Stepper } from "@/components/stepper";

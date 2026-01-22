@@ -1,16 +1,18 @@
 "use client";
-import { useActionState, useState } from "react";
-import { Button, buttonVariants } from "./ui/button";
-import { useForm } from "react-hook-form";
-import { Input } from "./ui/input";
-import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
-import { Separator } from "./ui/separator";
+import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { formatPeso } from "@/app/lib/helpers";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import qs from "query-string";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useActionState, useState } from "react";
 import { useUrlParams } from "@/hooks/use-url-params";
+import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 
 const coupons = {
   code: "CKANNIVERSARY",
@@ -71,11 +73,6 @@ export const DetailsCard = ({ name }: Props) => {
     <div className="w-full space-y-4 md:w-1/3">
       <Card>
         <CardHeader>
-          {/* {isLoading ? (
-                  <Skeleton className="h-5 w-full" />
-                ) : (
-                  <h1 className="font-semibold">{tour?.title}</h1>
-                )} */}
           <h1 className="font-semibold">{name}</h1>
           <span className="text-slate-500">{eachParams.type}</span>
         </CardHeader>

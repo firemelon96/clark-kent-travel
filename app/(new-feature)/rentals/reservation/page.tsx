@@ -1,5 +1,5 @@
 import { getRentalById } from "@/app/lib/helpers";
-import { BookingPreview } from "@/components/booking-preview";
+import { BookingPreview } from "@/app/(new-feature)/travel-and-tours/_components/booking-preview";
 import { Stepper } from "@/components/stepper";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getRentalByType } from "@/lib/utils";

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useUrlParams } from "@/hooks/use-url-params";
 
 type Props = {
