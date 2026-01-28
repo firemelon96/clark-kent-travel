@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 
 const coupons = {
-  code: "CKANNIVERSARY",
+  code: "CLARKKENT@12",
   type: "percentage",
   eligible: {
     type: "day tour",

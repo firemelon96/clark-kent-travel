@@ -9,13 +9,7 @@ export const PromoBanner = () => {
       <FireworksBackground className="absolute inset-0" />
       <div className="flex flex-col">
         <h1 className="text-xl">Celebrate our Anniversary using </h1>
-        {/* <div className="flex items-center gap-2">
-          <span className="text-3xl font-black tracking-wider md:text-4xl">
-            CKANNIVERSARY
-          </span>{" "}
-          <Ticket className="size-9" />
-        </div> */}
-        <CopyText text="CKANNIVERSARY" />
+        <CopyText text="CLARKKENT@12" />
         <p className="text-md">
           and get{" "}
           <span className="text-3xl font-bold tracking-wider text-rose-500">

@@ -8,7 +8,6 @@ export const tours = [
     slug: "3d2n-puerto-princesa-package-a",
     duration: 3,
     type: "package",
-    bestSeller: true,
     address: ["Puerto Princesa"],
     description:
       "A perfect short getaway designed for first-time visitors to Puerto Princesa. Enjoy a relaxed arrival, explore the world-famous Underground River, and wrap up your trip with a guided city tour showcasing the cultural and natural highlights of the city.",
@@ -46,7 +45,9 @@ export const tours = [
         price: 10400,
       },
     ],
-    images: ["/images/packages/3d2n-puerto-princesa-package-a.jpg"],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps-package/puerto-princesa-package-a.avif",
+    ],
     inclusions: [
       "Room Accommodation (Airconditioned)",
       "Tours mentioned",
@@ -116,7 +117,9 @@ export const tours = [
       "Transfers",
     ],
     exclusions: [],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps-package/puerto-princesa-package-b.avif",
+    ],
   },
   {
     tourId: "3d2n-puerto-princesa-package-c",
@@ -173,7 +176,9 @@ export const tours = [
       "Transfers",
     ],
     exclusions: [],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps-package/puerto-princesa-package-c.avif",
+    ],
   },
   {
     tourId: "3d2n-puerto-princesa-package-d",
@@ -233,7 +238,9 @@ export const tours = [
       "Transfers",
     ],
     exclusions: [],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps-package/puerto-princesa-package-d.avif",
+    ],
   },
   {
     tourId: "4d3n-puerto-princesa-package",
@@ -295,7 +302,9 @@ export const tours = [
       "Transfers",
     ],
     exclusions: [],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps-package/4d3n-puerto-princesa-package.avif",
+    ],
   },
   {
     tourId: "5d4n-puerto-princesa-package",
@@ -359,7 +368,9 @@ export const tours = [
       "Transfers",
     ],
     exclusions: [],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps-package/5d4n-puerto-princesa-package.avif",
+    ],
   },
 
   //----Elnido----
@@ -424,7 +435,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     images: [
-      "/resources/elnido-package-1/featured.jpeg",
+      "https://cdn.palawanwebsolutions.com/clarkkent/elnido-package/elnido%20package.avif",
       "/resources/elnido-package-1/7-commandos.avif",
       "/resources/elnido-package-1/big-lagoon.avif",
       "/resources/elnido-package-1/payong-payong.avif",
@@ -492,7 +503,9 @@ export const tours = [
       "Kayak fee & Snorkling gears",
       "Anything not mentioned in inclusions",
     ],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/elnido-package/elnido-package-2.avif",
+    ],
   },
   {
     tourId: "4d3n-el-nido-package-ac",
@@ -560,7 +573,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     images: [
-      "/resources/elnido-package-2/featured.jpeg",
+      "https://cdn.palawanwebsolutions.com/clarkkent/elnido-package/4d3n-elnido-package.avif",
       "/resources/elnido-package-2/7-commandos.avif",
       "/resources/elnido-package-2/big-lagoon.avif",
       "/resources/elnido-package-2/helicopter.avif",
@@ -638,7 +651,9 @@ export const tours = [
       "Kayak fee & Snorkling gears",
       "Anything not mentioned in inclusions",
     ],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/elnido-package/5d4n-elnido-free-package.avif",
+    ],
   },
   {
     tourId: "5d4n-el-nido-package-acb",
@@ -710,7 +725,7 @@ export const tours = [
       "Anything not mentioned in inclusions",
     ],
     images: [
-      "/resources/elnido-package-3/featured.jpeg",
+      "https://cdn.palawanwebsolutions.com/clarkkent/elnido-package/5d4n-elnido-package.avif",
       "/resources/elnido-package-3/7-commandos.avif",
       "/resources/elnido-package-3/big-lagoon.avif",
       "/resources/elnido-package-3/cathedral-cave.avif",
@@ -793,7 +808,9 @@ export const tours = [
       "Kayak fee & Snorkling gears",
       "Anything not mentioned in inclusions",
     ],
-    images: [],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/elnido-package/6d5n-elnido-package.avif",
+    ],
   },
 
   //---PPSxElnido----
