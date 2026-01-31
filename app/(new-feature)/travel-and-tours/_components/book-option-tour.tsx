@@ -58,7 +58,6 @@ export const BookOptionTour = ({
   const [isPending, startTransition] = useTransition();
 
   const priceType = Array.from(new Set(tourPricing.map((price) => price.type)));
-  console.log(priceType);
 
   const form = useForm<z.infer<typeof bookingOptionSchema>>({
     resolver: zodResolver(bookingOptionSchema),
@@ -99,8 +98,6 @@ export const BookOptionTour = ({
   const minForType = Math.min(
     ...tourPricing.filter((t) => type === t.type).map((t) => t.minGroupSize),
   );
-
-  console.log(type, maxForType, uniqueSet);
 
   if (participants > maxForType) {
     form.setValue("participants", maxForType, { shouldValidate: true });

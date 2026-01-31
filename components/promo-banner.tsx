@@ -19,7 +19,7 @@ export const PromoBanner = () => {
       </div>
       <div className="flex flex-col items-center md:items-start">
         <span className="text-sm">Promo runs until:</span>
-        <CountdownBlocks targetDate="2026-02-28T00:00:00+08:00" />
+        <CountdownBlocks targetDate="2026-02-15T00:00:00+08:00" />
       </div>
     </div>
   );

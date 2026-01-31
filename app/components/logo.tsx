@@ -24,7 +24,11 @@ export interface LogoProps extends VariantProps<typeof logoVariants> {
 export const Logo = ({ size, className }: LogoProps) => {
   return (
     <div className={cn(logoVariants({ size }), "relative", className)}>
-      <Image fill src="/resources/logo.png" alt="clark kent travel logo" />
+      <Image
+        fill
+        src="https://cdn.palawanwebsolutions.com/clarkkent/logo.png"
+        alt="clark kent travel logo"
+      />
     </div>
   );
 };
