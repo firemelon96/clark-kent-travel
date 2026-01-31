@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Menu } from "lucide-react";
 import { Logo } from "@/app/components/logo";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -208,6 +208,7 @@ export function NewNavbar() {
           <span className="sr-only">Toggle navigation menu</span>
         </Button>
         <Sheet onOpenChange={onClose} open={open}>
+          <SheetTitle className="hidden">Mobile navigation</SheetTitle>
           <SheetContent side="right">
             <nav className="mt-10 grid flex-1 auto-rows-min gap-6 px-4">
               {menuItems.map((item) => (

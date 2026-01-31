@@ -87,6 +87,8 @@ export const BookOptionTour = ({
 
   const isDay = duration === 1;
 
+  const isPuerto = location === "Puerto Princesa";
+
   const maxForType = tourPricing.reduce((max, price) => {
     if (price.type === type) {
       return Math.max(max, price.maxGroupSize);
@@ -135,7 +137,7 @@ export const BookOptionTour = ({
 
     const { from, to } = dateRange;
 
-    if (mapLink === "") {
+    if (isPuerto && mapLink === "") {
       toast.error("Please select a location on the map");
       return;
     }
@@ -171,7 +173,7 @@ export const BookOptionTour = ({
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full space-y-4"
       >
-        <MapLocation setMaplink={setMapLink} />
+        {isPuerto && <MapLocation setMaplink={setMapLink} />}
         <FormField
           control={form.control}
           name="dateRange"

@@ -38,7 +38,7 @@ export const TransferReserve = async (
     const { data, error } = await resend.emails.send({
       from: "Clark Kent Travel and Tours <sales@clarkkenttravelandtours.com>",
       to: [email],
-      cc: ["estong.jamion@gmail.com"],
+      cc: [process.env.USER_EMAIL || ""],
       replyTo: email,
       subject: title || "",
       react: TransferEmailTemplate({

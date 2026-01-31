@@ -28,11 +28,11 @@ const TourCard = ({
     <Link href={`/travel-and-tours/${id}`} className="relative">
       <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
         {bestSeller && (
-          <Badge className="absolute top-2 right-2" variant={"destructive"}>
+          <Badge className="absolute top-2 right-2 z-2" variant={"destructive"}>
             Best Seller
           </Badge>
         )}
-        <div className="relative h-64 w-full md:h-52">
+        <div className="relative z-0 h-64 w-full md:h-52">
           <Image
             unoptimized
             src={image}
