@@ -1,0 +1,9 @@
+services:
+  nextjs:
+    container_name: revamp
+    build: .
+    restart: always
+    ports:
+      - "3002:3000"
+    environment:
+      - .env
