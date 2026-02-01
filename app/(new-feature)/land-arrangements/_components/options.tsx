@@ -17,12 +17,12 @@ type Props = {
   iti: string;
   name: string;
   price: number;
-  inclusions?: string[];
   duration: number;
   itineraries: {
     day: number;
     activities: string[];
   }[];
+  id: string;
 };
 
 export const Options = ({
@@ -31,7 +31,7 @@ export const Options = ({
   duration,
   name,
   price,
-  inclusions,
+  id,
 }: Props) => {
   const { id: seletedIti, setId } = useOptionStore();
 
@@ -78,7 +78,7 @@ export const Options = ({
 
         {isVisible && (
           <div className="scroll-mt-80" ref={divRef}>
-            <BookForm id={iti} title={name} price={price} duration={duration} />
+            <BookForm id={id} title={name} price={price} duration={duration} />
           </div>
         )}
       </CardContent>

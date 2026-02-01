@@ -24,8 +24,8 @@ const coupons = {
   value: 20,
   maxDiscount: 500,
   minBookingAmount: 3000,
-  startDate: "2026-01-01",
-  expiryDate: "2026-01-31",
+  startDate: "2026-02-01",
+  expiryDate: "2026-02-28",
   status: "active",
   description: "Celebrate our anniversary with a special discount!",
 };

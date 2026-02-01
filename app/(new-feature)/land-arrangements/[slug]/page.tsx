@@ -79,9 +79,9 @@ const SinglePage = async ({ params }: SingleProps) => {
               key={option.iti}
               iti={option.iti}
               price={option.price}
-              inclusions={land.inclusions}
               duration={option.duration}
               itineraries={option.itineraries}
+              id={land.id}
             />
           ))}
         </div>

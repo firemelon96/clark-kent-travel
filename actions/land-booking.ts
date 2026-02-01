@@ -2,13 +2,14 @@
 
 import { z } from "zod";
 import { Resend } from "resend";
-import { TourFormSchema } from "@/types/tour";
+import { LandFormSchema } from "@/types/tour";
 import TourEmailTemplate from "@/emails/tour-email-template";
+import { LandArrangementTemplate } from "@/emails/land-arrangement-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const BookTour = async (values: z.infer<typeof TourFormSchema>) => {
-  const validatedFields = TourFormSchema.safeParse(values);
+export const LandBook = async (values: z.infer<typeof LandFormSchema>) => {
+  const validatedFields = LandFormSchema.safeParse(values);
 
   if (!validatedFields.success) {
     return {
@@ -17,18 +18,8 @@ export const BookTour = async (values: z.infer<typeof TourFormSchema>) => {
     };
   }
 
-  const {
-    name,
-    number,
-    type,
-    email,
-    notes,
-    count,
-    date,
-    total,
-    title,
-    mapLink,
-  } = validatedFields.data;
+  const { name, number, email, notes, count, date, total, title } =
+    validatedFields.data;
 
   try {
     const { data, error } = await resend.emails.send({
@@ -37,16 +28,14 @@ export const BookTour = async (values: z.infer<typeof TourFormSchema>) => {
       cc: [process.env.USER_EMAIL || ""],
       replyTo: email,
       subject: title || "",
-      react: TourEmailTemplate({
+      react: LandArrangementTemplate({
         count,
         date,
-        type,
         name,
         email,
         number,
         total,
         title,
-        mapLink,
         notes,
       }),
     });

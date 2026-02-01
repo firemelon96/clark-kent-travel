@@ -57,6 +57,12 @@ export const getTourById = (id: string) => {
   return tour;
 };
 
+export const getLandById = (id: string) => {
+  const land = landArrangements.find((land) => land.id === id);
+  if (land === undefined) return notFound();
+  return land;
+};
+
 export const getTransferById = (id: string) => {
   const transfer = transfers.find((transfer) =>
     transfer.options.map((opt) => opt.id === id),

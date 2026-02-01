@@ -112,13 +112,15 @@ export const BookForm = ({
         url: "/land-arrangements/booking",
         query: {
           id,
-          date: `${format(dateRange.from, "yyyy-MM-dd")} to ${format(
+          date: `${format(dateRange.from, "MMM dd, eee")} to ${format(
             dateRange.to,
-            "yyyy-MM-dd",
+            "MMM dd, eee",
           )}`,
           participants,
           totalPrice,
           title,
+          price,
+          duration,
         },
       },
       { skipNull: true, skipEmptyString: true },

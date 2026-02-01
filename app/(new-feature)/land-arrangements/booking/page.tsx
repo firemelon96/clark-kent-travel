@@ -1,13 +1,15 @@
-import { formatPeso, getTourById, getTransferById } from "@/app/lib/helpers";
+import { getLandById, getLandBySlug, getTourById } from "@/app/lib/helpers";
 import {
   BookingPreview,
   BookingPreviewSkeleton,
 } from "@/app/(new-feature)/travel-and-tours/_components/booking-preview";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Suspense } from "react";
-import { ContactForm } from "./_components/contact-form";
+// import { TourContactForm } from "../_components/tour-contact-form";
 import { Stepper } from "@/components/stepper";
-import { DetailsCard } from "@/app/(new-feature)/travel-and-tours/_components/details-card";
+import { Preview } from "../_components/preview";
+import { DetailsCard } from "../_components/details-card";
+import { ContactForm } from "../_components/contact-form";
 
 interface Props {
   searchParams: Promise<{
@@ -18,12 +20,12 @@ interface Props {
 const BookingPage = async ({ searchParams }: Props) => {
   const { id } = await searchParams;
 
-  const tour = getTourById(id);
+  const land = getLandById(id);
 
-  if (!tour) return;
+  if (!land) return;
 
   return (
-    <section className="mx-auto max-w-5xl space-y-5 py-10">
+    <section className="mx-auto max-w-5xl space-y-5 p-4">
       <Stepper />
 
       <div className="flex flex-col gap-2">
@@ -36,7 +38,7 @@ const BookingPage = async ({ searchParams }: Props) => {
             </CardHeader>
             <CardContent>
               <Suspense fallback={<BookingPreviewSkeleton />}>
-                <BookingPreview url={tour.images[0]} title={tour.tourName} />
+                <Preview url={land.images[0]} title={land.title} />
               </Suspense>
             </CardContent>
             <CardHeader>
@@ -45,10 +47,10 @@ const BookingPage = async ({ searchParams }: Props) => {
               </span>
             </CardHeader>
             <CardContent className="w-full">
-              <ContactForm tourName={tour.tourName} />
+              <ContactForm title={land.title} />
             </CardContent>
           </Card>
-          <DetailsCard name={tour.tourName} />
+          <DetailsCard name={land.title} />
         </div>
       </div>
     </section>

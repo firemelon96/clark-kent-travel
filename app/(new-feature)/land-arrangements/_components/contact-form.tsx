@@ -23,6 +23,7 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
+import { LandBook } from "@/actions/land-booking";
 
 export const contactFormSchema = z.object({
   contactName: z.string().min(1, { message: "Name is required" }),
@@ -39,10 +40,10 @@ export const contactFormSchema = z.object({
 });
 
 interface Props {
-  tourName: string;
+  title: string;
 }
 
-export const TourContactForm = ({ tourName }: Props) => {
+export const ContactForm = ({ title }: Props) => {
   const { eachParams, router } = useUrlParams();
   const [isPending, startTransition] = useTransition();
 
@@ -61,22 +62,15 @@ export const TourContactForm = ({ tourName }: Props) => {
       name: values.contactName,
       email: values.contactEmail,
       number: values.contactNumber,
-      total: eachParams.discountedPrice
-        ? +eachParams.discountedPrice
-        : +eachParams.totalPrice,
-      date: `${format(new Date(eachParams.from), "EEE, MMM d")} - ${format(new Date(eachParams.to), "EEE, MMM d")}`,
-      count: +eachParams.participants,
-      type: eachParams.type,
-      title: tourName,
-      mapLink: eachParams.mapLink,
-      withPromo: eachParams.discountedPrice
-        ? "Availed discount"
-        : "No discount",
       notes: values.notes || "",
+      total: +eachParams.totalPrice,
+      date: eachParams.date,
+      count: +eachParams.participants,
+      title,
     };
 
     startTransition(() => {
-      BookTour(newValues)
+      LandBook(newValues)
         .then((data) => {
           toast.success(data.message);
           form.reset();

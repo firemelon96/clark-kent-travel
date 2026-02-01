@@ -5,7 +5,10 @@ import { Suspense } from "react";
 const AccomodationPage = () => {
   return (
     <section className="space-y-4">
-      <HeroService title="Accomodations" />
+      <HeroService
+        title="Accomodations"
+        imageUrl="https://cdn.palawanwebsolutions.com/clarkkent/services/accommodations.jpg"
+      />
       <Suspense>
         <AccomClient />
       </Suspense>

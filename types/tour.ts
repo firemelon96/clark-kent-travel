@@ -14,6 +14,20 @@ export const TourFormSchema = z.object({
   total: z.number().optional(),
   title: z.string().optional(),
   mapLink: z.string().optional(),
+  notes: z.string().optional(),
+
+  // pickupLocation: z.string(),
+});
+
+export const LandFormSchema = z.object({
+  name: z.string().min(1, "Name is required!"),
+  email: z.string().email(),
+  number: z.string(),
+  notes: z.string().optional(),
+  date: z.string(),
+  count: z.number().min(1, "Count is required"),
+  total: z.number().optional(),
+  title: z.string().optional(),
 
   // pickupLocation: z.string(),
 });

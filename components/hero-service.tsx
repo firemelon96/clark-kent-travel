@@ -19,7 +19,10 @@ export const HeroService = ({ title, imageUrl, className }: Props) => {
         <Image
           fill
           alt="Palawan island"
-          src={imageUrl || "/resources/hero.avif"}
+          src={
+            imageUrl ||
+            "https://cdn.palawanwebsolutions.com/clarkkent/hero.avif"
+          }
           className="w-full object-cover object-center"
           priority
         />

@@ -3787,6 +3787,7 @@ export const tours = [
   {
     tourId: "talaudyong-beach",
     tourName: "Talaudyong Beach",
+    slug: "talaudyong-beach",
     isFeatured: true,
     type: "day tour",
     pricing: [

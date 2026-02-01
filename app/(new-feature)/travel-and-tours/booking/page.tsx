@@ -23,7 +23,7 @@ const BookingPage = async ({ searchParams }: Props) => {
   if (!tour) return;
 
   return (
-    <section className="mx-auto max-w-5xl space-y-5 py-10">
+    <section className="mx-auto max-w-5xl space-y-5 p-4">
       <Stepper />
 
       <div className="flex flex-col gap-2">

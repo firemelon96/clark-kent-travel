@@ -2,13 +2,14 @@
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useUrlParams } from "@/hooks/use-url-params";
+import { formatPeso } from "@/app/lib/helpers";
 
 type Props = {
   url: string;
   title: string;
 };
 
-export const BookingPreview = ({ url, title }: Props) => {
+export const Preview = ({ url, title }: Props) => {
   const { eachParams } = useUrlParams();
   return (
     <div className="flex gap-2 rounded-md border p-4">
@@ -19,10 +20,10 @@ export const BookingPreview = ({ url, title }: Props) => {
         alt={title}
         className="aspect-video rounded-md object-cover"
       />
-      <div className="space-y-2">
+      <div className="">
         <p>{title}</p>
         <span className="text-slate-500">
-          {eachParams.type.toLowerCase()} x {eachParams.participants} pax
+          {formatPeso(+eachParams.price)} x {eachParams.participants} pax
         </span>
       </div>
     </div>
