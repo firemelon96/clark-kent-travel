@@ -3,6 +3,7 @@ import { tours } from "../data/tours";
 import { transfers } from "../data/transfer";
 import { accommodtions } from "../data/accommodations";
 import { rentals } from "../data/rentals";
+import { landArrangements } from "../data/land-arrangements";
 
 interface TourLocationProps {
   address: string;
@@ -42,6 +43,12 @@ export const getTourBySlug = (slug: string) => {
   const tour = tours.find((tour) => tour.slug === slug);
   if (tour === undefined) return notFound();
   return tour;
+};
+
+export const getLandBySlug = (slug: string) => {
+  const land = landArrangements.find((land) => land.slug === slug);
+  if (land === undefined) return notFound();
+  return land;
 };
 
 export const getTourById = (id: string) => {

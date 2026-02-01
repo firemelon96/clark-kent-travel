@@ -158,10 +158,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/urvan/private-vanck.jpg",
-      "/resources/logistics/urvan/urvan-dash.webp",
-      "/resources/logistics/urvan/urvan-rear.webp",
-      "/resources/logistics/urvan/urvan-front.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"4 hours"
@@ -205,10 +204,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/urvan/private-vanck.jpg",
-      "/resources/logistics/urvan/urvan-dash.webp",
-      "/resources/logistics/urvan/urvan-rear.webp",
-      "/resources/logistics/urvan/urvan-front.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"4 hours"
@@ -247,10 +245,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/urvan/private-vanck.jpg",
-      "/resources/logistics/urvan/urvan-dash.webp",
-      "/resources/logistics/urvan/urvan-rear.webp",
-      "/resources/logistics/urvan/urvan-front.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/van-premium.png",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"1 trip"
@@ -298,11 +295,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/innova/innova.avif",
-      "/resources/logistics/innova/innova.webp",
-      "/resources/logistics/innova/innova-dashboard.webp",
-      "/resources/logistics/innova/innova-outside.webp",
-      "/resources/logistics/innova/innova-inside.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/innova.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/innova.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/innova.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"4 hours"
@@ -353,10 +348,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/zenix/zenix.avif",
-      "/resources/logistics/zenix/inside-zenix.webp",
-      "/resources/logistics/zenix/dashboad-zenix.webp",
-      "/resources/logistics/zenix/zenix.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/zenix.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/zenix.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/zenix.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"4 hours"
@@ -413,11 +407,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/nissan-pro/pro2.webp",
-      "/resources/logistics/nissan-pro/pro3.webp",
-      "/resources/logistics/nissan-pro/pro4.webp",
-      "/resources/logistics/nissan-pro/pro5.webp",
-      "/resources/logistics/nissan-pro/pro6.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/pro4x.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/pro4x.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/pro4x.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"4 hours"
@@ -467,10 +459,10 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/sedan/sedan.avif",
-      "/resources/logistics/sedan/sedan2.webp",
-      "/resources/logistics/sedan/sedan3.webp",
-      "/resources/logistics/sedan/sedan4.webp",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/sedan.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/sedan.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/sedan.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/sedan.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 4, //"4 hours"
@@ -509,9 +501,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/hondabeat.avif",
-      "/resources/logistics/hondabeat.avif",
-      "/resources/logistics/hondabeat.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/hondabeat.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/hondabeat.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/hondabeat.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 2, //"2 hours"
@@ -551,9 +543,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/click125.jpg",
-      "/resources/logistics/click125.jpg",
-      "/resources/logistics/click125.jpg",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/click.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/click.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/click.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 2, //"2 hours"
@@ -593,9 +585,9 @@ export const rentals = [
       },
     ],
     images: [
-      "/resources/logistics/aerox.avif",
-      "/resources/logistics/aerox.avif",
-      "/resources/logistics/aerox.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/aerox.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/aerox.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/logistics/aerox.avif",
     ],
     rentalTerms: {
       minimumRentalPeriod: 2, //"2 hours"

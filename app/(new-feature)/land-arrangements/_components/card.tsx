@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { formatPeso } from "../lib/helpers";
+import { formatPeso } from "../../../lib/helpers";
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
 import { Banknote, BanknoteIcon, MapPin } from "lucide-react";
@@ -14,22 +14,10 @@ interface CardProps {
   bestSeller?: boolean;
 }
 
-const TourCard = ({
-  image,
-  title,
-  address,
-  id,
-  price,
-  bestSeller,
-}: CardProps) => {
+const Card = ({ image, title, address, id, price, bestSeller }: CardProps) => {
   return (
     <Link href={`/travel-and-tours/${id}`} className="relative">
       <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
-        {bestSeller && (
-          <Badge className="absolute top-2 right-2 z-2" variant={"destructive"}>
-            Best Seller
-          </Badge>
-        )}
         <div className="relative z-0 h-64 w-full md:h-52">
           <Image
             unoptimized
@@ -62,4 +50,4 @@ const TourCard = ({
   );
 };
 
-export default TourCard;
+export default Card;

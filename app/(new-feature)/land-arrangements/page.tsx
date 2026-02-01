@@ -1,5 +1,5 @@
 import { HeroService } from "@/components/hero-service";
-import { TourClient } from "./_components/tour-client";
+import { Client } from "./_components/client";
 import { Suspense } from "react";
 
 const TravelPage = () => {
@@ -7,7 +7,7 @@ const TravelPage = () => {
     <section className="space-y-4">
       <HeroService title="Land Arrangements" imageUrl="" />
       <Suspense>
-        <TourClient />
+        <Client />
       </Suspense>
     </section>
   );

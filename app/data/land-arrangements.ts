@@ -1,900 +1,96 @@
 export const landArrangements = [
   {
-    tourId: "puerto-princesa-land-arrangement",
-    slug: "puerto-princesa-land-arrangement",
-    tourName: "Puerto Princesa Land Arrangement",
+    id: "adlaw-inn-puerto-princesa",
+    slug: "adlaw-inn-puerto-princesa",
+    title: "Adlaw Inn Puerto Princesa Package",
     isFeatured: false,
+    address: ["Puerto Princesa City, Palawan"],
     description:
       "Experience the beauty of Puerto Princesa with our exclusive land arrangement package.",
     type: "package",
     options: [
       {
-        name: "ADLAW INN",
-        description:
-          "A cozy 2-star hotel located in the heart of Puerto Princesa.",
-        options: [
+        name: "3D2N Adlaw Inn Package",
+        iti: "3D2N",
+        price: 6050,
+        itineraries: [
           {
-            duration: 3,
-            pricing: [],
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
+            day: 1,
+            activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
+          },
+          {
+            day: 2,
+            activities: [
+              "Underground River Tour",
+              "Lunch at a local restaurant",
+              "Return to Hotel",
             ],
           },
           {
-            numOfStay: 4,
-            price: 8950,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 11550,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
+            day: 3,
+            activities: ["City Tour", "Return to Hotel", "Departure"],
           },
         ],
       },
       {
-        name: "MANUELA SUITES 2 Star-Hotel",
-        description:
-          "A cozy 2-star hotel located in the heart of Puerto Princesa.",
-        options: [
+        name: "4D3N Adlaw Inn Package",
+        iti: "4D3N",
+        price: 7550,
+        itineraries: [
           {
-            numOfStay: 3,
-            price: 6350,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
+            day: 1,
+            activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
+          },
+          {
+            day: 2,
+            activities: [
+              "Underground River Tour",
+              "Lunch at a local restaurant",
+              "Return to Hotel",
             ],
           },
           {
-            numOfStay: 4,
-            price: 9450,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
+            day: 3,
+            activities: ["Honda Bay", "Buffet Lunch", "Return to Hotel"],
           },
           {
-            numOfStay: 5,
-            price: 12350,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
+            day: 4,
+            activities: ["City Tour", "Return to Hotel", "Departure"],
           },
         ],
       },
       {
-        name: "IPIL SUITES Budget",
-        description:
-          "A cozy 3-star hotel with a pool located in the heart of Puerto Princesa.",
-        options: [
+        name: "5D4N Adlaw Inn Package",
+        iti: "5D4N",
+        price: 9050,
+        itineraries: [
           {
-            numOfStay: 3,
-            price: 6650,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
+            day: 1,
+            activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
+          },
+          {
+            day: 2,
+            activities: [
+              "Underground River Tour",
+              "Lunch at a local restaurant",
+              "Return to Hotel",
             ],
           },
           {
-            numOfStay: 4,
-            price: 9800,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
+            day: 3,
+            activities: ["Honda Bay", "Buffet Lunch", "Return to Hotel"],
+          },
+          {
+            day: 4,
+            activities: [
+              "firefly Watching",
+              "Buffet Dinner",
+              "Return to Hotel",
             ],
           },
           {
-            numOfStay: 5,
-            price: 12750,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
-          },
-        ],
-      },
-      {
-        name: "UPGRACE INN Budget",
-        description:
-          "A budget-friendly 3-star hotel with pool located in Puerto Princesa.",
-        options: [
-          {
-            numOfStay: 3,
-            price: 6650,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 4,
-            price: 9800,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 12750,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
-          },
-        ],
-      },
-      {
-        name: "MARIANNE HOTEL",
-        description:
-          "A budget-friendly 3-star hotel with pool located in Puerto Princesa.",
-        options: [
-          {
-            numOfStay: 3,
-            price: 6650,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 4,
-            price: 9800,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 12750,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
-          },
-        ],
-      },
-      {
-        name: "CITYSTATE ASTURIAS",
-        description:
-          "A budget-friendly 3-star hotel with pool located in Puerto Princesa.",
-        options: [
-          {
-            numOfStay: 3,
-            price: 7050,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 4,
-            price: 10300,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 13350,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
-          },
-        ],
-      },
-      {
-        name: "PANJA RESORT",
-        description:
-          "A luxurious resort with stunning views and top-notch amenities.",
-        options: [
-          {
-            numOfStay: 3,
-            price: 10050,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 4,
-            price: 15300,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 20350,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
-          },
-        ],
-      },
-      {
-        name: "HUE HOTEL",
-        description: "A modern hotel with comfortable accommodations.",
-        options: [
-          {
-            numOfStay: 3,
-            price: 12050,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 4,
-            price: 17800,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 23350,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
-          },
-        ],
-      },
-      {
-        name: "CAPE DIEM VILLAS & RESORT",
-        description:
-          "A luxurious resort with stunning views and top-notch amenities.",
-        options: [
-          {
-            numOfStay: 3,
-            price: 13250,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Honda Bay", price: 1500 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 4,
-            price: 19500,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Lunch at a local restaurant",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "buffet lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: ["City Tour", "Return to Hotel", "Departure"],
-              },
-            ],
-            optionalTours: [
-              { name: "Firefly", price: 1350 },
-              { name: "Whaleshark", price: 2500 },
-            ],
-          },
-          {
-            numOfStay: 5,
-            price: 25550,
-            itineraries: [
-              {
-                day: 1,
-                activities: ["Arrival in Puerto Princesa", "Transfer to Hotel"],
-              },
-              {
-                day: 2,
-                activities: [
-                  "Underground River Tour",
-                  "Buffet Lunch",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 3,
-                activities: ["Honda Bay", "Picnic Lunch", "Return to Hotel"],
-              },
-              {
-                day: 4,
-                activities: [
-                  "Firefly Watching",
-                  "Buffet Dinner",
-                  "Return to Hotel",
-                ],
-              },
-              {
-                day: 5,
-                activities: ["City Tour", "Light Snacks", "Departure"],
-              },
-            ],
-            optionalTours: [{ name: "Whaleshark", price: 2500 }],
+            day: 5,
+            activities: ["City Tour", "Return to Hotel", "Departure"],
           },
         ],
       },

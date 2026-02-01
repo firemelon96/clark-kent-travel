@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BiSolidLeftArrow } from "react-icons/bi";
 
 interface Props {
   params: Promise<{
@@ -67,15 +66,15 @@ const SinglePage = async ({ params }: Props) => {
             />
           ))}
         </div>
-        <div className="w-full space-y-2 md:w-[370px]">
+        {/* <div className="w-full space-y-2 md:w-[370px]">
           <span className="font-medium uppercase">Package Information</span>
           <div className="relative rounded-md bg-rose-50 px-4">
             <BiSolidLeftArrow className="absolute top-0 -left-4 hidden size-6 text-rose-50 md:block" />
             <div>
-              {/* <ReusableAccordion items={transfer.included} label="Inclusion" /> */}
+              <ReusableAccordion items={transfer.included} label="Inclusion" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
