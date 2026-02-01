@@ -16,7 +16,7 @@ interface CardProps {
 
 const Card = ({ image, title, address, id, price, bestSeller }: CardProps) => {
   return (
-    <Link href={`/travel-and-tours/${id}`} className="relative">
+    <Link href={`/land-arrangements/${id}`} className="relative">
       <div className="flex w-full flex-col gap-2 overflow-hidden rounded-md border border-sky-500 bg-white shadow-xs hover:shadow-md hover:shadow-rose-500">
         <div className="relative z-0 h-64 w-full md:h-52">
           <Image

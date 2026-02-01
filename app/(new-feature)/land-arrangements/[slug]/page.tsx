@@ -34,8 +34,8 @@ const SinglePage = async ({ params }: SingleProps) => {
   }
 
   return (
-    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-5">
-      <ImageBanner images={land.images[0]} />
+    <section className="mx-auto mt-5 mb-10 max-w-5xl space-y-5 p-4">
+      <ImageBanner images={land.images} />
       <div className="flex flex-col-reverse gap-4 text-center md:flex-row md:text-start">
         <div className="flex flex-1 flex-col">
           <div className="space-y-2">
@@ -44,6 +44,17 @@ const SinglePage = async ({ params }: SingleProps) => {
               <Badge>{formatPeso(price)}</Badge>
             </div>
             <Description description={land.description} />
+            <div className="flex flex-wrap gap-2">
+              {land.inclusions.map((inclusion) => (
+                <Badge
+                  variant={"outline"}
+                  key={inclusion}
+                  className="text-ellipsis"
+                >
+                  {inclusion}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
         <Card className="h-full w-full border-none shadow-none md:w-[370px]">
@@ -57,7 +68,7 @@ const SinglePage = async ({ params }: SingleProps) => {
           </CardContent>
         </Card>
       </div>
-      <div className="flex flex-col-reverse gap-4 md:flex-row">
+      <div className="flex flex-col-reverse gap-4 transition-all duration-150 ease-in-out md:flex-row">
         <div className="flex flex-1 flex-col space-y-2">
           <span className="border-l-2 border-rose-500 pl-4 font-medium uppercase">
             Options
@@ -68,6 +79,9 @@ const SinglePage = async ({ params }: SingleProps) => {
               key={option.iti}
               iti={option.iti}
               price={option.price}
+              inclusions={land.inclusions}
+              duration={option.duration}
+              itineraries={option.itineraries}
             />
           ))}
         </div>
