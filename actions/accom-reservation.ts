@@ -3,7 +3,6 @@
 import { z } from "zod";
 import { Resend } from "resend";
 import { AccomFormSchema } from "@/types/tour";
-import { TransferEmailTemplate } from "@/emails/transfer-template";
 import { AccomEmailTemplate } from "@/emails/accommodation-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -12,8 +11,6 @@ export const AccomReservation = async (
   values: z.infer<typeof AccomFormSchema>,
 ) => {
   const validatedFields = AccomFormSchema.safeParse(values);
-
-  console.log({ ApiCall: validatedFields.data });
 
   if (!validatedFields.success) {
     return {
@@ -48,8 +45,6 @@ export const AccomReservation = async (
     if (error) {
       return { success: false, message: "Internal server error" };
     }
-
-    console.log(data);
 
     return {
       success: true,

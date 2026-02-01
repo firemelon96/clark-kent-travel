@@ -42,6 +42,14 @@ export const DetailsCard = ({ name }: Props) => {
   const addPromo = (prev: any, data: FormData) => {
     const promoCode = data.get("promo");
 
+    if (promoCode === null || promoCode === "") {
+      return "Please enter a promo code.";
+    }
+
+    if (promoCode !== coupons.code) {
+      return "Invalid promo code.";
+    }
+
     const isEligible =
       coupons.eligible.location.some((loc) => loc === eachParams.location) &&
       coupons.eligible.type === eachParams.serviceType;
