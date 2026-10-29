@@ -1881,13 +1881,15 @@ export const tours = [
     minParticipants: 2,
     maxParticipants: 12,
   },
+  //day tours
+
   {
     tourId: "city-tour-puerto-princesa-city",
     tourName: "City Tour with light snacks",
     isFeatured: true,
     type: "day tour",
     price: 850,
-    privatePrice: [4350, 2250, 1750, 1500, 1250, 1100, 1050, 1000, 950, 850],
+    privatePrice: [6200, 3250, 2266, 1750, 1440, 1250, 1200, 987, 900, 830],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Experience the best of Puerto Princesa in just one day with our exciting city tour! Known as the 'City in a Forest,' Puerto Princesa offers a perfect blend of history, culture, and natural beauty. This guided tour will take you through the city's most iconic landmarks, giving you a taste of everything this charming destination has to offer.",
@@ -1964,80 +1966,12 @@ export const tours = [
     maxParticipants: 12,
   },
   {
-    tourId: "honda-bay-puerto-princesa-city",
-    tourName: "Honda Bay Tour with Picnic Lunch",
-    type: "day tour",
-    price: 2000,
-    privatePrice: [8500, 4800, 3800, 2950, 2700, 2400, 2300, 2200, 2100, 2000],
-    address: ["Puerto Princesa, Palawan"],
-    description:
-      "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan's most picturesque islands, each with its unique charm and beauty.",
-    itineraries: [
-      {
-        name: "Iteneraries",
-        activities: [
-          "07:00-07:45 Pick up time then proceed to tour",
-          "08:30-09:00 Arrived in Honda Bay Wharf",
-          "11:00-12:00 Picnic Lunch at the Island",
-          "15:00-16:00 End of Tour",
-          "16:00-17:00 Drop to Hotel",
-        ],
-      },
-      {
-        name: "Destinations",
-        activities: [
-          "Luli Island",
-          "Pambato Reef or Starfish Island",
-          "Cowrie Island",
-        ],
-      },
-    ],
-    duration: ["7:00am to 8:00am", "3:30pm to 4:30pm"],
-    inclusions: [
-      "Picnic lunch",
-      "Licensed Tour Guide ",
-      "Tour pick up and drop around City Proper only",
-      "Motorized Boat",
-      "Island Entrance fees",
-      "Cottage fee",
-      "Life-vest",
-      "Accident insurance worth 10,000 pesos medical reimbursement only",
-      "Terminal and wharf fees",
-    ],
-    exclusions: [
-      "Tipping for the guide and driver not included",
-      "Environmental fee 150/person",
-      "Anything not mentioned in inclusions",
-      "Snorkeling gears",
-      "Aqua shoes ",
-    ],
-    notes: [
-      "Non Refundable",
-      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
-    ],
-    reminders: [
-      "Please bring your sunblock",
-      "Wear your swimwear",
-      "Bring your waterproof bag",
-      "Not suitable for people prone to seasickness",
-      "Bring your towel & hat",
-    ],
-    images: [
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/cowrie2.avif",
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/luli.avif",
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/starfish.avif",
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/starfish2.avif",
-    ],
-    minParticipants: 2,
-    maxParticipants: 12,
-  },
-  {
     tourId: "underground-puerto-princesa-city",
     tourName: "Underground River with Buffet Lunch",
     isFeatured: true,
     type: "day tour",
     price: 2700,
-    privatePrice: [11000, 6400, 4866, 4100, 3640, 3333, 3114, 2950, 2822, 2720],
+    privatePrice: [11800, 6500, 4666, 3750, 3300, 3150, 2857, 2637, 2466, 2400],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Explore one of the New 7 Wonders of Nature and a UNESCO World Heritage Site on this breathtaking Underground River Tour. Journey into the heart of Palawan and discover the natural beauty and incredible geology of the Puerto Princesa Subterranean River National Park. This tour offers an unforgettable adventure through ancient limestone caves, stunning rock formations, and a world-class ecosystem.",
@@ -2105,12 +2039,134 @@ export const tours = [
     maxParticipants: 12,
   },
   {
+    tourId: "honda-bay-puerto-princesa-city",
+    tourName: "Honda Bay Tour with Picnic Lunch",
+    type: "day tour",
+    price: 2000,
+    privatePrice: [11200, 5900, 4100, 3250, 2700, 2466, 2286, 2163, 2056, 1980],
+    address: ["Puerto Princesa, Palawan"],
+    description:
+      "Escape to the pristine waters of Honda Bay, where stunning islands and crystal-clear seas await you. This island-hopping adventure is perfect for beach lovers, snorkelers, and those seeking a relaxing getaway. Just a short drive from Puerto Princesa, Honda Bay offers some of Palawan's most picturesque islands, each with its unique charm and beauty.",
+    itineraries: [
+      {
+        name: "Iteneraries",
+        activities: [
+          "07:00-07:45 Pick up time then proceed to tour",
+          "08:30-09:00 Arrived in Honda Bay Wharf",
+          "11:00-12:00 Picnic Lunch at the Island",
+          "15:00-16:00 End of Tour",
+          "16:00-17:00 Drop to Hotel",
+        ],
+      },
+      {
+        name: "Destinations",
+        activities: [
+          "Luli Island",
+          "Pambato Reef or Starfish Island",
+          "Cowrie Island",
+        ],
+      },
+    ],
+    duration: ["7:00am to 8:00am", "3:30pm to 4:30pm"],
+    inclusions: [
+      "Picnic lunch",
+      "Licensed Tour Guide ",
+      "Tour pick up and drop around City Proper only",
+      "Motorized Boat",
+      "Island Entrance fees",
+      "Cottage fee",
+      "Life-vest",
+      "Accident insurance worth 10,000 pesos medical reimbursement only",
+      "Terminal and wharf fees",
+    ],
+    exclusions: [
+      "Tipping for the guide and driver not included",
+      "Environmental fee 150/person",
+      "Anything not mentioned in inclusions",
+      "Snorkeling gears",
+      "Aqua shoes ",
+    ],
+    notes: [
+      "Non Refundable",
+      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
+    ],
+    reminders: [
+      "Please bring your sunblock",
+      "Wear your swimwear",
+      "Bring your waterproof bag",
+      "Not suitable for people prone to seasickness",
+      "Bring your towel & hat",
+    ],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/cowrie2.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/luli.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/starfish.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/honda-bay/starfish2.avif",
+    ],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
+
+  {
+    tourId: "firefly-watching-puerto-princesa-city",
+    tourName: "Firefly Tour with Buffet Dinner",
+    type: "day tour",
+    price: 1800,
+    privatePrice: [7300, 4250, 3100, 2500, 2200, 1950, 1814, 1687, 1588, 1500],
+    address: ["Puerto Princesa, Palawan"],
+    description:
+      "Embark on a magical journey through the serene waters of Puerto Princesa as you experience the enchanting spectacle of Firefly Watching. This evening tour is perfect for nature lovers and those looking for a peaceful, unforgettable night under the stars. Witness the mesmerizing glow of fireflies lighting up the mangrove forests along the riverbanks, creating a truly magical and serene atmosphere.",
+    itineraries: [
+      {
+        name: "Itineraries",
+        activities: [
+          "17:00-17:30 Pick up time then proceed to tour",
+          "19:00-19:30 Buffet Dinner",
+          "20:00-21:00 End of tour then drop to hotel",
+        ],
+      },
+      {
+        name: "Destination",
+        activities: ["Kitu-kitu Firefly watching"],
+      },
+    ],
+    duration: ["5:00pm to 9:00pm", "5:30pm to 9:30pm"],
+    inclusions: [
+      "Buffet dinner",
+      "Tour Guide during the tour",
+      "Tour pick up and drop around City Proper",
+      "Accident insurance worth 10,000 pesos medical reimbursement",
+      "Life-vest",
+    ],
+    exclusions: [
+      "Tipping for the guide and driver not included",
+      "Environmental fee 150/person",
+      "Anything not mentioned in inclusions ",
+    ],
+    notes: [
+      "Non Refundable",
+      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
+    ],
+    reminders: [
+      "Not suitable for people with mobility impairments",
+      "Do not use insect repellent lotions as it drives away the firefly",
+      "Wear any comfortable clothes & Slippers/shoes",
+    ],
+    images: [
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/firefly/ff1.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/firefly/ff2.avif",
+      "https://cdn.palawanwebsolutions.com/clarkkent/pps/firefly/ff3.avif",
+    ],
+    minParticipants: 2,
+    maxParticipants: 12,
+  },
+  {
     tourId: "talaudyong-beach",
     tourName: "Talaudyong Beach",
     isFeatured: true,
     type: "day tour",
     // price: 2700,
-    privatePrice: [8000, 4100, 3000, 2400, 2100, 1916, 1800, 1700, 1600, 1500],
+    privatePrice: [11500, 6350, 4567, 3675, 3240, 3083, 2786, 2563, 2389, 2350],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Talaudyong Beach is a quiet tropical escape featuring powdery white sand, clear turquoise waters, and a peaceful atmosphere. Ideal for swimming, relaxing, and taking stunning photos, this hidden gem offers a calm and authentic beach experience away from the crowds.",
@@ -2174,64 +2230,11 @@ export const tours = [
     maxParticipants: 12,
   },
   {
-    tourId: "firefly-watching-puerto-princesa-city",
-    tourName: "Firefly Tour with Buffet Dinner",
-    type: "day tour",
-    price: 1800,
-    privatePrice: [6000, 3750, 2833, 2375, 2100, 1916, 1785, 1687, 1611, 1550],
-    address: ["Puerto Princesa, Palawan"],
-    description:
-      "Embark on a magical journey through the serene waters of Puerto Princesa as you experience the enchanting spectacle of Firefly Watching. This evening tour is perfect for nature lovers and those looking for a peaceful, unforgettable night under the stars. Witness the mesmerizing glow of fireflies lighting up the mangrove forests along the riverbanks, creating a truly magical and serene atmosphere.",
-    itineraries: [
-      {
-        name: "Itineraries",
-        activities: [
-          "17:00-17:30 Pick up time then proceed to tour",
-          "19:00-19:30 Buffet Dinner",
-          "20:00-21:00 End of tour then drop to hotel",
-        ],
-      },
-      {
-        name: "Destination",
-        activities: ["Kitu-kitu Firefly watching"],
-      },
-    ],
-    duration: ["5:00pm to 9:00pm", "5:30pm to 9:30pm"],
-    inclusions: [
-      "Buffet dinner",
-      "Tour Guide during the tour",
-      "Tour pick up and drop around City Proper",
-      "Accident insurance worth 10,000 pesos medical reimbursement",
-      "Life-vest",
-    ],
-    exclusions: [
-      "Tipping for the guide and driver not included",
-      "Environmental fee 150/person",
-      "Anything not mentioned in inclusions ",
-    ],
-    notes: [
-      "Non Refundable",
-      "2 yrs. old and below is free of charge. 3-4yrs old is half-rate and 5yrs old and above is considered as adult.",
-    ],
-    reminders: [
-      "Not suitable for people with mobility impairments",
-      "Do not use insect repellent lotions as it drives away the firefly",
-      "Wear any comfortable clothes & Slippers/shoes",
-    ],
-    images: [
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/firefly/ff1.avif",
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/firefly/ff2.avif",
-      "https://cdn.palawanwebsolutions.com/clarkkent/pps/firefly/ff3.avif",
-    ],
-    minParticipants: 2,
-    maxParticipants: 12,
-  },
-  {
     tourId: "whaleshark-watching-w-picnic-lunch",
     tourName: "Whaleshark Watching with Picnic Lunch",
     type: "day tour",
-    price: 2700,
-    privatePrice: [],
+    price: 3500,
+    privatePrice: [17500, 9000, 6167, 4750, 4200, 3833, 3571, 3500, 3444, 3300],
     address: ["Puerto Princesa, Palawan"],
     description:
       "Join us for an unforgettable Whaleshark Watching experience with a delightful picnic lunch. This tour offers a unique opportunity to encounter the gentle giants of the sea in their natural habitat while enjoying a delicious meal amidst the stunning backdrop of Puerto Princesa.",
@@ -2285,9 +2288,9 @@ export const tours = [
     tourId: "tour-a-el-nido",
     tourName: "Tour A",
     type: "day tour",
-    price: 1200,
+    price: 1500,
     isPax: true,
-    privatePrice: [11000, 12000, 14500, 16000, 18000, 19000, 20000],
+    privatePrice: [13500, 16000, 19000, 21500, 23500, 26000, 28000],
     address: ["El Nido, Palawan"],
     description:
       "Embark on the iconic El Nido Tour A, a must-experience adventure that showcases some of the most stunning natural attractions in El Nido, Palawan. Perfect for beach lovers, snorkelers, and nature enthusiasts, this tour offers an unforgettable day of exploring crystal-clear lagoons, pristine beaches, and vibrant underwater life.",
@@ -2354,11 +2357,10 @@ export const tours = [
   {
     tourId: "tour-b-el-nido",
     tourName: "Tour B",
-
     type: "day tour",
-    price: 1300,
+    price: 1600,
     isPax: true,
-    privatePrice: [13000, 15500, 17500, 19500, 21000, 22000, 23000],
+    privatePrice: [15000, 17500, 21000, 23000, 25000, 27000, 29000],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour B offers an exciting exploration of caves, hidden beaches, and vibrant marine life. This tour is perfect for those seeking adventure and discovery, providing a blend of thrilling activities and stunning natural scenery. Explore unique geological formations, swim in crystal-clear waters, and relax on pristine beaches.",
@@ -2427,11 +2429,10 @@ export const tours = [
     tourId: "tour-c-el-nido",
     tourName: "Tour C",
     isFeatured: true,
-
     type: "day tour",
-    price: 1400,
+    price: 1700,
     isPax: true,
-    privatePrice: [13000, 15500, 17500, 19500, 21000, 22000, 23000],
+    privatePrice: [15000, 17500, 21000, 23000, 25000, 27000, 29000],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour C is renowned for its hidden beaches, secret coves, and dramatic limestone formations. This tour is perfect for those seeking an adventurous day of snorkeling, exploring pristine beaches, and discovering the hidden treasures of El Nido's stunning seascape.",
@@ -2500,11 +2501,10 @@ export const tours = [
   {
     tourId: "tour-d-el-nido",
     tourName: "Tour D",
-
     type: "day tour",
-    price: 1200,
+    price: 1500,
     isPax: true,
-    privatePrice: [11000, 12000, 14500, 16000, 18000, 19000, 20000],
+    privatePrice: [13500, 16000, 19000, 21500, 23500, 26000, 28000],
     address: ["El Nido, Palawan"],
     description:
       "El Nido Tour D offers a more relaxed and intimate exploration of some of the less-visited yet equally stunning islands and beaches of El Nido. This tour is perfect for travelers looking to escape the crowds and enjoy a day of tranquility, snorkeling, and soaking in the natural beauty of secluded spots.",
